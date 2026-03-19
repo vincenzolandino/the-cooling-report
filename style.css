@@ -737,6 +737,24 @@ section h2 {
     padding: 32px 24px;
     text-align: left;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-card ul {
+    flex: 1;
+}
+
+.price-card .btn {
+    margin-top: auto;
+}
+
+.price-card-free {
+    justify-content: flex-start;
+}
+
+.price-card-free ul {
+    flex: 0;
 }
 
 .price-card.featured {
