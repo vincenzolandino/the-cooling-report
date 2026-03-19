@@ -517,6 +517,47 @@
         </div>
     </footer>
 
+    <!-- Subscribe form handler -->
+    <script>
+    document.querySelectorAll('.hero-form').forEach(function(form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var input = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = input.value.trim();
+            if (!email) return;
+
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            try {
+                var res = await fetch('/.netlify/functions/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+
+                if (res.ok) {
+                    input.value = '';
+                    btn.textContent = 'You are in.';
+                    setTimeout(function() {
+                        btn.textContent = 'Subscribe';
+                        btn.disabled = false;
+                    }, 3000);
+                } else {
+                    btn.textContent = 'Something went wrong.';
+                    btn.disabled = false;
+                    setTimeout(function() { btn.textContent = 'Subscribe'; }, 3000);
+                }
+            } catch (err) {
+                btn.textContent = 'Something went wrong.';
+                btn.disabled = false;
+                setTimeout(function() { btn.textContent = 'Subscribe'; }, 3000);
+            }
+        });
+    });
+    </script>
+
     <!-- LinkedIn Insight Tag -->
     <script type="text/javascript">
     _linkedin_partner_id = "8831074";
