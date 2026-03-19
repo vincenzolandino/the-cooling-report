@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA's Watt Roadmap Is Writing the Cooling Industry's Business Plan | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Every cooling technology decision being made in data centers right now traces back to a single forcing function: how many watts NVIDIA's next GPU generates. The H100 runs at 700 watts. The Blackwell B">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/nvidias-watt-roadmap-is-writing-the-cooling-industrys-business-plan.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="NVIDIA's Watt Roadmap Is Writing the Cooling Industry's Business Plan">
+    <meta property="og:description" content="Every cooling technology decision being made in data centers right now traces back to a single forcing function: how many watts NVIDIA's next GPU generates. The H100 runs at 700 watts. The Blackwell B">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/nvidias-watt-roadmap-is-writing-the-cooling-industrys-business-plan.html">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NVIDIA's Watt Roadmap Is Writing the Cooling Industry's Business Plan">
+    <meta name="twitter:description" content="Every cooling technology decision being made in data centers right now traces back to a single forcing function: how many watts NVIDIA's next GPU generates. The H100 runs at 700 watts. The Blackwell B">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Hardware</span>
+                <span class="date">February 14, 2026</span>
+            </div>
+            <h1>NVIDIA's Watt Roadmap Is Writing the Cooling Industry's Business Plan</h1>
+            <div class="body">
+                <p>Every cooling technology decision being made in data centers right now traces back to a single forcing function: how many watts NVIDIA's next GPU generates. The H100 runs at 700 watts. The Blackwell B200 pushes 1,000 watts. Rubin, the next generation, is expected to climb higher. Each step up the power ladder compounds the thermal load per rack, per row, per facility.</p>
+                <p>At 700 watts per GPU, a rack packed with eight accelerators generates heat loads that conventional air cooling cannot manage. At 1,000 watts, the math gets worse. A dense AI training cluster running Blackwell hardware pushes rack densities past 100 kW. Some configurations approach 120 kW. Next-generation designs on engineering whiteboards are targeting 200 to 250 kW per rack.</p>
+                <p>Air cooling tops out around 25 to 30 kW. That ceiling has not moved meaningfully in years and it will not move meaningfully in the future. The physics of convective heat transfer through air set a hard limit. Fans, baffles, and raised-floor optimization can push air cooling toward its theoretical maximum, but they cannot break through it.</p>
+                <p>The gap between what GPUs produce and what air can remove widens with every product generation. NVIDIA is not the only company driving this. AMD's MI300X and Intel's Gaudi 3 both push power envelopes that exceed air cooling capabilities. But NVIDIA commands the AI accelerator market. Their roadmap sets the thermal requirements that the entire cooling supply chain must respond to.</p>
+                <p>Non-AI workloads across the global data center fleet total approximately 38 gigawatts. AI workloads are expected to hit 44 GW in 2026. The crossover point, where AI thermal load exceeds everything else combined, is arriving this year. Cooling infrastructure built for the 8 to 15 kW racks of the previous era cannot serve the 85 to 250 kW racks of the current one without fundamental redesign.</p>
+                <p>The cooling industry is, in effect, building to NVIDIA's spec. When Jensen Huang announces a new chip architecture, the thermal management implications ripple through CDU manufacturers, cold plate suppliers, and facility designers within weeks. The vendors who can design, qualify, and ship cooling hardware matched to the next GPU generation before that generation reaches volume production will own the upgrade cycle. The ones who arrive late will find that someone else already has the purchase order.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/nvidias-watt-roadmap-is-writing-the-cooling-industrys-business-plan.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/nvidias-watt-roadmap-is-writing-the-cooling-industrys-business-plan.html&text=NVIDIA's%20Watt%20Roadmap%20Is%20Writing%20the%20Cooling%20Industry's%20Business%20Plan" target="_blank">X</a>
+                    <a href="mailto:?subject=NVIDIA's%20Watt%20Roadmap%20Is%20Writing%20the%20Cooling%20Industry's%20Business%20Plan&body=https://thecoolingreport.com/intel/nvidias-watt-roadmap-is-writing-the-cooling-industrys-business-plan.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/nvidias-watt-roadmap-is-writing-the-cooling-industrys-business-plan.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+</body>
+</html>

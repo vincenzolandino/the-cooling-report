@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Immersion Cooling Keeps Losing to Cold Plates | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Immersion cooling can hit a PUE of 1.02. Direct-to-chip liquid cooling lands around 1.15 to 1.20. On raw thermal efficiency, immersion wins. It has won that comparison for years. And yet direct-to-chi">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/why-immersion-cooling-keeps-losing-to-cold-plates.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Why Immersion Cooling Keeps Losing to Cold Plates">
+    <meta property="og:description" content="Immersion cooling can hit a PUE of 1.02. Direct-to-chip liquid cooling lands around 1.15 to 1.20. On raw thermal efficiency, immersion wins. It has won that comparison for years. And yet direct-to-chi">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/why-immersion-cooling-keeps-losing-to-cold-plates.html">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why Immersion Cooling Keeps Losing to Cold Plates">
+    <meta name="twitter:description" content="Immersion cooling can hit a PUE of 1.02. Direct-to-chip liquid cooling lands around 1.15 to 1.20. On raw thermal efficiency, immersion wins. It has won that comparison for years. And yet direct-to-chi">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Technology</span>
+                <span class="date">February 22, 2026</span>
+            </div>
+            <h1>Why Immersion Cooling Keeps Losing to Cold Plates</h1>
+            <div class="body">
+                <p>Immersion cooling can hit a PUE of 1.02. Direct-to-chip liquid cooling lands around 1.15 to 1.20. On raw thermal efficiency, immersion wins. It has won that comparison for years. And yet direct-to-chip holds 47% of the liquid cooling market while immersion sits at roughly $270 million, growing at 25% CAGR toward a projected $2.54 billion by 2032.</p>
+                <p>The gap between what works in a lab and what ships in volume comes down to three things that have nothing to do with thermodynamics.</p>
+                <p>Server compatibility is the first. Direct-to-chip cold plates mount onto existing CPU and GPU packages inside standard server chassis. The rest of the server remains air-cooled. Dell, HPE, and Lenovo all offer factory-integrated DTC options. An operator can order liquid-cooled servers through the same procurement channel they use for everything else. Immersion requires purpose-built or heavily modified servers. Standard components with standard connectors and standard cable routing do not survive submersion in dielectric fluid. The server ecosystem around immersion is growing but remains a fraction of what DTC can accommodate.</p>
+                <p>Workforce readiness is the second. Most data center operations teams have spent their careers managing air-cooled environments. DTC adds manifolds, hoses, and coolant distribution units. New procedures, but recognizable ones. Immersion asks a maintenance technician to pull a server out of a tank of fluid, let it drain, service it, and resubmerge it. Leak semantics change completely. Fluid handling introduces chemical safety protocols. The training overhead is real and it scales with headcount.</p>
+                <p>Retrofit economics is the third. DTC fits into existing rack infrastructure with manageable modifications. Immersion requires tanks, fluid inventory, specialized containment, and a fundamentally different floor layout. For the vast majority of operators adding liquid cooling to facilities that were built for air, DTC is the path that does not require gutting the room.</p>
+                <p>Dell published comparative data showing DTC maintained chip-to-coolant temperature differences of 17 to 20 degrees Celsius at 500-watt loads, against 60-plus degrees for air-cooled equivalents. The thermal performance is strong enough for current GPU densities. Whether it remains sufficient as NVIDIA pushes from the Blackwell B200 at 1,000 watts toward Rubin and beyond is the open question. If rack densities push far enough past 100 kW, the physics may eventually force immersion into the conversation regardless of the operational friction. But for the 2026 buying cycle, cold plates are winning on deployability. Immersion is winning on benchmarks.</p>
+                <p>Single-phase immersion vendors like Submer, GRC, and Asperitas have carved out positions in HPC, crypto, and edge deployments where the PUE advantage justifies the operational complexity. Two-phase immersion faces a separate headwind entirely, with the PFAS supply chain crisis limiting the fluids available for new deployments. The immersion market will grow. The question is whether it grows fast enough to matter before direct-to-chip becomes so entrenched that switching costs make the decision for everyone.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/why-immersion-cooling-keeps-losing-to-cold-plates.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/why-immersion-cooling-keeps-losing-to-cold-plates.html&text=Why%20Immersion%20Cooling%20Keeps%20Losing%20to%20Cold%20Plates" target="_blank">X</a>
+                    <a href="mailto:?subject=Why%20Immersion%20Cooling%20Keeps%20Losing%20to%20Cold%20Plates&body=https://thecoolingreport.com/intel/why-immersion-cooling-keeps-losing-to-cold-plates.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/why-immersion-cooling-keeps-losing-to-cold-plates.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+</body>
+</html>
