@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsorship Guidelines | The Cooling Report</title>
+    <meta name="description" content="Sponsorship guidelines for The Cooling Report newsletter. How we work with sponsors, what we accept, and what we don't.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .sponsor-page {
+            padding: 110px 24px 80px;
+        }
+        .sponsor-page .section-inner {
+            max-width: 720px;
+        }
+        .sponsor-page h1 {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        .sponsor-page .lead {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 48px;
+            max-width: 600px;
+        }
+        .sponsor-page h2 {
+            font-family: var(--serif);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+        .sponsor-page h2:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        .sponsor-page p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+        .sponsor-page strong {
+            color: var(--text);
+        }
+        .sponsor-page ul {
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+        .sponsor-page li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding: 6px 0 6px 20px;
+            position: relative;
+        }
+        .sponsor-page li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: 24px 0;
+        }
+        .do-col, .dont-col {
+            background: var(--bg-card);
+            padding: 24px;
+        }
+        .do-col h3, .dont-col h3 {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .do-col h3 { color: var(--green); }
+        .dont-col h3 { color: var(--orange); }
+        .do-col li::before { background: var(--green); }
+        .dont-col li::before { background: var(--orange); }
+        .format-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg-card);
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .format-card h3 {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .format-card p {
+            margin-bottom: 8px;
+        }
+        .format-card .specs {
+            font-family: var(--mono);
+            font-size: 0.76rem;
+            color: var(--text-muted);
+        }
+        .cta-block {
+            border: 1px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-top: 48px;
+            text-align: center;
+        }
+        .cta-block h2 {
+            border: none;
+            padding-top: 0;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        .cta-block p {
+            margin-bottom: 0;
+        }
+        .cta-block a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: 24px 0;
+        }
+        .tiers-grid-4 {
+            grid-template-columns: 1fr;
+        }
+        .tiers-grid-4 .founding-tier {
+            border-bottom: 2px solid var(--accent);
+        }
+        .tiers-grid-4 .founding-tier ~ .tier-card {
+            /* The three standard tiers sit in a row below the founding tier */
+        }
+        /* Use a nested approach: founding tier is full width, rest are in a sub-grid feel */
+        .tier-card {
+            background: var(--bg-card);
+            padding: 28px 24px;
+        }
+        .tier-card.featured-tier {
+            background: var(--bg-card-hover);
+            border-top: 3px solid var(--accent);
+        }
+        .tier-card.founding-tier {
+            background: var(--bg-card-hover);
+            border-left: 3px solid var(--accent);
+        }
+        .tier-label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .tier-label.best {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .tier-label.founding {
+            color: var(--orange);
+            font-weight: 600;
+        }
+        .tier-card h3 {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .tier-card > p {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .tier-card ul {
+            margin: 0 0 16px 0;
+        }
+        .tier-card li {
+            font-size: 0.82rem;
+            padding: 4px 0 4px 20px;
+        }
+        .tier-card li::before {
+            top: 12px;
+            width: 5px;
+            height: 5px;
+        }
+        .tier-card .specs {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+            .tiers-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .do-dont { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <span class="logo-icon">◈</span> The Cooling Report
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sponsor-page">
+        <div class="section-inner">
+
+            <h1>Sponsorship Guidelines</h1>
+            <p class="lead">We accept a limited number of sponsors per month. We are picky about who we work with, and we have rules about how their message shows up. These guidelines exist to protect the reading experience. They also exist because good sponsorships, done right, actually perform better for the sponsor.</p>
+
+            <h2>How We Think About Sponsorships</h2>
+            <p>The people who read this newsletter are thermal engineers, data center operators, infrastructure investors, and cooling vendors. They showed up because the content is useful and they trust it. We intend to keep it that way.</p>
+            <p>That means we treat every sponsorship as a collaboration. You bring something genuinely relevant. We present it in a way that respects the reader's time and intelligence. Clear labeling. Tight copy. No games about what is editorial and what is paid.</p>
+
+            <h2>Who We Work With</h2>
+            <ul>
+                <li>Companies selling products or services relevant to data center cooling, thermal management, liquid cooling, or adjacent categories like power, facilities, monitoring, and fluid handling</li>
+                <li>Industry events, conferences, and summits our readers would actually attend</li>
+                <li>Companies hiring thermal and cooling engineering professionals</li>
+                <li>Research firms, consultancies, and data providers in the data center infrastructure space</li>
+            </ul>
+
+            <h2>Who We Turn Down</h2>
+            <ul>
+                <li>Companies with no clear connection to data center cooling or infrastructure</li>
+                <li>Competing newsletters or publications</li>
+                <li>Gambling, crypto speculation, or financial products</li>
+                <li>Anything we wouldn't recommend to a reader ourselves</li>
+                <li>Anyone who wants editorial influence, link placement in editorial sections, or sign-off on our coverage</li>
+            </ul>
+
+            <h2>Sponsorship Tiers</h2>
+            <p>Four options. Each edition carries a maximum of <strong>one primary sponsor and one Cooling Byte</strong>. No stacking beyond that. No sidebar ads. No pop-ups.</p>
+
+            <div class="tiers-grid tiers-grid-4">
+                <div class="tier-card founding-tier">
+                    <span class="tier-label founding">Limited Availability</span>
+                    <h3>Founding Sponsor</h3>
+                    <p>We are opening a small number of long-term Founding Sponsor positions for companies that want a sustained, recurring presence with our audience. Four spots. That is all we will offer at this tier. When they fill, the tier closes permanently.</p>
+                    <p>Founding Sponsors lock in a preferred rate for 12 consecutive weeks of Primary Sponsor placement. You get a "Founding Sponsor" badge on every placement, priority access to Dedicated Send slots, and a quarterly audience insight briefing with engagement data and reader breakdown by job title and company type.</p>
+                    <p>This is the deepest relationship we offer, and the pricing reflects the commitment on both sides.</p>
+                    <ul>
+                        <li>12 consecutive weeks of Primary Sponsor</li>
+                        <li>Preferred rate, locked for the full run</li>
+                        <li>"Founding Sponsor" badge on every placement</li>
+                        <li>Priority access to Dedicated Send slots</li>
+                        <li>Quarterly audience insight briefing</li>
+                        <li>Limited to 4 companies. No exceptions.</li>
+                    </ul>
+                    <p class="specs">Best for: cooling vendors, CDU manufacturers, integrators, and service providers who want sustained visibility with the people who spec, buy, and build cooling infrastructure</p>
+                </div>
+                <div class="tier-card">
+                    <span class="tier-label">Cooling Byte</span>
+                    <h3>Single Line</h3>
+                    <p>A one-line sponsored mention inside the Cooling Bytes roundup. Your company name, a short message, one link. It sits alongside the news bites readers already scan every week. Feels native. Stays out of the way. Still gets clicked.</p>
+                    <ul>
+                        <li>One sentence, max 25 words</li>
+                        <li>One link</li>
+                        <li>Company name displayed</li>
+                        <li>Labeled "Sponsor"</li>
+                    </ul>
+                    <p class="specs">Best for: product launches, event promos, open roles, or staying visible on a weekly basis without a heavy commitment</p>
+                </div>
+                <div class="tier-card featured-tier">
+                    <span class="tier-label best">Most Popular</span>
+                    <h3>Primary Sponsor</h3>
+                    <p>The main sponsorship block. Placed between editorial sections in the newsletter with a headline, body copy, your logo, and a CTA link. This is the spot most readers engage with because it has enough room to actually say something worth clicking on.</p>
+                    <ul>
+                        <li>Headline: max 12 words</li>
+                        <li>Body: 50-80 words</li>
+                        <li>One CTA link</li>
+                        <li>Logo: 200px wide max</li>
+                        <li>Labeled "Sponsored by [Company]"</li>
+                    </ul>
+                    <p class="specs">Best for: driving demo requests, datasheet downloads, webinar signups, or putting your company in front of the people who spec, buy, and build cooling infrastructure</p>
+                </div>
+                <div class="tier-card">
+                    <span class="tier-label">Deep Integration</span>
+                    <h3>Dedicated Send</h3>
+                    <p>A standalone email to our full subscriber list, written collaboratively between your team and ours. We bring the editorial voice and audience knowledge. You bring the substance. The result reads like something worth opening, not something worth archiving.</p>
+                    <ul>
+                        <li>Full email, 200-400 words</li>
+                        <li>Written collaboratively (we will not forward a press release)</li>
+                        <li>Your logo and branding</li>
+                        <li>Up to 3 links</li>
+                        <li>Subject line co-crafted for deliverability and open rate</li>
+                        <li>Labeled "A message from [Company]"</li>
+                        <li>Limited to 1x per month</li>
+                    </ul>
+                    <p class="specs">Best for: major product launches, funding announcements, case study distribution, event pushes, or running a targeted campaign against the cooling infrastructure buyer</p>
+                </div>
+            </div>
+
+            <h2>Copy Standards</h2>
+            <p>Your copy should feel like it belongs in the newsletter. Our readers are engineers and operators. They can tell when something was written by someone who understands their world and when it was pulled from a pitch deck. We want the former.</p>
+
+            <div class="do-dont">
+                <div class="do-col">
+                    <h3>We encourage</h3>
+                    <ul>
+                        <li>Specific claims backed by real numbers ("40% reduction in pump energy at 85kW rack density")</li>
+                        <li>Addressing a problem our readers actually deal with</li>
+                        <li>Linking to something useful: a technical resource, a datasheet, a case study, a demo</li>
+                        <li>Direct language. Say what you do and why it matters. Then stop.</li>
+                        <li>Event, webinar, or job invitations that are genuinely relevant to this audience</li>
+                    </ul>
+                </div>
+                <div class="dont-col">
+                    <h3>We will push back on</h3>
+                    <ul>
+                        <li>Vague superlatives ("industry-leading," "best-in-class," "revolutionary")</li>
+                        <li>Copy that reads like it was copy-pasted from a press release</li>
+                        <li>Performance claims with no data behind them</li>
+                        <li>More than one CTA or link in a single sponsor slot</li>
+                        <li>Anything designed to look like editorial content</li>
+                        <li>Any request to shape, soften, or redirect our coverage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Labeling</h2>
+            <p>Every sponsorship gets labeled <strong>"Sponsored by [Company Name]"</strong> in its own visual section, clearly separated from the editorial around it. Non-negotiable. We will not run advertorials dressed up as editorial. We will not slip sponsor links into editorial paragraphs. We will not use language like "presented by" or "in partnership with" that makes things ambiguous.</p>
+
+            <h2>Editorial Independence</h2>
+            <p>Sponsoring this newsletter does not buy editorial influence. Full stop. If we cover your company, it is because the story earned coverage. If we write something critical about your market segment, the sponsorship runs anyway. These two things operate in separate rooms.</p>
+            <p>Specifically, we will never:</p>
+            <ul>
+                <li>Promise editorial coverage as part of a sponsorship deal</li>
+                <li>Show sponsors editorial drafts before publication</li>
+                <li>Adjust our positions or coverage based on who is paying us</li>
+                <li>Kill a story about a competitor because a sponsor asked</li>
+            </ul>
+
+            <h2>Pricing and Availability</h2>
+            <p>We share current rates, subscriber count, open rates, and audience breakdown during the inquiry process. We offer single-edition bookings and multi-week packages at a discount.</p>
+            <p>A <strong>Cooling Byte</strong> and a <strong>Primary Sponsor</strong> can run in the same edition since they sit in different sections and serve different purposes. <strong>Dedicated Sends</strong> go out separately from the regular newsletter and are capped at one per month so we do not burn the list.</p>
+            <p>We reserve the right to decline any sponsorship for any reason.</p>
+
+            <h2>How It Works</h2>
+            <ul>
+                <li><strong>Reach out.</strong> Tell us your company, what you want to promote, and which week(s) you are looking at</li>
+                <li><strong>We check the fit.</strong> If it works, we share rates and audience data</li>
+                <li><strong>You send copy.</strong> Headline, body, CTA link, optional logo. We review it and may suggest edits to sharpen performance.</li>
+                <li><strong>We both sign off.</strong> Payment clears before the send date.</li>
+                <li><strong>You get the numbers.</strong> Open rate, click-through rate, unique clicks on your link. Delivered within 48 hours of the send.</li>
+            </ul>
+
+            <div class="cta-block">
+                <h2>Let's talk.</h2>
+                <p>Email <a href="mailto:sponsor@thecoolingreport.com">sponsor@thecoolingreport.com</a> with your company name, what you would like to promote, and your preferred timing. We will get back to you within two business days.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
