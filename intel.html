@@ -125,6 +125,65 @@
         .blog-post.expanded .article-preview {
             display: none;
         }
+        .blog-post.premium-preview .article-preview {
+            display: block;
+        }
+        .blog-post.premium-preview .paywall {
+            position: relative;
+            text-align: center;
+            padding: 48px 24px 32px;
+            margin-top: -20px;
+            background: linear-gradient(to bottom, transparent 0%, var(--bg) 30%);
+        }
+        .blog-post.premium-preview .paywall p {
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .blog-post.premium-preview .paywall .paywall-sub {
+            font-family: var(--sans);
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .blog-post.premium-preview .paywall a {
+            display: inline-block;
+            padding: 10px 24px;
+            background: var(--accent);
+            color: #ffffff;
+            border-radius: var(--radius);
+            font-family: var(--sans);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .blog-post.premium-preview .paywall a:hover {
+            background: var(--accent-hover);
+            text-decoration: none;
+        }
+        .premium-label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--orange);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border: 1px solid var(--orange);
+            padding: 2px 8px;
+            border-radius: var(--radius);
+        }
+        .free-divider {
+            padding: 32px 0 0;
+            margin-top: 16px;
+        }
+        .free-divider h3 {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
         @media (max-width: 600px) {
             .blog-page h1 {
                 font-size: 1.6rem;
@@ -158,13 +217,68 @@
 
             <div class="blog-list">
 
+                <!-- PREMIUM DEEP DIVE PREVIEWS -->
+
+                <article class="blog-post premium-preview">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Deep Dive</span>
+                        <span class="premium-label">Premium Preview</span>
+                        <span class="blog-post-date">March 19, 2026</span>
+                    </div>
+                    <h2>The Global Water Table Is Collapsing. Data Centers Are Drinking Faster.</h2>
+                    <p class="article-preview">A United Nations report published in March 2025 introduced a term that should unsettle anyone building cooling infrastructure: "global water bankruptcy." The language is deliberate. According to the UN University's Institute for Water, Environment and Health, the world has moved past water stress and past water crisis into a condition where accumulated damage to freshwater systems has become, in many regions, irreversible. Half of the planet's large lakes have lost water since the early 1990s. Seventy percent of major aquifers are in long-term decline. Dozens of major rivers no longer reach the sea year-round.</p>
+                    <p class="article-preview">Against that backdrop, the data center industry is scaling water consumption at a rate that would have been unthinkable five years ago. A large hyperscale data center consumes roughly 300,000 gallons of water per day. Facilities running dense AI workloads push that figure to 5 million gallons daily. Google reported approximately 6 billion gallons consumed by its data centers in 2024. Microsoft hit 1.69 billion gallons in fiscal year 2024, a 34% year-over-year increase driven almost entirely by AI infrastructure expansion.</p>
+                    <div class="paywall">
+                        <p>This is a premium deep dive.</p>
+                        <p class="paywall-sub">We've made it available as a preview. Subscribe to read the full analysis.</p>
+                        <a href="/#pricing">Subscribe to Continue Reading</a>
+                    </div>
+                </article>
+
+                <article class="blog-post premium-preview">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Deep Dive</span>
+                        <span class="premium-label">Premium Preview</span>
+                        <span class="blog-post-date">March 17, 2026</span>
+                    </div>
+                    <h2>120 Kilowatts Per Rack and Rising: Why Liquid Cooling Became Mandatory for AI Infrastructure</h2>
+                    <p class="article-preview">There is a clean line in the thermal management timeline. Before 2023, air cooling worked for the overwhelming majority of data center deployments. Standard server racks generated 7 to 15 kilowatts of heat, and a well-designed hot-aisle/cold-aisle configuration with precision air handlers could manage that load without breaking a sweat. Literally.</p>
+                    <p class="article-preview">Then AI training clusters showed up at 40, 60, 85 kilowatts per rack. And now the next generation of GPU-dense cabinets is pushing past 120 kW, with designs on the board targeting 200 to 250 kW. Air cooling hits a hard physical ceiling around 25 to 30 kW per rack. The liquid cooling market has responded accordingly. BIS Research pegs the global market at $3.93 billion in 2024, growing to $22.57 billion by 2034. Goldman Sachs projects that 76% of AI servers will be liquid-cooled by the end of 2026, up from 15% in 2024. A fivefold increase in adoption in two years.</p>
+                    <div class="paywall">
+                        <p>This is a premium deep dive.</p>
+                        <p class="paywall-sub">We've made it available as a preview. Subscribe to read the full analysis.</p>
+                        <a href="/#pricing">Subscribe to Continue Reading</a>
+                    </div>
+                </article>
+
+                <article class="blog-post premium-preview">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Deep Dive</span>
+                        <span class="premium-label">Premium Preview</span>
+                        <span class="blog-post-date">March 14, 2026</span>
+                    </div>
+                    <h2>Nevada Banned Evaporative Cooling for Data Centers. Other States Are Watching.</h2>
+                    <p class="article-preview">In 2025, Nevada became the first U.S. state to ban evaporative cooling in new data center construction. The decision was not symbolic. Nevada sits in the driest region of the country, relies heavily on the Colorado River system (which has been in sustained decline for over two decades), and had watched a cluster of hyperscale data center proposals land on its doorstep, each one requesting municipal water allocations that would have supplied thousands of homes.</p>
+                    <p class="article-preview">The state said no. Not to data centers entirely. To the specific cooling technology that consumes the most water. California followed with SB 58, a disclosure law requiring data centers above a certain capacity to report their water consumption publicly. Several other states have water reporting mandates in various stages of committee work. The European Commission announced minimum water performance standards for data centers that will take effect in 2026. The regulatory direction is clear. The only variable is speed.</p>
+                    <div class="paywall">
+                        <p>This is a premium deep dive.</p>
+                        <p class="paywall-sub">We've made it available as a preview. Subscribe to read the full analysis.</p>
+                        <a href="/#pricing">Subscribe to Continue Reading</a>
+                    </div>
+                </article>
+
+                <!-- FREE ARTICLES -->
+                <div class="free-divider">
+                    <h3>Free to Read</h3>
+                </div>
+
                 <article class="blog-post">
                     <div class="blog-post-meta">
                         <span class="blog-post-tag">Sustainability</span>
-                        <span class="blog-post-date">March 19, 2026</span>
+                        <span class="blog-post-date">March 12, 2026</span>
                     </div>
                     <h2><a href="javascript:void(0)" onclick="this.closest('.blog-post').classList.toggle('expanded')">The Water-Power Tradeoff That Data Center Operators Keep Getting Wrong</a></h2>
-                    <p class="article-preview">A growing number of data center operators have started swapping water-cooled systems for air-cooled alternatives, claiming sustainability wins. The math tells a different story. Air cooling eliminates on-site water use, sure. But it doubles or triples electricity consumption, pushing the water burden upstream to power plants that need their own cooling loops to generate that extra juice. The problem doesn't vanish. It moves.</p>
+                    <p class="article-preview">A growing number of data center operators have started swapping water-cooled systems for air-cooled alternatives, claiming sustainability wins. The math tells a different story. Air cooling eliminates on-site water use, sure. But it doubles or triples electricity consumption, pushing the water burden upstream to power plants that need their own cooling loops to generate that extra juice.</p>
                     <a href="javascript:void(0)" class="read-more" onclick="this.closest('.blog-post').classList.toggle('expanded')">Read more →</a>
                     <div class="article-body">
                         <p>A growing number of data center operators have started swapping water-cooled systems for air-cooled alternatives, claiming sustainability wins. The math tells a different story. Air cooling eliminates on-site water use, sure. But it doubles or triples electricity consumption, pushing the water burden upstream to power plants that need their own cooling loops to generate that extra juice. The problem doesn't vanish. It moves.</p>
@@ -177,10 +291,10 @@
                 <article class="blog-post">
                     <div class="blog-post-meta">
                         <span class="blog-post-tag">Technology</span>
-                        <span class="blog-post-date">March 16, 2026</span>
+                        <span class="blog-post-date">March 9, 2026</span>
                     </div>
                     <h2><a href="javascript:void(0)" onclick="this.closest('.blog-post').classList.toggle('expanded')">Adaptive Cooling, Immersion Bets, and the Vendors Shaping What Comes Next</a></h2>
-                    <p class="article-preview">Schneider Electric ships cooling units packed with IoT sensors that run predictive maintenance cycles before failures happen. Iceotope has built immersion cooling platforms that work across traditional, hyperscale, and edge environments, pushing PUE numbers into territory that air-cooled facilities cannot touch. Stulz leans on free cooling and precise humidity control to shave CO2 output. Three very different approaches from three companies that agree on one thing: the old way of blowing cold air through server rows has a ceiling, and the industry is about to hit it.</p>
+                    <p class="article-preview">Schneider Electric ships cooling units packed with IoT sensors that run predictive maintenance cycles before failures happen. Iceotope has built immersion cooling platforms that work across traditional, hyperscale, and edge environments, pushing PUE numbers into territory that air-cooled facilities cannot touch. Three very different approaches from three companies that agree on one thing: the old way of blowing cold air through server rows has a ceiling, and the industry is about to hit it.</p>
                     <a href="javascript:void(0)" class="read-more" onclick="this.closest('.blog-post').classList.toggle('expanded')">Read more →</a>
                     <div class="article-body">
                         <p>Schneider Electric ships cooling units packed with IoT sensors that run predictive maintenance cycles before failures happen. Iceotope has built immersion cooling platforms that work across traditional, hyperscale, and edge environments, pushing PUE numbers into territory that air-cooled facilities cannot touch. Stulz leans on free cooling and precise humidity control to shave CO2 output. Three very different approaches from three companies that agree on one thing: the old way of blowing cold air through server rows has a ceiling, and the industry is about to hit it.</p>
@@ -193,7 +307,7 @@
                 <article class="blog-post">
                     <div class="blog-post-meta">
                         <span class="blog-post-tag">Energy</span>
-                        <span class="blog-post-date">March 12, 2026</span>
+                        <span class="blog-post-date">March 5, 2026</span>
                     </div>
                     <h2><a href="javascript:void(0)" onclick="this.closest('.blog-post').classList.toggle('expanded')">500 Megawatts in an Indiana Cornfield: The Physical Cost of the AI Buildout</a></h2>
                     <p class="article-preview">Pull up satellite imagery of New Carlisle, Indiana, from 2023 and you see farmland. Pull it up today and you see seven rectangular data centers with 23 more permitted. A single campus there already draws over 500 megawatts, enough to power several hundred thousand homes. When the full build finishes, the load will exceed what two cities the size of Atlanta consume.</p>
@@ -209,7 +323,7 @@
                 <article class="blog-post">
                     <div class="blog-post-meta">
                         <span class="blog-post-tag">Research</span>
-                        <span class="blog-post-date">March 8, 2026</span>
+                        <span class="blog-post-date">March 1, 2026</span>
                     </div>
                     <h2><a href="javascript:void(0)" onclick="this.closest('.blog-post').classList.toggle('expanded')">67% Energy Savings Are on the Table. Most Data Centers Leave Them There.</a></h2>
                     <p class="article-preview">A comprehensive review published in the International Journal of Refrigeration examined every major cooling optimization technology available to data centers today. The headline finding: advanced cooling architectures can cut energy consumption by up to 67.2% compared to conventional setups. The industry average PUE, according to Uptime Institute's 2024 survey, sits at 1.56. State-of-the-art facilities report 1.06. That gap represents billions of kilowatt-hours left on the table every year.</p>
