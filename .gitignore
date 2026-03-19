@@ -1,4 +1,6 @@
 # Local Netlify folder
 .netlify
-*.md
+research-*.md
+*-pricing-*.md
+competitive-analysis.md
 drafts/
