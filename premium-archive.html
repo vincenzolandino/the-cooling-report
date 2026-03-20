@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Archive | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gate-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--bg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gate-box {
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+        .gate-box h2 {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+        .gate-box p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        .gate-box input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 0.95rem;
+            text-align: center;
+            letter-spacing: 0.1em;
+            outline: none;
+            margin-bottom: 12px;
+        }
+        .gate-box input:focus { border-color: var(--accent); }
+        .gate-box button {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent);
+            color: #ffffff;
+            border: none;
+            border-radius: var(--radius);
+            font-family: var(--sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .gate-box button:hover { background: var(--accent-hover); }
+        .gate-error {
+            color: var(--orange);
+            font-size: 0.82rem;
+            margin-top: 8px;
+            display: none;
+        }
+        .archive-page {
+            padding: 110px 24px 80px;
+        }
+        .archive-page .section-inner {
+            max-width: 800px;
+        }
+        .archive-page h1 {
+            font-family: var(--serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .archive-page .lead {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+        .archive-item {
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+        }
+        .archive-item:last-child {
+            border-bottom: 1px solid var(--border);
+        }
+        .archive-item .meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .archive-item .tag {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--accent);
+            background: rgba(13,118,128,0.08);
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+        .archive-item .date {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+        .archive-item h3 {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 8px;
+        }
+        .archive-item h3 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        .archive-item h3 a:hover {
+            color: var(--accent);
+        }
+        .archive-item p {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+    </style>
+</head>
+<body>
+    <!-- Access Gate -->
+    <div class="gate-overlay" id="gate">
+        <div class="gate-box">
+            <p style="font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px;">&#9670; The Cooling Report</p>
+            <h2>Premium Archive</h2>
+            <p>Enter your subscriber access code. You received it in your welcome email when you subscribed.</p>
+            <input type="text" id="access-code" placeholder="ACCESS CODE" autofocus>
+            <button onclick="checkCode()">Access Archive</button>
+            <p class="gate-error" id="gate-error">Invalid code. Check your welcome email or contact premium@thecoolingreport.com</p>
+        </div>
+    </div>
+
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="intel.html">Intel</a>
+                <a href="sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="archive-page">
+        <div class="section-inner">
+            <h1>Premium Archive</h1>
+            <p class="lead">Every deep dive and premium report. Full text access for paid subscribers.</p>
+
+            <div class="archive-list">
+                <div class="archive-item">
+                    <div class="meta">
+                        <span class="tag">Deep Dive</span>
+                        <span class="date">March 19, 2026</span>
+                    </div>
+                    <h3><a href="intel/germany-heat-reuse.html">Germany Says Your Data Center Has to Heat the Neighborhood. The Deadline Is July 1.</a></h3>
+                    <p>The Energieeffizienzgesetz mandates 10% waste heat reuse for new data centers starting July 2026, rising to 20% by 2028. Who is compliant, who is scrambling, and what the economics actually look like.</p>
+                </div>
+
+                <div class="archive-item">
+                    <div class="meta">
+                        <span class="tag">Deep Dive</span>
+                        <span class="date">March 18, 2026</span>
+                    </div>
+                    <h3><a href="intel/pfas-immersion-liability.html">The Fluid That Made Two-Phase Immersion Cooling Work Just Became a Liability Worth $12.5 Billion</a></h3>
+                    <p>3M exited PFAS manufacturing. The $12.5B settlement landed. Microsoft and Meta backed away from two-phase immersion. The supply chain for the best-performing cooling technology on the market is broken.</p>
+                </div>
+
+                <div class="archive-item">
+                    <div class="meta">
+                        <span class="tag">Deep Dive</span>
+                        <span class="date">March 17, 2026</span>
+                    </div>
+                    <h3><a href="intel/offsite-water-consumption.html">72% of Data Center Water Consumption Happens Somewhere You Can't See It</a></h3>
+                    <p>Bluefield Research found that most data center water use occurs off-site at power plants, not at cooling towers. The $10-58B infrastructure bill nobody is talking about.</p>
+                </div>
+
+                <div class="archive-item">
+                    <div class="meta">
+                        <span class="tag">Deep Dive</span>
+                        <span class="date">March 16, 2026</span>
+                    </div>
+                    <h3><a href="intel/global-water-bankruptcy.html">The Global Water Table Is Collapsing. Data Centers Are Drinking Faster.</a></h3>
+                    <p>The UN declared "global water bankruptcy." Data centers consume up to 5 million gallons daily. Google used 6 billion gallons in 2024. The regulatory response is accelerating.</p>
+                </div>
+
+                <div class="archive-item">
+                    <div class="meta">
+                        <span class="tag">Deep Dive</span>
+                        <span class="date">March 15, 2026</span>
+                    </div>
+                    <h3><a href="intel/liquid-cooling-mandatory.html">120 Kilowatts Per Rack and Rising: Why Liquid Cooling Became Mandatory for AI Infrastructure</a></h3>
+                    <p>Air cooling tops out at 30 kW. AI racks push 120 kW and climbing. The three liquid cooling architectures, their tradeoffs, and the capex trap slowing adoption.</p>
+                </div>
+
+                <div class="archive-item">
+                    <div class="meta">
+                        <span class="tag">Deep Dive</span>
+                        <span class="date">March 14, 2026</span>
+                    </div>
+                    <h3><a href="intel/nevada-evaporative-ban.html">Nevada Banned Evaporative Cooling for Data Centers. Other States Are Watching.</a></h3>
+                    <p>The three-stage regulatory playbook taking shape: disclosure, performance standards, outright bans. The Iowa and Georgia incidents that catalyzed it. What operators need to plan for.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    var ACCESS_CODE = "COOLPREMIUM2026";
+    function checkCode() {
+        var input = document.getElementById('access-code').value.trim().toUpperCase();
+        if (input === ACCESS_CODE) {
+            document.getElementById('gate').style.display = 'none';
+            sessionStorage.setItem('tcr_access', 'granted');
+        } else {
+            document.getElementById('gate-error').style.display = 'block';
+        }
+    }
+    document.getElementById('access-code').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') checkCode();
+    });
+    if (sessionStorage.getItem('tcr_access') === 'granted') {
+        document.getElementById('gate').style.display = 'none';
+    }
+    </script>
+</body>
+</html>
