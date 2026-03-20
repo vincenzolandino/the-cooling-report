@@ -422,7 +422,7 @@
                         <li>Competitive landscapes &amp; market maps</li>
                         <li>Full archive access</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Subscribe Annual</a>
+                    <a href="#" class="btn btn-primary" onclick="event.preventDefault();checkout('annual')">Subscribe Annual</a>
                 </div>
                 <div class="price-card">
                     <h3>Monthly</h3>
@@ -436,7 +436,7 @@
                         <li>Competitive landscapes &amp; market maps</li>
                         <li>Full archive access</li>
                     </ul>
-                    <a href="#" class="btn btn-outline">Subscribe Monthly</a>
+                    <a href="#" class="btn btn-outline" onclick="event.preventDefault();checkout('monthly')">Subscribe Monthly</a>
                 </div>
             </div>
             <p class="pricing-note">Need team access? <a href="mailto:team@thecoolingreport.com">Contact us</a> for multi-seat plans with volume pricing and invoice billing.</p>
@@ -522,6 +522,27 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-DYYCLVFLEF');
+    </script>
+
+    <!-- Stripe checkout handler -->
+    <script>
+    async function checkout(plan) {
+        try {
+            var res = await fetch('/.netlify/functions/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ plan: plan })
+            });
+            var data = await res.json();
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            alert('Something went wrong. Please try again.');
+        }
+    }
     </script>
 
     <!-- Subscribe form handler -->

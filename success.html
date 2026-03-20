@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Premium | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .success-page {
+            padding: 160px 24px 100px;
+            text-align: center;
+            min-height: 80vh;
+        }
+        .success-page .section-inner {
+            max-width: 560px;
+        }
+        .success-page h1 {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .success-page p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+        .success-page a {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="intel.html">Intel</a>
+                <a href="sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="success-page">
+        <div class="section-inner">
+            <h1>You're in. Welcome to Premium.</h1>
+            <p>Your subscription is active. You now have full access to weekly deep dives, competitive landscapes, market maps, and the complete archive.</p>
+            <p>Your first premium dispatch arrives this week. In the meantime, start with the latest on the <a href="intel.html">Intel page</a>.</p>
+            <p>Questions about your subscription? Email <a href="mailto:premium@thecoolingreport.com">premium@thecoolingreport.com</a>.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
