@@ -31,7 +31,7 @@
             padding: 110px 24px 80px;
         }
         .blog-page .section-inner {
-            max-width: 860px;
+            max-width: 1080px;
         }
         .blog-page h1 {
             font-family: var(--serif);
@@ -44,16 +44,28 @@
             font-size: 1.05rem;
             color: var(--text-secondary);
             line-height: 1.75;
-            margin-bottom: 48px;
+            margin-bottom: 36px;
             max-width: 600px;
         }
+
+        /* Two-column layout */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Main column (Intel articles) */
+        .main-column {}
+
         .blog-list {
             display: flex;
             flex-direction: column;
             gap: 0;
         }
         .blog-post {
-            padding: 32px 0;
+            padding: 24px 0;
             border-top: 1px solid var(--border);
         }
         .blog-post:last-child {
@@ -83,10 +95,10 @@
         }
         .blog-post h2 {
             font-family: var(--serif);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             line-height: 1.35;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--text);
         }
         .blog-post h2 a {
@@ -97,14 +109,14 @@
             color: var(--accent);
         }
         .blog-post p {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             color: var(--text-secondary);
-            line-height: 1.75;
-            margin-bottom: 12px;
+            line-height: 1.7;
+            margin-bottom: 10px;
         }
         .blog-post .read-more {
             font-family: var(--sans);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             color: var(--accent);
             text-decoration: none;
@@ -113,58 +125,103 @@
             text-decoration: underline;
             cursor: pointer;
         }
-        .blog-post .article-body {
-            display: none;
+        .blog-post .article-body { display: none; }
+        .blog-post.expanded .article-body { display: block; }
+        .blog-post.expanded .read-more { display: none; }
+        .blog-post .article-preview { display: block; }
+        .blog-post.expanded .article-preview { display: none; }
+
+        /* Sidebar (Deep Dives) */
+        .sidebar {
+            position: sticky;
+            top: 70px;
         }
-        .blog-post.expanded .article-body {
+        .sidebar-header {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 0;
+        }
+        .sidebar-item {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .sidebar-item .sidebar-tag {
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--orange);
             display: block;
-        }
-        .blog-post.expanded .read-more {
-            display: none;
-        }
-        .blog-post .article-preview {
-            display: block;
-        }
-        .blog-post.expanded .article-preview {
-            display: none;
-        }
-        .blog-post.premium-preview .article-preview {
-            display: block;
-        }
-        .blog-post.premium-preview .paywall {
-            position: relative;
-            text-align: center;
-            padding: 48px 24px 32px;
-            margin-top: -20px;
-            background: linear-gradient(to bottom, transparent 0%, var(--bg) 30%);
-        }
-        .blog-post.premium-preview .paywall p {
-            font-family: var(--serif);
-            font-size: 1rem;
-            color: var(--text);
             margin-bottom: 6px;
         }
-        .blog-post.premium-preview .paywall .paywall-sub {
-            font-family: var(--sans);
-            font-size: 0.84rem;
-            color: var(--text-muted);
-            margin-bottom: 16px;
+        .sidebar-item h3 {
+            font-family: var(--serif);
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 6px;
         }
-        .blog-post.premium-preview .paywall a {
+        .sidebar-item h3 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        .sidebar-item h3 a:hover {
+            color: var(--accent);
+        }
+        .sidebar-item .sidebar-date {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+        .sidebar-item .sidebar-cta {
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
             display: inline-block;
-            padding: 10px 24px;
+            margin-top: 4px;
+        }
+        .sidebar-item .sidebar-cta:hover {
+            text-decoration: underline;
+        }
+        .sidebar-subscribe {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+        .sidebar-subscribe p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 12px;
+        }
+        .sidebar-subscribe a {
+            display: block;
+            padding: 8px 16px;
             background: var(--accent);
             color: #ffffff;
             border-radius: var(--radius);
             font-family: var(--sans);
-            font-size: 0.88rem;
+            font-size: 0.82rem;
             font-weight: 600;
             text-decoration: none;
         }
-        .blog-post.premium-preview .paywall a:hover {
+        .sidebar-subscribe a:hover {
             background: var(--accent-hover);
             text-decoration: none;
         }
+
         .premium-label {
             font-family: var(--mono);
             font-size: 0.68rem;
@@ -176,23 +233,24 @@
             padding: 2px 8px;
             border-radius: var(--radius);
         }
-        .free-divider {
-            padding: 32px 0 0;
-            margin-top: 16px;
-        }
-        .free-divider h3 {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-        @media (max-width: 600px) {
+
+        @media (max-width: 768px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .sidebar {
+                position: static;
+                order: 2;
+            }
+            .main-column {
+                order: 1;
+            }
             .blog-page h1 {
                 font-size: 1.6rem;
             }
             .blog-post h2 {
-                font-size: 1.15rem;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -217,118 +275,19 @@
         </div>
     </nav>
 
-    <div class="blog-page">
+        <div class="blog-page">
         <div class="section-inner">
 
             <h1>Intel</h1>
-            <p class="lead">Long-form analysis, market context, and editorial takes on what's shaping the data center cooling industry.</p>
+            <p class="lead">Analysis, market context, and editorial on the business of data center cooling.</p>
 
+            <div class="content-layout">
+
+            <!-- Main column: Intel articles -->
+            <div class="main-column">
             <div class="blog-list">
 
-                <!-- PREMIUM DEEP DIVE PREVIEWS -->
-
-                <article class="blog-post premium-preview">
-                    <div class="blog-post-meta">
-                        <span class="blog-post-tag">Deep Dive</span>
-                        <span class="premium-label">Premium Preview</span>
-                        <span class="blog-post-date">March 19, 2026</span>
-                    </div>
-                    <h2><a href="intel/germany-heat-reuse-mandate.html" style="color: inherit; text-decoration: none;">Germany Says Your Data Center Has to Heat the Neighborhood. The Deadline Is July 1.</a></h2>
-                    <p class="article-preview">On July 1, 2026, a law takes effect in Germany that no other major data center market has attempted at this scale. Any new data center commissioned on or after that date must reuse at least 10% of its waste heat. By 2027, the threshold rises to 15%. By 2028, 20%. Miss the target and the fines start at <a href="https://www.whitecase.com/insight-alert/data-center-requirements-under-new-german-energy-efficiency-act" target="_blank">EUR 50,000, climbing to EUR 100,000</a> depending on the violation.</p>
-                    <p class="article-preview">The law is called the Energieeffizienzgesetz. The German Parliament passed it in September 2023. It took effect in November of that year. And for most of the time since, the data center industry has treated it like something that would sort itself out before the deadline arrived. The deadline arrived.</p>
-                    <div class="paywall">
-                        <p>This is a premium deep dive.</p>
-                        <p class="paywall-sub">We've made it available as a preview. Subscribe to read the full analysis.</p>
-                        <a href="intel/germany-heat-reuse-mandate.html">Read Full Article (Free Preview)</a>
-                    </div>
-                </article>
-
-                <article class="blog-post premium-preview">
-                    <div class="blog-post-meta">
-                        <span class="blog-post-tag">Deep Dive</span>
-                        <span class="premium-label">Premium Preview</span>
-                        <span class="blog-post-date">March 18, 2026</span>
-                    </div>
-                    <h2><a href="intel/pfas-two-phase-immersion-cooling-crisis.html" style="color: inherit; text-decoration: none;">The Fluid That Made Two-Phase Immersion Cooling Work Just Became a Liability Worth $12.5 Billion</a></h2>
-                    <p class="article-preview">On December 20, 2022, 3M announced it would stop manufacturing all PFAS chemicals by the end of 2025. That single decision vaporized the supply chain for two-phase immersion cooling in data centers. The fluids that made the technology possible, Novec 7100, Novec 649, Fluorinert FC-72, are gone. The last day to place a new Novec order was March 31, 2025. Manufacturing lines shut down by year's end.</p>
-                    <p class="article-preview">3M did not make this call because they found a better product. They made it because they were staring down over 4,000 lawsuits and a <a href="https://investors.3m.com/news-events/press-releases/detail/1836/3m-settlement-with-public-water-suppliers-to-address-pfas" target="_blank">$12.5 billion settlement</a> with more than 11,000 U.S. public water systems alleging PFAS contamination in drinking water.</p>
-                    <div class="paywall">
-                        <p>This is a premium deep dive.</p>
-                        <p class="paywall-sub">We've made it available as a preview. Subscribe to read the full analysis.</p>
-                        <a href="intel/pfas-two-phase-immersion-cooling-crisis.html">Read Full Article (Free Preview)</a>
-                    </div>
-                </article>
-
-                <article class="blog-post premium-preview">
-                    <div class="blog-post-meta">
-                        <span class="blog-post-tag">Deep Dive</span>
-                        <span class="premium-label">Premium Preview</span>
-                        <span class="blog-post-date">March 17, 2026</span>
-                    </div>
-                    <h2><a href="intel/offsite-water-consumption-data-centers.html" style="color: inherit; text-decoration: none;">72% of Data Center Water Consumption Happens Somewhere You Can't See It</a></h2>
-                    <p class="article-preview">The number that dominates the data center water debate is wrong. Not wrong in the sense of inaccurate. Wrong in the sense of incomplete. When people talk about data center water consumption, they picture cooling towers on a rooftop evaporating thousands of gallons an hour. That is real. That happens. And it accounts for roughly 28% of the total water footprint.</p>
-                    <p class="article-preview">The other 72% happens off-site. At the power plants generating the electricity that these facilities consume around the clock. <a href="https://www.bluefieldresearch.com/research/the-water-power-nexus-how-data-centers-are-reshaping-the-u-s-water-landscape/" target="_blank">Bluefield Research published these figures</a> in late February 2026 in a report titled "The Water-Power Nexus." The numbers reframe the entire conversation.</p>
-                    <div class="paywall">
-                        <p>This is a premium deep dive.</p>
-                        <p class="paywall-sub">We've made it available as a preview. Subscribe to read the full analysis.</p>
-                        <a href="intel/offsite-water-consumption-data-centers.html">Read Full Article (Free Preview)</a>
-                    </div>
-                </article>
-
-                <article class="blog-post premium-preview">
-                    <div class="blog-post-meta">
-                        <span class="blog-post-tag">Deep Dive</span>
-                        <span class="premium-label">Premium Preview</span>
-                        <span class="blog-post-date">March 16, 2026</span>
-                    </div>
-                    <h2>The Global Water Table Is Collapsing. Data Centers Are Drinking Faster.</h2>
-                    <p class="article-preview">A United Nations report published in March 2025 introduced a term that should unsettle anyone building cooling infrastructure: "global water bankruptcy." The language is deliberate. According to the UN University's Institute for Water, Environment and Health, the world has moved past water stress and past water crisis into a condition where accumulated damage to freshwater systems has become, in many regions, irreversible. Half of the planet's large lakes have lost water since the early 1990s. Seventy percent of major aquifers are in long-term decline. Dozens of major rivers no longer reach the sea year-round.</p>
-                    <p class="article-preview">Against that backdrop, the data center industry is scaling water consumption at a rate that would have been unthinkable five years ago. A large hyperscale data center consumes roughly 300,000 gallons of water per day. Facilities running dense AI workloads push that figure to 5 million gallons daily. <a href="https://sustainability.google/reports/google-2025-environmental-report/" target="_blank">Google reported approximately 6 billion gallons</a> consumed by its data centers in 2024. <a href="https://datacenters.microsoft.com/sustainability/" target="_blank">Microsoft hit 1.69 billion gallons in fiscal year 2024</a>, a 34% year-over-year increase driven almost entirely by AI infrastructure expansion.</p>
-                    <div class="paywall">
-                        <p>This is a premium deep dive.</p>
-                        <p class="paywall-sub">We've made it available as a preview. Subscribe to read the full analysis.</p>
-                        <a href="/#pricing">Subscribe to Continue Reading</a>
-                    </div>
-                </article>
-
-                <article class="blog-post premium-preview">
-                    <div class="blog-post-meta">
-                        <span class="blog-post-tag">Deep Dive</span>
-                        <span class="premium-label">Premium Preview</span>
-                        <span class="blog-post-date">March 17, 2026</span>
-                    </div>
-                    <h2>120 Kilowatts Per Rack and Rising: Why Liquid Cooling Became Mandatory for AI Infrastructure</h2>
-                    <p class="article-preview">There is a clean line in the thermal management timeline. Before 2023, air cooling worked for the overwhelming majority of data center deployments. Standard server racks generated 7 to 15 kilowatts of heat, and a well-designed hot-aisle/cold-aisle configuration with precision air handlers could manage that load without breaking a sweat. Literally.</p>
-                    <p class="article-preview">Then AI training clusters showed up at 40, 60, 85 kilowatts per rack. And now the next generation of GPU-dense cabinets is pushing past 120 kW, with designs on the board targeting 200 to 250 kW. Air cooling hits a hard physical ceiling around 25 to 30 kW per rack. The liquid cooling market has responded accordingly. <a href="https://bisresearch.com/industry-report/liquid-cooling-market.html" target="_blank">BIS Research pegs the global market at $3.93 billion in 2024, growing to $22.57 billion by 2034</a>. <a href="https://www.lombardodier.com/insights/2026/january/ai-supercharges-the-race.html" target="_blank">Goldman Sachs projects that 76% of AI servers will be liquid-cooled by the end of 2026</a>, up from 15% in 2024. A fivefold increase in adoption in two years.</p>
-                    <div class="paywall">
-                        <p>This is a premium deep dive.</p>
-                        <p class="paywall-sub">We've made it available as a preview. Subscribe to read the full analysis.</p>
-                        <a href="/#pricing">Subscribe to Continue Reading</a>
-                    </div>
-                </article>
-
-                <article class="blog-post premium-preview">
-                    <div class="blog-post-meta">
-                        <span class="blog-post-tag">Deep Dive</span>
-                        <span class="premium-label">Premium Preview</span>
-                        <span class="blog-post-date">March 14, 2026</span>
-                    </div>
-                    <h2>Nevada Banned Evaporative Cooling for Data Centers. Other States Are Watching.</h2>
-                    <p class="article-preview">In 2025, Nevada became the first U.S. state to ban evaporative cooling in new data center construction. The decision was not symbolic. Nevada sits in the driest region of the country, relies heavily on the Colorado River system (which has been in sustained decline for over two decades), and had watched a cluster of hyperscale data center proposals land on its doorstep, each one requesting municipal water allocations that would have supplied thousands of homes.</p>
-                    <p class="article-preview">The state said no. Not to data centers entirely. To the specific cooling technology that consumes the most water. California followed with SB 58, a disclosure law requiring data centers above a certain capacity to report their water consumption publicly. Several other states have water reporting mandates in various stages of committee work. The European Commission announced minimum water performance standards for data centers that will take effect in 2026. The regulatory direction is clear. The only variable is speed.</p>
-                    <div class="paywall">
-                        <p>This is a premium deep dive.</p>
-                        <p class="paywall-sub">We've made it available as a preview. Subscribe to read the full analysis.</p>
-                        <a href="/#pricing">Subscribe to Continue Reading</a>
-                    </div>
-                </article>
-
-                <!-- FREE ARTICLES -->
-                <div class="free-divider">
-                    <h3>Free to Read</h3>
-                </div>
-
-                <article class="blog-post">
+<article class="blog-post">
                     <div class="blog-post-meta">
                         <span class="blog-post-tag">Sustainability</span>
                         <span class="blog-post-date">March 12, 2026</span>
@@ -509,12 +468,67 @@
                     </div>
                 </article>
 
+            
+
             </div>
+            </div>
+
+
+            <!-- Sidebar: Deep Dives -->
+            <div class="sidebar">
+                <p class="sidebar-header">Premium Deep Dives</p>
+
+                <div class="sidebar-item">
+                    <span class="sidebar-tag">Free Preview</span>
+                    <h3><a href="intel/germany-heat-reuse-mandate.html">Germany Says Your Data Center Has to Heat the Neighborhood</a></h3>
+                    <span class="sidebar-date">March 19, 2026</span>
+                    <a href="intel/germany-heat-reuse-mandate.html" class="sidebar-cta">Read full article →</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="sidebar-tag">Free Preview</span>
+                    <h3><a href="intel/pfas-two-phase-immersion-cooling-crisis.html">The Fluid That Made Two-Phase Immersion Cooling Work Just Became a $12.5B Liability</a></h3>
+                    <span class="sidebar-date">March 18, 2026</span>
+                    <a href="intel/pfas-two-phase-immersion-cooling-crisis.html" class="sidebar-cta">Read full article →</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="sidebar-tag">Free Preview</span>
+                    <h3><a href="intel/offsite-water-consumption-data-centers.html">72% of Data Center Water Consumption Happens Off-Site</a></h3>
+                    <span class="sidebar-date">March 17, 2026</span>
+                    <a href="intel/offsite-water-consumption-data-centers.html" class="sidebar-cta">Read full article →</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="sidebar-tag">Premium</span>
+                    <h3>The Global Water Table Is Collapsing. Data Centers Are Drinking Faster.</h3>
+                    <span class="sidebar-date">March 16, 2026</span>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="sidebar-tag">Premium</span>
+                    <h3>120 Kilowatts Per Rack and Rising: Why Liquid Cooling Became Mandatory</h3>
+                    <span class="sidebar-date">March 15, 2026</span>
+                </div>
+
+                <div class="sidebar-item">
+                    <span class="sidebar-tag">Premium</span>
+                    <h3>Nevada Banned Evaporative Cooling for Data Centers</h3>
+                    <span class="sidebar-date">March 14, 2026</span>
+                </div>
+
+                <div class="sidebar-subscribe">
+                    <p>Premium subscribers get weekly deep dives, Cooling Bytes, and full archive access.</p>
+                    <a href="/#pricing">Subscribe to Premium</a>
+                </div>
+            </div>
+
+            </div><!-- end content-layout -->
 
         </div>
     </div>
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer class="footer">
         <div class="section-inner">
             <div class="footer-inner">
