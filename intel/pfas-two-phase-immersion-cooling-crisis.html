@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fluid That Made Two-Phase Immersion Cooling Work Just Became a Liability Worth $12.5 Billion | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="On December 20, 2022, 3M announced it would stop manufacturing all PFAS chemicals by the end of 2025. That single decision vaporized the supply chain for two-phase immersion cooling in data centers. T">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Fluid That Made Two-Phase Immersion Cooling Work Just Became a Liability Worth $12.5 Billion">
+    <meta property="og:description" content="On December 20, 2022, 3M announced it would stop manufacturing all PFAS chemicals by the end of 2025. That single decision vaporized the supply chain for two-phase immersion cooling in data centers. T">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/pfas-immersion-liability.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/pfas-immersion-liability.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Fluid That Made Two-Phase Immersion Cooling Work Just Became a Liability Worth $12.5 Billion">
+    <meta name="twitter:description" content="On December 20, 2022, 3M announced it would stop manufacturing all PFAS chemicals by the end of 2025. That single decision vaporized the supply chain for two-phase immersion cooling in data centers. T">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .premium-tag { font-family: var(--mono); font-size: 0.68rem; font-weight: 600; color: #c4640a; border: 1px solid #c4640a; padding: 2px 8px; border-radius: 3px; margin-left: 8px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .preview-banner { background: #f6e9d8; border: 1px solid #e0cdb8; border-radius: 3px; padding: 16px 20px; margin-bottom: 32px; }
+        .preview-banner p { font-size: 0.88rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+        .preview-banner a { color: var(--accent); font-weight: 600; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        .subscribe-cta { margin-top: 40px; padding: 32px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; text-align: center; }
+        .subscribe-cta h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .subscribe-cta p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px; }
+        .subscribe-cta a { display: inline-block; background: var(--accent); color: #ffffff; padding: 10px 24px; border-radius: 3px; font-family: var(--sans); font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+        .subscribe-cta a:hover { background: var(--accent-hover); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Deep Dive</span>
+                <span class="premium-tag">Free Preview</span>
+                <span class="date">March 18, 2026</span>
+            </div>
+            <h1>The Fluid That Made Two-Phase Immersion Cooling Work Just Became a Liability Worth $12.5 Billion</h1>
+            <div class="preview-banner">
+                <p>This is a premium deep dive, made available in full as a free preview. Our paid subscribers receive reports like this every week, plus Cooling Bytes, This Week in Cooling, and full archive access. <a href="/#pricing">See plans</a>.</p>
+            </div>
+            <div class="body">
+                <p>On December 20, 2022, 3M announced it would stop manufacturing all PFAS chemicals by the end of 2025. That single decision vaporized the supply chain for two-phase immersion cooling in data centers. The fluids that made the technology possible, Novec 7100, Novec 649, Fluorinert FC-72, are gone. The last day to place a new Novec order was March 31, 2025. Manufacturing lines shut down by year's end.</p>
+                <p>3M did not make this call because they found a better product. They made it because they were staring down over 4,000 lawsuits and a $12.5 billion settlement with more than 11,000 U.S. public water systems alleging PFAS contamination in drinking water. The settlement received final court approval in March 2024. Payments stretch over 13 years.</p>
+                <p>Two-phase immersion cooling, the technology that could push PUE below 1.05 and handle heat loads that make even direct-to-chip systems sweat, now has a supply chain problem that no amount of engineering can solve on its own. The chemistry that made it work is being regulated, litigated, and banned off the market.</p>
+                <h2>What PFAS Did for Cooling (and What It Did to Everything Else)</h2>
+                <p>Per- and polyfluoroalkyl substances earned the name "forever chemicals" because the carbon-fluorine bond that makes them thermally stable, chemically inert, and electrically nonconductive also makes them essentially indestructible in the environment. Those same properties made PFAS-based fluids ideal for two-phase immersion cooling. A server submerged in Novec 7100 could boil the fluid off the chip surface at 61 degrees Celsius, absorbing massive amounts of heat through the phase change. The vapor would rise, condense on a coil, and drip back down. No fans. No water. PUE values of 1.02 to 1.03.</p>
+                <p>BitFury Group and Allied Control built the largest two-phase immersion deployment in the world using Novec 7100: a 40 MW facility in the Republic of Georgia running at a PUE of 1.02. Microsoft tested boiling-liquid cooling in partnership with Wiwynn. Intel ran proof-of-concept data center cooling with Novec 649. The technology worked beautifully. The chemistry underneath it was poisoning groundwater.</p>
+                <p>3M's factory in Zwijndrecht, Belgium became a documented contamination site. Across the United States, municipalities discovered PFAS in their water supplies at concentrations linked to the company's manufacturing and disposal practices. The EPA moved in April 2024, designating PFOA and PFOS as hazardous substances under CERCLA (Superfund), the first time the agency had ever used that authority. The designation stuck. Even under the current administration, the EPA announced in September 2025 that it would retain the hazardous substance classification.</p>
+                <p>DuPont, Chemours, and Corteva reached their own $1.185 billion settlement with U.S. water systems. A separate New Jersey state settlement hit $2 billion. Solvay agreed to $393 million for remediation near its West Deptford facility. The total legal exposure across the PFAS industry is measured in tens of billions.</p>
+                <h2>The Hyperscalers Walked Away</h2>
+                <p>ServeTheHome reported in June 2023 that Microsoft and Meta had both backed away from two-phase immersion cooling research. The publication noted it had stopped covering two-phase immersion entirely as regulatory pressure mounted. Google, alongside Microsoft and Meta, faced ESG commitments incompatible with deploying "forever chemicals" at scale in their infrastructure.</p>
+                <p>The retreat was practical, not just reputational. Any hyperscaler deploying PFAS-based fluids in a data center would be introducing a substance that the EPA classifies as hazardous into a facility that operates for 20 to 30 years. The liability calculation on that is straightforward. Even in a closed-loop system where the fluid never intentionally vents to the atmosphere, maintenance events, hardware swaps, decommissioning, and end-of-life disposal all create potential release pathways. And under CERCLA, the entity that introduced the substance bears cleanup liability.</p>
+                <p>The pivot happened fast. Microsoft shifted focus to direct-to-chip liquid cooling. The broader industry followed. Single-phase immersion (using hydrocarbon-based fluids that are PFAS-free) continued to grow. Two-phase immersion, the approach with the best thermal performance numbers on paper, stalled.</p>
+                <h2>Who Got Hurt, Who Didn't</h2>
+                <p>The PFAS crisis split the immersion cooling market along a clean line.</p>
+                <p>**Single-phase vendors came through largely unscathed.** Submer uses synthetic hydrocarbon fluids co-engineered with Castrol. PFAS-free. Biodegradable. The company published a blog post titled "PFAS Contamination: A Call to Action for the Datacenter Industry," positioning itself on the right side of the issue. Green Revolution Cooling runs on hydrocarbon-based dielectrics. Also PFAS-free. Asperitas partnered with Shell to develop a bespoke immersion cooling fluid based on gas-to-liquid technology. Single-phase systems held 80.9% of the data center immersion cooling market in 2024. That share is growing.</p>
+                <p>**Two-phase vendors took the hit.** ZutaCore, whose HyperCool product is a two-phase direct-on-chip system, was the most directly exposed. The company moved from Novec to Chemours' Opteon SF33 as an interim solution and committed to delivering a fully PFAS-free two-phase fluid by 2026. LiquidStack, which offered both single-phase and two-phase products, carried more exposure than pure single-phase competitors. The two-phase product lines that relied on fluorinated fluids became strategically complicated overnight.</p>
+                <p>The alternative fluid market is scrambling to fill the void. Chemours developed Opteon 2P50, an HFO-based (hydrofluoroolefin) fluid with zero ozone depletion potential and a global warming potential of 10. Commercial production, through a manufacturing agreement with Navin Fluorine, is targeted for 2026. Samsung has already qualified the fluid. ZutaCore is working toward R-1336mzz(Z) as a transitional chemistry.</p>
+                <p>But here is the problem with all of these alternatives: the EU's PFAS restriction proposal, submitted by Denmark, Germany, the Netherlands, Norway, and Sweden under the REACH regulation, covers over 10,000 PFAS substances. The updated proposal published in August 2025 narrowed the scope and expanded derogations from 26 to 74, including longer transition periods for certain industrial applications. Heat transfer fluids for some uses received derogations of up to 13.5 years. General data center cooling fluids, however, are not explicitly carved out with a long derogation. The legal status of fluorinated two-phase cooling fluids in Europe remains uncertain.</p>
+                <p>ECHA's final opinions are expected by the end of 2026. The European Commission would then draft restriction legislation, with a vote anticipated in early 2027. Any vendor building a two-phase product around a fluorinated fluid is building on ground that may shift under them within 18 months.</p>
+                <h2>The Numbers on What Remains</h2>
+                <p>The immersion cooling fluids market was estimated at $2.51 billion in 2025, projected to reach $4.04 billion by 2030. Two-phase immersion cooling is projected to grow at 21.6% CAGR through 2030, but that projection assumes the availability of viable fluids. Remove PFAS-based options and constrain the alternatives to whatever Chemours and its competitors can manufacture at scale, and the growth curve flattens.</p>
+                <p>Fluid pricing reflects the squeeze. Engineered single-phase fluids run $150 to $400 per gallon depending on brand and purity. Entry-level mineral oils come in much cheaper at $19 to $38 per gallon. Remaining Novec inventory, for anyone still running it, is scarce and climbing in price. Two-phase alternatives from Chemours are not yet at volume production. When they arrive, pricing will reflect the R&D cost, the regulatory compliance overhead, and the limited number of manufacturers.</p>
+                <p>A 55-gallon drum of Shell Immersion Cooling S5 X is commercially available today for single-phase deployments. A comparable volume of two-phase fluid for a new installation in 2026 requires a supply agreement with Chemours that may or may not deliver on schedule.</p>
+                <h2>Where This Leaves Two-Phase</h2>
+                <p>Two-phase immersion cooling offers the best thermal transfer efficiency of any cooling technology available to data centers. That remains true. The phase change at the chip surface absorbs heat at a rate that single-phase convection cannot match. For the highest-density compute loads, for cabinets pushing 100 kW and beyond, two-phase is the theoretical ideal.</p>
+                <p>But the theoretical ideal runs on a fluid that is either banned, being banned, or made by a single company that has not yet reached commercial-scale production. The technology works. The supply chain around it is broken.</p>
+                <p>Direct-to-chip liquid cooling has absorbed the market momentum. Cold plates are commercially mature, widely compatible with existing server designs, and run on water-glycol mixtures that no regulator is coming for. DTC holds 47% of the liquid cooling market. It retrofits into existing racks. It scales. It ships.</p>
+                <p>Single-phase immersion continues to grow in niches where its advantages (zero fan energy, extreme density support, simplified mechanical infrastructure) justify the operational complexity. Submer, GRC, and Asperitas are all expanding.</p>
+                <p>Two-phase immersion cooling is not dead. ZutaCore and Chemours are both pushing toward PFAS-free solutions that could revive the segment. But the timeline for commercial-scale availability of those alternatives stretches through 2026 and into 2027. The EU regulatory decision could land before the alternative fluids do. And the hyperscalers who were the most likely buyers at scale have already moved on.</p>
+                <p>3M settled for $12.5 billion. The cooling technology that depended on their chemistry is paying a different kind of price.</p>
+            </div>
+            <div class="subscribe-cta">
+                <h3>Get reports like this every week.</h3>
+                <p>Premium subscribers receive weekly deep dives, Cooling Bytes, competitive landscapes, and full archive access.</p>
+                <a href="/#pricing">Subscribe to Premium</a>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis.html&text=The%20Fluid%20That%20Made%20Two-Phase%20Immersion%20Cooling%20Work%20Just%20Became%20a%20Liability%20Worth%20$12.5%20Billion" target="_blank">X</a>
+                    <a href="mailto:?subject=The%20Fluid%20That%20Made%20Two-Phase%20Immersion%20Cooling%20Work%20Just%20Became%20a%20Liability%20Worth%20$12.5%20Billion&body=https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYYCLVFLEF');
+    </script>
+    <!-- LinkedIn Insight Tag -->
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+</body>
+</html>
