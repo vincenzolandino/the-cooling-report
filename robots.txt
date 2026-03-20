@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /premium-archive.html
+Disallow: /success.html
+Disallow: /.netlify/
+
+Sitemap: https://thecoolingreport.com/sitemap.xml
