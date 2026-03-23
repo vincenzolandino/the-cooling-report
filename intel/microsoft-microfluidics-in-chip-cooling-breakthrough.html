@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Built Cooling Channels Directly Into the Chip. It Works Three Times Better Than Cold Plates. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Microsoft's microfluidics system etches microscopic channels into silicon to circulate coolant where heat is generated. Lab testing shows 3x better heat removal and a 65% reduction in peak GPU temperatures.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/microsoft-microfluidics-in-chip-cooling-breakthrough.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Microsoft Built Cooling Channels Directly Into the Chip. It Works Three Times Better Than Cold Plates.">
+    <meta property="og:description" content="Microsoft's microfluidics system etches microscopic channels into silicon to circulate coolant where heat is generated. Lab testing shows 3x better heat removal and a 65% reduction in peak GPU temperatures.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/microsoft-microfluidics-in-chip-cooling-breakthrough.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microsoft Built Cooling Channels Directly Into the Chip. It Works Three Times Better Than Cold Plates.">
+    <meta name="twitter:description" content="Microsoft's microfluidics system etches microscopic channels into silicon to circulate coolant where heat is generated. Lab testing shows 3x better heat removal and a 65% reduction in peak GPU temperatures.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Technology</span>
+                <span class="date">March 23, 2026</span>
+            </div>
+            <h1>Microsoft Built Cooling Channels Directly Into the Chip. It Works Three Times Better Than Cold Plates.</h1>
+            <div class="body">
+                <p>Microsoft has developed an <a href="https://news.microsoft.com/source/features/innovation/microfluidics-liquid-cooling-ai-chips/" target="_blank">in-chip microfluidics cooling system</a> that removes heat up to three times more efficiently than current cold plate technology. The approach etches microscopic channels directly into the back surface of a silicon die, then circulates liquid coolant through those channels at the exact locations where heat is generated. Lab testing on servers running Microsoft Teams simulations showed a 65% reduction in maximum temperature rise inside GPUs.</p>
+
+                <p>That number deserves a moment. Cold plates sit on top of a chip and draw heat through a thermal interface material. Microfluidics puts the coolant inside the chip. The thermal resistance between heat source and heat sink drops by an order of magnitude because there is essentially no distance left to cross.</p>
+
+                <h2>How It Actually Works</h2>
+
+                <p>The system carves channels into the back surface of a GPU die using semiconductor fabrication techniques. The channels are microscopic, measured in microns, and follow patterns that the Microsoft team optimized using AI to map each chip's unique thermal signature. Where a traditional cold plate applies uniform cooling pressure across the entire top surface of a chip, the microfluidic channels direct coolant with precision to the specific transistor regions that generate the most heat.</p>
+
+                <p>The channel designs are bio-inspired. The branching patterns resemble leaf veins or butterfly wing structures, geometries that nature arrived at through millions of years of optimizing fluid distribution across surfaces. Microsoft partnered with Swiss startup <a href="https://www.corintis.com/" target="_blank">Corintis</a> to refine these designs using computational fluid dynamics and AI-driven optimization.</p>
+
+                <p>Four design iterations were completed in the past year. Each cycle addressed a different engineering constraint: channel depth had to be optimized so that coolant flow was adequate without weakening the silicon structurally. The packaging had to be leak-proof at the die level, a requirement far more demanding than sealing a cold plate manifold. The coolant formula itself had to be developed for compatibility with exposed silicon at microscopic scale. And the entire assembly had to be manufacturable within existing semiconductor packaging workflows.</p>
+
+                <h2>Why This Matters for the Cooling Industry</h2>
+
+                <p>Direct-to-chip liquid cooling, the kind that uses cold plates mounted on top of processors, is the current mainstream answer to AI thermal management. Cold plates work. They are shipping in volume from CoolIT, Motivair, Boyd, and others. They handle rack densities up to 100 kW with reasonable PUE numbers. But cold plates have a ceiling. The thermal interface material between the cold plate and the chip surface introduces resistance. The plate itself adds mass and thermal lag. And the cooling is applied uniformly rather than targeted at hotspots.</p>
+
+                <p>Microfluidics eliminates the interface layer entirely. Coolant touches silicon. The thermal path from transistor to fluid is measured in microns, not millimeters. That is why the performance improvement is 3x rather than 30%. The physics of the approach are fundamentally different from anything the current cooling supply chain produces.</p>
+
+                <p>For cold plate manufacturers, this technology represents a potential category disruption. Not next quarter. Not next year. The system has been proven in lab conditions on test servers. It has not been demonstrated at production volume, on commercial GPU architectures, or through the thousands of hours of reliability testing that data center operators require before qualifying a new thermal solution. But the performance gap is large enough that the trajectory is clear.</p>
+
+                <h2>The Manufacturing Challenge</h2>
+
+                <p>Building cooling channels into silicon is a semiconductor fabrication problem, not a cooling hardware problem. The companies that will manufacture microfluidic cooling at scale are TSMC, Intel, and Samsung, the foundries that already process silicon at the nanometer level. Cold plate manufacturers do not have clean rooms. They have CNC machines, brazing ovens, and manifold assembly lines. The skill sets do not overlap.</p>
+
+                <p>This creates an interesting dynamic. If microfluidics matures to production readiness, the cooling function migrates from the data center supply chain into the semiconductor supply chain. The chip arrives pre-cooled, in a sense. The facility still needs coolant distribution units to pump fluid to and from the chips, and it still needs heat rejection infrastructure to dump that heat outside the building. But the component that sits on the processor, currently a cold plate, becomes part of the chip packaging itself.</p>
+
+                <p>Sashi Majety, senior technical program manager at Microsoft, led the development. Husam Alissa, director of systems technology, and Jim Kleewein, a technical fellow, contributed to the systems integration. Judy Priest, CTO of cloud operations and innovation, framed the work as part of Microsoft's broader infrastructure strategy. The company plans to spend over $30 billion on infrastructure this quarter alone.</p>
+
+                <h2>Timeline and Position</h2>
+
+                <p>Microsoft has not announced a production deployment date. The technology is real, tested, and producing results that make the current state of the art look primitive by comparison. Whether it reaches commercial deployment in three years or seven depends on reliability validation, yield rates, and whether the semiconductor packaging industry can integrate fluid channels without disrupting existing manufacturing flows.</p>
+
+                <p>The cooling industry should watch this closely. Cold plates are the current answer. Microfluidics may be the next one. The companies that recognize the shift early enough to participate in it, whether by partnering with semiconductor packagers or by developing the CDU and facility-level infrastructure that microfluidic systems will still require, will be positioned for the transition. The ones that assume cold plates are the permanent solution may find themselves manufacturing a component that moved inside the chip.</p>
+
+                <p>Three times better. That is not an incremental improvement. That is a generational change in how heat leaves a processor. The question is when, not whether.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/microsoft-microfluidics-in-chip-cooling-breakthrough.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/microsoft-microfluidics-in-chip-cooling-breakthrough.html&text=Microsoft%20Built%20Cooling%20Channels%20Directly%20Into%20the%20Chip.%20It%20Works%20Three%20Times%20Better%20Than%20Cold%20Plates." target="_blank">X</a>
+                    <a href="mailto:?subject=Microsoft%20Built%20Cooling%20Channels%20Directly%20Into%20the%20Chip.%20It%20Works%20Three%20Times%20Better%20Than%20Cold%20Plates.&body=https://thecoolingreport.com/intel/microsoft-microfluidics-in-chip-cooling-breakthrough.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/microsoft-microfluidics-in-chip-cooling-breakthrough.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYYCLVFLEF');
+    </script>
+    <!-- LinkedIn Insight Tag -->
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+</body>
+</html>

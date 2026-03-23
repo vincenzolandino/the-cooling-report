@@ -16,6 +16,21 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://thecoolingreport.com/intel/microsoft-microfluidics-in-chip-cooling-breakthrough.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/nvidia-rubin-liquid-cooling-standard-not-optional.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/ai-water-crisis-17-billion-gallons-great-lakes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thecoolingreport.com/intel/musk-terafab-20-billion-chip-factory-cooling-demand.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
