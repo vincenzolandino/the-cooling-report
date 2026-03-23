@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nvidia Wants to Put Data Centers in Orbit. The Cooling Equation Is the Whole Point. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Nvidia unveiled the Vera Rubin Space-1 module for AI data centers in orbit. The initiative treats terrestrial cooling constraints as a problem worth leaving the planet to solve.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/nvidia-vera-rubin-space-data-center-cooling.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Nvidia Wants to Put Data Centers in Orbit. The Cooling Equation Is the Whole Point.">
+    <meta property="og:description" content="Nvidia unveiled the Vera Rubin Space-1 module for AI data centers in orbit. The initiative treats terrestrial cooling constraints as a problem worth leaving the planet to solve.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/nvidia-vera-rubin-space-data-center-cooling.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nvidia Wants to Put Data Centers in Orbit. The Cooling Equation Is the Whole Point.">
+    <meta name="twitter:description" content="Nvidia unveiled the Vera Rubin Space-1 module for AI data centers in orbit. The initiative treats terrestrial cooling constraints as a problem worth leaving the planet to solve.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Technology</span>
+                <span class="date">March 23, 2026</span>
+            </div>
+            <h1>Nvidia Wants to Put Data Centers in Orbit. The Cooling Equation Is the Whole Point.</h1>
+            <div class="body">
+                <p>Nvidia has unveiled the <a href="https://finance.yahoo.com/sectors/technology/articles/nvidia-move-space-computing-may-140000667.html" target="_blank">Vera Rubin Space-1 module</a>, a computing platform designed to power AI data centers in orbit using solar energy. The initiative, developed in partnership with Axiom Space, positions space as what Nvidia calls "the next compute frontier." Tim Bajarin, writing for Forbes, described the announcement as a potential reshaping of AI infrastructure architecture by distributing computational resources beyond terrestrial limitations.</p>
+
+                <p>That framing deserves unpacking. Because the reason space-based compute keeps surfacing in conversations at Nvidia, SpaceX, and a growing number of infrastructure investors has everything to do with what happens on the ground: cooling is becoming a binding constraint on how much AI infrastructure the planet can absorb.</p>
+
+                <h2>The Terrestrial Ceiling</h2>
+
+                <p>The math that makes orbital data centers thinkable starts with thermal physics. A large terrestrial data center dedicates 30 to 40 percent of its total electricity consumption to cooling. At AI training densities, where racks routinely exceed 100 kW and are pushing toward 200 kW, the cooling load scales faster than the compute load. Every additional watt of GPU power requires additional watts of cooling power, plus the power to move heat from the chip to the facility boundary and reject it into the atmosphere.</p>
+
+                <p>That rejection step is where the constraints compound. Evaporative cooling systems consume enormous quantities of water. A single hyperscale facility can drink what a town of 50,000 people uses in a day. Dry cooling avoids the water but demands more electricity and more physical space for heat exchangers. In either case, the thermal load must ultimately be dumped into an atmosphere that is getting warmer, in regions that are getting drier, under regulatory frameworks that are getting stricter.</p>
+
+                <p><a href="https://thecoolingreport.com/intel/500-megawatts-in-an-indiana-cornfield-the-physical-cost-of-the-ai-buildout.html">AI workloads are expected to hit 44 GW globally in 2026</a>, surpassing all non-AI data center workloads combined. The cooling infrastructure required to support that load does not exist yet. Building it requires water, land, power, and regulatory approval, all of which are becoming scarcer in the markets where data centers concentrate.</p>
+
+                <h2>What Space Offers</h2>
+
+                <p>In low Earth orbit, the thermal equation inverts. Solar irradiance is roughly five times greater than at Earth's surface, providing abundant power without competing for terrestrial grid capacity. The vacuum of space serves as an effectively infinite heat sink. Radiative cooling, where heat is emitted as infrared radiation directly into space, works without water, without fans, without compressors, and without the atmospheric constraints that limit terrestrial heat rejection.</p>
+
+                <p>The engineering is real. Spacecraft have managed thermal loads with radiative panels for decades. The International Space Station uses an active thermal control system that pumps ammonia through cold plates and rejects heat via external radiators. The physics of heat rejection in vacuum are well understood.</p>
+
+                <p>What has changed is the density of compute that needs cooling. Running thousands of high-wattage AI processors in orbit, keeping them within thermal operating range, managing hotspots, and maintaining reliability across thermal cycling as satellites move in and out of direct sunlight requires thermal engineering at a scale and precision that no spacecraft has demonstrated. The Vera Rubin Space-1 module is a concept, not a deployed system.</p>
+
+                <h2>The Signal for Terrestrial Cooling</h2>
+
+                <p>For the data center cooling industry, the most useful way to read this announcement is not as a prediction of where computing goes in 2035. The useful signal is what it reveals about where the industry's largest players think the constraints are right now.</p>
+
+                <p>Nvidia designs the GPUs that generate the heat. The company understands, at the transistor level, how thermal design power scales with each architecture generation. When Nvidia invests in orbital compute, it is making a statement about the long-term trajectory of terrestrial cooling limitations. The Blackwell B200 runs at 1,000 watts. Rubin will go higher. Whatever comes after Rubin will go higher still. At some point, the cooling industry's ability to reject heat from concentrated GPU clusters in terrestrial facilities reaches a practical ceiling defined by water availability, power cost, and regulatory tolerance.</p>
+
+                <p>Orbital compute does not solve for the next five years. Ground-based data centers will absorb the overwhelming majority of AI workloads through at least 2032. The cooling vendors, CDU manufacturers, cold plate suppliers, and facility designers serving those builds have a decade of demand ahead of them regardless of what happens in orbit.</p>
+
+                <p>But the announcement carries a message that cooling professionals should internalize. The companies spending the most on AI infrastructure view terrestrial thermal management as a problem that gets harder every year, not easier. That is a long-term demand signal for the cooling industry, and a warning that the solutions need to keep pace with GPU roadmaps that show no sign of flattening.</p>
+
+                <h2>When the Sky Becomes Competition</h2>
+
+                <p>If orbital data centers become viable at commercial scale, and that is a very large if, the competitive dynamics for terrestrial cooling change. Facilities in water-stressed or power-constrained regions would face a new alternative: rather than solving the cooling problem on the ground, hyperscalers could route certain workloads to orbit where the thermal problem does not exist in the same form.</p>
+
+                <p>That scenario is at least a decade away. Probably more. The launch costs, the satellite servicing requirements, the latency constraints, and the regulatory framework for operating compute infrastructure in space all present obstacles that make terrestrial cooling look elegant by comparison. But the fact that Nvidia is spending engineering resources on the concept tells you something about how the company models the future of thermal load growth. They see a curve that eventually exceeds what the ground can handle.</p>
+
+                <p>For now, the cooling industry's job is the same as it was last week. Build the infrastructure to manage heat loads that are doubling every two to three years, in facilities that are getting denser, in climates that are getting less cooperative. Space can wait. The 44 GW of AI thermal load arriving this year cannot.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/nvidia-vera-rubin-space-data-center-cooling.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/nvidia-vera-rubin-space-data-center-cooling.html&text=Nvidia%20Wants%20to%20Put%20Data%20Centers%20in%20Orbit.%20The%20Cooling%20Equation%20Is%20the%20Whole%20Point." target="_blank">X</a>
+                    <a href="mailto:?subject=Nvidia%20Wants%20to%20Put%20Data%20Centers%20in%20Orbit.%20The%20Cooling%20Equation%20Is%20the%20Whole%20Point.&body=https://thecoolingreport.com/intel/nvidia-vera-rubin-space-data-center-cooling.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/nvidia-vera-rubin-space-data-center-cooling.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYYCLVFLEF');
+    </script>
+    <!-- LinkedIn Insight Tag -->
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+</body>
+</html>

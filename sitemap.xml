@@ -16,6 +16,31 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://thecoolingreport.com/intel/musk-terafab-20-billion-chip-factory-cooling-demand.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/supermicro-nvidia-gpu-smuggling-china-supply-chain.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/nvidia-vera-rubin-space-data-center-cooling.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/tsmc-45-billion-capex-2nm-cooling-demand.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/immersion-cooling-market-14-billion-2034-forecast.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thecoolingreport.com/intel/the-water-power-tradeoff-that-data-center-operators-keep-getting-wrong.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
