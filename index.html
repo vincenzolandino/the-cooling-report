@@ -199,7 +199,6 @@
             <div class="nav-links">
                 <a href="intel.html">Intel</a>
                 <a href="sponsor.html">Sponsor</a>
-                <a href="#pricing">Premium</a>
                 <a href="#advisory">Advisory</a>
                 <a href="#subscribe" class="nav-cta">Subscribe</a>
             </div>
@@ -346,103 +345,6 @@
         </div>
     </section>
 
-    <!-- Deep Dives -->
-    <section class="deep-dives" id="deep-dives" aria-labelledby="dives-heading">
-        <div class="section-inner">
-            <div class="section-header">
-                <h2 id="dives-heading">Weekly Deep Dives</h2>
-                <p class="section-meta">Premium Reports</p>
-            </div>
-            <p class="section-sub">One long-form report each week covering liquid cooling, immersion cooling, thermal management, and data center energy efficiency. Competitive landscapes. Technology comparisons. Market maps. Real analysis, not press release rewrites.</p>
-            <div class="article-list">
-                <article class="article-item locked">
-                    <span class="article-type">M&amp;A Analysis</span>
-                    <h3>Eaton's $9.5B Bet on Boyd: What the Biggest Liquid Cooling Acquisition Means for the Thermal Management Stack</h3>
-                    <p>Eaton paid a massive premium to own liquid cooling hardware. Schneider grabbed Motivair. Daikin bought Chilldyne. The consolidation playbook reshaping commercial readiness in data center thermal management is clear. Here is who gets acquired next and what it means for the supply chain.</p>
-                    <div class="article-footer">
-                        <span class="article-lock">Premium</span>
-                        <span class="article-date">March 2026</span>
-                    </div>
-                </article>
-                <article class="article-item locked">
-                    <span class="article-type">Land &amp; Infrastructure</span>
-                    <h3>$4M Per Acre in Loudoun County: Where the Liquid Cooling-Ready Land Grab Is Heading Next</h3>
-                    <p>Northern Virginia is priced out. Secondary markets (Salt Lake City, Des Moines, Reno) are surging 20-40% YoY. Parcels near substations and hydro command 2-4x premiums. We map the next wave of liquid cooling and immersion cooling-ready data center campus deals.</p>
-                    <div class="article-footer">
-                        <span class="article-lock">Premium</span>
-                        <span class="article-date">March 2026</span>
-                    </div>
-                </article>
-                <article class="article-item locked">
-                    <span class="article-type">Regulation &amp; Energy Efficiency</span>
-                    <h3>The Water Wars: How State Mandates and EU Energy Efficiency Standards Will Reshape Data Center Cooling Design</h3>
-                    <p>Texas data centers used 49B gallons in 2025. California, Iowa, and Michigan are pushing water reporting mandates. The EU is rolling out minimum energy efficiency standards in 2026. Closed-loop liquid cooling and hybrid cooling are about to become non-negotiable for commercial readiness.</p>
-                    <div class="article-footer">
-                        <span class="article-lock">Premium</span>
-                        <span class="article-date">February 2026</span>
-                    </div>
-                </article>
-                <article class="article-item locked">
-                    <span class="article-type">Business Model &amp; Energy Efficiency</span>
-                    <h3>Heating 30,000 Apartments: How Data Center Waste Heat and Thermal Management Became a Revenue Line</h3>
-                    <p>Stockholm does it already. Germany is mandating it. Equinix is running export partnerships across three continents. Waste heat at 12-30 EUR/MWh undercuts gas boilers. The data center cooling industry's next business model turns thermal management and energy efficiency into revenue.</p>
-                    <div class="article-footer">
-                        <span class="article-lock">Premium</span>
-                        <span class="article-date">February 2026</span>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
-        <div class="section-inner">
-            <h2 id="pricing-heading">Subscribe to The Cooling Report.</h2>
-            <div class="pricing-grid">
-                <div class="price-card price-card-free">
-                    <h3>Free</h3>
-                    <p class="price">$0</p>
-                    <p class="price-save">&nbsp;</p>
-                    <ul>
-                        <li>Intel blog posts delivered to your inbox</li>
-                    </ul>
-                    <a href="#subscribe" class="btn btn-outline">Subscribe Free</a>
-                </div>
-                <div class="price-card featured">
-                    <span class="price-badge">MOST POPULAR</span>
-                    <h3>Annual</h3>
-                    <p class="price">$199<span>/year</span></p>
-                    <p class="price-save">Save $29 vs. monthly</p>
-                    <ul>
-                        <li>Everything in Free</li>
-                        <li>Cooling Bytes weekly roundup</li>
-                        <li>This Week in Cooling Friday dispatch</li>
-                        <li>Weekly deep dive reports</li>
-                        <li>Competitive landscapes &amp; market maps</li>
-                        <li>Full archive access</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary" onclick="event.preventDefault();checkout('annual')">Subscribe Annual</a>
-                </div>
-                <div class="price-card">
-                    <h3>Monthly</h3>
-                    <p class="price">$19<span>/month</span></p>
-                    <p class="price-save">&nbsp;</p>
-                    <ul>
-                        <li>Everything in Free</li>
-                        <li>Cooling Bytes weekly roundup</li>
-                        <li>This Week in Cooling Friday dispatch</li>
-                        <li>Weekly deep dive reports</li>
-                        <li>Competitive landscapes &amp; market maps</li>
-                        <li>Full archive access</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline" onclick="event.preventDefault();checkout('monthly')">Subscribe Monthly</a>
-                </div>
-            </div>
-            <p class="pricing-note">Need team access? <a href="mailto:team@thecoolingreport.com">Contact us</a> for multi-seat plans with volume pricing and invoice billing.</p>
-        </div>
-    </section>
-
     <!-- Who This Is For -->
     <section class="audience" aria-labelledby="audience-heading">
         <div class="section-inner">
@@ -522,27 +424,6 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-DYYCLVFLEF');
-    </script>
-
-    <!-- Stripe checkout handler -->
-    <script>
-    async function checkout(plan) {
-        try {
-            var res = await fetch('/.netlify/functions/checkout', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ plan: plan })
-            });
-            var data = await res.json();
-            if (data.url) {
-                window.location.href = data.url;
-            } else {
-                alert('Something went wrong. Please try again.');
-            }
-        } catch (err) {
-            alert('Something went wrong. Please try again.');
-        }
-    }
     </script>
 
     <!-- Subscribe form handler -->
