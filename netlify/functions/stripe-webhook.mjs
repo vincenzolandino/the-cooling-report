@@ -15,41 +15,32 @@ export default async (req) => {
       return new Response("OK", { status: 200 });
     }
 
-    const apiKey = Netlify.env.get("SENDGRID_API_KEY");
+    const apiKey = Netlify.env.get("RESEND_API_KEY");
+    const audienceId = Netlify.env.get("RESEND_AUDIENCE_ID");
     const senderEmail = Netlify.env.get("SENDER_EMAIL");
 
-    // Add to SendGrid contacts
-    await fetch("https://api.sendgrid.com/v3/marketing/contacts", {
-      method: "PUT",
+    // Add to Resend audience
+    await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
+      method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        contacts: [{ email }],
-      }),
+      body: JSON.stringify({ email }),
     });
 
     // Send premium welcome email
-    await fetch("https://api.sendgrid.com/v3/mail/send", {
+    await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        personalizations: [{ to: [{ email }] }],
-        from: {
-          email: senderEmail,
-          name: "The Cooling Report",
-        },
+        from: `The Cooling Report <${senderEmail}>`,
+        to: [email],
         subject: "Your premium subscription is active.",
-        content: [
-          {
-            type: "text/html",
-            value: premiumWelcomeEmail(),
-          },
-        ],
+        html: premiumWelcomeEmail(),
       }),
     });
 
