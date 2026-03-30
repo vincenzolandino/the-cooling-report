@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Data Center Cooling Works in 2026: The Complete Guide | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="The definitive guide to data center cooling systems. Air cooling, liquid cooling, immersion, heat rejection, water regulation, and market numbers for 2026.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/data-center-cooling-systems-complete-guide-2026.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How Data Center Cooling Works in 2026: The Complete Guide">
+    <meta property="og:description" content="The definitive guide to data center cooling systems. Air cooling, liquid cooling, immersion, heat rejection, water regulation, and market numbers for 2026.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/data-center-cooling-systems-complete-guide-2026.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Guide</span>
+                <span class="date">March 30, 2026</span>
+            </div>
+            <h1>How Data Center Cooling Works in 2026: The Complete Guide</h1>
+            <div class="body">
+<h2>Data Center Cooling Systems in 2026: The Complete Guide</h2>
+
+<p>Every server burns. Every GPU, every CPU, every NVMe drive converts electricity into heat as a byproduct of computation. In a single rack running eight Nvidia H100 GPUs, that heat output can exceed 70 kilowatts. Multiply by hundreds of racks in a hyperscale facility and you have a thermal problem that rivals a small industrial plant. Cooling is what keeps the whole thing from melting itself.</p>
+
+<p>That is not metaphor. Semiconductors throttle and eventually fail when junction temperatures cross critical thresholds. DRAM develops bit errors. SSDs degrade. The entire economic argument for building a $2 billion data center collapses if the cooling system cannot move heat out of the building faster than the IT equipment generates it.</p>
+
+<p>Cooling systems consume <a href="https://iaeimagazine.org/electrical-fundamentals/how-much-electricity-does-a-data-center-use-complete-2025-analysis/">30 to 40 percent of a facility's total electricity</a>. In a 100 MW campus, that means 30 to 40 megawatts just to reject heat. The energy cost alone makes cooling the single largest lever operators have for controlling operating expenses. Get it wrong and you bleed money. Get it right and you unlock density, efficiency, and margin that competitors cannot match.</p>
+
+<p>This guide covers every major cooling architecture in production or deployment today, the economics behind each, and the regulatory and supply chain forces reshaping the industry in real time. If you build, operate, invest in, or sell into data centers, this is the technical and commercial map.</p>
+
+<h2>Temperature Standards and PUE: The Numbers That Govern Everything</h2>
+
+<p>ASHRAE TC 9.9 sets the thermal envelope for data processing environments. The <a href="https://avtech.com/articles/23418/ashrae-recommended-data-center-temperature-humidity/">recommended inlet air temperature range for Class A1 through A4 equipment is 18 to 27 degrees Celsius</a> (64.4 to 80.6 degrees Fahrenheit). That is the band where hardware manufacturers guarantee full performance and warranty coverage. The allowable range extends higher, with some equipment classes tolerating inlet temperatures up to 35 degrees Celsius and, in A4 environments, up to 45 degrees Celsius. Running at the high end of allowable saves cooling energy. It also compresses safety margins and demands more precise airflow management.</p>
+
+<p>Power Usage Effectiveness, PUE, remains the primary efficiency metric. A PUE of 1.0 would mean every watt entering the facility goes directly to IT equipment. Impossible in practice. The <a href="https://journal.uptimeinstitute.com/global-pues-are-they-going-anywhere/">Uptime Institute's 2025 Global Data Center Survey</a> reported a weighted average PUE of 1.54, virtually unchanged for the sixth consecutive year. The industry average has been stuck in the 1.55 to 1.59 band since 2020. Facilities built in the last five years average around 1.45. The best hyperscale campuses operate between 1.03 and 1.10. Google's reported fleet average sits at 1.10. Meta's Prineville campus has reported 1.08.</p>
+
+<p>The stagnation matters. Legacy facilities with raised floors, CRAC units built in the 2000s, and minimal containment drag the average up. New construction keeps pushing PUE lower. But the installed base turns over slowly. Uptime found that facilities larger than 1 MW and less than 15 years old average around 1.48 globally. In the Middle East, Africa, and Latin America, average PUE readings exceed 1.7. The global number hides enormous regional and vintage variation.</p>
+
+<h2>Hot Aisle, Cold Aisle, and Containment</h2>
+
+<p>The simplest improvement any data center can make costs almost nothing to understand and relatively little to implement. Servers draw cool air from one side and exhaust hot air from the other. Line them up so all intakes face the same aisle and all exhausts face the opposite aisle. Cold aisle. Hot aisle. Keep the two air streams from mixing and you can cut cooling energy by 20 to 30 percent compared to an open floor plan where hot and cold air recirculate freely.</p>
+
+<p>Containment systems take this further. Physical barriers, curtains, panels, or rigid enclosures, seal either the cold aisle or the hot aisle to prevent recirculation entirely. <a href="https://www.datacenterfrontier.com/special-reports/article/11427230/containment-strategies-in-high-density-data-centers">Hot aisle containment with a plenum ceiling can support 20 to 25 kW per rack with a standard two-tile cold aisle, and 30 kW or more with a three-tile cold aisle</a>. Cold aisle containment with end-of-aisle doors achieves similar results. Neither approach is superior in all cases. The choice depends on fire suppression requirements, ceiling height, and the facility's air handling architecture.</p>
+
+<p>Containment is table stakes in 2026. Any operator running 10 kW or more per rack without containment is wasting energy and likely running hot spots that shorten hardware life. The ROI is measured in months, not years.</p>
+
+<h2>Air Cooling: The Workhorse and Its Limits</h2>
+
+<p>Computer Room Air Conditioning (CRAC) units use a direct expansion refrigerant cycle to cool air. Computer Room Air Handlers (CRAH) units use chilled water from a central plant. Both blow conditioned air into the data hall, typically through a raised floor plenum or overhead ductwork. CRACs are simpler and self-contained. CRAHs are more efficient at scale because they decouple refrigeration from air distribution and allow the central plant to optimize across multiple air handlers.</p>
+
+<p>Raised floor plenums dominated data center design for decades. Conditioned air pressurizes the space below the raised floor and enters the cold aisle through perforated tiles. The approach works well at moderate densities but develops problems at higher loads: uneven tile airflow, bypass air escaping through cable cutouts, and insufficient static pressure to deliver adequate volume to high-density rows. Hard floor designs with overhead or in-row cooling units have gained traction in new builds because they eliminate the plenum's inefficiencies and deliver air directly where it is needed.</p>
+
+<p>In-row cooling units sit between racks in the row, drawing hot exhaust air directly from the hot aisle and returning cooled air to the cold aisle. The short air path improves efficiency and responsiveness. Rear-door heat exchangers (RDHx) mount on the back of individual racks, using chilled water coils to absorb heat from the server exhaust before it enters the room. RDHx units can handle 30 to 40 kW per rack depending on water temperature and flow rate, making them a useful bridge technology between pure air cooling and full liquid cooling.</p>
+
+<p>The ceiling on air cooling in a well-designed facility is roughly <a href="https://www.networkworld.com/article/4149069/why-ai-rack-densities-make-liquid-cooling-nonnegotiable.html">25 to 30 kW per rack</a>. Push beyond that and the volume of air required, the fan energy to move it, and the noise generated all become impractical. A single Nvidia DGX B200 system consumes over 14 kW. A GB200 NVL72 rack draws 120 kW. Air cooling cannot touch these workloads. Period.</p>
+
+<h2>Direct-to-Chip Liquid Cooling: The 2026 Default for AI</h2>
+
+<p>A cold plate is a metal block, typically copper or aluminum, machined with internal microchannels through which liquid coolant flows. The plate bolts directly onto a GPU or CPU, absorbing heat through conduction at the chip surface and carrying it away through a closed loop to a coolant distribution unit (CDU). The CDU transfers heat from the facility water loop to a secondary loop connected to the building's heat rejection system. The liquid touching the chip is typically a water-glycol mixture. Nothing exotic. Nothing regulated.</p>
+
+<p>Cold plates are commercially mature, broadly compatible with existing server form factors, and run on fluids that no regulatory body on earth is coming for. <a href="https://www.futuremarketinsights.com/reports/ai-datacenter-liquid-cooling-market">Direct-to-chip cold plate cooling commands 47 percent of the AI data center liquid cooling segment</a>. It is the technology Nvidia specifies for its GB200 NVL72 and the forthcoming Vera Rubin platform. It retrofits into standard 19-inch racks. It scales linearly.</p>
+
+<p>The vendor landscape consolidated fast in 2025 and 2026. <a href="https://www.ecolab.com/news/2026/03/ecolab-to-acquire-coolit-systems-a-global-leader-in-advanced-liquid-cooling-for-next-gen-ai-data-ce">Ecolab agreed to acquire CoolIT Systems for $4.75 billion</a> in March 2026. CoolIT has been in liquid cooling for 25 years. Its CDUs and cold plates serve six of the world's top ten supercomputers. Expected revenue over the next 12 months: approximately $550 million. The deal signals that industrial water treatment giants see data center cooling as their next growth vertical.</p>
+
+<p><a href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-signs-agreement-to-acquire-boyd-thermal--expanding-solutio.html">Eaton completed its $9.5 billion acquisition of Boyd Thermal</a> in March 2026. Boyd Thermal has forecasted 2026 sales of $1.7 billion, of which $1.5 billion is in liquid cooling. Eaton CEO Craig Arnold called it a "grid-to-chip" solution, combining Eaton's power distribution infrastructure with Boyd's thermal components. At 22.5 times estimated 2026 EBITDA, the multiple tells you exactly how much the market values cooling capability right now.</p>
+
+<p><a href="https://www.se.com/ww/en/about-us/newsroom/news/press-releases/schneider-electric-unveils-liquid-cooling-portfolio-with-motivair-featuring-dedicated-solutions-and-services-for-hpc-and-ai-workloads-68d69e595c9dbb622505caf3/">Schneider Electric acquired a controlling interest in Motivair</a> in February 2025 and unveiled a combined liquid cooling portfolio in early 2026 spanning CDUs from 105 kW to 2.5 MW, cold plates, rear-door heat exchangers, and chillers. Motivair's CDU technology powers six of the world's top ten supercomputers. Its fourth U.S. manufacturing facility opened in Buffalo, New York in June 2025.</p>
+
+<h2>Immersion Cooling: Single-Phase vs. Two-Phase</h2>
+
+<p>In immersion cooling, servers are submerged in a dielectric fluid that absorbs heat directly from all components simultaneously. No fans. No cold plates. The entire board is in contact with the coolant.</p>
+
+<p>Single-phase immersion uses fluids that remain liquid throughout the process. Hydrocarbon-based or synthetic oils absorb heat through convection. The warm fluid circulates to a heat exchanger where it transfers heat to a facility water loop. Single-phase systems are simpler, use PFAS-free fluids, and <a href="https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis">held 80.9 percent of the data center immersion cooling market in 2024</a>. That share is growing.</p>
+
+<p>Two-phase immersion works differently. The fluid boils at the chip surface, absorbing enormous amounts of heat through the phase change from liquid to vapor. The vapor rises, condenses on a coil, and drips back down. The thermal transfer efficiency is superior to any other cooling method available. PUE values of 1.02 to 1.03 have been demonstrated. But the fluids that made two-phase work were PFAS-based, and the supply chain for those fluids is gone.</p>
+
+<p><a href="https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis">3M announced in December 2022 that it would cease all PFAS manufacturing by the end of 2025</a>. The last day to order Novec fluids was March 31, 2025. 3M was facing over 4,000 lawsuits and a $12.5 billion settlement with more than 11,000 U.S. public water systems over PFAS contamination. The EPA designated PFOA and PFOS as hazardous substances under CERCLA in April 2024. Microsoft, Meta, and Google all walked away from two-phase immersion research. The liability math was simple: deploying forever chemicals in facilities with 20 to 30 year lifespans creates cleanup exposure that no CFO would approve.</p>
+
+<p>Chemours developed Opteon 2P50, an HFO-based alternative with zero ozone depletion potential and a global warming potential of 10, targeting commercial production in 2026 through a manufacturing deal with Navin Fluorine. <a href="https://submer.com/blog/pfas-contamination-a-call-to-action-for-the-datacenter-industry/">Shell secured Intel certification</a> for its single-phase immersion fluid, unlocking preferred-vendor status in 2026 cloud tenders. But the EU's PFAS restriction proposal covers over 10,000 substances, and ECHA's final opinions are expected by end of 2026. Any vendor building a two-phase product around fluorinated chemistry is building on regulatory ground that may shift within 18 months.</p>
+
+<p>The immersion vendors that survived the PFAS crisis are single-phase players. <a href="https://investors.tranetechnologies.com/news-and-events/news-releases/news-release-details/2026/Trane-Technologies-to-Acquire-LiquidStack-to-Accelerate-EndtoEnd-Data-Center-Thermal-Management-Solutions/default.aspx">Trane Technologies completed its acquisition of LiquidStack</a> in early 2026, adding immersion and direct-to-chip capabilities to Trane's plant-level thermal infrastructure. <a href="https://www.grcooling.com/">GRC (Green Revolution Cooling)</a> continues to expand its single-phase immersion platform, partnering with Samsung C&T, LG Electronics, and SK Enmove. <a href="https://submer.com/">Submer</a> raised $55.5 million, launched data center design and construction business units, and signed a 1 GW AI data center MOU with the government of Madhya Pradesh, India.</p>
+
+<h2>Coolant Distribution Units: The Plumbing No One Talks About</h2>
+
+<p>A CDU is the bridge between the IT cooling loop and the facility rejection loop. It matches flow rates, manages pressure, monitors coolant quality, and controls temperature setpoints. Without a CDU, liquid cooling does not work. The unit receives warm coolant from cold plates or immersion tanks, passes it through a heat exchanger to transfer heat to the building's chilled or condenser water system, and returns cooled fluid to the IT equipment.</p>
+
+<p>CDU capacity ranges from under 100 kW for edge and small deployments to over 2.5 MW for hyperscale racks. <a href="https://www.delloro.com/market-at-the-boiling-point-is-the-cdu-space-becoming-saturated/">Dell'Oro Group has flagged the CDU market as potentially approaching saturation</a> in terms of vendor count, with dozens of manufacturers now competing. The technology itself is not complex. But reliability, serviceability, and integration with building management systems separate serious products from commodity hardware. Redundancy matters. A CDU failure in a liquid-cooled environment is a thermal emergency measured in minutes, not hours.</p>
+
+<h2>Nvidia Vera Rubin and the 45 Degree Celsius Inflection</h2>
+
+<p>Jensen Huang stood on stage in early 2026 and said something that sent HVAC company stock prices down in real time: <a href="https://www.facilitiesdive.com/news/no-chillers-needed-for-vera-rubin-server-racks-nvidia-ceo/809216/">Vera Rubin NVL72 racks would run on 45 degree Celsius warm water, and no chillers would be needed</a>.</p>
+
+<p>The physics are straightforward. Silicon junctions throttle around 100 degrees Celsius. With a 45 degree supply temperature, you still have enough delta-T to keep chips well within operating range. And 45 degree water can be cooled to ambient using nothing more than dry coolers or adiabatic assist systems. No mechanical refrigeration. No chiller plant. No compressor energy. The cooling power draw drops dramatically.</p>
+
+<p>This is a genuine architectural shift. Most existing liquid-cooled deployments, including Nvidia's own Blackwell GB200 systems, run on 35 to 40 degree supply water. Dropping the chiller requirement at 45 degrees opens warm-water cooling in nearly every climate on earth. The exception: when ambient temperature approaches or exceeds 45 degrees Celsius, which happens in Phoenix, Dubai, and parts of India during peak summer. Those locations still need adiabatic assist or trim chillers for peak days. Everywhere else, the chiller plant disappears.</p>
+
+<p>Vera Rubin racks are expected to arrive in data centers in fall 2026. They will be 100 percent liquid cooled. The thermal design sets the direction for every GPU platform that follows.</p>
+
+<h2>Hybrid Cooling: The Reality for the Next Decade</h2>
+
+<p>Pure liquid-cooled facilities exist. They are new builds designed from the ground up for AI training workloads. They represent a fraction of global data center capacity.</p>
+
+<p>The vast majority of the world's data centers were built for 5 to 15 kW racks with raised floors and CRAC units. These facilities do not disappear because Nvidia released a new GPU. They get retrofitted. <a href="https://blog.se.com/datacenter/2025/11/18/air-vs-liquid-cooling-finding-right-strategy-ai-ready-data-centers/">Hybrid cooling architectures that combine existing air handling with supplemental liquid cooling loops</a> have become the standard approach for retrofit projects. A facility running mostly general-purpose compute at 8 to 12 kW per rack might add two rows of liquid-cooled cabinets at 60 kW per rack for an AI training cluster. The air system handles the legacy load. The liquid system handles the GPUs. Both reject heat to the same central plant.</p>
+
+<p>Retrofit costs run <a href="https://irpros.com/the-rising-demand-for-data-center-cooling-what-facility-operators-need-to-know-in-2026/">$2 to $3 million per megawatt</a>, with potential energy savings of 40 percent for AI workloads. Liquid cooling systems carry a 25 to 40 percent premium over traditional CRAC units. The ROI depends entirely on the density and utilization of the liquid-cooled racks. At 60 kW or above with sustained GPU utilization, payback periods compress to under three years. At lower densities or intermittent workloads, the economics get harder to justify.</p>
+
+<p><a href="https://irpros.com/why-data-center-cooling-service-demands-are-surging-in-2026-and-what-operators-should-look-for-in-a-service-partner/">Retrofit projects now account for 58 percent of the HVAC services market in data centers</a>, and that share is growing. Thirty-seven percent of operators report space constraints and structural limitations when upgrading legacy facilities. The piping, the weight of CDUs, the need for secondary containment under liquid-cooled rows: these are real engineering problems that slow deployment timelines.</p>
+
+<p>Hybrid will be the dominant model for years. The installed base of air-cooled facilities is enormous. The transition is happening rack by rack, row by row, not building by building.</p>
+
+<h2>Heat Rejection: The New Bottleneck</h2>
+
+<p>Every watt of heat removed from a chip must eventually leave the building. Heat rejection is the final link in the thermal chain, and in 2026 it has become the binding constraint for many new deployments.</p>
+
+<p>Evaporative cooling towers are the most thermally efficient heat rejection method. Water evaporates, absorbing heat, and the cooled water returns to the system. A large cooling tower can reject hundreds of megawatts of heat. The catch: water consumption. A 1 MW data center using evaporative cooling can consume over <a href="https://dgtlinfra.com/data-center-water-usage/">25 million gallons of water per year</a>. In water-stressed regions, that volume is increasingly unavailable or politically untenable.</p>
+
+<p>Dry coolers use finned coils and fans to transfer heat from water to ambient air with no evaporation. Zero water consumption. But dry coolers lose effectiveness as ambient temperature rises. In a Phoenix summer, the approach temperature between coolant and ambient narrows, fan speeds increase following a cube law (double the speed, eight times the power), and the cooling capacity of the system degrades precisely when it is needed most.</p>
+
+<p><a href="https://www.vertiv.com/en-us/about/news-and-insights/corporate-news/2026/vertiv-to-acquire-thermokey-expanding-heat-rejection-portfolio-for-converged-physical-infrastructure/">Vertiv announced its agreement to acquire ThermoKey in March 2026</a>, specifically to expand its heat rejection portfolio. ThermoKey, founded in 1991 in Italy, manufactures heat exchangers, dry coolers, and air-cooled condensers. The acquisition is expected to close in Q2 2026. Vertiv CEO Giordano Albertazzi framed heat rejection as the part of the thermal chain where capacity constraints are tightest. He is right. You can build liquid cooling loops and CDUs relatively quickly. Manufacturing and deploying the outdoor heat rejection equipment to match those loops takes longer, requires more physical space, and in many jurisdictions faces permitting delays.</p>
+
+<p>Heat rejection is where the thermal chain meets the physical world: land, water, ambient temperature, noise ordinances, and local regulation. No amount of clever engineering inside the data hall matters if you cannot get the heat out of the building.</p>
+
+<h2>Water Consumption and the Regulatory Reckoning</h2>
+
+<p>A <a href="https://news.ucr.edu/articles/2026/03/09/data-center-water-spikes-could-cost-billions">UC Riverside study led by Shaolei Ren</a>, published in March 2026, found that U.S. data centers will need 697 million to 1.45 billion gallons of additional daily peak water capacity within four years. That is roughly equivalent to the daily water supply of New York City. The infrastructure investment required: $10 billion to $58 billion.</p>
+
+<p>The study's most important finding is not the annual average. It is the peak. Daily water demand from evaporative cooling can spike 6 to 10 times higher than average, with some planned facilities exceeding a 30-fold spike. Municipal water systems are engineered for residential demand curves, not for industrial loads that swing wildly with ambient temperature and compute utilization. Ren's team argued that "water is a hidden and even more binding constraint" than power in many communities.</p>
+
+<p>Individual large data centers can withdraw over <a href="https://www.eesi.org/articles/view/data-centers-and-water-consumption">1 million gallons daily</a>, with some facilities allocated up to 8 million gallons per day. <a href="https://www.issa.com/industry-news/ai-data-center-water-consumption-is-creating-an-unprecedented-crisis-in-the-united-states/">AI-driven data centers consumed approximately 17 billion gallons of water in 2023</a>, with projections showing usage surging to 68 billion gallons by 2028.</p>
+
+<p>The regulatory response is accelerating. <a href="https://goodjobsfirst.org/data-center-moratorium-bills-are-spreading-in-2026/">Moratorium bills have been introduced in 11 states in 2026</a>, though they face industry resistance. Dozens of municipalities have imposed local construction pauses without waiting for state action. <a href="https://www.multistate.us/insider/2026/2/20/state-data-center-legislation-in-2026-tackles-energy-and-tax-issues">More than 300 data center bills have been filed across 30-plus states</a> in just the first six weeks of 2026, marking a shift from incentive-based policies to regulatory oversight. Minnesota established separate water permitting requirements for data centers in 2025. More states are following.</p>
+
+<p>The industry's response has been uneven. Microsoft has unveiled zero-water data center designs for desert climates. Google publishes water usage data by facility. Many operators disclose nothing. The gap between best practice and standard practice is wide, and regulators are losing patience with voluntary disclosure frameworks that produce vague annual averages instead of peak demand data.</p>
+
+<h2>Market Numbers: Where the Money Is Going</h2>
+
+<p>The data center liquid cooling market roughly doubled in 2025, reaching close to <a href="https://www.delloro.com/news/data-center-liquid-cooling-market-to-approach-7-billion-by-2029-as-ai-deployments-accelerate/">$3 billion in manufacturer revenue, with Dell'Oro Group projecting the market to approach $7 billion by 2029</a>. Alex Cordovil, research director at Dell'Oro, put it directly: "Liquid cooling has crossed a critical threshold. What was once treated as an optional efficiency upgrade is now a functional requirement for large-scale AI deployments."</p>
+
+<p>Dell'Oro had previously forecast the liquid cooling market topping <a href="https://www.delloro.com/news/ata-center-liquid-cooling-market-set-to-go-mainstream-and-top-15-b-over-the-next-five-years/">$15 billion cumulative over five years</a> in a July 2024 report, before revising to the $7 billion annual run rate by 2029 in their January 2026 update. GPU thermal design power is projected to exceed 4,000 watts by 2029, making liquid cooling structurally essential.</p>
+
+<p>The total data center cooling market, including air and liquid, is valued at <a href="https://www.mordorintelligence.com/industry-reports/global-data-center-cooling-market-industry">$10.8 billion in 2025 and projected to reach $25.1 billion by 2031</a>, a 15.1 percent CAGR per Mordor Intelligence.</p>
+
+<p>Adoption surveys tell the demand story. <a href="https://www.networkworld.com/article/4149069/why-ai-rack-densities-make-liquid-cooling-nonnegotiable.html">Fifty-nine percent of data center operators plan to implement liquid cooling within five years</a>, according to a November 2025 S&P Global 451 Research survey. Only 45 percent of facilities now run purely on air cooling, down from 48 percent in 2024. The tipping point is behind us.</p>
+
+<p>The M&A activity alone confirms the trajectory. Eaton paid $9.5 billion for Boyd Thermal. Ecolab paid $4.75 billion for CoolIT. Trane acquired LiquidStack. Schneider took a controlling stake in Motivair. Vertiv moved to acquire ThermoKey. In the span of 18 months, the five largest thermal infrastructure deals in data center history all closed. That is not a trend. That is a market repricing the value of cooling at a fundamental level.</p>
+
+<h2>What Comes Next</h2>
+
+<p>The trajectory is set. Air cooling will continue to serve general-purpose compute at moderate densities. It is not going away. But every new AI training cluster, every GPU-dense inference deployment, every rack above 30 kW will require some form of liquid cooling. The question is no longer whether to adopt liquid cooling. The question is which architecture, which vendor, and how fast you can get capacity online.</p>
+
+<p>Direct-to-chip cold plates will remain the dominant liquid cooling technology through at least 2028. They are mature, they retrofit, and they are what Nvidia specifies. Immersion cooling will grow in niches where its zero-fan, full-component coverage advantages justify the operational complexity. Two-phase immersion will survive in a narrow band of ultra-high-density applications, constrained by fluid availability and regulatory uncertainty.</p>
+
+<p>The real bottlenecks are downstream. Heat rejection capacity. Water availability. Permitting timelines. The chip-level thermal problem is solved. The building-level and community-level thermal problems are just getting started. Every operator planning a liquid-cooled deployment in 2026 should be spending as much time on their heat rejection strategy and water sourcing as they spend on CDU specifications. The rack is the easy part. Getting the heat out of the building and out of the neighborhood is where the hard engineering begins.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/data-center-cooling-systems-complete-guide-2026.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/data-center-cooling-systems-complete-guide-2026.html" target="_blank">X</a>
+                    <a href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/data-center-cooling-systems-complete-guide-2026.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/data-center-cooling-systems-complete-guide-2026.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer"><div class="section-inner"><div class="footer-inner"><p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p><p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p></div></div></footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DYYCLVFLEF');</script>
+    <script type="text/javascript">_linkedin_partner_id="8831074";window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script><script type="text/javascript">(function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";s.parentNode.insertBefore(b,s);})(window.lintrk);</script>
+    <noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" /></noscript>
+</body>
+</html>
