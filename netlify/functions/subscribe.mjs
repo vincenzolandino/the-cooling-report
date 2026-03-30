@@ -19,24 +19,23 @@ export default async (req) => {
       });
     }
 
-    const apiKey = Netlify.env.get("SENDGRID_API_KEY");
+    const apiKey = Netlify.env.get("RESEND_API_KEY");
+    const audienceId = Netlify.env.get("RESEND_AUDIENCE_ID");
     const senderEmail = Netlify.env.get("SENDER_EMAIL");
 
-    // Add contact to SendGrid Marketing contacts
-    const contactRes = await fetch("https://api.sendgrid.com/v3/marketing/contacts", {
-      method: "PUT",
+    // Add contact to Resend audience
+    const contactRes = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
+      method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        contacts: [{ email }],
-      }),
+      body: JSON.stringify({ email }),
     });
 
     if (!contactRes.ok) {
       const err = await contactRes.text();
-      console.error("SendGrid contact error:", err);
+      console.error("Resend contact error:", err);
       return new Response(JSON.stringify({ error: "Failed to add contact" }), {
         status: 500,
         headers,
@@ -44,31 +43,23 @@ export default async (req) => {
     }
 
     // Send welcome email
-    const mailRes = await fetch("https://api.sendgrid.com/v3/mail/send", {
+    const mailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        personalizations: [{ to: [{ email }] }],
-        from: {
-          email: senderEmail,
-          name: "The Cooling Report",
-        },
+        from: `The Cooling Report <${senderEmail}>`,
+        to: [email],
         subject: "You're in.",
-        content: [
-          {
-            type: "text/html",
-            value: freeWelcomeEmail(),
-          },
-        ],
+        html: freeWelcomeEmail(),
       }),
     });
 
     if (!mailRes.ok) {
       const err = await mailRes.text();
-      console.error("SendGrid mail error:", err);
+      console.error("Resend mail error:", err);
     }
 
     return new Response(JSON.stringify({ success: true }), {
@@ -125,8 +116,8 @@ function freeWelcomeEmail() {
     <table cellpadding="0" cellspacing="0" width="100%"><tr>
       <td width="40" valign="top" style="font-family: Georgia, serif; font-size: 22px; font-weight: 700; color: #0d7680; padding-top: 2px;">01</td>
       <td style="padding-left: 16px;">
-        <p style="margin: 0 0 4px; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #1a1a1a;">Intel Articles</p>
-        <p style="margin: 0; font-size: 14px; color: #807060; line-height: 1.6;">Free analysis and editorial on what is shaping the data center cooling industry. Delivered to your inbox when published.</p>
+        <p style="margin: 0 0 4px; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #1a1a1a;">Cooling Bytes</p>
+        <p style="margin: 0; font-size: 14px; color: #807060; line-height: 1.6;">Monday morning roundup. The deals, partnerships, regulation, and technology moves shaping data center cooling that week.</p>
       </td>
     </tr></table>
   </td></tr>
@@ -136,8 +127,8 @@ function freeWelcomeEmail() {
     <table cellpadding="0" cellspacing="0" width="100%"><tr>
       <td width="40" valign="top" style="font-family: Georgia, serif; font-size: 22px; font-weight: 700; color: #0d7680; padding-top: 2px;">02</td>
       <td style="padding-left: 16px;">
-        <p style="margin: 0 0 4px; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #1a1a1a;">This Week in Cooling</p>
-        <p style="margin: 0; font-size: 14px; color: #807060; line-height: 1.6;">Friday dispatch. What happened and what to watch next.</p>
+        <p style="margin: 0 0 4px; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #1a1a1a;">Intel Articles</p>
+        <p style="margin: 0; font-size: 14px; color: #807060; line-height: 1.6;">Deep analysis and editorial on what is shaping the data center cooling industry. Published throughout the week.</p>
       </td>
     </tr></table>
   </td></tr>
@@ -148,23 +139,13 @@ function freeWelcomeEmail() {
       <td width="40" valign="top" style="font-family: Georgia, serif; font-size: 22px; font-weight: 700; color: #0d7680; padding-top: 2px;">03</td>
       <td style="padding-left: 16px;">
         <p style="margin: 0 0 4px; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #1a1a1a;">Major Deal Alerts</p>
-        <p style="margin: 0; font-size: 14px; color: #807060; line-height: 1.6;">When something significant moves in the cooling market, you hear about it.</p>
+        <p style="margin: 0; font-size: 14px; color: #807060; line-height: 1.6;">When something big moves in the cooling market, you hear about it.</p>
       </td>
     </tr></table>
   </td></tr>
 
   <!-- Divider -->
   <tr><td style="border-top: 1px solid #e0cdb8; padding-top: 28px;"></td></tr>
-
-  <!-- Upgrade block -->
-  <tr><td style="background-color: #f6e9d8; padding: 24px; border-radius: 3px; margin-bottom: 28px;">
-    <p style="margin: 0 0 8px; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #1a1a1a;">Want the full picture?</p>
-    <p style="margin: 0 0 16px; font-size: 14px; color: #4a4a4a; line-height: 1.65;">Premium subscribers get weekly deep dives, Cooling Bytes roundups, competitive landscapes, market maps, and full archive access. Starting at $19/month.</p>
-    <a href="https://thecoolingreport.com/#pricing" style="display: inline-block; background-color: #0d7680; color: #ffffff; padding: 10px 24px; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 3px;">See Premium Plans</a>
-  </td></tr>
-
-  <!-- Spacer -->
-  <tr><td style="height: 28px;"></td></tr>
 
   <!-- Start reading CTA -->
   <tr><td style="font-size: 16px; line-height: 1.75; color: #4a4a4a; padding-bottom: 8px;">
