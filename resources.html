@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | The Cooling Report — Data Center Cooling Glossary, Methods & Reference</title>
+    <meta name="description" content="The essential reference for data center cooling. A glossary of every term that matters, a breakdown of every cooling method in production, and the numbers you need to spec, buy, and build thermal infrastructure.">
+    <meta name="keywords" content="data center cooling glossary, liquid cooling terms, immersion cooling, cold plate, CDU, PUE, thermal management, direct-to-chip cooling, rear-door heat exchanger, two-phase immersion, data center cooling methods">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="canonical" href="https://thecoolingreport.com/resources.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Resources | Data Center Cooling Glossary, Methods & Reference">
+    <meta property="og:description" content="The essential reference for data center cooling. Glossary, cooling methods, and the numbers that matter for thermal infrastructure.">
+    <meta property="og:url" content="https://thecoolingreport.com/resources.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Resources | Data Center Cooling Glossary, Methods & Reference">
+    <meta name="twitter:description" content="The essential reference for data center cooling. Glossary, methods, and the numbers that matter.">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+
+    <!-- Structured Data: DefinedTermSet for glossary -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "name": "Data Center Cooling Glossary",
+        "description": "Comprehensive glossary of data center cooling terminology covering liquid cooling, immersion cooling, thermal management, and infrastructure metrics.",
+        "url": "https://thecoolingreport.com/resources.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "The Cooling Report"
+        }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage for AI citability -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a cold plate in data center cooling?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A cold plate is a metal block, typically copper or aluminum, that mounts directly to a heat-generating component such as a CPU or GPU. Coolant flows through internal channels machined into the plate, absorbing heat through conduction. Cold plates are the contact point in direct-to-chip liquid cooling systems and currently dominate the liquid cooling market with roughly 47% share."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a CDU (Coolant Distribution Unit)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A Coolant Distribution Unit (CDU) is the central hub of a liquid cooling loop. It receives heated coolant returning from servers, transfers that heat to a facility water loop via a heat exchanger, and pumps cooled fluid back to the racks. CDUs regulate flow rate, temperature, and pressure across the secondary cooling loop. Lead times for CDUs in 2025-2026 range from 16 to 30+ weeks depending on the vendor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is PUE (Power Usage Effectiveness)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PUE is the ratio of total facility energy to IT equipment energy. A PUE of 1.0 means every watt goes to compute. Traditional air-cooled facilities run a PUE of 1.5 to 1.8. Direct-to-chip liquid cooling brings PUE down to 1.1 to 1.2. Two-phase immersion cooling can reach PUE as low as 1.02 to 1.03. The global average PUE for data centers is approximately 1.58."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between single-phase and two-phase immersion cooling?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In single-phase immersion cooling, servers are submerged in a dielectric fluid that remains liquid throughout the process. Heat transfers from components to the fluid, which is then circulated to a heat exchanger. In two-phase immersion cooling, the dielectric fluid boils on contact with hot components, and the resulting vapor rises to a condenser where it returns to liquid form. Two-phase systems achieve higher heat transfer rates and can reach PUE of 1.02, but face regulatory risk from PFAS restrictions on fluorinated fluids."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .glossary-item {
+            padding: 20px 24px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+        }
+        .glossary-item:last-child {
+            border-bottom: none;
+        }
+        .glossary-item:hover {
+            background: var(--bg-card-hover);
+        }
+        .glossary-term {
+            font-family: var(--serif);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .glossary-aka {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            color: var(--accent);
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .glossary-def {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .method-card {
+            background: var(--bg-card);
+            padding: 28px 24px;
+        }
+        .method-card h3 {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .method-card p {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .method-specs {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+            line-height: 1.8;
+        }
+        .method-specs span {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .alpha-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 24px;
+        }
+        .alpha-nav a {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--accent);
+            padding: 4px 8px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-decoration: none;
+        }
+        .alpha-nav a:hover {
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+        }
+        .glossary-letter {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 10px 24px 6px;
+            background: var(--bg-elevated);
+            border-bottom: 1px solid var(--border);
+        }
+        .ref-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            font-size: 0.84rem;
+        }
+        .ref-table th {
+            background: var(--bg-elevated);
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        .ref-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            background: var(--bg-card);
+        }
+        .ref-table tr:last-child td {
+            border-bottom: none;
+        }
+        .ref-table td:first-child {
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+        }
+        .jump-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+        .jump-links a {
+            font-family: var(--mono);
+            font-size: 0.76rem;
+            font-weight: 500;
+            color: var(--accent);
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+        .jump-links a:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .ref-table {
+                font-size: 0.78rem;
+            }
+            .ref-table th, .ref-table td {
+                padding: 10px 12px;
+            }
+            .ref-table td:first-child {
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <span class="logo-icon">◈</span> The Cooling Report
+            </a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="intel.html">Intel</a>
+                <a href="resources.html" style="color:var(--text);font-weight:600;">Resources</a>
+                <a href="sponsor.html">Sponsor</a>
+                <a href="/#advisory">Advisory</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" style="padding-bottom:48px;">
+        <div class="hero-inner">
+            <p class="hero-tag">Resources</p>
+            <h1 class="hero-headline">The terms, the systems, the&nbsp;numbers.</h1>
+            <p class="hero-sub">Data center cooling has its own language. CDUs, cold plates, PUE, PFAS, two-phase immersion. Whether you are speccing your first liquid-ready facility or getting up to speed on the thermal management buildout, this is the reference we wish existed when we started covering the industry.</p>
+            <div class="jump-links">
+                <a href="#glossary">Glossary</a>
+                <a href="#methods">Cooling Methods</a>
+                <a href="#numbers">Key Numbers</a>
+                <a href="#guide">Complete Guide</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Glossary -->
+    <section id="glossary" aria-labelledby="glossary-heading">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 id="glossary-heading">Glossary</h2>
+                <p class="section-meta">48 terms</p>
+            </div>
+
+            <div class="alpha-nav" aria-label="Jump to letter">
+                <a href="#letter-a">A</a>
+                <a href="#letter-b">B</a>
+                <a href="#letter-c">C</a>
+                <a href="#letter-d">D</a>
+                <a href="#letter-e">E</a>
+                <a href="#letter-f">F</a>
+                <a href="#letter-g">G</a>
+                <a href="#letter-h">H</a>
+                <a href="#letter-i">I</a>
+                <a href="#letter-l">L</a>
+                <a href="#letter-m">M</a>
+                <a href="#letter-o">O</a>
+                <a href="#letter-p">P</a>
+                <a href="#letter-r">R</a>
+                <a href="#letter-s">S</a>
+                <a href="#letter-t">T</a>
+                <a href="#letter-w">W</a>
+            </div>
+
+            <div class="glossary-grid">
+
+                <!-- A -->
+                <div class="glossary-letter" id="letter-a">A</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Adiabatic Cooling</div>
+                    <p class="glossary-def">A cooling method that reduces air temperature through water evaporation. Warm outside air passes through wetted media or a fine mist, and the evaporation process absorbs heat from the air. Used in economizer systems and dry coolers to reduce mechanical chiller load. Effective in hot, dry climates. Consumes water, which makes it a target of water-use regulations in states like Arizona and Virginia.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Air Handler Unit (AHU)</div>
+                    <p class="glossary-def">A large, centralized unit that conditions and circulates air through ductwork to the data hall. Contains fans, filters, heating coils, and cooling coils. Common in legacy facilities and perimeter cooling designs. Being displaced in high-density builds by in-row cooling and liquid cooling systems that reject heat closer to the source.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">ASHRAE</div>
+                    <span class="glossary-aka">American Society of Heating, Refrigerating and Air-Conditioning Engineers</span>
+                    <p class="glossary-def">The standards body that sets recommended and allowable operating temperature and humidity ranges for data center equipment. ASHRAE's TC 9.9 committee publishes the thermal guidelines that most operators use to set supply air temperatures and evaluate cooling strategies. The 2021 guidelines expanded the recommended envelope to 18-27°C (64.4-80.6°F), which enabled wider free cooling adoption. ASHRAE also publishes standards for liquid cooling connections and facility water quality.</p>
+                </div>
+
+                <!-- B -->
+                <div class="glossary-letter" id="letter-b">B</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Blanking Panel</div>
+                    <p class="glossary-def">A filler panel installed in unused rack unit positions to prevent hot exhaust air from recirculating to the cold aisle. A simple, cheap component that has an outsized impact on cooling efficiency. Missing blanking panels in a single rack can raise inlet temperatures by 5-10°F and force CRACs to work harder than necessary.</p>
+                </div>
+
+                <!-- C -->
+                <div class="glossary-letter" id="letter-c">C</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">CDU</div>
+                    <span class="glossary-aka">Coolant Distribution Unit</span>
+                    <p class="glossary-def">The central hub of a liquid cooling loop. A CDU receives heated coolant returning from servers, transfers that heat to a facility water loop through a heat exchanger, and pumps cooled fluid back to the racks. CDUs regulate flow rate, temperature, and pressure across the secondary cooling loop. They sit between the IT hardware and the facility's heat rejection infrastructure. Lead times for CDUs in 2025-2026 range from 16 to 30+ weeks depending on the vendor, making them one of the longest-lead components in the liquid cooling supply chain.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Chiller</div>
+                    <p class="glossary-def">A mechanical refrigeration system that produces chilled water for cooling distribution. Data center chillers typically use vapor compression cycles with scroll, screw, or centrifugal compressors. Chillers are the largest single energy consumers in traditional air-cooled facilities, often accounting for 30-40% of total cooling energy. Air-cooled chillers reject heat to outdoor air. Water-cooled chillers reject heat through cooling towers, which adds water consumption to the equation.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Cold Aisle / Hot Aisle</div>
+                    <p class="glossary-def">The standard airflow management layout in data centers. Server racks face each other in alternating rows, creating cold aisles (where chilled supply air enters the front of servers) and hot aisles (where heated exhaust exits the rear). Containment systems seal either the cold or hot aisle to prevent mixing. This layout is the foundation of air-cooled data center design. At rack densities above 20-25kW, even well-contained hot aisle / cold aisle setups begin to struggle.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Cold Plate</div>
+                    <p class="glossary-def">A metal block, typically copper or aluminum, that mounts directly to a heat-generating component like a CPU or GPU. Coolant flows through internal channels machined into the plate, absorbing heat through conduction. Cold plates are the contact point in direct-to-chip liquid cooling systems. They currently dominate the liquid cooling market with roughly 47% share. Nvidia's GB200 NVL72 and the upcoming Vera Rubin platforms ship with cold plate liquid cooling as the standard thermal solution.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Containment</div>
+                    <p class="glossary-def">Physical barriers that separate hot exhaust air from cold supply air in a data center. Cold aisle containment encloses the cold aisle with doors and a roof. Hot aisle containment seals the hot aisle and routes exhaust directly to return plenums. Proper containment can improve cooling efficiency by 20-40% over open floor plans. A prerequisite for any air-cooled facility running above 10kW per rack without wasting energy.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Cooling Tower</div>
+                    <p class="glossary-def">An evaporative heat rejection device that cools facility water by exposing it to outdoor air. Water cascades over fill media while fans draw air across it, and evaporation removes heat. Cooling towers are the dominant heat rejection method for large data centers. They are also the primary driver of data center water consumption. A single 1MW data center can consume 25-50 million gallons of water per year through cooling tower evaporation, depending on climate and PUE.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">CRAC / CRAH</div>
+                    <span class="glossary-aka">Computer Room Air Conditioner / Computer Room Air Handler</span>
+                    <p class="glossary-def">Floor-mounted units that cool data center air. A CRAC uses a built-in refrigeration compressor to cool air directly. A CRAH uses chilled water from a central plant and blows air across a cooling coil. CRAHs are more energy efficient and common in larger facilities. Both typically distribute cold air through a raised floor plenum. At rack densities above 15-20kW, perimeter CRACs and CRAHs cannot deliver enough airflow to keep pace with the thermal load.</p>
+                </div>
+
+                <!-- D -->
+                <div class="glossary-letter" id="letter-d">D</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Delta T (&Delta;T)</div>
+                    <p class="glossary-def">The temperature difference between the supply and return of a cooling medium. In air cooling, Delta T is the difference between cold aisle supply air and hot aisle return air. In liquid cooling, it is the difference between coolant entering and leaving the cold plates or immersion tank. A higher Delta T means more heat is being captured per unit of coolant flow, which generally means the system is working efficiently. Typical Delta T targets for liquid cooling loops range from 10-20°C.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Dielectric Fluid</div>
+                    <p class="glossary-def">An electrically non-conductive liquid used in immersion cooling. Servers are submerged directly in the fluid, which absorbs heat from all components simultaneously. Common dielectric fluids include synthetic hydrocarbons, mineral oils, and fluorinated fluids (fluorocarbons). Fluorinated fluids offer superior thermal performance and are used in most two-phase immersion systems, but they face mounting regulatory pressure under PFAS restrictions in the EU and several U.S. states.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Direct-to-Chip (DTC) Cooling</div>
+                    <p class="glossary-def">A liquid cooling approach where coolant is piped directly to cold plates mounted on the hottest components in a server, typically CPUs and GPUs. The rest of the server remains air-cooled. DTC is the most widely adopted form of liquid cooling in production data centers. It handles the highest heat-generating components while requiring less infrastructure change than full immersion. Facilities running DTC still need supplemental air cooling for memory, storage, VRMs, and networking components.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Dry Cooler</div>
+                    <p class="glossary-def">An air-to-fluid heat exchanger that rejects heat from a liquid loop to outdoor air without using water evaporation. Glycol or water flows through a coil, and fans blow ambient air across it. Dry coolers consume zero water but are limited by ambient air temperature. When outdoor air is warmer than the required supply temperature, a dry cooler alone cannot do the job. Often paired with adiabatic assist (water spray) for peak conditions, creating a hybrid dry cooler.</p>
+                </div>
+
+                <!-- E -->
+                <div class="glossary-letter" id="letter-e">E</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Economizer</div>
+                    <p class="glossary-def">A system that uses outside air or water conditions to cool the data center without running mechanical refrigeration. Airside economizers bring filtered outdoor air directly into the facility when conditions permit. Waterside economizers use cool outdoor air to chill facility water through a heat exchanger or cooling tower, bypassing the chiller. Economizer hours, the number of hours per year when free cooling is available, vary dramatically by climate. A facility in Stockholm might achieve 8,000+ economizer hours. A facility in Phoenix might get 2,000.</p>
+                </div>
+
+                <!-- F -->
+                <div class="glossary-letter" id="letter-f">F</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Free Cooling</div>
+                    <p class="glossary-def">Operating a data center cooling system without mechanical refrigeration by leveraging cold outdoor air or water temperatures. Free cooling reduces energy consumption and operating cost. It is the primary reason hyperscalers build in Nordic countries, the Pacific Northwest, and other cool climates. The ASHRAE expanded temperature envelope (up to 27°C supply) increased free cooling hours across most geographies. At liquid cooling temperatures, where supply water can run 35-45°C, free cooling hours increase further because the heat rejection threshold is higher.</p>
+                </div>
+
+                <!-- G -->
+                <div class="glossary-letter" id="letter-g">G</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Glycol</div>
+                    <p class="glossary-def">A chemical additive (typically propylene glycol or ethylene glycol) mixed with water in cooling loops to prevent freezing and lower the fluid's freezing point. Used in outdoor cooling loops and secondary loops exposed to cold ambient conditions. Glycol reduces heat transfer efficiency compared to pure water, so the concentration is kept as low as practical, usually 20-40% depending on the minimum expected temperature.</p>
+                </div>
+
+                <!-- H -->
+                <div class="glossary-letter" id="letter-h">H</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Heat Exchanger</div>
+                    <p class="glossary-def">A device that transfers heat between two fluid loops without mixing them. In liquid cooling, heat exchangers sit inside CDUs and transfer heat from the server-side coolant loop to the facility-side water loop. Plate heat exchangers and shell-and-tube designs are the most common in data center applications. Heat exchanger sizing directly determines how much thermal load a cooling system can handle.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Heat Reuse</div>
+                    <p class="glossary-def">Capturing waste heat from data center cooling systems and redirecting it for productive use: district heating, industrial processes, agriculture, or building HVAC. Liquid cooling makes heat reuse viable because it captures heat at 40-60°C, warm enough to be useful. Air-cooled facilities exhaust heat at 30-35°C, which is too low for most reuse applications without a heat pump. Germany mandated data center heat reuse by 2026. Stockholm already heats 30,000 apartments from data center waste heat. Heat reuse is becoming a revenue line for operators and a permitting advantage in communities skeptical of data center energy consumption.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Hot Spot</div>
+                    <p class="glossary-def">A localized area within a data center or server where temperatures exceed design thresholds. Hot spots occur when cooling capacity cannot keep up with the thermal load in a specific zone. Common causes include poor airflow management, missing blanking panels, overloaded racks, or cable obstructions. In air-cooled environments, a single 40kW rack in a row of 10kW racks creates a hot spot that the perimeter CRAH was never sized to handle.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Hybrid Cooling</div>
+                    <p class="glossary-def">A cooling strategy that combines two or more methods in the same facility. The most common hybrid approach pairs direct-to-chip liquid cooling for CPUs and GPUs with air cooling for everything else: memory, SSDs, VRMs, NICs, and fans. Some facilities combine liquid-cooled compute racks with traditional air-cooled storage and networking racks in the same data hall. Hybrid cooling is the de facto standard for new AI-capable facilities because no single cooling method optimally handles every component in a modern server.</p>
+                </div>
+
+                <!-- I -->
+                <div class="glossary-letter" id="letter-i">I</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Immersion Cooling</div>
+                    <p class="glossary-def">A cooling method where servers or other IT equipment are fully submerged in a thermally conductive, electrically non-conductive dielectric fluid. The fluid absorbs heat from all components simultaneously, eliminating the need for fans, heat sinks, and traditional airflow management. Two variants exist: single-phase immersion (fluid stays liquid) and two-phase immersion (fluid boils on contact with hot components, then condenses and drips back). Immersion cooling can achieve PUE as low as 1.02-1.03 and handles rack densities above 100kW. Despite the thermal performance advantages, immersion holds roughly 8-12% of the liquid cooling market. The adoption gap comes down to workforce training, facility design changes, and maintenance procedures that operators have not standardized.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">In-Row Cooling</div>
+                    <p class="glossary-def">Cooling units installed between server racks within a row, rather than along the perimeter of the data hall. In-row units place cooling capacity closer to the heat source, reducing the distance air must travel and improving efficiency. They use chilled water or refrigerant to cool air drawn from the hot aisle and deliver it directly to the cold aisle. More responsive to local thermal loads than perimeter CRAHs, and common in medium-density deployments (10-25kW per rack).</p>
+                </div>
+
+                <!-- L -->
+                <div class="glossary-letter" id="letter-l">L</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Liquid Cooling</div>
+                    <p class="glossary-def">Any cooling method that uses a liquid medium to absorb and transport heat away from IT equipment. The three primary forms are direct-to-chip (cold plates on CPUs/GPUs), rear-door heat exchangers (liquid-cooled doors on standard racks), and immersion cooling (full submersion in dielectric fluid). Liquid carries roughly 3,000 times more heat per unit volume than air. At rack densities above 40kW, liquid cooling transitions from a preference to a physical requirement. Goldman Sachs projects 76% of AI servers will be liquid-cooled by 2026.</p>
+                </div>
+
+                <!-- M -->
+                <div class="glossary-letter" id="letter-m">M</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Manifold</div>
+                    <p class="glossary-def">A distribution component that splits a single coolant supply line into multiple branches feeding individual servers or racks, and collects return flow back into a single line. Manifolds sit at the rack level or row level and are critical for balancing flow rates across all connected cold plates. Leaking manifold connections are one of the top operational concerns cited by facility managers evaluating liquid cooling for the first time.</p>
+                </div>
+
+                <!-- O -->
+                <div class="glossary-letter" id="letter-o">O</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">OCP</div>
+                    <span class="glossary-aka">Open Compute Project</span>
+                    <p class="glossary-def">An open-source hardware initiative founded by Facebook (Meta) in 2011. OCP publishes open specifications for data center hardware, including rack designs, server form factors, and cooling standards. The OCP Advanced Cooling Solutions subproject is developing standardized liquid cooling interfaces to reduce vendor lock-in and accelerate adoption. OCP's liquid cooling specifications are increasingly referenced in hyperscale procurement requirements.</p>
+                </div>
+
+                <!-- P -->
+                <div class="glossary-letter" id="letter-p">P</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">PFAS</div>
+                    <span class="glossary-aka">Per- and Polyfluoroalkyl Substances</span>
+                    <p class="glossary-def">A class of synthetic chemicals known as "forever chemicals" because they do not break down in the environment. Fluorinated dielectric fluids used in two-phase immersion cooling contain PFAS compounds. The EU's proposed PFAS restriction, if enacted, would ban the manufacture and import of most fluorinated cooling fluids. Several U.S. states have enacted or proposed their own restrictions. This regulatory trajectory is the single largest risk factor for the two-phase immersion cooling market. Vendors including 3M (which exited the market in 2025) and Solvay are directly affected. The industry is exploring fluorine-free alternatives, but none match the thermal performance of fluorocarbons in two-phase applications.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Plenum</div>
+                    <p class="glossary-def">An enclosed space used for air distribution. In raised-floor data centers, the space beneath the raised floor tiles serves as a supply air plenum, distributing chilled air from CRAHs to perforated tiles in the cold aisle. Above the racks, a ceiling plenum can collect hot return air. Plenum design, including depth, obstructions from cabling and piping, and tile placement, directly affects airflow distribution and cooling effectiveness.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">PUE</div>
+                    <span class="glossary-aka">Power Usage Effectiveness</span>
+                    <p class="glossary-def">The ratio of total facility energy to IT equipment energy. A PUE of 1.0 would mean every watt entering the facility goes to compute, with zero overhead. That is physically impossible. Traditional air-cooled facilities run a PUE of 1.5 to 1.8. Well-optimized air-cooled hyperscale facilities achieve 1.1-1.2. Direct-to-chip liquid cooling brings PUE to the 1.05-1.15 range. Two-phase immersion cooling can reach 1.02-1.03. The global average PUE for data centers is approximately 1.58. PUE is the most widely cited efficiency metric in the industry, though it does not capture water consumption, embodied carbon, or total environmental impact.</p>
+                </div>
+
+                <!-- R -->
+                <div class="glossary-letter" id="letter-r">R</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Rack Density</div>
+                    <p class="glossary-def">The total power consumption (and corresponding thermal load) of a single server rack, measured in kilowatts (kW). Traditional enterprise racks run 5-10kW. Standard cloud and colocation racks range from 10-20kW. AI training racks using Nvidia A100/H100 GPUs run 30-70kW. Nvidia's GB200 NVL72 racks draw 120-130kW. The Vera Rubin generation is expected to push higher. Rack density is the forcing function behind the transition to liquid cooling. Air cooling physically cannot handle densities above approximately 40kW per rack without exotic and increasingly impractical airflow engineering.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Raised Floor</div>
+                    <p class="glossary-def">An elevated floor system in a data center consisting of removable tiles supported on pedestals, creating a plenum underneath for air distribution. Chilled air is pushed under the raised floor by CRAHs and delivered to the cold aisle through perforated tiles. Raised floors were the dominant data center design for decades. Newer facilities are increasingly moving to overhead air distribution or liquid cooling, which eliminates the need for a floor plenum entirely.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">RDHx</div>
+                    <span class="glossary-aka">Rear-Door Heat Exchanger</span>
+                    <p class="glossary-def">A liquid cooling device that replaces the rear door of a standard server rack with a heat exchanger coil. Hot exhaust air from the servers passes through the coil, which is fed with chilled or ambient-temperature water. The heat transfers to the liquid loop, and the air exits the rear door at a neutral or near-neutral temperature. RDHx systems can handle 30-50kW per rack without modifying the servers themselves. They are a common retrofit path for facilities that want to increase density without deploying direct-to-chip or immersion infrastructure.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Redundancy (N, N+1, 2N)</div>
+                    <p class="glossary-def">The level of backup capacity built into cooling infrastructure. N means exactly enough capacity to handle the load with no backup. N+1 adds one additional unit beyond what is required, so if any single component fails, the system continues operating. 2N provides a fully redundant, parallel cooling system. The redundancy level directly affects both capital cost and availability guarantees. Most colocation SLAs require at minimum N+1 cooling redundancy. Hyperscale operators increasingly design for 2N on the liquid cooling side because a leak or CDU failure in a liquid loop affects more IT capacity than a single CRAH failure in an air-cooled facility.</p>
+                </div>
+
+                <!-- S -->
+                <div class="glossary-letter" id="letter-s">S</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Sensible Cooling</div>
+                    <p class="glossary-def">Cooling that reduces the temperature of air without changing its moisture content. The opposite of latent cooling, which removes humidity. Data center cooling is overwhelmingly sensible cooling. Servers produce dry heat. The goal is to lower the air (or liquid) temperature, not to dehumidify. This is why data center cooling loads are calculated primarily in terms of sensible heat ratio (SHR), typically 0.95-1.0.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Supply Temperature</div>
+                    <p class="glossary-def">The temperature of cooling medium (air or liquid) delivered to the IT equipment. For air cooling, ASHRAE recommends 18-27°C (64.4-80.6°F) at the server inlet. For liquid cooling, supply temperatures vary widely by system design. Direct-to-chip systems typically supply coolant at 25-45°C. Warm-water cooling architectures push supply temperatures to 40-50°C, which is high enough to reject heat with dry coolers and eliminate chillers entirely. Higher supply temperatures mean more free cooling hours and lower energy bills.</p>
+                </div>
+
+                <!-- T -->
+                <div class="glossary-letter" id="letter-t">T</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">TDP</div>
+                    <span class="glossary-aka">Thermal Design Power</span>
+                    <p class="glossary-def">The maximum amount of heat a processor generates under sustained workload, measured in watts. TDP defines the cooling capacity required for a given chip. Nvidia's H100 GPU has a TDP of 700W. The B200 reaches 1,000W. Vera Rubin is expected to exceed that. TDP is the number that cooling system designers start from when sizing cold plates, CDUs, and heat rejection capacity. When GPU TDP doubles, the entire cooling chain must be re-specced.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Thermal Conductivity</div>
+                    <p class="glossary-def">A material's ability to conduct heat, measured in watts per meter-kelvin (W/m·K). Copper (386 W/m·K) and aluminum (205 W/m·K) are used in cold plates because they transfer heat rapidly from the chip surface to the coolant. Water has a thermal conductivity of 0.6 W/m·K, low compared to metals but roughly 25 times higher than air (0.025 W/m·K). This physical gap is why liquid cooling captures and moves heat so much more effectively than air cooling.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Two-Phase Cooling</div>
+                    <p class="glossary-def">A cooling method where the working fluid undergoes a phase change from liquid to vapor to absorb heat. In two-phase immersion cooling, dielectric fluid boils on contact with hot components. The vapor rises to a condenser, releases heat, returns to liquid, and drips back into the tank. The phase change absorbs significantly more energy than simple liquid convection (latent heat vs. sensible heat), which is why two-phase systems achieve the highest heat removal rates. The trade-off: most two-phase fluids are fluorinated compounds subject to PFAS regulations.</p>
+                </div>
+
+                <!-- W -->
+                <div class="glossary-letter" id="letter-w">W</div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">Warm-Water Cooling</div>
+                    <p class="glossary-def">A liquid cooling approach that uses supply water temperatures of 35-50°C, significantly warmer than traditional chilled water (7-12°C). At these temperatures, heat can be rejected to the outdoors using dry coolers or cooling towers without running mechanical chillers for most or all of the year. Warm-water cooling dramatically reduces energy consumption and enables heat reuse for district heating and industrial processes. IBM pioneered warm-water cooling with its Power Systems servers. The approach is gaining traction in new liquid-cooled AI facilities where operators want to eliminate chiller infrastructure entirely.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <div class="glossary-term">WUE</div>
+                    <span class="glossary-aka">Water Usage Effectiveness</span>
+                    <p class="glossary-def">The ratio of annual water consumption (in liters) to IT equipment energy (in kWh). WUE measures how much water a data center uses per unit of compute. Lower is better. Air-cooled facilities using cooling towers typically report WUE of 1.0-2.0 L/kWh. Facilities using dry coolers or liquid cooling with closed-loop heat rejection can achieve WUE approaching 0. WUE is becoming a reporting requirement under EU sustainability regulations and is increasingly scrutinized in water-stressed permitting jurisdictions.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cooling Methods -->
+    <section id="methods" class="deep-dives" aria-labelledby="methods-heading">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 id="methods-heading">Cooling Methods</h2>
+                <p class="section-meta">What is in production</p>
+            </div>
+            <p class="section-sub">Every cooling method deployed in data centers today, with the specs and trade-offs that matter.</p>
+
+            <div class="grid-3" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="method-card">
+                    <h3>Raised Floor / Perimeter Air Cooling</h3>
+                    <p>The legacy standard. CRAHs or CRACs along the perimeter push chilled air through a raised floor plenum to cold aisles. Still running in the majority of data centers worldwide. Effective up to 10-15kW per rack with proper containment. Struggles above 20kW. The installed base is enormous, but no one is building new AI-capable facilities with this design.</p>
+                    <div class="method-specs">
+                        Max density: <span>~15kW/rack</span><br>
+                        PUE range: <span>1.5 - 1.8</span><br>
+                        Water use: <span>High (cooling towers)</span>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <h3>In-Row / Close-Coupled Air Cooling</h3>
+                    <p>Cooling units placed between racks, shortening the air path and improving responsiveness to local heat loads. Works well for medium-density deployments and mixed environments. Common in enterprise and colocation facilities that need more capacity than perimeter units can deliver but are below the liquid cooling threshold.</p>
+                    <div class="method-specs">
+                        Max density: <span>~25kW/rack</span><br>
+                        PUE range: <span>1.3 - 1.5</span><br>
+                        Water use: <span>Moderate to high</span>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <h3>Rear-Door Heat Exchanger (RDHx)</h3>
+                    <p>Liquid-cooled door replaces the standard rear door on a server rack. Hot exhaust passes through a water coil and exits at neutral temperature. No server modifications required. Retrofittable into existing facilities. Handles moderate-to-high densities and reduces or eliminates the need for room-level air conditioning. A practical bridge for operators increasing density without overhauling their cooling infrastructure.</p>
+                    <div class="method-specs">
+                        Max density: <span>~50kW/rack</span><br>
+                        PUE range: <span>1.15 - 1.3</span><br>
+                        Water use: <span>Low to moderate</span>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <h3>Direct-to-Chip (Cold Plate) Liquid Cooling</h3>
+                    <p>Coolant piped directly to cold plates mounted on CPUs and GPUs. The dominant liquid cooling method in production AI data centers. Handles the highest heat-generating components while leaving the rest of the server air-cooled. Supported natively by Nvidia's GB200 and Vera Rubin platforms. Requires CDUs, manifolds, and facility plumbing infrastructure, but does not require custom server enclosures or dielectric fluids.</p>
+                    <div class="method-specs">
+                        Max density: <span>100-150kW/rack</span><br>
+                        PUE range: <span>1.05 - 1.15</span><br>
+                        Water use: <span>Low (closed loop)</span>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <h3>Single-Phase Immersion Cooling</h3>
+                    <p>Servers submerged in a non-conductive liquid that remains in a liquid state throughout. Heat transfers from all components to the fluid, which circulates to a heat exchanger. Eliminates fans, heat sinks, and airflow management. Handles extreme densities. Uses hydrocarbon-based or synthetic fluids that are not subject to PFAS restrictions. Maintenance procedures require draining and drying hardware for servicing, which adds complexity compared to air-cooled or DTC environments.</p>
+                    <div class="method-specs">
+                        Max density: <span>100-200kW/tank</span><br>
+                        PUE range: <span>1.02 - 1.08</span><br>
+                        Water use: <span>Zero to very low</span>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <h3>Two-Phase Immersion Cooling</h3>
+                    <p>Servers submerged in a dielectric fluid engineered to boil at a low temperature. The fluid vaporizes on contact with hot components, rises to a condenser, releases heat, returns to liquid. The phase change absorbs far more energy per unit mass than single-phase convection. Achieves the lowest PUE of any cooling method in production. The constraint: most two-phase fluids are fluorinated compounds facing regulatory restrictions under PFAS legislation. This is the technology with the best thermodynamics and the most uncertain regulatory future.</p>
+                    <div class="method-specs">
+                        Max density: <span>200kW+/tank</span><br>
+                        PUE range: <span>1.02 - 1.03</span><br>
+                        Water use: <span>Zero</span><br>
+                        Regulatory risk: <span>High (PFAS)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Numbers -->
+    <section id="numbers" aria-labelledby="numbers-heading">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 id="numbers-heading">Key Numbers</h2>
+                <p class="section-meta">The specs that matter</p>
+            </div>
+            <p class="section-sub">The reference numbers that show up in RFPs, spec sheets, earnings calls, and facility design conversations. Bookmark this.</p>
+
+            <h3 style="font-family:var(--serif);font-size:1rem;font-weight:600;margin:32px 0 16px;">Rack Density by Workload</h3>
+            <table class="ref-table">
+                <thead>
+                    <tr>
+                        <th>Workload</th>
+                        <th>Typical Density</th>
+                        <th>Cooling Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Enterprise / storage</td>
+                        <td>5-10 kW</td>
+                        <td>Air cooling</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud / colocation</td>
+                        <td>10-20 kW</td>
+                        <td>Air cooling with containment</td>
+                    </tr>
+                    <tr>
+                        <td>High-performance compute</td>
+                        <td>20-40 kW</td>
+                        <td>In-row or RDHx</td>
+                    </tr>
+                    <tr>
+                        <td>AI inference</td>
+                        <td>30-50 kW</td>
+                        <td>RDHx or direct-to-chip</td>
+                    </tr>
+                    <tr>
+                        <td>AI training (H100/B200)</td>
+                        <td>50-100 kW</td>
+                        <td>Direct-to-chip liquid cooling</td>
+                    </tr>
+                    <tr>
+                        <td>AI training (GB200 NVL72)</td>
+                        <td>120-130 kW</td>
+                        <td>Direct-to-chip liquid cooling (required)</td>
+                    </tr>
+                    <tr>
+                        <td>Next-gen AI (Vera Rubin)</td>
+                        <td>200-250 kW (projected)</td>
+                        <td>Liquid cooling (mandatory)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="font-family:var(--serif);font-size:1rem;font-weight:600;margin:32px 0 16px;">GPU Thermal Design Power</h3>
+            <table class="ref-table">
+                <thead>
+                    <tr>
+                        <th>GPU</th>
+                        <th>TDP</th>
+                        <th>Cooling</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nvidia A100</td>
+                        <td>400W</td>
+                        <td>Air or liquid</td>
+                    </tr>
+                    <tr>
+                        <td>Nvidia H100</td>
+                        <td>700W</td>
+                        <td>Air or liquid</td>
+                    </tr>
+                    <tr>
+                        <td>Nvidia B200</td>
+                        <td>1,000W</td>
+                        <td>Liquid recommended</td>
+                    </tr>
+                    <tr>
+                        <td>Nvidia GB200 NVL72</td>
+                        <td>1,400W (per GPU tray)</td>
+                        <td>Liquid required</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="font-family:var(--serif);font-size:1rem;font-weight:600;margin:32px 0 16px;">PUE by Cooling Method</h3>
+            <table class="ref-table">
+                <thead>
+                    <tr>
+                        <th>Cooling Method</th>
+                        <th>PUE Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Legacy air (perimeter CRAC)</td>
+                        <td>1.5 - 1.8</td>
+                    </tr>
+                    <tr>
+                        <td>Optimized air (in-row, containment)</td>
+                        <td>1.2 - 1.4</td>
+                    </tr>
+                    <tr>
+                        <td>Hyperscale air (economizers)</td>
+                        <td>1.08 - 1.2</td>
+                    </tr>
+                    <tr>
+                        <td>Rear-door heat exchanger</td>
+                        <td>1.15 - 1.3</td>
+                    </tr>
+                    <tr>
+                        <td>Direct-to-chip liquid</td>
+                        <td>1.05 - 1.15</td>
+                    </tr>
+                    <tr>
+                        <td>Single-phase immersion</td>
+                        <td>1.02 - 1.08</td>
+                    </tr>
+                    <tr>
+                        <td>Two-phase immersion</td>
+                        <td>1.02 - 1.03</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="font-family:var(--serif);font-size:1rem;font-weight:600;margin:32px 0 16px;">Temperature Reference Points</h3>
+            <table class="ref-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ASHRAE recommended inlet (air)</td>
+                        <td>18-27°C (64-81°F)</td>
+                    </tr>
+                    <tr>
+                        <td>ASHRAE allowable inlet (air)</td>
+                        <td>5-45°C (41-113°F)</td>
+                    </tr>
+                    <tr>
+                        <td>Chilled water supply (traditional)</td>
+                        <td>7-12°C (45-54°F)</td>
+                    </tr>
+                    <tr>
+                        <td>Direct-to-chip coolant supply</td>
+                        <td>25-45°C (77-113°F)</td>
+                    </tr>
+                    <tr>
+                        <td>Warm-water cooling supply</td>
+                        <td>35-50°C (95-122°F)</td>
+                    </tr>
+                    <tr>
+                        <td>Liquid cooling return (typical)</td>
+                        <td>40-65°C (104-149°F)</td>
+                    </tr>
+                    <tr>
+                        <td>Heat reuse viable threshold</td>
+                        <td>&gt;40°C (&gt;104°F)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Complete Guide CTA -->
+    <section id="guide" class="guide-cta" style="padding:48px 24px;background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+        <div class="section-inner" style="max-width:800px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;">
+            <div style="flex:1;min-width:280px;">
+                <p style="font-family:var(--mono);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">Go Deeper</p>
+                <h2 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;line-height:1.25;margin-bottom:12px;">How Data Center Cooling Works in 2026</h2>
+                <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7;margin-bottom:16px;">The complete technical and commercial map. Air cooling, liquid cooling, immersion, heat rejection, PFAS, warm-water architectures, water regulation, and every market number that matters. 13 sections. 31 sources.</p>
+                <a href="intel/data-center-cooling-systems-complete-guide-2026.html" style="display:inline-block;padding:10px 24px;background:var(--accent);color:#fff;font-family:var(--sans);font-size:0.85rem;font-weight:600;text-decoration:none;border-radius:var(--radius);">Read the Guide</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta" aria-labelledby="cta-heading">
+        <div class="section-inner">
+            <h2 id="cta-heading">The buildout is moving. Track the decisions that matter.</h2>
+            <form class="hero-form" aria-label="Newsletter signup">
+                <input type="email" placeholder="you@company.com" required aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. Business intelligence for liquid cooling, immersion cooling, and thermal management in data centers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYYCLVFLEF');
+    </script>
+
+    <!-- Subscribe form handler -->
+    <script>
+    document.querySelectorAll('.hero-form').forEach(function(form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var input = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = input.value.trim();
+            if (!email) return;
+
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            try {
+                var res = await fetch('/.netlify/functions/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+
+                if (res.ok) {
+                    input.value = '';
+                    btn.textContent = 'You are in.';
+                    setTimeout(function() {
+                        btn.textContent = 'Subscribe';
+                        btn.disabled = false;
+                    }, 3000);
+                } else {
+                    btn.textContent = 'Something went wrong.';
+                    btn.disabled = false;
+                    setTimeout(function() { btn.textContent = 'Subscribe'; }, 3000);
+                }
+            } catch (err) {
+                btn.textContent = 'Something went wrong.';
+                btn.disabled = false;
+                setTimeout(function() { btn.textContent = 'Subscribe'; }, 3000);
+            }
+        });
+    });
+    </script>
+
+    <!-- LinkedIn Insight Tag -->
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+
+</body>
+</html>
