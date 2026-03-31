@@ -242,7 +242,78 @@
             border-color: var(--accent);
             text-decoration: none;
         }
+        /* Sidebar layout */
+        .resources-layout {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 0;
+            position: relative;
+        }
+        .resources-main {
+            min-width: 0;
+        }
+        .resources-main > section {
+            padding: 64px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        .resources-main > section .section-inner {
+            padding: 0;
+        }
+        .resources-sidebar {
+            position: relative;
+        }
+        .sidebar-nav {
+            position: sticky;
+            top: 74px;
+            padding: 24px 0 24px 24px;
+            border-left: 1px solid var(--border);
+        }
+        .sidebar-nav p {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .sidebar-nav a {
+            display: block;
+            font-family: var(--sans);
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 6px 0 6px 12px;
+            border-left: 2px solid transparent;
+            margin-left: -25px;
+            padding-left: 23px;
+            transition: all 0.15s;
+        }
+        .sidebar-nav a:hover {
+            color: var(--text);
+            text-decoration: none;
+        }
+        .sidebar-nav a.active {
+            color: var(--accent);
+            border-left-color: var(--accent);
+            font-weight: 600;
+        }
         @media (max-width: 768px) {
+            .resources-layout {
+                grid-template-columns: 1fr;
+            }
+            .resources-sidebar {
+                display: none;
+            }
+            .resources-main > section {
+                padding: 48px 20px;
+            }
+            .methods-grid-2col {
+                grid-template-columns: 1fr;
+            }
             .ref-table {
                 font-size: 0.78rem;
             }
@@ -282,14 +353,11 @@
             <p class="hero-tag">Resources</p>
             <h1 class="hero-headline">The terms, the systems, the&nbsp;numbers.</h1>
             <p class="hero-sub">Data center cooling has its own language. CDUs, cold plates, PUE, PFAS, two-phase immersion. Whether you are speccing your first liquid-ready facility or getting up to speed on the thermal management buildout, this is the reference we wish existed when we started covering the industry.</p>
-            <div class="jump-links">
-                <a href="#glossary">Glossary</a>
-                <a href="#methods">Cooling Methods</a>
-                <a href="#numbers">Key Numbers</a>
-                <a href="#guide">Complete Guide</a>
-            </div>
         </div>
     </header>
+
+    <div class="resources-layout">
+        <div class="resources-main">
 
     <!-- Glossary -->
     <section id="glossary" aria-labelledby="glossary-heading">
@@ -599,7 +667,7 @@
             </div>
             <p class="section-sub">Every cooling method deployed in data centers today, with the specs and trade-offs that matter.</p>
 
-            <div class="grid-3" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="grid-3 methods-grid-2col" style="grid-template-columns: repeat(2, 1fr);">
                 <div class="method-card">
                     <h3>Raised Floor / Perimeter Air Cooling</h3>
                     <p>The legacy standard. CRAHs or CRACs along the perimeter push chilled air through a raised floor plenum to cold aisles. Still running in the majority of data centers worldwide. Effective up to 10-15kW per rack with proper containment. Struggles above 20kW. The installed base is enormous, but no one is building new AI-capable facilities with this design.</p>
@@ -832,16 +900,30 @@
     </section>
 
     <!-- Complete Guide CTA -->
-    <section id="guide" class="guide-cta" style="padding:48px 24px;background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-        <div class="section-inner" style="max-width:800px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;">
-            <div style="flex:1;min-width:280px;">
+    <section id="guide" style="border-bottom:none;">
+        <div class="section-inner">
+            <div style="border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-card);padding:28px 24px;">
                 <p style="font-family:var(--mono);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">Go Deeper</p>
-                <h2 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;line-height:1.25;margin-bottom:12px;">How Data Center Cooling Works in 2026</h2>
-                <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7;margin-bottom:16px;">The complete technical and commercial map. Air cooling, liquid cooling, immersion, heat rejection, PFAS, warm-water architectures, water regulation, and every market number that matters. 13 sections. 31 sources.</p>
+                <h3 style="font-family:var(--serif);font-size:1.15rem;font-weight:700;line-height:1.25;margin-bottom:12px;">How Data Center Cooling Works in 2026</h3>
+                <p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.7;margin-bottom:16px;">The complete technical and commercial map. Air cooling, liquid cooling, immersion, heat rejection, PFAS, warm-water architectures, water regulation, and every market number that matters. 13 sections. 31 sources.</p>
                 <a href="intel/data-center-cooling-systems-complete-guide-2026.html" style="display:inline-block;padding:10px 24px;background:var(--accent);color:#fff;font-family:var(--sans);font-size:0.85rem;font-weight:600;text-decoration:none;border-radius:var(--radius);">Read the Guide</a>
             </div>
         </div>
     </section>
+
+        </div><!-- end resources-main -->
+
+        <div class="resources-sidebar">
+            <nav class="sidebar-nav" aria-label="Page sections">
+                <p>On this page</p>
+                <a href="#glossary" class="active">Glossary</a>
+                <a href="#methods">Cooling Methods</a>
+                <a href="#numbers">Key Numbers</a>
+                <a href="#guide">Complete Guide</a>
+            </nav>
+        </div>
+
+    </div><!-- end resources-layout -->
 
     <!-- CTA -->
     <section class="final-cta" aria-labelledby="cta-heading">
@@ -912,6 +994,30 @@
             }
         });
     });
+    </script>
+
+    <!-- Sidebar scroll spy -->
+    <script>
+    (function() {
+        var links = document.querySelectorAll('.sidebar-nav a');
+        var sections = [];
+        links.forEach(function(link) {
+            var id = link.getAttribute('href').slice(1);
+            var el = document.getElementById(id);
+            if (el) sections.push({ id: id, el: el, link: link });
+        });
+        function update() {
+            var scrollY = window.scrollY + 100;
+            var current = sections[0];
+            for (var i = 0; i < sections.length; i++) {
+                if (sections[i].el.offsetTop <= scrollY) current = sections[i];
+            }
+            links.forEach(function(l) { l.classList.remove('active'); });
+            if (current) current.link.classList.add('active');
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+    })();
     </script>
 
     <!-- LinkedIn Insight Tag -->
