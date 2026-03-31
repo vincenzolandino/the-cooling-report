@@ -234,6 +234,79 @@
             border-radius: var(--radius);
         }
 
+        /* Special Report featured card */
+        .featured-report {
+            margin-bottom: 32px;
+            border: 2px solid var(--accent);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--bg-card);
+        }
+        .featured-report-label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: var(--accent);
+            padding: 8px 16px;
+            display: block;
+        }
+        .featured-report-body {
+            padding: 24px;
+        }
+        .featured-report-body h2 {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .featured-report-body h2 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .featured-report-body h2 a:hover {
+            color: var(--accent);
+        }
+        .featured-report-body p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+        .featured-report-body .read-report {
+            font-family: var(--sans);
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: var(--accent);
+            padding: 8px 20px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .featured-report-body .read-report:hover {
+            background: var(--accent-hover);
+            text-decoration: none;
+        }
+        .featured-report-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .featured-report-meta .blog-post-tag {
+            background: rgba(13,118,128,0.12);
+        }
+        .featured-report-meta .blog-post-date {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
         @media (max-width: 768px) {
             .content-layout {
                 grid-template-columns: 1fr;
@@ -285,7 +358,121 @@
 
             <!-- Main column: Intel articles -->
             <div class="main-column">
+
+            <div class="featured-report">
+                <span class="featured-report-label">Special Report</span>
+                <div class="featured-report-body">
+                    <div class="featured-report-meta">
+                        <span class="blog-post-tag">Guide</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/data-center-cooling-supply-chain-guide-2026.html">Where Cooling Components Come From and Why They're Late: The 2026 Data Center Cooling Supply Chain Guide</a></h2>
+                    <p>89% of manufacturers report material impact from tariffs. Safety stock is declining while demand spikes. CDU lead times run 16-24 weeks. This guide maps the RELEX 2026 State of the Supply Chain findings to cooling-specific context: the bill of materials nobody publishes, tariff exposure by vendor and trade lane, the M&A consolidation wave, and what operators should do now.</p>
+                    <a href="intel/data-center-cooling-supply-chain-guide-2026.html" class="read-report">Read the full report →</a>
+                </div>
+            </div>
+
             <div class="blog-list">
+
+<article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Energy</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/big-tech-climate-goals-ai-data-centers-fossil-fuels.html">Big Tech Promised Clean Energy. AI Data Centers Brought Back Fossil Fuels. The Cooling Bill Follows.</a></h2>
+                    <p class="article-preview">Google's emissions up 50%. Meta's up 60%. Natural gas powers over 40% of US data centers. Every megawatt of gas-fired power means heat rejection at scale. The climate backslide has a direct thermal infrastructure cost that nobody is pricing in.</p>
+                    <a href="intel/big-tech-climate-goals-ai-data-centers-fossil-fuels.html" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Technology</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html">Nvidia Says 45°C Water Can Cool Vera Rubin. That Eliminates the Chiller Plant Entirely.</a></h2>
+                    <p class="article-preview">Jensen Huang: "No water chillers are necessary." At 45°C supply temperature, dry coolers handle rejection in nearly every climate. Potential $4M annual savings per 50MW facility. The operators still designing around chilled water plants are building the wrong building.</p>
+                    <a href="intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Infrastructure</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/meta-10-billion-el-paso-data-center-1gw-cooling.html">Meta Is Spending $10 Billion on a 1 GW Data Center in the Chihuahuan Desert. The Cooling Architecture Will Be Watched Closely.</a></h2>
+                    <p class="article-preview">Closed-loop liquid cooling. Zero operational water claims. In a desert that hits 100°F regularly. Gary Demasi announced the sixfold investment increase at the Borderplex Alliance summit. Meanwhile, Meta is building 10 gas-fired power plants in Louisiana. Two very different thermal stories from the same company.</p>
+                    <a href="intel/meta-10-billion-el-paso-data-center-1gw-cooling.html" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Policy</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/senate-hawley-warren-data-center-energy-reporting-mandate.html">Hawley and Warren Want Data Centers to Report Their Power Bills. Cooling Will Be on That List.</a></h2>
+                    <p class="article-preview">Bipartisan Senate push for mandatory EIA reporting on data center energy consumption. Cooling accounts for 30-40% of total draw. Once that shows up as a named line item on a federal spreadsheet, it becomes a regulatory target. Pennsylvania already passed H.B. 1834.</p>
+                    <a href="intel/senate-hawley-warren-data-center-energy-reporting-mandate.html" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Policy</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/sanders-aoc-data-center-moratorium-act-cooling-freeze.html">Sanders and AOC Want to Freeze All New Data Center Construction. The Cooling Supply Chain Felt It Immediately.</a></h2>
+                    <p class="article-preview">The AI Data Center Moratorium Act will almost certainly die. But 36 projects blocked, $162B disrupted, and 100+ communities with their own moratoriums. The cooling supply chain needs 18-24 month visibility. Political noise cuts that in half.</p>
+                    <a href="intel/sanders-aoc-data-center-moratorium-act-cooling-freeze.html" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Market</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/march-2026-data-center-construction-boom-cooling-demand.html">One Percent Vacancy. $69 Billion in Deals. 6 GW From AMD and Meta Alone. March 2026 Construction Update.</a></h2>
+                    <p class="article-preview">S&P counted 113 completed transactions in 2025. North American vacancy at 1% for the second consecutive year. AMD and Meta signed a $100B agreement for 6 GW of AI capacity. Every one of these facilities needs cooling infrastructure. The procurement window is now.</p>
+                    <a href="intel/march-2026-data-center-construction-boom-cooling-demand.html" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Market</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/750-billion-capex-ai-data-center-construction-cooling-demand.html">$750 Billion in AI Data Center Capex Is Coming. The Cooling Industry Built for a 5 GW Market.</a></h2>
+                    <p class="article-preview">BloombergNEF: capex from the top 14 operators nearing $750B in 2026. 23 GW under construction globally, 75% in the US. The cooling supply chain's manufacturing capacity was built for 5-8 GW annually. CDU lead times, cold plate supply, and skilled labor are all bottlenecks.</p>
+                    <a href="intel/750-billion-capex-ai-data-center-construction-cooling-demand.html" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Energy</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/ai-data-centers-176-twh-power-consumption-cooling-crisis.html">US Data Centers Burn 176 TWh a Year. Between 53 and 70 TWh of That Goes Purely to Cooling.</a></h2>
+                    <p class="article-preview">4.4% of total US electricity. EPRI projects 9-17% by 2030. The efficiency delta between air cooling and liquid cooling at national scale represents tens of TWh of potential savings. The economic argument for liquid cooling is no longer about rack density. It is about the grid.</p>
+                    <a href="intel/ai-data-centers-176-twh-power-consumption-cooling-crisis.html" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Water</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/ai-data-center-water-consumption-surge-liquid-cooling-race.html">Liquid Cooling Was Supposed to Solve the Water Problem. The Data Says Otherwise.</a></h2>
+                    <p class="article-preview">Water capacity needed by 2030: up to 1.45 billion gallons per day. Indirect water through power plants accounts for 72% of total consumption. Direct-to-chip systems still reject heat to cooling towers. The only zero-water path has higher energy costs. The water math is the cooling industry's biggest unsolved problem.</p>
+                    <a href="intel/ai-data-center-water-consumption-surge-liquid-cooling-race.html" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-meta">
+                        <span class="blog-post-tag">Vendor</span>
+                        <span class="blog-post-date">March 31, 2026</span>
+                    </div>
+                    <h2><a href="intel/panasonic-liquid-cooling-europe-ai-data-centers-tecnair.html">Panasonic Enters European Liquid Cooling. The Tecnair Acquisition Was the Setup.</a></h2>
+                    <p class="article-preview">400kW and 800kW CDUs. R1234ze(E) refrigerant at GWP of 1. Free-cooling threshold at 10°C. This is a northern Europe play, targeting colocation and enterprise rather than hyperscale. The first major Japanese manufacturer to enter European data center liquid cooling.</p>
+                    <a href="intel/panasonic-liquid-cooling-europe-ai-data-centers-tecnair.html" class="read-more">Read more →</a>
+                </article>
 
 <article class="blog-post">
                     <div class="blog-post-meta">
