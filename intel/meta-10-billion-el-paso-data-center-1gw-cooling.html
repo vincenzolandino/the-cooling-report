@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Is Spending $10 Billion on a 1 GW Data Center in the Chihuahuan Desert. The Cooling Architecture Will Be Watched Closely. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Meta boosted its El Paso data center investment from $1.5B to $10B, targeting 1 GW by 2028 with closed-loop liquid cooling and zero operational water claims in a desert that hits 100°F for months. The thermal design challenge is real, and the contradiction with Meta's simultaneous gas plant buildout in Louisiana is hard to ignore.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/meta-10-billion-el-paso-data-center-1gw-cooling.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Meta Is Spending $10 Billion on a 1 GW Data Center in the Chihuahuan Desert. The Cooling Architecture Will Be Watched Closely.">
+    <meta property="og:description" content="Meta boosted its El Paso data center investment from $1.5B to $10B, targeting 1 GW by 2028 with closed-loop liquid cooling and zero operational water claims in a desert that hits 100°F for months. The thermal design challenge is real, and the contradiction with Meta's simultaneous gas plant buildout in Louisiana is hard to ignore.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/meta-10-billion-el-paso-data-center-1gw-cooling.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meta Is Spending $10 Billion on a 1 GW Data Center in the Chihuahuan Desert. The Cooling Architecture Will Be Watched Closely.">
+    <meta name="twitter:description" content="Meta boosted its El Paso data center investment from $1.5B to $10B, targeting 1 GW by 2028 with closed-loop liquid cooling and zero operational water claims in a desert that hits 100°F for months. The thermal design challenge is real, and the contradiction with Meta's simultaneous gas plant buildout in Louisiana is hard to ignore.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .hero-image { width: 100%; margin-bottom: 28px; }
+        .article-page .hero-image img { width: 100%; height: auto; border-radius: 6px; }
+        .article-page .hero-image figcaption { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 8px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        .inline-chart { width: 100%; margin: 24px 0; padding: 20px; background: rgba(13,118,128,0.04); border: 1px solid var(--border); border-radius: 6px; }
+        .inline-chart .chart-title { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 16px; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../resources.html">Resources</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Infrastructure</span>
+                <span class="date">March 31, 2026</span>
+            </div>
+            <h1>Meta Is Spending $10 Billion on a 1 GW Data Center in the Chihuahuan Desert. The Cooling Architecture Will Be Watched Closely.</h1>
+            <figure class="hero-image">
+                <img src="images/meta-el-paso-data-center-desert-cooling.jpg" alt="Aerial view of a large-scale data center campus under construction in a desert region">
+                <figcaption>Large-scale data center construction in the American Southwest. / File photo</figcaption>
+            </figure>
+            <div class="body">
+                <p>Six hundred percent.</p>
+
+                <p>That is how much Meta increased its El Paso investment in a single announcement. <a href="https://www.cnbc.com/2026/03/26/meta-to-spend-10-billion-on-ai-data-center-in-el-paso-1gw-by-2028.html" target="_blank">What was a $1.5 billion commitment became a $10 billion one on March 26</a>, when Gary Demasi, Meta's VP of Data Center Development, took the stage at the Borderplex Alliance summit and laid out the plan. One point two million square feet. One gigawatt of IT capacity by 2028. Closed-loop liquid cooling. Zero operational water use for the majority of the year.</p>
+
+                <p>El Paso averages 302 days of sunshine annually. Summer temperatures clear 100°F and stay there for months. The Chihuahuan Desert is one of the hottest, driest operating environments in North America. Meta is planning to build the equivalent of a small power grid's worth of compute there, and they are claiming to do it without drawing meaningful water from local supplies. The cooling industry should pay close attention to whether that claim holds at 1 GW.</p>
+
+                <h2>What Closed-Loop Actually Means at This Scale</h2>
+
+                <p>Meta has not released full mechanical specifications for the El Paso facility, but closed-loop liquid cooling at gigawatt scale in a desert environment points toward a specific set of engineering choices. The defining constraint is heat rejection without evaporation. If water is circulating in a closed loop and the facility claims zero operational water use for the bulk of the year, that heat has to go somewhere through dry means: air-cooled heat exchangers, dry coolers, or adiabatic systems that use water only at peak ambient temperature thresholds.</p>
+
+                <p>The challenge is that dry heat rejection at extreme ambient temperatures is capital-intensive and imposes a hard ceiling on cooling capacity per square foot. A dry cooler rejecting heat to 105°F ambient air needs a large surface area and high airflow to achieve the same rejection capacity it would manage easily at 65°F. Scaling that to a gigawatt facility in El Paso means either a very large heat rejection footprint, accepted capacity reduction during peak summer conditions, or a hybrid approach that introduces water only when dry rejection is insufficient. The "zero operational water for majority of the year" language in Meta's announcement is precise wording. The qualifier is doing significant load-bearing work in that sentence.</p>
+
+                <p>Meta's comparison to a regional golf course frames the water footprint for local stakeholders. A typical golf course in the El Paso region consumes somewhere between 150 million and 300 million gallons annually depending on acreage and irrigation practices. At 1 GW, if the closed-loop system operates as described, the comparison may hold. A 1 GW facility running even modest evaporative cooling tower makeup during summer peak would likely exceed it. The framing is intended to reassure; the audit will be in the operational data.</p>
+
+                <div class="inline-chart">
+                    <div class="chart-title">Meta El Paso — investment and capacity at a glance</div>
+                    <svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                        <style>
+                            .bar-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #555; }
+                            .bar-value { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #0D7680; font-weight: 600; }
+                            .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #999; text-transform: uppercase; letter-spacing: 0.04em; }
+                        </style>
+                        <text x="20" y="22" class="section-label">Investment (USD)</text>
+                        <!-- Original $1.5B bar -->
+                        <rect x="20" y="32" width="22" height="22" rx="3" fill="#0D7680" opacity="0.3"/>
+                        <text x="50" y="47" class="bar-label">Original commitment (2024)</text>
+                        <text x="370" y="47" class="bar-value">$1.5B</text>
+                        <!-- New $10B bar -->
+                        <rect x="20" y="64" width="148" height="22" rx="3" fill="#0D7680" opacity="0.82"/>
+                        <text x="174" y="79" class="bar-label">Revised commitment (March 2026)</text>
+                        <text x="370" y="79" class="bar-value">$10B</text>
+
+                        <text x="20" y="118" class="section-label">Capacity target by 2028</text>
+                        <rect x="20" y="128" width="180" height="22" rx="3" fill="#0D7680" opacity="0.68"/>
+                        <text x="206" y="143" class="bar-label">IT capacity</text>
+                        <text x="370" y="143" class="bar-value">1.0 GW</text>
+
+                        <text x="20" y="182" class="section-label">Jobs</text>
+                        <rect x="20" y="192" width="80" height="18" rx="3" fill="#0D7680" opacity="0.45"/>
+                        <text x="106" y="205" class="bar-label">4,000+ construction (peak) / 300+ permanent</text>
+                    </svg>
+                </div>
+
+                <h2>The Water Restoration Commitment</h2>
+
+                <p>Meta's stated goal is to restore 200% of consumed water to local watersheds by 2030. That program includes a partnership with DigDeep, a nonprofit focused on water access in underserved communities, to bring clean water to more than 100 homes in the El Paso region. The $500,000 grant to El Paso Public Schools for STEM education fits the same community-investment pattern Meta has deployed at other large domestic campuses.</p>
+
+                <p>The 200% restoration commitment matters most in a region where El Paso sits atop the Hueco Bolson aquifer, a finite and already-stressed groundwater resource that supplies most of the region's municipal water. Restoring twice what the facility consumes, if structured through verified watershed projects and aquifer recharge programs, is a substantive offset. The credibility depends entirely on how the water accounting is structured and independently audited over time. Pledge and performance are different instruments.</p>
+
+                <p>For the cooling industry, the more interesting question is how the facility achieves the low-consumption baseline in the first place. If the answer is advanced closed-loop design with adiabatic assist only at extreme temperature thresholds, the El Paso campus will serve as a proof point for liquid cooling in harsh climates. That proof point is worth having. Most of the industry's successful closed-loop deployments have been built in favorable ambient conditions. A 1 GW validation in the Chihuahuan Desert is a different order of evidence.</p>
+
+                <h2>The Louisiana Contradiction</h2>
+
+                <p>Meta did not stop at El Paso on March 26. The same week, the company confirmed plans to build ten gas-fired power plants at its Hyperion campus in Louisiana, <a href="https://www.cnbc.com/2026/03/26/meta-to-spend-10-billion-on-ai-data-center-in-el-paso-1gw-by-2028.html" target="_blank">totaling 7.5 GW of generation capacity at roughly $11 billion</a>. That announcement ran alongside the El Paso story in most coverage. Most treated them as separate items.</p>
+
+                <p>They are not separate. Meta's <a href="https://www.cnbc.com/2026/03/26/meta-to-spend-10-billion-on-ai-data-center-in-el-paso-1gw-by-2028.html" target="_blank">total 2026 capital expenditure trajectory sits at $135 billion</a>. The company has contracted more than <a href="https://www.cnbc.com/2026/03/26/meta-to-spend-10-billion-on-ai-data-center-in-el-paso-1gw-by-2028.html" target="_blank">5,000 MW of clean power for the Texas grid</a>, and the El Paso facility targets LEED Gold certification. That is the public narrative. The Louisiana gas plant buildout is the operational reality. Ten gas peakers at a hyperscale campus are not a backup system. They are the primary generation strategy for a load that existing clean power procurement cannot supply at the reliability levels AI inference requires.</p>
+
+                <p>What the combination tells you is what every serious operator understands but rarely states plainly: at gigawatt scale, the grid as it currently exists cannot guarantee uptime for this class of workload. You either overbuild renewable contracts and absorb curtailment losses, or you put gas generation on-site and run it when the grid cannot keep up. Meta is doing the latter in Louisiana while presenting the Texas strategy in cleaner terms. Neither approach is dishonest. Both are rational given the constraints. The combination is simply a more complete picture of what building AI infrastructure at this scale actually costs, in every sense of that word.</p>
+
+                <h2>What 1 GW Means for Cooling Equipment Supply Chains</h2>
+
+                <p>The procurement consequences of a 1 GW facility on a two-year build timeline are large and will move markets. At full capacity, the El Paso campus requires cooling infrastructure at a scale that few vendors can supply at the volumes and lead times involved. Closed-loop liquid cooling at 1 GW means tens of thousands of cold plates or direct-to-chip manifolds, dry cooler arrays measured in hundreds of units, closed-circuit fluid distribution systems spanning millions of square feet, and leak detection and monitoring infrastructure to match throughout.</p>
+
+                <p>The 4,000 construction jobs at peak are a rough indicator of build complexity. A typical hyperscale campus at 100 to 200 MW might peak at 500 to 800 construction workers. Meta is effectively building several facilities simultaneously on a single site, compressing what would normally be multi-year sequential phases into parallel workstreams. The vendors supplying cooling equipment into that project will face qualification, delivery, and installation challenges that stress supply chain depth in ways smaller contracts do not.</p>
+
+                <p>Vertiv, Schneider Electric, Munters, and the liquid cooling specialists currently competing for hyperscaler contracts all have reason to watch El Paso closely. A project at this scale sets procurement precedents that echo through the broader market. What Meta specifies and validates at El Paso in 2026 will shape what gets standardized across new construction in 2027 and 2028.</p>
+
+                <h2>The Desert as a Proving Ground</h2>
+
+                <p>The cooling industry has spent years debating whether closed-loop, water-minimal architectures can scale to the densities AI compute requires. Most of that debate has played out in forgiving climates: the Pacific Northwest, Scandinavia, Ireland, the upper Midwest. El Paso is not forgiving. The ambient conditions there stress every heat rejection assumption.</p>
+
+                <p>If Meta's closed-loop liquid-cooled architecture at 1 GW delivers on the zero operational water claim through a full West Texas summer, it will be the most compelling real-world proof point the industry has seen for extreme-climate thermal design at this scale. If it does not, that failure will be equally instructive. Either outcome gives the cooling sector a 1 GW test case to analyze by the end of 2028.</p>
+
+                <p>Gary Demasi and his team chose El Paso for real reasons: land availability, transmission access, the Texas grid's structure, and regulatory predictability. The thermal environment was a constraint they accepted, not an advantage they sought. That the facility is being built there anyway, with these cooling commitments attached, is the clearest possible statement of where the technology is expected to perform.</p>
+
+                <p>The desert will provide the answer. Build accordingly.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/meta-10-billion-el-paso-data-center-1gw-cooling.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/meta-10-billion-el-paso-data-center-1gw-cooling.html&text=Meta%20Is%20Spending%20%2410%20Billion%20on%20a%201%20GW%20Data%20Center%20in%20the%20Chihuahuan%20Desert" target="_blank">X</a>
+                    <a href="mailto:?subject=Meta%20Is%20Spending%20%2410%20Billion%20on%20a%201%20GW%20Data%20Center%20in%20the%20Chihuahuan%20Desert&body=https://thecoolingreport.com/intel/meta-10-billion-el-paso-data-center-1gw-cooling.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/meta-10-billion-el-paso-data-center-1gw-cooling.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYYCLVFLEF');
+    </script>
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+</body>
+</html>

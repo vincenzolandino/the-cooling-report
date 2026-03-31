@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA Says 45°C Cooling Water Eliminates Chillers. Here Is What That Changes for Data Center Infrastructure. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Jensen Huang says Vera Rubin chips can run on 45°C water, removing chillers from the cooling loop entirely. The facility design consequences are enormous: lower capex, lower opex, less water, and a mechanical plant that needs to be redesigned from scratch.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="NVIDIA Says 45°C Cooling Water Eliminates Chillers. Here Is What That Changes for Data Center Infrastructure.">
+    <meta property="og:description" content="Jensen Huang says Vera Rubin chips can run on 45°C water, removing chillers from the cooling loop entirely. The facility design consequences are enormous: lower capex, lower opex, less water, and a mechanical plant that needs to be redesigned from scratch.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NVIDIA Says 45°C Cooling Water Eliminates Chillers. Here Is What That Changes for Data Center Infrastructure.">
+    <meta name="twitter:description" content="Jensen Huang says Vera Rubin chips can run on 45°C water, removing chillers from the cooling loop entirely. The facility design consequences are enormous: lower capex, lower opex, less water, and a mechanical plant that needs to be redesigned from scratch.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .hero-image { width: 100%; margin-bottom: 28px; }
+        .article-page .hero-image img { width: 100%; height: auto; border-radius: 6px; }
+        .article-page .hero-image figcaption { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 8px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        .inline-chart { width: 100%; margin: 24px 0; padding: 20px; background: rgba(13,118,128,0.04); border: 1px solid var(--border); border-radius: 6px; }
+        .inline-chart .chart-title { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 16px; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../resources.html">Resources</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Technology</span>
+                <span class="date">March 31, 2026</span>
+            </div>
+            <h1>NVIDIA Says 45°C Cooling Water Eliminates Chillers. Here Is What That Changes for Data Center Infrastructure.</h1>
+            <figure class="hero-image">
+                <img src="images/nvidia-hot-water-cooling-vera-rubin.jpg" alt="Direct-to-chip liquid cooling manifolds on a high-density GPU server rack">
+                <figcaption>Direct-to-chip liquid cooling infrastructure at a hyperscale GPU cluster. / File photo</figcaption>
+            </figure>
+            <div class="body">
+                <p>One number. Forty-five degrees Celsius.</p>
+
+                <p>That is the cooling water inlet temperature at which NVIDIA says its Vera Rubin processors can operate without performance degradation. Jensen Huang stated it directly: <a href="https://blogs.nvidia.com/blog/blackwell-platform-water-efficiency-liquid-cooling-data-centers-ai-factories/" target="_blank">"With 45 degrees Celsius, no water chillers are necessary for data centers."</a> If you have been watching the trajectory of liquid cooling adoption, you know why that sentence matters. Chillers are among the largest capital expenditures in a data center mechanical plant. They are also among the largest consumers of energy and water. Removing them from the loop changes the facility economics at every level: construction cost, operational cost, water consumption, and physical footprint.</p>
+
+                <p>This is the single most consequential cooling infrastructure specification change in 2026. The operators who understand it are already redesigning their mechanical plants around that number.</p>
+
+                <h2>Why Chiller-Free Is a Fundamentally Different Building</h2>
+
+                <p>Traditional data center cooling relies on chilled water loops operating at 7 to 15°C supply temperatures. Producing that cold water requires vapor-compression chillers running continuously, consuming electricity to drive compressors, and rejecting heat through cooling towers or dry coolers. <a href="https://www.networkworld.com/article/4135239/raising-the-temp-on-liquid-cooling.html" target="_blank">Cooling accounts for up to 40% of a typical data center's electricity consumption</a>, and chillers are a dominant share of that load.</p>
+
+                <p>A 45°C supply temperature requirement changes the entire thermal rejection strategy. At that temperature, cooling towers and dry coolers can reject heat directly to the atmosphere using the wet-bulb or dry-bulb temperature differential without mechanical refrigeration, across most climate zones and for most of the calendar year. The mechanical plant simplifies radically. Fewer moving parts. No refrigerant circuits. Lower maintenance burden. Lower failure risk on the highest-density, most critical compute in the facility.</p>
+
+                <p>The direct energy savings are measurable. <a href="https://www.networkworld.com/article/4135239/raising-the-temp-on-liquid-cooling.html" target="_blank">Direct-to-chip cooling uses 31% less power than traditional air cooling</a>. Vertiv benchmarks <a href="https://www.fierce-network.com/cloud/nvidia-has-no-chill" target="_blank">put liquid cooling energy reduction at up to 25% of facility consumption</a>. AWS reported <a href="https://www.fierce-network.com/cloud/nvidia-has-no-chill" target="_blank">46% reduced energy consumption alongside 12% increased compute performance</a> after shifting to liquid-cooled infrastructure. At 50 megawatts of IT load, the projected annual savings reach approximately <a href="https://blogs.nvidia.com/blog/blackwell-platform-water-efficiency-liquid-cooling-data-centers-ai-factories/" target="_blank">$4 million</a>, assuming data centers spend between <a href="https://www.networkworld.com/article/4135239/raising-the-temp-on-liquid-cooling.html" target="_blank">$1.9 and $2.8 million per megawatt annually</a>.</p>
+
+                <p>That math gets more favorable when you factor in chiller capital costs, which typically range from $500 to $1,500 per ton of cooling capacity, plus the associated electrical infrastructure, controls, and ongoing maintenance. A 50 MW AI data center running at modern PUE targets might require 2,000 to 4,000 tons of cooling capacity. The chiller plant alone represents tens of millions of dollars in equipment that simply does not need to exist.</p>
+
+                <h2>300x Water Efficiency</h2>
+
+                <p>The water story is equally consequential. NVIDIA claims <a href="https://blogs.nvidia.com/blog/blackwell-platform-water-efficiency-liquid-cooling-data-centers-ai-factories/" target="_blank">direct-to-chip liquid cooling achieves a 300x improvement in water efficiency compared to air cooling</a>. That figure reflects the difference between evaporative cooling towers consuming large volumes of water to reject heat at scale versus a closed-loop or near-closed-loop liquid system that circulates the same water through the facility repeatedly with minimal evaporative loss.</p>
+
+                <p>This matters because water availability is already a hard constraint for data center siting in many markets. The hyperscalers are facing permitting resistance, municipal water allocation limits, and state-level reporting requirements that did not exist five years ago. A cooling architecture that dramatically reduces consumptive water use removes one of the most common site selection blockers. At 45°C operating temperature, the facility can use higher approach temperatures in its heat rejection equipment, which reduces or eliminates the need for evaporative cooling towers entirely in some climates, moving to dry coolers that reject heat purely through convection and do not consume process water.</p>
+
+                <h2>The GB200 and GB300 Efficiency Numbers</h2>
+
+                <p>The architecture driving this change is the Blackwell NVLink rack scale platform. The <a href="https://blogs.nvidia.com/blog/blackwell-platform-water-efficiency-liquid-cooling-data-centers-ai-factories/" target="_blank">GB200 NVL72 delivers 25x energy efficiency gains over its predecessor</a> for AI inference workloads. The GB300 NVL72 extends that to 30x. These are gains measured at the compute level, meaning the useful AI work performed per watt of power consumed. More work per watt means less heat generated per unit of AI output. The thermal density per rack goes up because the absolute power draw increases, but the heat generated per inference, per training step, or per token is dramatically lower.</p>
+
+                <p>The implication for cooling design is that you are building a higher-density facility that produces more AI throughput per square foot but needs extremely capable thermal management at the rack level. Air cooling cannot reach the rack densities these systems require. The GPU clusters in Blackwell-class deployments run at 30 to 100 kilowatts per rack or more. No CRAC unit, in-row cooler, or rear-door heat exchanger handles that load adequately. Direct-to-chip liquid is not optional for these systems. It is a prerequisite.</p>
+
+                <div class="inline-chart">
+                    <div class="chart-title">Liquid cooling adoption status — current data center deployments</div>
+                    <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                        <style>
+                            .donut-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #444; }
+                            .donut-pct { font-family: 'JetBrains Mono', monospace; font-size: 13px; fill: #0D7680; font-weight: 600; }
+                        </style>
+                        <!-- Air only: 45% -->
+                        <rect x="20" y="40" width="120" height="28" rx="3" fill="#0D7680" opacity="0.2"/>
+                        <rect x="20" y="40" width="54" height="28" rx="3" fill="#0D7680" opacity="0.85"/>
+                        <text x="155" y="59" class="donut-label">Air only</text>
+                        <text x="290" y="59" class="donut-pct">45%</text>
+                        <!-- Hybrid: 42% -->
+                        <rect x="20" y="84" width="120" height="28" rx="3" fill="#0D7680" opacity="0.2"/>
+                        <rect x="20" y="84" width="50" height="28" rx="3" fill="#0D7680" opacity="0.65"/>
+                        <text x="155" y="103" class="donut-label">Hybrid (air + liquid)</text>
+                        <text x="290" y="103" class="donut-pct">42%</text>
+                        <!-- Fully liquid: 12% -->
+                        <rect x="20" y="128" width="120" height="28" rx="3" fill="#0D7680" opacity="0.2"/>
+                        <rect x="20" y="128" width="14" height="28" rx="3" fill="#0D7680" opacity="0.9"/>
+                        <text x="155" y="147" class="donut-label">Fully liquid</text>
+                        <text x="290" y="147" class="donut-pct">12%</text>
+                        <text x="20" y="190" class="donut-label" fill="#999">Source: industry survey data. 59% of operators plan liquid implementation within 5 years.</text>
+                    </svg>
+                </div>
+
+                <h2>The Competition and the Adoption Gap</h2>
+
+                <p>NVIDIA is not alone at elevated water temperatures. Accelsius operates its two-phase immersion cooling systems at <a href="https://www.fierce-network.com/cloud/nvidia-has-no-chill" target="_blank">51 to 55°C</a>, pushing the threshold even higher and enabling heat reuse scenarios in district heating or industrial processes. LiquidStack, Supermicro, and Lenovo's Neptune platform are all positioned in the 45°C-plus operating range. The market around this temperature band is forming fast.</p>
+
+                <p>The liquid cooling market <a href="https://www.fierce-network.com/cloud/nvidia-has-no-chill" target="_blank">nearly doubled in 2025 to approximately $3 billion</a> and is projected to reach roughly $7 billion by 2029. That growth is coming entirely from AI infrastructure. The traditional enterprise data center market is not driving it. Hyperscalers building GPU clusters are driving it.</p>
+
+                <p>And yet <a href="https://www.networkworld.com/article/4135239/raising-the-temp-on-liquid-cooling.html" target="_blank">only 12% of data centers are fully liquid-cooled today</a>. <a href="https://www.networkworld.com/article/4135239/raising-the-temp-on-liquid-cooling.html" target="_blank">56% of operators cite high upfront costs</a> as the primary barrier. 53% believe air cooling is adequate for their current workloads. 29% point to a lack of standardization across vendors and platforms.</p>
+
+                <p>That adoption gap is closing, and not gradually. IBM demonstrated hot-water cooling as early as 2012 on its zEnterprise EC12 mainframe systems, circulating water at up to 60°C through cold plates attached directly to processor modules. The technology worked. The industry moved on. The difference now is that the AI compute platforms leave no alternative. You cannot air-cool a 72-GPU NVLink rack at 100 kilowatts. The physics close that door completely.</p>
+
+                <h2>What This Means for Facilities Being Planned Today</h2>
+
+                <p>The operators who are still designing AI data centers around chilled water plants are building the wrong building. The capital expenditure for that mechanical plant, the energy to run it, and the water it consumes are all costs that a chiller-free 45°C direct-to-chip design avoids. The savings are not marginal. At scale, they represent hundreds of millions of dollars over a facility's operating life.</p>
+
+                <p>The redesign required is not trivial. Facility managers who have spent careers managing chilled water systems, CRAC unit layouts, and raised-floor air distribution need to learn a different discipline. Piping design, leak detection, coolant chemistry, and manifold infrastructure are not the same engineering domain as traditional HVAC-based cooling. The workforce transition is real, and it takes time.</p>
+
+                <p>But the direction is not ambiguous. Jensen Huang gave the industry a specification: 45°C inlet water, no chillers required. The hardware that runs on that specification is shipping now. The facilities being commissioned on 2026 and 2027 timelines that still include vapor-compression chiller plants are already behind the curve.</p>
+
+                <p><a href="https://www.fierce-network.com/cloud/nvidia-has-no-chill" target="_blank">59% of data centers plan to implement liquid cooling within five years</a>. The ones moving on that timeline with chiller-free mechanical designs will come out structurally ahead. The ones that treat it as a later-phase upgrade will spend the intervening years paying for infrastructure they are going to remove anyway.</p>
+
+                <p>Forty-five degrees. That is the number. Build around it.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html&text=NVIDIA%20Says%2045%C2%B0C%20Cooling%20Water%20Eliminates%20Chillers" target="_blank">X</a>
+                    <a href="mailto:?subject=NVIDIA%20Says%2045%C2%B0C%20Cooling%20Water%20Eliminates%20Chillers&body=https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYYCLVFLEF');
+    </script>
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+</body>
+</html>
