@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Direct-to-Chip Liquid Cooling Actually Works: The Engineering Behind the Cold Plate | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="A technical reference for the full direct-to-chip cooling loop: cold plate to manifold to CDU to heat rejection. Operating pressures, flow rates, fluid chemistry, and the engineering decisions at each stage.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/how-direct-to-chip-liquid-cooling-works-engineering-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How Direct-to-Chip Liquid Cooling Actually Works: The Engineering Behind the Cold Plate">
+    <meta property="og:description" content="A technical reference for the full DTC cooling loop: cold plate to manifold to CDU to heat rejection. Real operating parameters, not marketing numbers.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/how-direct-to-chip-liquid-cooling-works-engineering-guide.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How Direct-to-Chip Liquid Cooling Actually Works: The Engineering Behind the Cold Plate">
+    <meta name="twitter:description" content="A technical reference for the full DTC cooling loop. Real operating parameters, not marketing numbers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../resources.html">Resources</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Guide</span>
+                <span class="date">April 2, 2026</span>
+            </div>
+            <h1>How Direct-to-Chip Liquid Cooling Actually Works: The Engineering Behind the Cold Plate</h1>
+            <div class="body">
+                <p>Vendor presentations show a cold plate on a chip and an arrow labeled "coolant." The reality involves four distinct engineering stages, each with its own fluid dynamics, pressure constraints, material compatibility requirements, and failure modes. This is the full loop, stage by stage, with the operating parameters that matter.</p>
+
+                <h2>Stage 1: The Cold Plate</h2>
+
+                <p>The cold plate is a metal block, typically copper or aluminum, machined with internal channels that sit directly on the processor package. Thermal interface material (TIM) fills the gap between the chip's integrated heat spreader and the cold plate's contact surface. The quality of this thermal interface is the single most important variable in the entire system. A 0.1 mm air gap in the TIM application can increase thermal resistance by 20% or more.</p>
+
+                <p>Coolant enters the cold plate through an inlet port, flows through the internal channel geometry, absorbs heat from the processor through conductive transfer from the metal walls, and exits through an outlet port. The channel geometry varies by manufacturer. Some use simple serpentine patterns. Others use microfinned or skived fin structures that increase the surface area in contact with the coolant. More surface area means more heat transfer per unit of flow, but also means higher pressure drop through the cold plate.</p>
+
+                <p><strong>Single-phase operating parameters:</strong> Coolant is a propylene glycol and water blend, typically 30/70 or 40/60 ratio. Inlet temperature 25 to 40 degrees Celsius. Flow rate 1.0 to 1.5 LPM per cold plate for a 300 to 500W chip, scaling to 1.5 to 2.5 LPM for chips above 700W. Pressure drop across the cold plate: 3 to 8 PSI depending on channel geometry and flow rate. Outlet temperature 10 to 15 degrees Celsius above inlet for a fully loaded chip.</p>
+
+                <p><strong>Two-phase operating parameters:</strong> Coolant is a refrigerant (historically 3M Novec, transitioning to HFO-based fluids like Chemours Opteon). Inlet pressure 130 to 150 PSI. The refrigerant enters as a subcooled liquid and undergoes partial or full vaporization at the chip surface. Outlet is a two-phase mixture of liquid and vapor. The ratio of vapor to liquid (quality) at the outlet depends on the thermal load. A chip at full TDP might push outlet quality to 60 to 80% vapor. Flow rates are lower than single-phase, typically 0.3 to 0.8 LPM per cold plate, because the latent heat absorbed during vaporization carries far more energy per unit mass.</p>
+
+                <h2>Stage 2: The Manifold and Distribution</h2>
+
+                <p>Coolant travels between cold plates and the CDU through a manifold system. The manifold is the plumbing backbone of the rack. It typically consists of a supply header that distributes coolant from the CDU to individual server nodes, and a return header that collects heated coolant (or two-phase mixture) and routes it back.</p>
+
+                <p>The connections between servers and the manifold are where the engineering gets interesting. Quick-disconnect couplings allow servers to be connected and disconnected from the cooling loop without draining the manifold. These couplings must be leak-free at operating pressure, compatible with the fluid chemistry, and operable without specialized tools. In a production data center, a technician needs to be able to swap a server node without shutting down the cooling loop for the rest of the rack.</p>
+
+                <p>Blind-mate connectors take this a step further. The server slides into the rack on rails and the fluid connections engage automatically as the server seats. No manual coupling required. The connector alignment is mechanical, built into the rail and server chassis design. This is the direction the OEMs are heading for high-volume deployments.</p>
+
+                <p>The manifold is also where <a href="https://thecoolingreport.com/intel/direct-to-chip-flow-balancing-problem-liquid-cooling.html">flow balancing</a> either happens or does not. Each branch of the manifold feeding a cold plate can include a flow restriction device, either a fixed orifice or a pressure-compensated regulator, to ensure even distribution. Without flow balancing, the cold plates closest to the pump (lowest pressure drop path) receive more flow than the cold plates at the end of the line. In a rack with 8 GPU nodes, the difference in flow between the first and last cold plate can be 15 to 25% without correction.</p>
+
+                <p><strong>Operating parameters:</strong> Manifold supply pressure is typically 40 to 50 PSI for single-phase and 130 to 150 PSI for two-phase. Total rack flow rates range from 10 to 40 LPM for single-phase (depending on the number of nodes and TDP per chip) and 3 to 15 LPM for two-phase. The manifold itself is usually stainless steel or high-grade polymer tubing rated for the operating pressure and fluid chemistry. Copper is avoided in manifolds carrying water-glycol because of galvanic corrosion risk when copper manifold components connect to aluminum cold plates. The material pairing matters.</p>
+
+                <h2>Stage 3: The Coolant Distribution Unit (CDU)</h2>
+
+                <p>The CDU is the heat exchanger that sits between the rack-level cooling loop and the facility-level heat rejection system. It receives heated coolant from the rack manifold return, transfers that heat to a secondary fluid loop (typically facility water), and sends cooled coolant back to the rack supply manifold.</p>
+
+                <p>In a single-phase system, the CDU is a liquid-to-liquid heat exchanger with a pump. Heated water-glycol from the rack loop passes through one side. Facility chilled water or condenser water passes through the other side. Heat transfers across the exchanger surfaces. The CDU pump drives the rack-side loop. Some CDUs include a secondary pump for the facility side. Most rely on the facility water loop's own pumps.</p>
+
+                <p>In a two-phase system, the CDU is a condenser. Two-phase mixture (liquid and vapor) returns from the rack. The vapor passes through a condenser where it rejects its latent heat to the facility water loop and returns to liquid form. A receiver tank collects the condensed liquid. A pump or gravity feed returns subcooled liquid to the rack supply manifold. The condenser design is critical because the rate at which it can process incoming vapor determines the maximum thermal load the system can handle. If the condenser backs up, vapor pressure in the return manifold increases and flow to the cold plates drops.</p>
+
+                <p><strong>Operating parameters:</strong> CDU capacity is rated in kilowatts. A rack-level CDU for a single-phase system typically handles 50 to 150 kW. For two-phase, 80 to 200 kW. Row-level CDUs can handle 200 to 500 kW or more. The facility water temperature entering the CDU matters enormously. At 15 degrees Celsius supply water, a CDU has maximum heat rejection capacity. At 30 degrees Celsius (warm water), the delta-T across the exchanger shrinks and capacity drops. NVIDIA has been pushing the industry toward <a href="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html">45 degree Celsius supply water</a>, which eliminates the need for chillers entirely but requires CDU and cold plate designs optimized for that higher inlet temperature.</p>
+
+                <h2>Stage 4: Heat Rejection</h2>
+
+                <p>Heat exits the building through one of three paths.</p>
+
+                <p><strong>Chilled water plant:</strong> Traditional approach. Mechanical chillers cool facility water to 7 to 15 degrees Celsius. That chilled water feeds the CDUs. The chillers reject heat to the outside air via cooling towers (evaporative, consuming water) or dry coolers (air-cooled, consuming no water but requiring more energy and physical space). This is the architecture that most existing data centers use. It works, but the chiller plant is a massive energy consumer and the cooling towers can use millions of gallons of water per year.</p>
+
+                <p><strong>Warm water direct rejection:</strong> If the cooling loop operates at high enough temperatures (supply water above 35 to 45 degrees Celsius), the CDU's facility-side water can be warm enough to reject its heat directly to the outside air through dry coolers, without a chiller in between. No mechanical refrigeration. No evaporative water loss. The energy savings are substantial: eliminating the chiller can cut <a href="https://thecoolingreport.com/intel/30-percent-cooling-electricity-component-level-savings.html">cooling energy consumption</a> by 30 to 50%. The constraint is climate. In hot, humid climates where ambient air temperature exceeds 40 degrees Celsius for extended periods, the delta-T between the warm water and the ambient air becomes too small for dry coolers to work. Supplemental cooling is needed for those conditions.</p>
+
+                <p><strong>Heat reuse:</strong> The heated facility water, instead of rejecting its thermal load to the atmosphere, feeds a district heating system, an industrial process, or an agricultural operation. <a href="https://thecoolingreport.com/intel/germany-heat-reuse-mandate.html">Germany's Energy Efficiency Act</a> mandates heat reuse for new data centers above 500 kW. The economics work when there is a consistent heat consumer within reasonable piping distance. The engineering works when the cooling loop operates at temperatures high enough to be useful as a heat source, typically above 50 degrees Celsius on the return side.</p>
+
+                <h2>The Full Loop in Numbers</h2>
+
+                <p>For a single-phase DTC system cooling a rack of 8 GPUs at 500W each (4 kW total GPU thermal load, roughly 8 to 10 kW total rack thermal load including memory, networking, and power delivery):</p>
+
+                <p>Coolant: propylene glycol/water 30/70. Total rack flow: 12 to 16 LPM. Supply pressure at manifold: 45 PSI. Pressure drop per cold plate: 5 PSI. Supply temperature: 35 degrees Celsius. Return temperature: 45 to 48 degrees Celsius. CDU capacity: 15 kW. Facility water supply: 20 degrees Celsius. Pump power: 50 to 100W.</p>
+
+                <p>For a two-phase DTC system cooling the same rack:</p>
+
+                <p>Coolant: HFO-based refrigerant. Total rack flow: 4 to 8 LPM. Supply pressure at manifold: 145 PSI. Pressure drop per cold plate: 10 to 20 PSI (variable with vapor generation). Supply temperature: 25 degrees Celsius (subcooled liquid). Return: two-phase mixture at 50 to 70% vapor quality. CDU/condenser capacity: 15 kW. Facility water supply: 20 degrees Celsius. Pump power: 30 to 60W (lower flow rate compensates for higher pressure).</p>
+
+                <p>The two-phase system uses less fluid, less flow, and less pump energy for the same thermal load. It also operates at three times the pressure, requires vapor-rated connectors, needs a condenser instead of a simple heat exchanger, and introduces two-phase flow dynamics that make the system harder to predict, harder to balance, and harder to scale.</p>
+
+                <p>Both systems work. The choice between them is not a thermal performance question. It is an operations question, a supply chain question, and increasingly, a regulatory question. The engineering is solvable either way. The decision is about which set of tradeoffs the operator is equipped to manage for the next 15 years.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/how-direct-to-chip-liquid-cooling-works-engineering-guide.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/how-direct-to-chip-liquid-cooling-works-engineering-guide.html&text=How%20Direct-to-Chip%20Liquid%20Cooling%20Actually%20Works" target="_blank">X</a>
+                    <a href="mailto:?subject=DTC%20Liquid%20Cooling%20Engineering%20Guide&body=https://thecoolingreport.com/intel/how-direct-to-chip-liquid-cooling-works-engineering-guide.html" target="_blank">Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

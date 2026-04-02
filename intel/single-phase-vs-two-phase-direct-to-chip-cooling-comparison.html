@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single-Phase vs Two-Phase Direct-to-Chip Cooling: Same Cold Plate, Completely Different Engineering | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Single-phase direct-to-chip runs a water-glycol blend at 50 PSI. Two-phase runs a refrigerant at 150 PSI with a phase change at the chip surface. Same form factor. Different physics, different failure modes, different scaling limits.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/single-phase-vs-two-phase-direct-to-chip-cooling-comparison.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Single-Phase vs Two-Phase Direct-to-Chip Cooling: Same Cold Plate, Completely Different Engineering">
+    <meta property="og:description" content="Single-phase runs water-glycol at 50 PSI. Two-phase runs refrigerant at 150 PSI with a phase change at the chip. Same form factor. Different physics entirely.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/single-phase-vs-two-phase-direct-to-chip-cooling-comparison.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Single-Phase vs Two-Phase Direct-to-Chip Cooling: Same Cold Plate, Completely Different Engineering">
+    <meta name="twitter:description" content="Single-phase runs water-glycol at 50 PSI. Two-phase runs refrigerant at 150 PSI with a phase change at the chip. Same form factor. Different physics entirely.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../resources.html">Resources</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Technology</span>
+                <span class="date">April 2, 2026</span>
+            </div>
+            <h1>Single-Phase vs Two-Phase Direct-to-Chip Cooling: Same Cold Plate, Completely Different Engineering</h1>
+            <div class="body">
+                <p>Both approaches mount a cold plate directly on the processor. Both circulate a liquid through that cold plate to absorb heat. Both return the heated fluid to a coolant distribution unit for heat rejection. From the outside of the server chassis, they look identical. From the inside of the cooling loop, they are completely different systems with different fluids, different pressures, different failure modes, and different scaling limits.</p>
+
+                <p>The industry tends to lump them together under "direct-to-chip liquid cooling." That obscures the engineering tradeoffs that determine which one actually works for a given deployment. Here is the breakdown.</p>
+
+                <h2>Single-Phase: The Automotive Radiator</h2>
+
+                <p>The simplest analogy is a car radiator. Coolant flows through a heat exchanger mounted on the engine. It absorbs heat. It stays liquid the entire time. A pump pushes it to a radiator where the heat is rejected to the air. The coolant returns to the engine and the cycle repeats.</p>
+
+                <p>In a data center, the "engine" is a GPU or CPU. The "radiator" is a CDU connected to a facility water loop or dry cooler. The coolant is typically a propylene glycol and water blend, the same chemistry used in automotive cooling and HVAC systems for decades. Supply pressures run around 40 to 50 PSI at the rack level. Flow rates per cold plate sit between 1.0 and 1.5 liters per minute depending on the thermal design power of the chip.</p>
+
+                <p>The fluid enters the cold plate as a liquid at one temperature, absorbs heat through convective transfer, and exits the cold plate as a liquid at a higher temperature. No phase change. No vapor. The delta-T between inlet and outlet is the entire thermal budget. A typical cold plate on a 500W GPU might see a 10 to 15 degree Celsius rise from inlet to outlet.</p>
+
+                <p><strong>Advantages:</strong> Simple plumbing. Inexpensive fluid. Off-the-shelf components. Water-glycol blends cost pennies per liter and are available from any industrial coolant supplier on earth. Fittings, manifolds, pumps, and heat exchangers are mature technologies. The maintenance technician who services the HVAC system can understand the cooling loop. Commissioning is straightforward. Leak detection is straightforward. Fluid disposal is straightforward.</p>
+
+                <p><strong>Limitations:</strong> Convective heat transfer without a phase change has a ceiling. Water-glycol can absorb roughly 4.0 to 4.2 kJ per kilogram per degree Celsius (its specific heat capacity). That is a lot for a liquid, but it means the only way to absorb more heat is to push more flow through the cold plate or accept a higher outlet temperature. At chip TDPs above 700 to 1,000 watts, the flow rates required to keep junction temperatures within spec start demanding larger pipe diameters, higher pump speeds, and more aggressive heat rejection at the CDU. The system scales, but it scales by getting bigger and louder.</p>
+
+                <h2>Two-Phase: The Automotive AC System</h2>
+
+                <p>A car's air conditioning system does not just circulate a liquid. It circulates a refrigerant that changes state. The refrigerant enters the evaporator as a liquid, absorbs heat from the cabin air, boils into a vapor, then travels to a condenser where it rejects its heat and returns to liquid form. The magic is in the phase change. When a liquid boils, it absorbs an enormous amount of energy, its latent heat of vaporization, without any temperature increase. That is why the AC blows cold air. The refrigerant is absorbing heat by changing state, not by getting warmer.</p>
+
+                <p>Two-phase direct-to-chip cooling works the same way. A refrigerant enters the cold plate as a liquid, typically at 130 to 150 PSI. The chip's heat causes the refrigerant to boil at the contact surface. The latent heat absorbed during that phase change is orders of magnitude greater per unit mass than what convective single-phase transfer can achieve. The vapor exits the cold plate, travels through tubing to a condenser (either rack-mounted or in the CDU), rejects its heat, returns to liquid, and flows back to the cold plate.</p>
+
+                <p>The system requires only small amounts of refrigerant. Where a single-phase loop might circulate liters of water-glycol per minute, a two-phase system can achieve equivalent or superior cooling with a fraction of the fluid volume. Some implementations use as little as 3 to 4 liters of refrigerant in the entire rack loop.</p>
+
+                <p><strong>Advantages:</strong> Superior heat transfer per unit of fluid. The latent heat of vaporization means a two-phase system can handle higher heat fluxes at the chip surface without proportionally increasing flow rate or pipe diameter. It can cool chips above 1,000W in a compact form factor without the large radiator footprint that single-phase systems require at those thermal loads. Zero water consumption if the system is fully closed-loop with air-cooled condensers. PUE values below 1.05 are achievable.</p>
+
+                <p><strong>Limitations:</strong> Everything about the system is more complex. The refrigerant is more expensive. Operating pressures are three times higher than single-phase (150 PSI vs 50 PSI). The system contains a vapor phase, which means two-phase flow dynamics, pressure fluctuations, and the possibility of flow instabilities that do not exist when the coolant stays liquid. Connectors and fittings must be rated for both liquid and vapor phases of the refrigerant and tested for chemical compatibility with the specific fluid chemistry. Maintenance requires understanding of refrigerant handling, not just plumbing. And the <a href="https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis.html">PFAS crisis</a> has thrown the entire fluid supply chain into uncertainty for two-phase systems that relied on fluorinated refrigerants.</p>
+
+                <h2>The Flow Balancing Difference</h2>
+
+                <p>Both systems face flow distribution challenges when multiple cold plates share a manifold. But the nature of the challenge is different.</p>
+
+                <p>In single-phase, the pressure drop across each cold plate varies with the thermal load on that chip. A hotter chip heats the coolant more, changes its viscosity, and alters the pressure drop. The variation is real but relatively small. A well-designed single-phase manifold with <a href="https://thecoolingreport.com/intel/direct-to-chip-flow-balancing-problem-liquid-cooling.html">properly sized flow restrictors</a> can keep imbalances within manageable limits across a range of workloads.</p>
+
+                <p>In two-phase, the problem is structural. A hotter chip generates more vapor. More vapor downstream creates higher back-pressure in that branch. Higher back-pressure redirects liquid flow to cooler branches. The flow imbalance is driven by the phase change itself, and it scales nonlinearly with thermal load. A chip that goes from 50% to 100% utilization does not just double its cooling demand. It fundamentally changes the pressure profile of its branch of the loop. Fixed orifices cannot adapt to this. The industry is actively working on pressure-compensated flow regulators and active valve solutions, but nothing has standardized yet.</p>
+
+                <h2>Where Each One Wins</h2>
+
+                <p><strong>Single-phase wins</strong> in brownfield retrofits, standard enterprise deployments, and any environment where operational simplicity and supply chain availability are the priority. If the facility has an existing chilled water loop and the IT team is comfortable with plumbing but not refrigeration, single-phase is the path that deploys without drama. It handles current-generation GPUs at 500 to 700W without breaking a sweat. Dell, HPE, and Lenovo all ship factory-integrated single-phase DTC options. The procurement channel is established.</p>
+
+                <p><strong>Two-phase wins</strong> in greenfield high-density builds where thermal performance per square foot is the primary constraint. Sovereign AI facilities in water-scarce regions where zero water consumption is mandated. HPC clusters contractually required to operate below PUE 1.10. Edge deployments where the compact form factor of a two-phase system, small pipes, minimal fluid volume, no large radiator, creates a deployability advantage. Military and defense applications where passive cooling reliability in harsh environments outweighs operational complexity.</p>
+
+                <p>The threshold where single-phase starts struggling and two-phase starts earning its complexity premium is somewhere around 1,000W per chip. NVIDIA's Blackwell B200 sits right on that line. Rubin will push past it. The GPU roadmap is writing the cooling architecture decision for every operator who has not already committed.</p>
+
+                <h2>The Convergence</h2>
+
+                <p>The industry is not going to pick one. Both will coexist. Single-phase direct-to-chip will be the volume play, the 80% solution for the 80% of deployments that need liquid cooling and need it to work reliably with the workforce and supply chain they have today. Two-phase direct-to-chip will be the performance play, the architecture that handles the thermal extremes of the next two GPU generations in the facilities that are being designed right now.</p>
+
+                <p>The operators who understand both, who can spec single-phase for their current fleet and two-phase for their next build, who know where the physics of each approach starts to bend and where it breaks, will make better procurement decisions than the ones who treat "liquid cooling" as a single category. It is not. It is two completely different systems that happen to share a form factor.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/single-phase-vs-two-phase-direct-to-chip-cooling-comparison.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/single-phase-vs-two-phase-direct-to-chip-cooling-comparison.html&text=Single-Phase%20vs%20Two-Phase%20Direct-to-Chip%20Cooling" target="_blank">X</a>
+                    <a href="mailto:?subject=Single-Phase%20vs%20Two-Phase%20DTC%20Cooling&body=https://thecoolingreport.com/intel/single-phase-vs-two-phase-direct-to-chip-cooling-comparison.html" target="_blank">Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
