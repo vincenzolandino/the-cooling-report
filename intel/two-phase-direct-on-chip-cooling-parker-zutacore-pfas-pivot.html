@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Phase Direct-on-Chip Cooling Had the Best Thermal Numbers in the Industry. Then the Fluid Disappeared. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Two-phase direct-on-chip cooling could handle 1,500 W/cm2 and push PUE below 1.03. Parker built the fittings. ZutaCore built the platform. 3M built the fluid. Then 3M walked away from PFAS entirely.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/two-phase-direct-on-chip-cooling-parker-zutacore-pfas-pivot.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Two-Phase Direct-on-Chip Cooling Had the Best Thermal Numbers in the Industry. Then the Fluid Disappeared.">
+    <meta property="og:description" content="Two-phase direct-on-chip cooling could handle 1,500 W/cm2 and push PUE below 1.03. Parker built the fittings. ZutaCore built the platform. 3M built the fluid. Then 3M walked away from PFAS entirely.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/two-phase-direct-on-chip-cooling-parker-zutacore-pfas-pivot.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/two-phase-direct-on-chip-cooling.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/two-phase-direct-on-chip-cooling.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Two-Phase Direct-on-Chip Cooling Had the Best Thermal Numbers in the Industry. Then the Fluid Disappeared.">
+    <meta name="twitter:description" content="Two-phase direct-on-chip cooling could handle 1,500 W/cm2 and push PUE below 1.03. Parker built the fittings. ZutaCore built the platform. 3M built the fluid. Then 3M walked away from PFAS entirely.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../resources.html">Resources</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Technology</span>
+                <span class="date">April 2, 2026</span>
+            </div>
+            <h1>Two-Phase Direct-on-Chip Cooling Had the Best Thermal Numbers in the Industry. Then the Fluid Disappeared.</h1>
+            <div class="body">
+                <p>The concept is elegant. Place a small evaporator directly on top of the processor. Fill it with a low-boiling-point dielectric fluid. The chip's heat causes the fluid to boil at the contact surface, absorbing enormous amounts of energy through the phase change from liquid to vapor. The vapor rises through a line to a condenser, rejects its heat, returns to liquid, and flows back to the chip by gravity and vapor pressure. No fans. No water. No moving parts in the cooling loop itself. PUE of 1.02 to 1.03. Sustained heat flux capacity of 1,500 W/cm2.</p>
+
+                <p>That is two-phase direct-on-chip cooling. On paper, it is the best thermal technology the data center industry has ever produced. In practice, it is a technology in the middle of an existential supply chain crisis.</p>
+
+                <h2>The Architecture Parker and ZutaCore Built</h2>
+
+                <p>The system that came closest to commercializing two-phase direct-on-chip cooling at scale was a collaboration between <a href="https://zutacore.com/">ZutaCore</a>, an Israeli company founded to build waterless cooling for high-density compute, and <a href="https://www.parker.com/us/en/additional-information/data-center-cooling.html">Parker Hannifin</a>, the Fortune 250 motion and control technology manufacturer that supplied the connectors, fittings, and fluid handling components.</p>
+
+                <p>ZutaCore's HyperCool platform works like this. An Enhanced Nucleation Evaporator (ENE) mounts directly onto the CPU or GPU package. The evaporator is small, compact enough to fit inside a standard 1U server chassis without modifying the server form factor. A dielectric refrigerant circulates through the evaporator, boils on contact with the processor surface, and the resulting vapor travels through tubing to a rack-mounted Heat Rejection Unit (HRU). The HRU condenses the vapor back to liquid. A Refrigerant Distribution Unit (RDU) manages flow across the rack, with connections between servers and manifold handled by Parker's quick-coupling connectors.</p>
+
+                <p>Parker's contribution was the plumbing. Their LIQUfit push-in fittings and Blind-Mate couplers (the 08KLPR04MENS, specifically) allowed servers to connect and disconnect from the rack manifold without tools, without dripping, without shutting down the cooling loop. Laurent Pouchard, Parker's Business Unit Manager for Direct OEM, described the design philosophy as "peace-of-mind leak-free connection solutions." The fittings were originally developed for water cooling and medical flows. Parker and ZutaCore tested them extensively against the dielectric fluid's two phases, gas and liquid, checking chemical compatibility, material aging, and seal integrity over time.</p>
+
+                <p>The numbers from the partnership were strong. The system required only 3.6 liters of dielectric fluid in a cycling flow, ten times less than water cooling systems. Energy consumption was 50% lower than air-cooled equivalents. A two-phase direct-on-chip system could cool more than 100 kW in a single rack without a large radiator, without the oversized pipe diameters that water-based systems require at those thermal loads, and without sacrificing any rack density. Three times the workloads in the same form factor. Zero water consumption.</p>
+
+                <p>ZutaCore's software-defined cooling (SDC) platform sat on top, adjusting processor frequency and cooling parameters in real time based on actual compute demand. The microprocessor frequency scales automatically. When the workload drops, so does the cooling output. When it spikes, the system responds without operator intervention.</p>
+
+                <h2>The Fluid That Made It Work</h2>
+
+                <p>All of this ran on 3M's Novec 7000 Engineered Fluid. A fluorocarbon with the right boiling point, the right dielectric properties, and the right thermal conductivity to make two-phase evaporative cooling practical in a server environment. 3M had spent decades developing this chemistry. The fluid was nonconductive, nonflammable, had zero ozone depletion potential, and in the event of a leak would evaporate without damaging components.</p>
+
+                <p>It was also a PFAS compound. A forever chemical.</p>
+
+                <p>On December 20, 2022, 3M announced it would <a href="https://thecoolingreport.com/intel/pfas-two-phase-immersion-cooling-crisis.html">exit all PFAS manufacturing by the end of 2025</a>. The company was staring down over 4,000 lawsuits and a $12.5 billion settlement with U.S. public water systems. The last day to place a new Novec order was March 31, 2025. Manufacturing shut down by year's end. Novec 7100, Novec 649, Fluorinert FC-72. Gone.</p>
+
+                <p>The hyperscalers moved first. <a href="https://www.servethehome.com/2-phase-immersion-cooling-halted-over-multi-billion-dollar-health-hazard-lawsuits/">Microsoft and Meta both backed away from two-phase immersion research by mid-2023</a>. Google followed. The liability math was straightforward: deploying a substance the EPA classifies as hazardous into a facility that operates for 20 to 30 years creates a cleanup obligation under Superfund that no procurement team can justify. The pivot to direct-to-chip cold plates happened fast.</p>
+
+                <h2>The Scramble for a Replacement</h2>
+
+                <p>ZutaCore did not abandon two-phase. They pivoted fluids.</p>
+
+                <p>The interim step was Chemours' Opteon SF33, a transitional chemistry. The longer play is <a href="https://www.chemours.com/en/news-media-center/all-news/press-releases/2023/chemours-announces-development-of-new-specialty-fluid-for-two-phase-immersion-cooling-opteon-2p50">Chemours Opteon 2P50</a>, an HFO-based (hydrofluoroolefin) fluid with zero ozone depletion potential and a global warming potential of 10. Not a PFAS compound. Samsung has qualified it. <a href="https://investors.chemours.com/news-releases/news-release-details/chemours-joins-forces-ntt-data-and-hibiya-engineering-ltd-full">NTT DATA and Hibiya Engineering signed on for a full-scale trial</a> announced in March 2025. French server manufacturer 2CRSi entered a Joint Development Agreement with Chemours after successful fluid qualification on their Atlantis and Octopus platforms. Commercial production is targeted for 2026 through a manufacturing agreement with Navin Fluorine.</p>
+
+                <p>ZutaCore themselves committed to a fully PFAS-free two-phase fluid <a href="https://www.datacenterdynamics.com/en/news/zutacores-two-phase-cooling-will-eliminate-pfas-in-2026/">by 2026</a>. They are working with R-1336mzz(Z), an HFO with very low GWP and zero ODP, as a transitional chemistry on the path to that goal.</p>
+
+                <p>But here is the problem. As of April 2026, Opteon 2P50 is still not in full commercial production. ZutaCore's PFAS-free promise extends into 2027 for full-scale availability. The only drop-in replacement available today is Syensqo's Galden PFPE fluid, which works as a Novec substitute but is itself a PFAS compound. It solves today's supply problem. It does not solve tomorrow's regulatory problem. The EU's <a href="https://echa.europa.eu/-/echa-publishes-updated-pfas-restriction-proposal">PFAS restriction proposal</a> covers over 10,000 substances. ECHA final opinions are expected by the end of 2026. The European Commission vote is anticipated in early 2027. General data center cooling fluids are not explicitly carved out with a long-term derogation.</p>
+
+                <h2>What Parker's Role Looks Like Now</h2>
+
+                <p>Parker's fittings and connectors are fluid-agnostic. The LIQUfit push-in fittings, the Blind-Mate couplers, the manifold connections between servers and rack-level distribution units: all of this works regardless of whether the loop carries Novec, Opteon 2P50, R-1336mzz(Z), or whatever chemistry eventually replaces them. The mechanical infrastructure Parker built for two-phase cooling applies equally to direct-to-chip cold plate loops, single-phase immersion circuits, and hybrid architectures.</p>
+
+                <p>That positions Parker well. The connector and fitting layer of the liquid cooling stack does not carry the regulatory risk that the fluid layer does. As the broader data center liquid cooling market grows toward <a href="https://www.delloro.com/news/data-center-liquid-cooling-market-to-approach-7-billion-by-2029-as-ai-deployments-accelerate/">$7 billion by 2029</a>, every deployment needs leak-free couplings, quick-disconnect manifolds, and chemically compatible tubing. Parker's catalog covers all of it.</p>
+
+                <h2>Where Two-Phase Still Makes Sense</h2>
+
+                <p>Two-phase cooling is retreating to the use cases where its thermal superiority is irreplaceable and the operational complexity is tolerable.</p>
+
+                <p>Sovereign AI in water-scarce regions. Military and defense, where <a href="https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/">Blackstone's acquisition of Advanced Cooling Technologies in March 2026</a> signals that private equity sees thermal management as critical defense infrastructure. Extreme-density HPC clusters contractually mandated below PUE 1.10. Edge deployments where passive cooling with no moving parts has a reliability advantage that justifies the fluid cost.</p>
+
+                <p>The Blackstone deal deserves a closer look. Blackstone Energy Transition Partners took a majority stake in ACT, a Lancaster, Pennsylvania company founded in 2003 that builds two-phase liquid cooling, heat pipes, phase change materials, and cold plates for data centers, space, and defense. Blackstone is the world's largest owner of data centers through QTS and the rest of its portfolio. Mark Zhu, Blackstone's managing director, said ACT is "well positioned for accelerated growth given the increasing importance of thermal management amid rising power intensity and AI innovation." Vertical integration. The company that owns the data centers is buying the company that cools them.</p>
+
+                <h2>The Verdict</h2>
+
+                <p>Two-phase direct-on-chip cooling remains the highest-performing thermal technology available for data center compute. The physics have not changed. What changed is the chemistry underneath it, and the legal and regulatory framework surrounding that chemistry. Until Chemours gets Opteon 2P50 into full commercial production and the EU finalizes its PFAS position, two-phase immersion lives in a liminal state: technically superior, commercially constrained, and dependent on a fluid that does not yet exist at scale.</p>
+
+                <p>Parker and ZutaCore built a system that could cool 100 kW racks with 3.6 liters of refrigerant and zero water. The architecture still works. The connectors still work. The software still works. The fluid does not.</p>
+
+                <p>That is the story of two-phase cooling in 2026. The best thermal numbers in the industry, waiting for a chemistry breakthrough that may or may not arrive on time.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/two-phase-direct-on-chip-cooling-parker-zutacore-pfas-pivot.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/two-phase-direct-on-chip-cooling-parker-zutacore-pfas-pivot.html&text=Two-Phase%20Direct-on-Chip%20Cooling%20Had%20the%20Best%20Numbers.%20Then%20the%20Fluid%20Disappeared." target="_blank">X</a>
+                    <a href="mailto:?subject=Two-Phase%20Direct-on-Chip%20Cooling&body=https://thecoolingreport.com/intel/two-phase-direct-on-chip-cooling-parker-zutacore-pfas-pivot.html" target="_blank">Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
