@@ -135,6 +135,14 @@
         .sidebar {
             position: sticky;
             top: 70px;
+            align-self: start;
+            max-height: calc(100vh - 90px);
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .sidebar::-webkit-scrollbar {
+            display: none;
         }
         .sidebar-header {
             font-family: var(--mono);
