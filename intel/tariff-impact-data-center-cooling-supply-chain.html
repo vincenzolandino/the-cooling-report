@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnam at 46%. China at 145%. The Tariff Math on Cooling Hardware. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Trump's reciprocal tariffs hit the countries where CDUs, cold plates, and liquid cooling components are manufactured. Here is the exposure, vendor by vendor.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/tariff-impact-data-center-cooling-supply-chain.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vietnam at 46%. China at 145%. The Tariff Math on Cooling Hardware.">
+    <meta property="og:description" content="Trump's reciprocal tariffs hit the countries where CDUs, cold plates, and liquid cooling components are manufactured. Here is the exposure, vendor by vendor.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/tariff-impact-data-center-cooling-supply-chain.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vietnam at 46%. China at 145%. The Tariff Math on Cooling Hardware.">
+    <meta name="twitter:description" content="Trump's reciprocal tariffs hit the countries where CDUs, cold plates, and liquid cooling components are manufactured. Here is the exposure, vendor by vendor.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .hero-image { width: 100%; margin-bottom: 28px; }
+        .article-page .hero-image img { width: 100%; height: auto; border-radius: 6px; }
+        .article-page .hero-image figcaption { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 8px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        .tariff-table { width: 100%; margin: 28px 0; border-collapse: collapse; font-family: var(--mono); font-size: 0.78rem; }
+        .tariff-table th { text-align: left; padding: 8px 12px; background: rgba(13,118,128,0.08); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem; border-bottom: 1px solid var(--border); }
+        .tariff-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        .tariff-table tr:last-child td { border-bottom: none; }
+        .tariff-table .high { color: #c0392b; font-weight: 600; }
+        .tariff-table .mid { color: #e67e22; font-weight: 600; }
+        .tariff-table .low { color: var(--accent); font-weight: 600; }
+        .tariff-table .exempt { color: #27ae60; font-weight: 600; }
+        .data-callout { width: 100%; margin: 28px 0; padding: 20px 24px; background: rgba(13,118,128,0.04); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 4px; }
+        .data-callout .callout-label { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 10px; }
+        .data-callout p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; margin: 0; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../resources.html">Resources</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Supply Chain</span>
+                <span class="date">April 5, 2026</span>
+            </div>
+            <h1>Vietnam at 46%. China at 145%. The Tariff Math on Cooling Hardware.</h1>
+            <div class="body">
+                <p>The liquid cooling supply chain runs through exactly the countries the Trump administration targeted hardest with its reciprocal tariff schedule. Vietnam at 46%. China at 145%. Taiwan at 32%. Thailand at 37%. Malaysia and Japan at 24% each. These are not peripheral markets for cooling hardware. They are where CDUs, cold plates, pumps, and manifold assemblies are manufactured at scale.</p>
+
+                <p>The tariffs went into effect in April 2025. One year out, the cooling industry is still recalibrating. The cost increases embedded in current quotes are real. The supply chain restructuring is underway but slow. And the operators writing purchase orders for 2026 liquid cooling deployments are absorbing the math in ways that were not in the budget models from 18 months ago.</p>
+
+                <h2>Where the Exposure Is Concentrated</h2>
+
+                <p>The most significant tariff exposure for cooling hardware sits in three component categories: cold plates, CDUs, and fans and motors.</p>
+
+                <p>Cold plates and CDUs are precision-machined assemblies. The manufacturing for these at data center scale is concentrated in Taiwan, China, Vietnam, and increasingly Thailand. CoolIT Systems, which Ecolab agreed to acquire for $4.75 billion in March, manufactures in Canada, China, and Vietnam. The 145% China rate and 46% Vietnam rate apply to a meaningful portion of that production footprint. Ecolab has not disclosed the geographic split of CoolIT's manufacturing revenue, and that number is material to the deal's economics.</p>
+
+                <p>Fans and motors tell a different story. The final assembly of air-cooled chillers happens largely in North America, at facilities run by companies like Johnson Controls, Carrier, and Vertiv. But the fans and motors inside those chillers are imported: Germany, China, Japan. The 145% China rate and 24% Japan rate make the internal components significantly more expensive even when the finished unit is assembled domestically.</p>
+
+                <table class="tariff-table">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Tariff Rate</th>
+                            <th>Relevant Components</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>China</td>
+                            <td class="high">145%</td>
+                            <td>Cold plates, CDUs, fans, motors, manifolds</td>
+                        </tr>
+                        <tr>
+                            <td>Vietnam</td>
+                            <td class="high">46%</td>
+                            <td>CDU subassemblies, cold plate production</td>
+                        </tr>
+                        <tr>
+                            <td>Taiwan</td>
+                            <td class="mid">32%</td>
+                            <td>Precision cooling components, heat spreaders</td>
+                        </tr>
+                        <tr>
+                            <td>Thailand</td>
+                            <td class="mid">37%</td>
+                            <td>Heat exchangers, cooling subassemblies</td>
+                        </tr>
+                        <tr>
+                            <td>Malaysia</td>
+                            <td class="low">24%</td>
+                            <td>Electronic cooling components</td>
+                        </tr>
+                        <tr>
+                            <td>Japan</td>
+                            <td class="low">24%</td>
+                            <td>Motors, precision pumps, heat exchanger fins</td>
+                        </tr>
+                        <tr>
+                            <td>South Korea</td>
+                            <td class="low">25%</td>
+                            <td>Electronic thermal management components</td>
+                        </tr>
+                        <tr>
+                            <td>EU</td>
+                            <td class="low">20%</td>
+                            <td>Dry coolers, microchannel heat exchangers</td>
+                        </tr>
+                        <tr>
+                            <td>Mexico / Canada (USMCA)</td>
+                            <td class="exempt">0%</td>
+                            <td>Domestically assembled systems, USMCA-qualified components</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Who Has Cover and Who Does Not</h2>
+
+                <p>Schneider Electric's disclosure is the clearest public benchmark available. The company said 83% of its North American cost of goods sold is not imported from affected countries, excluding Mexico and Canada. For a company of Schneider's scale, that means its North American liquid cooling and power management products have meaningful tariff insulation, at least at the finished goods level. The subcomponent picture is more complicated — domestic assembly does not mean domestic bill of materials.</p>
+
+                <p>Vertiv has less public clarity in its disclosures, but the company's manufacturing expansion announced throughout 2025 and early 2026 points toward the same conclusion most of the industry has reached: new capacity goes in USMCA-eligible geographies where it can. Vertiv's CEO Giordano Albertazzi told investors in early 2026 that new factory locations are coming online specifically to support liquid cooling volume growth. Where those factories land matters for tariff exposure.</p>
+
+                <p>The vendors with the most acute near-term exposure are the ones who scaled Asian manufacturing aggressively from 2022 through 2024 to meet hyperscaler demand and have not yet restructured those supply chains. Moving a cold plate manufacturing line from Vietnam to Mexico is not a 90-day project. It is an 18-to-24-month capital program.</p>
+
+                <h2>The Cost Impact on Operators</h2>
+
+                <p>Current estimates put the tariff-driven cost increase for a complete liquid cooling deployment in the mid-to-high single digits as a percentage of total cooling system cost. On a 100 MW AI data center where cooling infrastructure can run $50-80 million depending on architecture, that is a $3-6 million line item that did not exist in 2024 budgets.</p>
+
+                <p>The impact on total cost of ownership is more muted. SemiAnalysis modeled the broader data center tariff scenario and estimated that even a 15% increase to colocation leasing costs would raise GPU cluster TCO by roughly 2%. Cooling is one input among many. But it is the input that is hardest to substitute, has the longest lead times, and has the least pricing flexibility at the component level. When a CDU has a 16-to-24-week lead time and is subject to a 46% tariff, the operator cannot simply shop around.</p>
+
+                <div class="data-callout">
+                    <div class="callout-label">Lead time context</div>
+                    <p>CDU lead times currently run 16–24 weeks at most major vendors. Cold plate assemblies for GB200-class deployments are on allocation. Adding tariff-driven cost increases to a supply chain already running on constrained inventory means operators face both a price problem and a timing problem simultaneously. The two do not resolve on the same schedule.</p>
+                </div>
+
+                <h2>Steel and Aluminum Are Separate</h2>
+
+                <p>The reciprocal tariff schedule operates alongside the Section 232 steel and aluminum tariffs, which are distinct. Steel and aluminum face a 25% tariff from all sources, including Canada and Mexico where USMCA provides no exemption. For cooling hardware with significant metal content — heat exchangers, ductwork, structural frames for outdoor CDUs — this adds a baseline cost increase on top of the reciprocal rate. A chiller manufactured in North America with domestic assembly still pays 25% more for imported steel in its heat exchanger coils.</p>
+
+                <p>The vendors managing this best are the ones who locked in steel supply contracts before the tariff schedule was finalized or who have enough volume with domestic steel producers to negotiate multi-year pricing. Smaller cooling vendors without that leverage are absorbing the spot price.</p>
+
+                <h2>The Restructuring Playing Out Now</h2>
+
+                <p>Three patterns are visible in how the cooling supply chain is responding. First, USMCA-eligible manufacturing is getting new investment. Mexico assembly operations are expanding across multiple vendors. The economics justify the capital even at current tariff rates. Second, vendors are accelerating domestic component sourcing where substitutes exist. Fans and motors have domestic options that are more expensive per unit but no longer obviously more expensive when a 24-to-145% tariff lands on the imported alternative. Third, the M&A consolidation wave — <a href="https://thecoolingreport.com/intel/eaton-boyd-thermal-9-billion-cooling-acquisition.html">Eaton's $9.5 billion Boyd acquisition</a>, Ecolab's CoolIT deal, Trane's LiquidStack purchase — creates vertically integrated vendors with more leverage to absorb or redirect tariff costs across a larger manufacturing footprint.</p>
+
+                <p>None of these adjustments are complete. The supply chain is mid-restructuring, not post-restructuring. Operators building out liquid cooling capacity in 2026 are buying into a cost environment that is still shifting. The vendors who close 2026 with a clear picture of their USMCA-eligible production percentage, their domestic component sourcing, and their tariff exposure by SKU will have a pricing story that operators need to hear.</p>
+
+                <p>The vendors who do not have that picture have a different problem: they are quoting prices they cannot hold.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/tariff-impact-data-center-cooling-supply-chain.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/tariff-impact-data-center-cooling-supply-chain.html&text=Vietnam%20at%2046%25.%20China%20at%20145%25.%20The%20Tariff%20Math%20on%20Cooling%20Hardware." target="_blank">X</a>
+                    <a href="mailto:?subject=The%20Tariff%20Math%20on%20Cooling%20Hardware&body=https://thecoolingreport.com/intel/tariff-impact-data-center-cooling-supply-chain.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/tariff-impact-data-center-cooling-supply-chain.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYYCLVFLEF');
+    </script>
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+</body>
+</html>
