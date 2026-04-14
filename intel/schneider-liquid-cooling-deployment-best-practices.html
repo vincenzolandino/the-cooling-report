@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schneider Published the Liquid Cooling Deployment Playbook. Most Operators Still Don't Have One. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Schneider Electric lays out liquid cooling deployment best practices for AI data centers, from MCDU architecture to redundancy planning. The real problem: most facilities teams have never commissioned liquid cooling.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/schneider-liquid-cooling-deployment-best-practices.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Schneider Published the Liquid Cooling Deployment Playbook. Most Operators Still Don't Have One.">
+    <meta property="og:description" content="Schneider Electric lays out liquid cooling deployment best practices for AI data centers, from MCDU architecture to redundancy planning. The real problem: most facilities teams have never commissioned liquid cooling.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/schneider-liquid-cooling-deployment-best-practices.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Schneider Published the Liquid Cooling Deployment Playbook. Most Operators Still Don't Have One.">
+    <meta name="twitter:description" content="Schneider Electric lays out liquid cooling deployment best practices for AI data centers, from MCDU architecture to redundancy planning. The real problem: most facilities teams have never commissioned liquid cooling.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .hero-image { width: 100%; margin-bottom: 28px; }
+        .article-page .hero-image img { width: 100%; height: auto; border-radius: 6px; }
+        .article-page .hero-image figcaption { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 8px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../resources.html">Resources</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Operations</span>
+                <span class="date">April 14, 2026</span>
+            </div>
+            <h1>Schneider Published the Liquid Cooling Deployment Playbook. Most Operators Still Don't Have One.</h1>
+            <figure class="hero-image">
+                <img src="images/schneider-mcdu-liquid-cooling-deployment.jpg" alt="Schneider Electric MCDU liquid cooling unit for AI data center deployment">
+                <figcaption>Schneider Electric's modular coolant distribution units represent the company's push into high-density liquid cooling infrastructure.</figcaption>
+            </figure>
+            <div class="body">
+                <p>The liquid cooling market is growing at <a href="https://www.datacenterdynamics.com/en/opinions/best-practices-for-deploying-liquid-cooled-servers-in-ai-data-centers/">more than 30% annually</a>. The number of facilities teams that have actually commissioned a liquid cooling system? Far smaller. That gap between market trajectory and operational readiness is the single biggest risk in the AI infrastructure buildout right now, and Schneider Electric just published a detailed guide that makes the problem impossible to ignore.</p>
+
+                <p>The company's best practices document for deploying liquid-cooled servers in AI data centers reads less like a product pitch and more like a field manual written by people who have watched too many commissioning projects go sideways. Direct-to-chip cooling, Schneider argues, is the recommended architecture for AI and HPC workloads. Not immersion. Not rear-door heat exchangers. <a href="https://www.datacenterdynamics.com/en/opinions/best-practices-for-deploying-liquid-cooled-servers-in-ai-data-centers/">Direct-to-chip</a>. They are picking a side, and they are doing it with the weight of their Motivair acquisition behind them.</p>
+
+                <h2>The MCDU-70 and What It Tells You About Scale</h2>
+
+                <p>Schneider's headline hardware is the <a href="https://www.datacenterdynamics.com/en/opinions/best-practices-for-deploying-liquid-cooled-servers-in-ai-data-centers/">MCDU-70</a>, a modular coolant distribution unit that delivers 2.5 MW of cooling capacity per unit. Daisy-chain enough of them and you scale beyond 10 MW. That is not a cooling system for a single rack or even a single row. That is a cooling system for a building. The Motivair acquisition, which closed in 2024, gave Schneider the engineering bench to build this class of hardware. They are now deploying it against the same customers they already sell power distribution and building management systems to. The cross-sell opportunity is obvious. The execution risk is real.</p>
+
+                <p>A 2.5 MW CDU is a serious piece of infrastructure. It requires mechanical room space, piping runs, water treatment, and a team that understands fluid dynamics at scale. Most data center operators have spent their entire careers managing air handlers and CRACs. Asking those same teams to commission and maintain a high-pressure liquid loop is like asking a residential electrician to wire a substation.</p>
+
+                <h2>The Actual Best Practices, and Why They Matter</h2>
+
+                <p>The Schneider guide lays out several operational requirements that sound straightforward on paper but are brutal in practice. First: <a href="https://www.datacenterdynamics.com/en/opinions/best-practices-for-deploying-liquid-cooled-servers-in-ai-data-centers/">constant differential pressure control</a>. This means the cooling loop must maintain stable pressure regardless of how many servers are drawing coolant at any given moment. In an air-cooled environment, you adjust fan speeds. In a liquid-cooled environment, pressure fluctuations can cause cavitation in pumps, uneven flow distribution across cold plates, and in the worst case, thermal throttling on GPUs that cost $30,000 each.</p>
+
+                <p>Second: redundant pumps. Every CDU needs backup pumps that can take over without interruption. A pump failure in an air-cooled facility means a hot spot. A pump failure in a liquid-cooled facility means coolant stops flowing to silicon. The thermal mass of a cold plate buys you seconds, not minutes.</p>
+
+                <p>Third: dual power supplies with UPS protection on every CDU. Schneider is explicit about this. The cooling distribution unit is now as critical as the UPS itself. If the CDU loses power, the servers lose cooling, and the thermal runway happens faster than any operator can respond manually. This is a fundamental shift in how facilities teams need to think about power architecture. The CDU is no longer ancillary equipment. It is Tier 1 infrastructure.</p>
+
+                <h2>The Partnership Problem</h2>
+
+                <p>Schneider's guide also pushes operators to <a href="https://www.datacenterdynamics.com/en/opinions/best-practices-for-deploying-liquid-cooled-servers-in-ai-data-centers/">partner early with IT vendors, cooling specialists, and system integrators</a>. This is corporate language for a blunt reality: you cannot do this alone. The IT team needs to coordinate with the mechanical team, the mechanical team needs to coordinate with the server OEM, and the server OEM needs to coordinate with the chip vendor on cold plate specifications. In an air-cooled world, these teams operate in silos. In a liquid-cooled world, a mismatch between the cold plate flow rate and the CDU output pressure means the entire deployment fails acceptance testing.</p>
+
+                <p>The system integrator role is particularly interesting. In traditional data center construction, the integrator handles structured cabling and rack installation. In a liquid-cooled deployment, the integrator is responsible for pipe routing, leak detection, water treatment, and commissioning a pressurized fluid system. These are skills that come from industrial process engineering, not from IT infrastructure. The talent pool is small. The demand is growing at 30% a year.</p>
+
+                <h2>ESG and Regulatory Compliance Are Not Optional Anymore</h2>
+
+                <p>One section of the Schneider guide that will get less attention than it deserves covers <a href="https://www.datacenterdynamics.com/en/opinions/best-practices-for-deploying-liquid-cooled-servers-in-ai-data-centers/">tying liquid cooling strategies to ESG goals and regional regulations</a>. In the EU, the Energy Efficiency Directive already requires data centers above 500 kW to report PUE and water usage effectiveness. In parts of the American Southwest, water permits for data center cooling are being denied or restricted. Liquid cooling does not eliminate water usage, but it can reduce it dramatically compared to evaporative cooling towers, and the heat rejection temperatures are high enough to enable waste heat reuse in district heating systems.</p>
+
+                <p>Schneider is positioning liquid cooling not just as a thermal management solution but as a regulatory compliance tool. That framing will resonate with CFOs and general counsel in ways that pure engineering arguments never will. When a $500 million data center project faces permitting delays because of water usage concerns, a cooling architecture that cuts consumption by 40% becomes a scheduling tool, not just an engineering choice.</p>
+
+                <h2>The Real Bottleneck</h2>
+
+                <p>The hardest paragraph in the Schneider guide is the one that says what everyone in the industry already knows. Most facilities teams have never commissioned liquid cooling before. They have never pressurized a coolant loop. They have never tested a leak detection system under load. They have never managed the water chemistry required to prevent corrosion in copper cold plates. And they are being asked to deploy these systems at a pace that gives them no margin for learning on the job.</p>
+
+                <p>Schneider can publish all the best practices documents it wants. The bottleneck is not information. The bottleneck is people. The liquid cooling market is growing at 30% annually. The workforce that can deploy and maintain these systems is growing at a fraction of that rate. Until that gap closes, every best practice in this guide is theoretical for the majority of operators in the market.</p>
+
+                <p>The companies that figure out training, hiring, and retention for liquid cooling operations will win the next decade of data center infrastructure. The ones that treat this as a procurement exercise will spend the next five years explaining thermal incidents to their board.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/schneider-liquid-cooling-deployment-best-practices.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/schneider-liquid-cooling-deployment-best-practices.html&text=Schneider%20Published%20the%20Liquid%20Cooling%20Deployment%20Playbook.%20Most%20Operators%20Still%20Don%27t%20Have%20One." target="_blank">X</a>
+                    <a href="mailto:?subject=Schneider%20Published%20the%20Liquid%20Cooling%20Deployment%20Playbook.%20Most%20Operators%20Still%20Don%27t%20Have%20One.&body=https://thecoolingreport.com/intel/schneider-liquid-cooling-deployment-best-practices.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/schneider-liquid-cooling-deployment-best-practices.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYYCLVFLEF');
+    </script>
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+</body>
+</html>
