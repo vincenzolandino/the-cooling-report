@@ -11,6 +11,41 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://thecoolingreport.com/intel/castrol-partnerships-liquid-cooling-innovation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/data-centers-must-evolve-1050-twh-cooling-power-ceiling.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/absorption-chillers-waste-heat-onsite-generation-data-centers.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/datacool-alpine-glacier-kodiak-air-handler-launch.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/india-ai-data-center-150kw-rack-infrastructure-reset.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/iceotope-200-patents-precision-liquid-cooling-milestone.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/orbital-space-based-ai-data-centers-2027-radiative-cooling.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thecoolingreport.com/sponsor.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -124,5 +159,30 @@
     <loc>https://thecoolingreport.com/intel/offsite-water-consumption-data-centers.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/brownfield-liquid-cooling-retrofit-ai-modernization.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/mena-ai-data-center-water-stress.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/california-data-center-water-disclosure-veto.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/ai-data-center-grid-utilities-shockwave.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/digital-realty-nrt14-japan-150kw-rack-ai.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
