@@ -1,168 +1,569 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Centers Burned 683 TWh in 2024 and Cooling Ate Half of It. Most Operators Still Cannot Measure Where the Energy Goes. | The Cooling Report</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <meta name="description" content="Cooling consumes up to 50% of total data center energy. With demand projected to hit 1,479 TWh by 2030, the industry needs real-time thermal monitoring before it can optimize anything. Most facilities are still flying blind.">
-    <link rel="canonical" href="https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Data Centers Burned 683 TWh in 2024 and Cooling Ate Half of It. Most Operators Still Cannot Measure Where the Energy Goes.">
-    <meta property="og:description" content="Cooling consumes up to 50% of total data center energy. With demand projected to hit 1,479 TWh by 2030, the industry needs real-time thermal monitoring before it can optimize anything.">
-    <meta property="og:url" content="https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html">
-    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
-    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
-    <meta property="og:site_name" content="The Cooling Report">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Data Centers Burned 683 TWh in 2024 and Cooling Ate Half of It. Most Operators Still Cannot Measure Where the Energy Goes.">
-    <meta name="twitter:description" content="Cooling consumes up to 50% of data center energy. Most operators still cannot measure where it goes.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Centers Burned 683 TWh in 2024 and Cooling Ate Half of It. Most
+      Operators Still Cannot Measure Where the Energy Goes. | The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="Cooling consumes up to 50% of total data center energy. With demand projected to hit 1,479 TWh by 2030, the industry needs real-time thermal monitoring before it can optimize anything. Most facilities are still flying blind."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Data Centers Burned 683 TWh in 2024 and Cooling Ate Half of It. Most Operators Still Cannot Measure Where the Energy Goes."
+    />
+    <meta
+      property="og:description"
+      content="Cooling consumes up to 50% of total data center energy. With demand projected to hit 1,479 TWh by 2030, the industry needs real-time thermal monitoring before it can optimize anything."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Data Centers Burned 683 TWh in 2024 and Cooling Ate Half of It. Most Operators Still Cannot Measure Where the Energy Goes."
+    />
+    <meta
+      name="twitter:description"
+      content="Cooling consumes up to 50% of data center energy. Most operators still cannot measure where it goes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
     <style>
-        .article-page { padding: 110px 24px 80px; }
-        .article-page .section-inner { max-width: 720px; }
-        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
-        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
-        .article-page .meta { margin-bottom: 16px; }
-        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
-        .article-page .hero-image { width: 100%; margin-bottom: 28px; }
-        .article-page .hero-image img { width: 100%; height: auto; border-radius: 6px; }
-        .article-page .hero-image figcaption { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 8px; }
-        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
-        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
-        .article-page .body a { color: var(--accent); }
-        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
-        .article-page .back:hover { text-decoration: underline; }
-        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
-        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
-        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
-        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
-        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
-        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .hero-image {
+        width: 100%;
+        margin-bottom: 28px;
+      }
+      .article-page .hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+      }
+      .article-page .hero-image figcaption {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        margin-top: 8px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="nav" aria-label="Primary navigation">
-        <div class="nav-inner">
-            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
-            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
-                <span></span><span></span><span></span>
-            </div>
-            <div class="nav-links">
-                <a href="../intel.html">Intel</a>
-                <a href="../resources.html">Resources</a>
-                <a href="../sponsor.html">Sponsor</a>
-                <a href="/#pricing">Premium</a>
-                <a href="/#subscribe" class="nav-cta">Subscribe</a>
-            </div>
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
         </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#pricing">Premium</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
     </nav>
     <div class="article-page">
-        <div class="section-inner">
-            <a href="../intel.html" class="back">← Back to Intel</a>
-            <div class="meta">
-                <span class="tag">Efficiency</span>
-                <span class="date">April 21, 2026</span>
-            </div>
-            <h1>Data Centers Burned 683 TWh in 2024 and Cooling Ate Half of It. Most Operators Still Cannot Measure Where the Energy Goes.</h1>
-                <div class="body">
-                <p>The global data center fleet consumed <a href="https://www.datacenterdynamics.com/en/opinions/cooling-the-digital-future-why-data-centers-must-evolve/">683 terawatt-hours of electricity in 2024</a>, according to ABI Research. The IEA projects that figure will reach <a href="https://www.datacenterdynamics.com/en/opinions/cooling-the-digital-future-why-data-centers-must-evolve/">1,479 TWh by 2030</a>, growing at roughly 14 percent per year. Cooling systems account for <a href="https://www.datacenterdynamics.com/en/opinions/cooling-the-digital-future-why-data-centers-must-evolve/">up to 50 percent of that total energy draw</a>. Run the arithmetic. That means cooling alone consumed somewhere in the range of 340 TWh last year. More than the entire electricity consumption of South Africa. And the number doubles by decade's end.</p>
-
-                <p>Here is the problem nobody wants to put in a press release: most operators cannot tell you, in real time, where those cooling kilowatt-hours are actually going. They know total facility power. They know IT load. They can calculate a PUE number that looks respectable on an investor slide. But granular, continuous measurement of thermal performance across the cooling chain, from chiller plant to CRAC unit to cold aisle to server inlet? That is rare. And without it, optimization is guesswork dressed in engineering language.</p>
-
-                <h2>The ASHRAE Envelope and Why Every Degree Matters</h2>
-
-                <p>ASHRAE's recommended thermal guidelines for data center equipment specify a server inlet temperature range of <a href="https://www.badgermeter.com/blog/cooling-the-digital-future/">64 to 81 degrees Fahrenheit (18 to 27 degrees Celsius)</a> with relative humidity between <a href="https://www.badgermeter.com/blog/cooling-the-digital-future/">40 and 60 percent</a>. That window defines the operating regime for every cooling system in the industry. Stay inside it and equipment runs within manufacturer specifications. Drift outside and failure rates climb, warranties void, and thermal throttling degrades compute throughput.</p>
-
-                <p>The math inside that window is where the money hides. Every degree Celsius you raise the server inlet temperature reduces cooling energy consumption by approximately 4 percent. Moving from 20C to 25C saves roughly 20 percent of cooling power. That is real. At scale, across a 50 MW campus, 20 percent of the cooling load translates to megawatts freed and millions of dollars in annual operating expense removed from the P&L. We covered this dynamic in detail when we reported on <a href="https://thecoolingreport.com/intel/67-energy-savings-are-on-the-table-most-data-centers-leave-them-there.html">the 67 percent energy savings most data centers leave on the table</a>.</p>
-
-                <p>So why do most facilities still cool to 68F or below? Fear. Conservative setpoints persist because operators lack the instrumentation to know, minute by minute, that raising the temperature two degrees will not create a hot spot in row 14 that takes out a storage array. Without dense sensor coverage and real-time analytics, the rational choice is to overcool. And overcooling is the single largest source of wasted energy in the industry.</p>
-
-                <h2>PUE Is a Blunt Instrument</h2>
-
-                <p>Power Usage Effectiveness remains the standard metric. Total facility energy divided by IT equipment energy. A PUE of 1.3 means 30 percent of your power goes to overhead, mostly cooling. Hyperscalers report PUEs of 1.1 or below. The industry average hovers around 1.55 to 1.6.</p>
-
-                <p>The problem with PUE as a management tool is granularity. It tells you the ratio. It does not tell you which CRAC unit is running at 40 percent efficiency because a damper is stuck. It does not flag that your chilled water loop is overcirculating by 15 percent because the flow setpoint was never adjusted after the last capacity expansion. It does not catch the fact that three racks in zone B are pulling supply air from the hot aisle through a gap in the containment curtain. PUE is an annual physical when you need continuous vital signs.</p>
-
-                <p>The data center sector emits roughly <a href="https://www.datacenterdynamics.com/en/opinions/cooling-the-digital-future-why-data-centers-must-evolve/">330 million tons of CO2 annually</a>, about one percent of global energy-related emissions. That figure will grow proportionally with demand unless cooling efficiency improves faster than capacity scales. The trajectory right now does not inspire confidence. As we reported in our coverage of <a href="https://thecoolingreport.com/intel/big-tech-climate-goals-ai-data-centers-fossil-fuels.html">Big Tech's climate goals colliding with AI data center expansion</a>, the gap between corporate sustainability commitments and operational reality is widening.</p>
-
-                <h2>Air Cooling Hits the Wall</h2>
-
-                <p>Traditional air-based cooling, specifically Computer Room Air Conditioning (CRAC) units and Computer Room Air Handlers (CRAH), has served the industry for decades. These systems work. They are well understood. They are also approaching fundamental limits as rack densities climb past 30 kW toward 50, 80, and eventually 100+ kW per rack driven by GPU-intensive AI workloads.</p>
-
-                <p>Air has a volumetric heat capacity of approximately 1.2 kJ per cubic meter per degree Kelvin. Water's is about 4,180 times denser per unit volume at carrying heat. That physics gap explains why air cooling requires massive airflow volumes, raised floors, hot aisle/cold aisle containment, and progressively larger fan arrays as density increases. Evaporative cooling can extend the range by exploiting the latent heat of water evaporation, but it introduces water consumption as a variable, and in drought-prone regions where data centers are increasingly being built, water is becoming a constrained resource.</p>
-
-                <p>The ceiling for air cooling in practice is somewhere around <a href="https://thecoolingreport.com/intel/data-centers-must-evolve-1050-twh-cooling-power-ceiling.html">25 to 30 kW per rack</a> before the economics and physics both break. Above that threshold, you need liquid.</p>
-
-                <h2>Liquid Cooling Is the Path Forward. The Measurement Problem Follows It There.</h2>
-
-                <p><a href="https://thecoolingreport.com/intel/how-direct-to-chip-liquid-cooling-works-engineering-guide.html">Direct-to-chip liquid cooling</a> routes dielectric fluid or treated water through cold plates mounted directly on CPUs and GPUs. Heat transfers from silicon to liquid at the source, with dramatically higher efficiency than forcing air across a heatsink and hoping the thermal gradient does the work. <a href="https://thecoolingreport.com/intel/ai-liquid-cooling-mandatory-rack-density.html">Immersion cooling</a> goes further, submerging entire server boards in dielectric fluid that absorbs heat across every component simultaneously.</p>
-
-                <p>Both approaches can handle rack densities of 100 kW and above. Both reduce fan energy to near zero. Both can operate at higher fluid temperatures, which means waste heat can potentially be captured and reused. NVIDIA has demonstrated that <a href="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html">hot water cooling at 45C inlet temperatures eliminates the need for chillers entirely</a>, collapsing the cooling infrastructure from a multi-stage refrigeration chain to a simple heat exchanger and a dry cooler.</p>
-
-                <p>But liquid cooling introduces new measurement requirements that most facilities are not equipped to handle. Flow rates matter at the individual server level. Fluid temperature differentials across cold plates indicate thermal performance in real time. Pressure drops across distribution manifolds signal clogging or air entrainment. Water quality in open-loop systems affects corrosion rates and biofilm growth. Every one of these parameters needs continuous monitoring.</p>
-
-                <h2>Measurement Before Optimization</h2>
-
-                <p>A recent analysis from <a href="https://www.badgermeter.com/blog/cooling-the-digital-future/">Badger Meter</a> frames the cooling transition around their BlueEdge monitoring suite, which tracks flow, energy, gas, and water quality across cooling infrastructure. The vendor angle is obvious. But the underlying argument holds: you cannot optimize what you cannot measure, and the industry's measurement infrastructure has not kept pace with the thermal complexity of modern deployments.</p>
-
-                <p>Consider what real-time cooling telemetry actually provides. Per-rack thermal profiles that allow dynamic setpoint adjustment. Early detection of cooling system degradation before it becomes a capacity constraint. Verification that <a href="https://thecoolingreport.com/intel/30-percent-cooling-electricity-component-level-savings.html">component-level efficiency gains</a> are translating to system-level savings. Correlation between IT workload patterns and cooling demand that feeds <a href="https://thecoolingreport.com/intel/penn-state-ai-cooling-optimization-25-percent.html">AI-driven cooling optimization systems</a>. Without dense, accurate, continuous measurement, none of these capabilities exist. You are left with periodic audits and spreadsheet models that describe what happened last quarter.</p>
-
-                <p>The industry is building liquid cooling capacity at pace. CDUs, rear-door heat exchangers, immersion tanks. The hardware is arriving. What is lagging is the instrumentation layer that makes all of it work at peak efficiency rather than at whatever setpoints the commissioning engineer picked on day one.</p>
-
-                <h2>The Read</h2>
-
-                <p>Cooling consumes half the energy in a data center. Demand is growing at 14 percent per year. The transition from air to liquid cooling is technically sound and already underway. None of that matters if operators cannot measure thermal performance across their infrastructure in real time, continuously, at the component level.</p>
-
-                <p>The industry has a monitoring deficit. PUE is a summary statistic. What operators need is a live thermal map of every cooling loop, every rack, every server inlet. The technology to provide that exists. Flow meters, temperature sensors, pressure transducers, analytics platforms. The gap is deployment. Most facilities, particularly in the colocation and enterprise segments, are still running cooling systems with the same instrumentation density they had a decade ago, before rack densities tripled and the stakes of thermal mismanagement became a material line item on the balance sheet.</p>
-
-                <p>The operators who instrument first will optimize first. Everyone else will keep overcooling, overspending, and wondering why their PUE number never moves.</p>
-            </div>
-            <div class="share-bar">
-                <p>Share this article</p>
-                <div class="share-links">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html" target="_blank">LinkedIn</a>
-                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html&text=Data%20Centers%20Burned%20683%20TWh%20in%202024%20and%20Cooling%20Ate%20Half" target="_blank">X</a>
-                    <a href="mailto:?subject=Data%20Centers%20Burned%20683%20TWh%20in%202024%20and%20Cooling%20Ate%20Half&body=https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html" target="_blank">Email</a>
-                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
-                </div>
-            </div>
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Efficiency</span>
+          <span class="date">April 21, 2026</span>
         </div>
+        <h1>
+          Data Centers Burned 683 TWh in 2024 and Cooling Ate Half of It. Most
+          Operators Still Cannot Measure Where the Energy Goes.
+        </h1>
+        <div class="body">
+          <p>
+            The global data center fleet consumed
+            <a
+              href="https://www.datacenterdynamics.com/en/opinions/cooling-the-digital-future-why-data-centers-must-evolve/"
+              >683 terawatt-hours of electricity in 2024</a
+            >, according to ABI Research. Cooling systems account for
+            <a
+              href="https://www.datacenterdynamics.com/en/opinions/cooling-the-digital-future-why-data-centers-must-evolve/"
+              >up to 50 percent of that total energy draw</a
+            >. That puts cooling's share somewhere around 340 TWh last year,
+            more than the entire electricity consumption of South Africa, and
+            the IEA projects total data center demand will reach
+            <a
+              href="https://www.datacenterdynamics.com/en/opinions/cooling-the-digital-future-why-data-centers-must-evolve/"
+              >1,479 TWh by 2030</a
+            >
+            at roughly 14 percent annual growth. The cooling bill doubles by
+            decade's end.
+          </p>
+
+          <p>
+            Most operators cannot tell you, in real time, where those
+            kilowatt-hours go. They know total facility power. They know IT
+            load. They can produce a PUE number that looks respectable on an
+            investor slide. Granular, continuous measurement of thermal
+            performance across the cooling chain, from chiller plant to CRAC
+            unit to cold aisle to server inlet, remains rare across the fleet.
+            Without it, optimization is guesswork dressed in engineering
+            language.
+          </p>
+
+          <h2>The ASHRAE Envelope and Why Every Degree Matters</h2>
+
+          <p>
+            ASHRAE's recommended thermal guidelines for data center equipment
+            specify a server inlet temperature range of
+            <a
+              href="https://www.badgermeter.com/blog/cooling-the-digital-future/"
+              >64 to 81 degrees Fahrenheit (18 to 27 degrees Celsius)</a
+            >
+            with relative humidity between
+            <a
+              href="https://www.badgermeter.com/blog/cooling-the-digital-future/"
+              >40 and 60 percent</a
+            >. That window defines the operating regime for every cooling system
+            in the industry. Stay inside it and equipment runs within
+            manufacturer specifications. Drift outside and failure rates climb,
+            warranties void, and thermal throttling degrades compute throughput.
+          </p>
+
+          <p>
+            The math inside that window is where the money hides. Every degree
+            Celsius you raise the server inlet temperature reduces cooling
+            energy consumption by approximately 4 percent, so moving from 20C to
+            25C saves roughly 20 percent of cooling power. At scale, across a 50
+            MW campus, that 20 percent translates to megawatts freed and
+            millions of dollars in annual operating expense removed from the
+            P&L. We covered this dynamic in detail when we reported on
+            <a
+              href="https://thecoolingreport.com/intel/67-energy-savings-are-on-the-table-most-data-centers-leave-them-there.html"
+              >the 67 percent energy savings most data centers leave on the
+              table</a
+            >.
+          </p>
+
+          <p>
+            Most facilities still cool to 68F or below because operators lack
+            the instrumentation to know, minute by minute, that raising the
+            temperature two degrees will not create a hot spot in row 14 that
+            takes out a storage array. Without dense sensor coverage and
+            real-time analytics, the rational choice is to overcool. Overcooling
+            is the single largest source of wasted energy in the industry, and
+            it persists as a deliberate strategy rather than an oversight
+            because the cost of a thermal excursion that brings down a
+            production cluster dwarfs the cost of running the chillers harder
+            than necessary.
+          </p>
+
+          <h2>PUE Is a Blunt Instrument</h2>
+
+          <p>
+            Power Usage Effectiveness remains the standard metric. Total
+            facility energy divided by IT equipment energy. A PUE of 1.3 means
+            30 percent of your power goes to overhead, mostly cooling.
+            Hyperscalers report PUEs of 1.1 or below. The industry average
+            hovers around 1.55 to 1.6.
+          </p>
+
+          <p>
+            The problem with PUE as a management tool is granularity. It tells
+            you the ratio. It does not tell you which CRAC unit is running at 40
+            percent efficiency because a damper is stuck. It does not flag that
+            your chilled water loop is overcirculating by 15 percent because the
+            flow setpoint was never adjusted after the last capacity expansion.
+            It does not catch the fact that three racks in zone B are pulling
+            supply air from the hot aisle through a gap in the containment
+            curtain. PUE is an annual physical when you need continuous vital
+            signs.
+          </p>
+
+          <p>
+            The data center sector emits roughly
+            <a
+              href="https://www.datacenterdynamics.com/en/opinions/cooling-the-digital-future-why-data-centers-must-evolve/"
+              >330 million tons of CO2 annually</a
+            >, about one percent of global energy-related emissions. That figure
+            will grow proportionally with demand unless cooling efficiency
+            improves faster than capacity scales. The trajectory right now does
+            not inspire confidence. As we reported in our coverage of
+            <a
+              href="https://thecoolingreport.com/intel/big-tech-climate-goals-ai-data-centers-fossil-fuels.html"
+              >Big Tech's climate goals colliding with AI data center
+              expansion</a
+            >, the gap between corporate sustainability commitments and
+            operational reality is widening.
+          </p>
+
+          <h2>Air Cooling Hits the Wall</h2>
+
+          <p>
+            Traditional air-based cooling, specifically Computer Room Air
+            Conditioning (CRAC) units and Computer Room Air Handlers (CRAH), has
+            served the industry for decades. These systems work. They are well
+            understood. They are also approaching fundamental limits as rack
+            densities climb past 30 kW toward 50, 80, and eventually 100+ kW per
+            rack driven by GPU-intensive AI workloads.
+          </p>
+
+          <p>
+            Air has a volumetric heat capacity of approximately 1.2 kJ per cubic
+            meter per degree Kelvin. Water's is about 4,180 times denser per
+            unit volume at carrying heat. That physics gap explains why air
+            cooling requires massive airflow volumes, raised floors, hot
+            aisle/cold aisle containment, and progressively larger fan arrays as
+            density increases. Evaporative cooling can extend the range by
+            exploiting the latent heat of water evaporation, but it introduces
+            water consumption as a variable, and in drought-prone regions where
+            data centers are increasingly being built, water is becoming a
+            constrained resource.
+          </p>
+
+          <p>
+            The ceiling for air cooling in practice is somewhere around
+            <a
+              href="https://thecoolingreport.com/intel/data-centers-must-evolve-1050-twh-cooling-power-ceiling.html"
+              >25 to 30 kW per rack</a
+            >
+            before the economics and physics both break. Above that threshold,
+            you need liquid.
+          </p>
+
+          <h2>
+            Liquid Cooling Solves the Thermal Problem and Creates a Measurement
+            One
+          </h2>
+
+          <p>
+            <a
+              href="https://thecoolingreport.com/intel/how-direct-to-chip-liquid-cooling-works-engineering-guide.html"
+              >Direct-to-chip liquid cooling</a
+            >
+            routes dielectric fluid or treated water through cold plates mounted
+            directly on CPUs and GPUs, transferring heat from silicon to liquid
+            at the source with dramatically higher efficiency than forcing air
+            across a heatsink.
+            <a
+              href="https://thecoolingreport.com/intel/ai-liquid-cooling-mandatory-rack-density.html"
+              >Immersion cooling</a
+            >
+            goes further, submerging entire server boards in dielectric fluid
+            that absorbs heat across every component simultaneously.
+          </p>
+
+          <p>
+            Both approaches can handle rack densities of 100 kW and above,
+            reduce fan energy to near zero, and operate at higher fluid
+            temperatures that open the door to waste heat capture and reuse.
+            NVIDIA has demonstrated that
+            <a
+              href="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html"
+              >hot water cooling at 45C inlet temperatures eliminates the need
+              for chillers entirely</a
+            >, collapsing the cooling infrastructure from a multi-stage
+            refrigeration chain to a simple heat exchanger and a dry cooler.
+          </p>
+
+          <p>
+            Liquid cooling also introduces measurement requirements that most
+            facilities are nowhere near ready to handle. Flow rates matter at
+            the individual server level. Fluid temperature differentials across
+            cold plates indicate thermal performance in real time. Pressure
+            drops across distribution manifolds signal clogging or air
+            entrainment. Water quality in open-loop systems affects corrosion
+            rates and biofilm growth. Every one of these parameters needs
+            continuous monitoring, and the instrumentation to provide it is
+            lagging far behind the hardware it needs to serve.
+          </p>
+
+          <h2>Measurement Before Optimization</h2>
+
+          <p>
+            <a
+              href="https://www.badgermeter.com/blog/cooling-the-digital-future/"
+              >Badger Meter</a
+            >
+            recently framed the cooling transition around their BlueEdge
+            monitoring suite, which tracks flow, energy, gas, and water quality
+            across cooling infrastructure. The industry's measurement
+            infrastructure has not kept pace with the thermal complexity of
+            modern deployments, and the operators who close that gap first will
+            be the ones who actually capture the efficiency gains that liquid
+            cooling promises on paper.
+          </p>
+
+          <p>
+            Real-time cooling telemetry provides per-rack thermal profiles that
+            allow dynamic setpoint adjustment, early detection of cooling system
+            degradation before it becomes a capacity constraint, and
+            verification that
+            <a
+              href="https://thecoolingreport.com/intel/30-percent-cooling-electricity-component-level-savings.html"
+              >component-level efficiency gains</a
+            >
+            are translating to system-level savings. It also creates the data
+            layer that feeds
+            <a
+              href="https://thecoolingreport.com/intel/penn-state-ai-cooling-optimization-25-percent.html"
+              >AI-driven cooling optimization systems</a
+            >, correlating IT workload patterns with cooling demand in ways that
+            static setpoints cannot. Without dense, accurate, continuous
+            measurement, none of these capabilities exist. You are left with
+            periodic audits and spreadsheet models that describe what happened
+            last quarter.
+          </p>
+
+          <p>
+            The industry is building liquid cooling capacity at pace. CDUs,
+            rear-door heat exchangers, immersion tanks. The hardware is
+            arriving. What is lagging is the instrumentation layer that makes
+            all of it work at peak efficiency rather than at whatever setpoints
+            the commissioning engineer picked on day one.
+          </p>
+
+          <h2>The Read</h2>
+
+          <p>
+            Cooling consumes half the energy in a data center, and with demand
+            growing at 14 percent per year that share represents a problem
+            compounding faster than any efficiency program in the industry can
+            offset. The transition from air to liquid cooling is technically
+            sound and already underway, but none of it matters if operators
+            cannot measure thermal performance across their infrastructure in
+            real time, continuously, at the component level.
+          </p>
+
+          <p>
+            PUE is a summary statistic. What operators need is a live thermal
+            map of every cooling loop, every rack, every server inlet, and the
+            technology to provide that already exists in the form of flow
+            meters, temperature sensors, pressure transducers, and analytics
+            platforms capable of processing the data in real time. The gap is
+            deployment. Most facilities, particularly in the colocation and
+            enterprise segments, are still running cooling systems with the same
+            instrumentation density they had a decade ago, before rack densities
+            tripled and the stakes of thermal mismanagement became a material
+            line item on the balance sheet.
+          </p>
+
+          <p>
+            The operators who instrument first will optimize first. Everyone
+            else will keep overcooling, overspending, and wondering why their
+            PUE number never moves.
+          </p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html&text=Data%20Centers%20Burned%20683%20TWh%20in%202024%20and%20Cooling%20Ate%20Half"
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=Data%20Centers%20Burned%20683%20TWh%20in%202024%20and%20Cooling%20Ate%20Half&body=https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/data-center-cooling-energy-50-percent-683-twh-evolution-required.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
     <footer class="footer">
-        <div class="section-inner">
-            <div class="footer-inner">
-                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
-                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
-            </div>
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
         </div>
+      </div>
     </footer>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-DYYCLVFLEF');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
     </script>
     <script type="text/javascript">
-    _linkedin_partner_id = "8831074";
-    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-    </script><script type="text/javascript">
-    (function(l) {
-    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-    window.lintrk.q=[]}
-    var s = document.getElementsByTagName("script")[0];
-    var b = document.createElement("script");
-    b.type = "text/javascript";b.async = true;
-    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-    s.parentNode.insertBefore(b, s);})(window.lintrk);
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
     </script>
     <noscript>
-    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+      />
     </noscript>
-</body>
+  </body>
 </html>
