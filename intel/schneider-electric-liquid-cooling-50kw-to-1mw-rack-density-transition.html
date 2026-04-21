@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schneider Electric Maps the Full Liquid Cooling Stack From 50kW to 1MW Per Rack. The Transition Is Already Underway. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Schneider Electric's Sujit Kamble detailed the cooling architecture progression from air to direct-to-chip to full immersion at an AeD India Centre session. Air cooling tops out at 50kW per rack. Two-phase immersion reaches 1MW. The CDU specifications reveal where the real engineering complexity lives.">
+    <link rel="canonical" href="https://thecoolingreport.com/intel/schneider-electric-liquid-cooling-50kw-to-1mw-rack-density-transition.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Schneider Electric Maps the Full Liquid Cooling Stack From 50kW to 1MW Per Rack. The Transition Is Already Underway.">
+    <meta property="og:description" content="Schneider Electric's Sujit Kamble detailed the cooling architecture progression from air to direct-to-chip to full immersion at an AeD India Centre session.">
+    <meta property="og:url" content="https://thecoolingreport.com/intel/schneider-electric-liquid-cooling-50kw-to-1mw-rack-density-transition.html">
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png">
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png">
+    <meta property="og:site_name" content="The Cooling Report">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Schneider Electric Maps the Full Liquid Cooling Stack From 50kW to 1MW Per Rack. The Transition Is Already Underway.">
+    <meta name="twitter:description" content="Schneider Electric details the cooling architecture from 50kW air-cooled racks to 1MW immersion-cooled racks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { padding: 110px 24px 80px; }
+        .article-page .section-inner { max-width: 720px; }
+        .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13,118,128,0.08); padding: 3px 8px; border-radius: 3px; }
+        .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+        .article-page .meta { margin-bottom: 16px; }
+        .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+        .article-page .hero-image { width: 100%; margin-bottom: 28px; }
+        .article-page .hero-image img { width: 100%; height: auto; border-radius: 6px; }
+        .article-page .hero-image figcaption { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 8px; }
+        .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+        .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .article-page .body a { color: var(--accent); }
+        .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+        .article-page .back:hover { text-decoration: underline; }
+        .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+        .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+        .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+            <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="../intel.html">Intel</a>
+                <a href="../resources.html">Resources</a>
+                <a href="../sponsor.html">Sponsor</a>
+                <a href="/#pricing">Premium</a>
+                <a href="/#subscribe" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    <div class="article-page">
+        <div class="section-inner">
+            <a href="../intel.html" class="back">← Back to Intel</a>
+            <div class="meta">
+                <span class="tag">Technology</span>
+                <span class="date">April 21, 2026</span>
+            </div>
+            <h1>Schneider Electric Maps the Full Liquid Cooling Stack From 50kW to 1MW Per Rack. The Transition Is Already Underway.</h1>
+                <div class="body">
+                <p>The math on air cooling broke years ago. Operators know it. Equipment vendors know it. The problem is that the replacement architecture is not one thing. It is a spectrum of thermal management approaches, each with distinct plumbing, distinct risk profiles, and distinct density ceilings. <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">At a technical session hosted by AeD India Centre</a>, organized by Ravi Kochak and Sanjeev Sharma of Schneider Electric, Sujit Kamble laid out the full progression. Kamble, a General Manager at Schneider Electric and an HVAC specialist with deep deployment experience, walked <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">more than 15 industry professionals</a> through the cooling architecture that carries a data center from 50kW per rack to 1MW per rack. Three tiers. Three completely different sets of engineering constraints.</p>
+
+                <h2>The Air Ceiling Is 50kW. Period.</h2>
+
+                <p>Kamble put the number plainly. <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">Air cooling, including rear door heat exchangers, supports up to 50kW per rack</a>. That is the absolute ceiling when you have optimized airflow management, hot aisle containment, and high-density CRAC/CRAH configurations. For context, a single NVIDIA GB200 NVL72 rack pulls roughly 120kW. A DGX SuperPOD rack can exceed 130kW. Air cooling does not get you within shouting distance of modern AI training infrastructure.</p>
+
+                <p>This is not new information for anyone tracking <a href="https://thecoolingreport.com/intel/ai-liquid-cooling-mandatory-rack-density.html">rack density trends</a>. But hearing the 50kW figure stated by a Schneider Electric engineer, without hedging, without a footnote about future innovations in air distribution, matters. The world's largest data center cooling vendor is telling operators the air chapter is closed.</p>
+
+                <h2>Direct-to-Chip: 80% of Heat at the Source</h2>
+
+                <p><a href="https://thecoolingreport.com/intel/how-direct-to-chip-liquid-cooling-works-engineering-guide.html">Direct-to-chip liquid cooling</a> is where most of the industry is heading first. Cold plates mounted directly to the processor die carry coolant across microchannel structures, pulling heat away before it ever reaches the surrounding air volume. Kamble noted that <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">this approach removes up to 80% of heat at the source</a>. The remaining 20%, generated by memory, VRMs, storage, and networking components, still dissipates into the ambient environment and requires supplemental air handling. So you get a hybrid. Liquid on the processors. Air on everything else.</p>
+
+                <p>The critical detail Kamble highlighted is the collaborative design requirement. <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">Cold plates are designed in collaboration with chip manufacturers</a>. This is not a bolt-on aftermarket accessory. The cold plate geometry, the microchannel dimensions, the mounting pressure, and the thermal interface material all have to match the die package. NVIDIA, AMD, and Intel each have specific thermal specifications. A cold plate designed for one GPU does not simply transfer to another. This co-design relationship between the cooling vendor and the silicon vendor is where <a href="https://thecoolingreport.com/intel/schneider-liquid-cooling-deployment-best-practices.html">Schneider's deployment work</a> becomes relevant, because the company operates across multiple chip platforms simultaneously.</p>
+
+                <p>This is also where the CDU conversation gets serious.</p>
+
+                <h2>CDU Specifications Tell the Real Story</h2>
+
+                <p>A coolant distribution unit is the heart of any direct-to-chip or immersion deployment. It sits between the facility water loop and the IT equipment loop, managing flow rates, temperatures, pressures, and fluid quality. Kamble provided specific numbers. <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">Schneider's CDUs filter down to 25 microns, handle up to 2.5MW of thermal capacity, carry a 20+ year design lifespan, and include continuous fluid property monitoring</a>.</p>
+
+                <p>The 25-micron filtration number deserves attention. Microchannel cold plates have internal passages that can be as narrow as 50 to 100 microns. A particle at 30 microns can lodge in a channel restriction, reduce flow, create a local hot spot, and degrade or kill a processor. The filtration spec is not about general cleanliness. It is about protecting passages that are narrower than a human hair. Operators moving from air-cooled facilities, where the worst contamination scenario is dust on a heat sink fin, into liquid-cooled facilities, where a single particle can obstruct a flow path inside a <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">server worth more than $1 million</a>, need to internalize this difference. The consequences of poor fluid management scale with server value.</p>
+
+                <p>The continuous fluid monitoring capability matters for the same reason. Coolant degrades over time. Glycol concentrations drift. Conductivity changes. pH shifts. In a system where the fluid is in direct thermal contact with processors that cost tens of thousands of dollars each, housed in servers that individually exceed $1M in replacement value, you cannot sample the fluid quarterly and hope for the best. Real-time monitoring catches degradation before it reaches the cold plate.</p>
+
+                <p>The 20-year lifespan claim is also worth parsing. A CDU rated for two decades is designed to outlast multiple server refresh cycles. That makes the CDU a capital infrastructure asset, not a component that turns over with the IT equipment. This changes procurement decisions, maintenance planning, and total cost of ownership modeling in ways that <a href="https://thecoolingreport.com/intel/the-biggest-barrier-to-liquid-cooling-adoption-has-nothing-to-do-with-technology.html">most operators are still working through</a>.</p>
+
+                <h2>Two-Phase and Full Immersion: the 1MW Tier</h2>
+
+                <p>At the top of Kamble's density spectrum sits <a href="https://thecoolingreport.com/intel/single-phase-vs-two-phase-direct-to-chip-cooling-comparison.html">two-phase and full immersion cooling</a>. <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">Servers submerged entirely in dielectric fluid, with thermal capacity reaching up to 1MW per rack</a>. This is the far end of the density curve. No fans. No air handling. Every component, every connector, every stick of memory sits in a bath of engineered fluid that absorbs heat through direct contact and, in two-phase systems, through the phase change from liquid to vapor.</p>
+
+                <p>The engineering advantages at 1MW per rack are obvious. The practical challenges are <a href="https://thecoolingreport.com/intel/why-immersion-cooling-keeps-losing-to-cold-plates.html">equally well documented</a>. Serviceability. Fluid cost and management. Compatibility testing across every component. Connector corrosion profiles over years of submersion. The industry has been circling immersion for a decade without reaching mass adoption, and Kamble's presentation positioned it correctly: as the high end of a spectrum, not as the default path forward.</p>
+
+                <h2>PUE Drops from 1.5 to 1.1. Here Is Why.</h2>
+
+                <p>Kamble cited <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">PUE as low as 1.1 for liquid-cooled facilities versus 1.5 for traditional air-cooled data centers</a>. That 0.4 delta sounds modest until you do the multiplication. At 100MW of IT load, a PUE of 1.5 means 50MW of overhead power going to cooling, lighting, and distribution. A PUE of 1.1 means 10MW of overhead. That is 40MW of saved power. At $0.06 per kWh, that is roughly $21 million per year in energy costs eliminated.</p>
+
+                <p>The reason liquid cooling drives PUE down so aggressively is thermodynamic. Water has roughly 3,500 times the volumetric heat capacity of air. Moving the same amount of heat requires dramatically less fluid volume and dramatically less fan energy. In a direct-to-chip system, the pump energy to circulate coolant through cold plates and a CDU is a fraction of what rows of CRAC units and overhead fans consume in an air-cooled hall. Eliminate the fans, eliminate the massive air handlers, eliminate the raised floor pressure requirements, and the parasitic power load drops by an order of magnitude.</p>
+
+                <h2>The India Context</h2>
+
+                <p>This session took place in India, hosted by AeD India Centre, and that geography matters. <a href="https://thecoolingreport.com/intel/india-ai-data-center-150kw-rack-infrastructure-reset.html">India's AI data center buildout</a> is accelerating at a pace that outstrips legacy infrastructure planning. Ambient temperatures in key Indian data center markets regularly exceed 40 degrees Celsius during summer months, which compresses the already limited free cooling hours available to air-cooled facilities. Liquid cooling is not optional in these conditions at modern densities. It is physics.</p>
+
+                <p>Schneider <a href="https://www.imeche.org/news/news-article/liquid-cooling-takes-centre-stage-as-ai-drives-data-centre-demand">operates testing labs including one in Bangalore</a>, which positions the company to validate cooling architectures against the specific ambient conditions, water quality profiles, and power infrastructure realities of the Indian market. The <a href="https://thecoolingreport.com/intel/edgeconnex-global-training-center-liquid-cooling-workforce.html">workforce training gap</a> remains a concern, but the hardware validation infrastructure is in place.</p>
+
+                <h2>The Read</h2>
+
+                <p>Schneider is not describing a future state. The 50kW air ceiling, the 80% heat capture rate for direct-to-chip, the 1MW immersion tier, the CDU specifications, all of this is shipping product. The transition is a procurement decision, not a research problem.</p>
+
+                <p>What happens next is straightforward. The majority of new AI-focused builds over the next 18 months will deploy direct-to-chip as the primary cooling method, with supplemental air handling for the residual 20%. Immersion will remain confined to specialty deployments and operators who have already committed to the platform. The CDU becomes the long-lived infrastructure backbone, the piece that stays when the servers turn over. And the operators who understand filtration, fluid monitoring, and the risk calculus of million-dollar servers in liquid contact will separate from those who treat cooling as an afterthought. The density curve is not slowing down. The question is how many operators are ready to follow it.</p>
+            </div>
+            <div class="share-bar">
+                <p>Share this article</p>
+                <div class="share-links">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/schneider-electric-liquid-cooling-50kw-to-1mw-rack-density-transition.html" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/schneider-electric-liquid-cooling-50kw-to-1mw-rack-density-transition.html&text=Schneider%20Electric%20Maps%20the%20Full%20Liquid%20Cooling%20Stack%20From%2050kW%20to%201MW%20Per%20Rack" target="_blank">X</a>
+                    <a href="mailto:?subject=Schneider%20Electric%20Maps%20Liquid%20Cooling%20From%2050kW%20to%201MW&body=https://thecoolingreport.com/intel/schneider-electric-liquid-cooling-50kw-to-1mw-rack-density-transition.html" target="_blank">Email</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/schneider-electric-liquid-cooling-50kw-to-1mw-rack-density-transition.html');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-inner">
+                <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+                <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYYCLVFLEF');
+    </script>
+    <script type="text/javascript">
+    _linkedin_partner_id = "8831074";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" />
+    </noscript>
+</body>
+</html>
