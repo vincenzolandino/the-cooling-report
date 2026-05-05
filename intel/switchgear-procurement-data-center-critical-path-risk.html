@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Switchgear Is Now a Critical-Path Risk in Data Center Development. Late
+      Procurement Is How Projects Miss Their Timelines. | The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="Adhum Carter Wolde-Lule of Prism Power Group identifies switchgear as one of the biggest hidden constraints in data center construction. AI workload demand and government-backed infrastructure initiatives have tightened the supply chain to the point where late procurement decisions become schedule-critical."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/switchgear-procurement-data-center-critical-path-risk.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Switchgear Is Now a Critical-Path Risk in Data Center Development. Late Procurement Is How Projects Miss Their Timelines."
+    />
+    <meta
+      property="og:description"
+      content="Data centers are consuming massive quantities of low and medium voltage switchgear. AI workloads and government digital infrastructure initiatives have tightened supply. Procurement can no longer be deferred."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/switchgear-procurement-data-center-critical-path-risk.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Switchgear Is Now a Critical-Path Risk in Data Center Development. Late Procurement Is How Projects Miss Their Timelines."
+    />
+    <meta
+      name="twitter:description"
+      content="Switchgear procurement can no longer be deferred. AI demand and government infrastructure initiatives have turned a late-stage decision into a critical-path constraint."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#pricing">Premium</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Infrastructure</span>
+          <span class="date">May 5, 2026</span>
+        </div>
+        <h1>
+          Switchgear Is Now a Critical-Path Risk in Data Center Development.
+          Late Procurement Is How Projects Miss Their Timelines.
+        </h1>
+        <div class="body">
+          <p>
+            For most of the past two decades, switchgear was a late-stage
+            procurement decision. Engineers specced the servers, designed the
+            cooling architecture, priced the power contract, and then ordered
+            the electrical distribution equipment in the final construction
+            phase. That sequence worked when lead times were predictable and
+            demand was steady. Adhum Carter Wolde-Lule, Director at Prism Power
+            Group, described what has changed: switchgear is fast becoming one
+            of the biggest hidden constraints in commercial construction, and
+            data center development is where the constraint is most acute.
+          </p>
+
+          <p>
+            Three forces are converging on the same supply chain simultaneously.
+            Data centers are consuming massive quantities of low and medium
+            voltage switchgear as AI workloads push power draw per facility well
+            beyond what the previous generation of hyperscale builds required.
+            Government-backed digital infrastructure initiatives in the UK and
+            elsewhere are adding public-sector demand on top of private
+            hyperscale procurement. And the manufacturers who produce
+            switchgear, particularly the medium voltage equipment that feeds the
+            transformer-to-distribution path in large data center campuses, have
+            finite production capacity that does not scale quickly.
+          </p>
+
+          <h2>What Early Design Freeze Actually Means in Practice</h2>
+
+          <p>
+            Carter Wolde-Lule's prescription is precise: organizations must now
+            treat switchgear as a critical path risk, which means early design
+            freeze and early manufacturer engagement. In practical terms, this
+            means the electrical distribution architecture needs to be finalized
+            before the cooling design is locked, before the structural work is
+            completed, before the lease is signed at some sites. The sequence
+            that worked in low-demand periods, where switchgear was treated as a
+            near-commodity available on reasonable notice, is now a schedule
+            risk that can slip a project by six to twelve months.
+          </p>
+
+          <p>
+            This is the same dynamic that reshaped CDU procurement over the past
+            three years.
+            <a
+              href="https://thecoolingreport.com/intel/the-liquid-cooling-supply-chain-race-has-three-frontrunners-and-a-hundred-chaser.html"
+              >The liquid cooling supply chain</a
+            >
+            tightened as hyperscale demand exceeded manufacturing capacity, and
+            operators who treated CDUs as late-stage decisions found themselves
+            commissioning facilities with cooling infrastructure gaps.
+            Switchgear is following the same path, but with the added
+            complication that electrical distribution equipment has longer
+            manufacturing lead times than most cooling components and fewer
+            substitute vendors at the medium voltage tier.
+          </p>
+
+          <h2>The Broader Procurement Discipline Problem</h2>
+
+          <p>
+            Data center development has historically been organized around the
+            technology procurement cycle, where the servers and networking
+            equipment set the schedule and everything else followed. That
+            organizational logic breaks down when the infrastructure supporting
+            the compute, electrical distribution, cooling, and
+            <a
+              href="https://thecoolingreport.com/intel/neocloud-colocation-credit-risk-deals-stalling.html"
+              >colocation capacity</a
+            >, all face independent supply constraints that compress against
+            each other. The operators who are executing consistently on AI
+            infrastructure timelines are running parallel procurement tracks,
+            not sequential ones. Switchgear, CDUs, chillers, and transformers
+            are all being specified and ordered at design freeze, well before
+            the construction schedule would traditionally require them.
+          </p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/switchgear-procurement-data-center-critical-path-risk.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/switchgear-procurement-data-center-critical-path-risk.html&text=Switchgear%20Is%20Now%20a%20Critical-Path%20Risk"
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=Switchgear%20Procurement%20Risk&body=https://thecoolingreport.com/intel/switchgear-procurement-data-center-critical-path-risk.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/switchgear-procurement-data-center-critical-path-risk.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+    /></noscript>
+  </body>
+</html>

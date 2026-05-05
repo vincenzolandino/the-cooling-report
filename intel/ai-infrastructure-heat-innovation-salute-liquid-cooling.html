@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      AI Infrastructure Has a Heat Problem. The Industry Is Converging on Liquid
+      Cooling as the Only Path Forward. | The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="Traditional data center racks handle 5-15kW. AI clusters are generating 50-100kW per rack and climbing. Richard Clifford of Salute lays out why heat management is now a central technical limitation on AI scaling, not a downstream facilities problem."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/ai-infrastructure-heat-innovation-salute-liquid-cooling.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="AI Infrastructure Has a Heat Problem. The Industry Is Converging on Liquid Cooling as the Only Path Forward."
+    />
+    <meta
+      property="og:description"
+      content="Traditional data center racks handle 5-15kW. AI clusters are generating 50-100kW per rack. Liquid cooling is no longer a premium option. It is the physical requirement."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/ai-infrastructure-heat-innovation-salute-liquid-cooling.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="AI Infrastructure Has a Heat Problem. The Industry Is Converging on Liquid Cooling as the Only Path Forward."
+    />
+    <meta
+      name="twitter:description"
+      content="AI clusters are generating 50-100kW per rack. Traditional racks handle 5-15kW. Heat management is now a central limitation on AI scaling."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#pricing">Premium</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Technology</span>
+          <span class="date">May 5, 2026</span>
+        </div>
+        <h1>
+          AI Infrastructure Has a Heat Problem. The Industry Is Converging on
+          Liquid Cooling as the Only Path Forward.
+        </h1>
+        <div class="body">
+          <p>
+            Traditional data center racks were designed around 5 to 15
+            kilowatts. That was the thermal envelope for decades, and the
+            cooling industry built a global fleet of CRAC units, raised floors,
+            and hot-aisle containment around it. AI clusters changed the math
+            permanently. Rack densities are now running 50 to 100 kilowatts, and
+            next-generation GPU configurations are pushing past that. Richard
+            Clifford, VP of Sales and Solutions EMEA at Salute, described the
+            implication plainly: heat management has become a central technical
+            limitation on scaling AI compute, not a facilities afterthought to
+            resolve after the servers are specced.
+          </p>
+
+          <p>
+            The physics behind this are not contested. Air moves heat at a rate
+            determined by its specific heat capacity and the volume you can push
+            through a rack. Water carries heat roughly 3,500 times more
+            efficiently per unit volume than air at equivalent conditions. At 15
+            kilowatts, air works. At 80 kilowatts, you are moving so much air at
+            such velocity that the mechanical energy cost of the fans becomes a
+            material fraction of the server power draw itself. At 130 kilowatts,
+            air has no path. The progression from room cooling to row cooling to
+            rack-level direct-to-chip liquid cooling is not a technology
+            preference. It is the industry following the physics upward along
+            the wattage curve.
+          </p>
+
+          <h2>What the Infrastructure Migration Actually Requires</h2>
+
+          <p>
+            Moving from air to liquid cooling is not a configuration change. It
+            requires new piping, heat exchangers, and specialized pumps.
+            Secondary coolant loops inside server chassis need manifolds,
+            quick-disconnect fittings, and leak containment measures that
+            air-cooled facilities never had to plan for. Workforce training is a
+            genuine constraint: the technicians who maintain CRAC units are not
+            automatically qualified to commission and service CDUs and
+            cold-plate manifolds. Salute's Clifford named lifecycle expertise as
+            the differentiator that separates operators who execute liquid
+            cooling migrations smoothly from those who commission at scale and
+            discover thermal validation gaps between vendor specifications after
+            the facility is already running.
+          </p>
+
+          <p>
+            Site selection is also shifting. Facilities that support AI
+            workloads need high power availability, large available space, and
+            heat rejection infrastructure rated for loads that older sites were
+            never designed to handle. Environmental compliance adds another
+            variable: water use restrictions in Nevada and Arizona affect the
+            evaporative cooling systems that many facilities still depend on as
+            their primary heat rejection mechanism. Operators who treat cooling
+            as a late-phase infrastructure decision are building themselves into
+            a corner where their power contract and their thermal rejection
+            capacity are mismatched before the first server rack arrives.
+          </p>
+
+          <h2>The Broader Pattern in the Vendor Market</h2>
+
+          <p>
+            The vendor response to this constraint is consistent across the
+            sector.
+            <a
+              href="https://thecoolingreport.com/intel/vertiv-acquires-strategic-thermal-labs-cold-plate-engineering.html"
+              >Vertiv acquired Strategic Thermal Labs</a
+            >
+            to add server-side cold-plate engineering.
+            <a
+              href="https://thecoolingreport.com/intel/direct-to-chip-cooling-market-17-billion-2032.html"
+              >The direct-to-chip cooling market is projected at $17.31 billion
+              by 2032</a
+            >, growing at 26.5% annually.
+            <a
+              href="https://thecoolingreport.com/intel/air-vs-liquid-cooling-ai-data-centers-hybrid-architecture.html"
+              >Air cooling and liquid cooling are not competing modalities for
+              AI workloads</a
+            >: air handles everything below 40 kilowatts; liquid handles the
+            rest. The hybrid architecture that operators will actually run
+            through the end of this decade uses both, with RDHx and
+            direct-to-chip loops alongside existing CRAH units for legacy
+            workloads.
+          </p>
+
+          <p>
+            The operators who have already committed to liquid cooling
+            infrastructure and built the internal expertise to commission and
+            maintain it are not making a premium bet on an emerging technology.
+            They are building the baseline that AI compute requires. Everyone
+            retrofitting on someone else's timeline will pay more per kilowatt
+            of thermal capacity and wait longer for the components to arrive.
+          </p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/ai-infrastructure-heat-innovation-salute-liquid-cooling.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/ai-infrastructure-heat-innovation-salute-liquid-cooling.html&text=AI%20Infrastructure%20Has%20a%20Heat%20Problem"
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=AI%20Infrastructure%20Heat%20Problem&body=https://thecoolingreport.com/intel/ai-infrastructure-heat-innovation-salute-liquid-cooling.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/ai-infrastructure-heat-innovation-salute-liquid-cooling.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+    /></noscript>
+  </body>
+</html>
