@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Putting GPU Nodes Next to Houses Sounds Clever Until You Read the Cooling
+      Spec. Fast Company on the Pulte-Span Pilot. | The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="Fast Company breaks down the unanswered cooling, noise, and power questions in the Span-PulteGroup pilot to put mini GPU data centers next to suburban houses."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/fast-company-home-mini-data-centers-untested-risks.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Putting GPU Nodes Next to Houses Sounds Clever Until You Read the Cooling Spec. Fast Company on the Pulte-Span Pilot."
+    />
+    <meta
+      property="og:description"
+      content="Fast Company breaks down the unanswered cooling, noise, and power questions in the Span-PulteGroup pilot to put mini GPU data centers next to suburban houses."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/fast-company-home-mini-data-centers-untested-risks.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Technology</span>
+          <span class="date">May 11, 2026</span>
+        </div>
+        <h1>
+          Putting GPU Nodes Next to Houses Sounds Clever Until You Read the
+          Cooling Spec. Fast Company on the Pulte-Span Pilot.
+        </h1>
+        <div class="body">
+          <p>
+            Fast Company published a careful takedown of the
+            <a
+              href="https://www.fastcompany.com/91539193/home-side-mini-data-centers-are-untested-and-come-with-risks"
+              >Span-PulteGroup pilot</a
+            >
+            that is supposed to let homebuilders put mini AI data center nodes
+            alongside residential HVAC equipment. The pitch is straightforward.
+            Span's smart utility box detects unused household electrical
+            capacity, steers that capacity to GPU nodes mounted outside the
+            house in HVAC-looking enclosures, and pays the homeowner a share of
+            the resulting compute revenue. Nvidia is providing the GPUs. Pulte
+            is providing the houses. Span is providing the box.
+          </p>
+
+          <p>
+            Reading the reporting carefully reveals the gap between the press
+            release and the engineering reality. Span has not actually deployed
+            at scale. Pulte told CNBC that exactly one prototype has been
+            installed next to a single home. Span's VP Chris Lander declined to
+            share technical studies showing the distributed compute architecture
+            can actually deliver AI workloads at production quality. The company
+            says the pilot will involve "upwards of 100" nodes "later this
+            year." Neither timing nor location has been disclosed.
+          </p>
+
+          <h2>The Cooling Math Does Not Work Out the Way the Pitch Suggests</h2>
+
+          <p>
+            A GPU node sitting next to a residential HVAC unit has to reject
+            heat somewhere. The most likely thermal architecture is a
+            self-contained air-cooled enclosure with fans pushing waste heat
+            into the air around the house. Two practical problems follow
+            immediately.
+          </p>
+
+          <p>
+            First, the noise. Even a modest 5 kW GPU node running air cooling at
+            full load will emit fan noise well above ambient residential levels.
+            Residential HVAC compressors run around 50 to 65 dBA at the unit. A
+            continuously running GPU enclosure at the same scale runs higher,
+            especially during AI training workloads that hold the GPUs at
+            sustained near-peak power for hours. The Span pitch assumes
+            neighbors will not complain because the enclosure looks like an HVAC
+            unit. The neighbors will hear the difference within a week.
+          </p>
+
+          <p>
+            Second, the thermal envelope. A residential lot in Arizona, Texas,
+            or Florida will see ambient temperatures above 38°C for months at a
+            time. Air cooling a 5 kW GPU at those ambient temperatures requires
+            either oversized heat sinks, larger fans, or both. Power draw on the
+            cooling system rises sharply with ambient temperature. The GPU's
+            effective performance drops because it has to throttle to stay under
+            thermal limits. The 100-node pilot has not been stress-tested
+            through a Texas summer. The data on what the actual usable compute
+            capacity looks like at 40°C ambient does not exist.
+          </p>
+
+          <h2>The Grid Argument Cuts Both Ways</h2>
+
+          <p>
+            Span's marketing positions the distributed approach as a way to ease
+            load on the regional grid by using residential transformer capacity
+            that is sitting idle. The math is more complicated than the pitch
+            suggests.
+            <a
+              href="https://thecoolingreport.com/intel/wisconsin-data-center-moratorium-cooling-backlash.html"
+              >Residential rate structures are the political third rail behind
+              every hyperscale opposition campaign</a
+            >. Communities are angry because data center growth is correlating
+            with rate hikes on their power bills. The Span model does not change
+            that equation. It actually deepens it by drawing power through
+            residential transformers and distribution lines that are billed at
+            residential rates, while the compute revenue accrues to a third
+            party.
+          </p>
+
+          <p>
+            If neighbors realize their house is hosting a GPU node and the
+            homeowner is taking a share of the revenue, the political math
+            becomes harder still. The pitch only works if the nodes are
+            essentially invisible. The cooling noise, the visible enclosure, and
+            the rate-structure questions make invisibility impossible.
+          </p>
+
+          <h2>The Strategic Question for Cooling Vendors</h2>
+
+          <p>
+            The Span concept is not the first attempt to distribute AI compute
+            into residential or edge environments. Edge data centers, micro DCs,
+            and modular containers have all been tried in various form factors
+            over the last decade. Most have not scaled because the thermal
+            architecture trades efficiency for distribution, and the resulting
+            cost per FLOP is hard to compete with what hyperscalers can deliver
+            from a centralized 100 MW facility running optimized direct-to-chip
+            cooling.
+          </p>
+
+          <p>
+            The cooling vendor base should treat the Pulte-Span pilot as a
+            low-probability outcome that, if it works, would shift the
+            addressable market for residential-grade thermal solutions in
+            interesting directions. If it does not work, the political pressure
+            that pushed hyperscalers to look for distributed alternatives will
+            refocus on the hyperscale model and the existing cooling
+            architectures that support it. The interim is going to be an
+            experiment with maybe 100 prototype units, which is too small a
+            sample to draw a credible thermal performance conclusion from. Wait
+            for the second pilot before adjusting any product roadmap.
+          </p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/fast-company-home-mini-data-centers-untested-risks.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/fast-company-home-mini-data-centers-untested-risks.html"
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/fast-company-home-mini-data-centers-untested-risks.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/fast-company-home-mini-data-centers-untested-risks.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+    /></noscript>
+  </body>
+</html>
