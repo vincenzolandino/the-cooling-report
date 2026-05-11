@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Center Cooling Systems: A Foundational Guide From Vertiv | Sponsored
+      | The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="Sponsored by Vertiv. A foundational primer on the principles, technologies, and constraints behind data center cooling, from environmental setpoints to thermal modeling."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/vertiv-data-center-cooling-systems-beginners-guide-sponsored.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Data Center Cooling Systems: A Foundational Guide From Vertiv [Sponsored]"
+    />
+    <meta
+      property="og:description"
+      content="A foundational primer from Vertiv on the principles, technologies, and constraints behind data center cooling."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/vertiv-data-center-cooling-systems-beginners-guide-sponsored.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #fff;
+        background: #c2541a;
+        padding: 4px 10px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .sponsor-disclosure {
+        background: #fff8f0;
+        border-left: 4px solid #c2541a;
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-family: var(--sans);
+        font-size: 0.82rem;
+        color: #6a4a30;
+        line-height: 1.6;
+        border-radius: 2px;
+      }
+      .sponsor-disclosure strong {
+        color: #c2541a;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+      .sponsor-cta {
+        background: #1a1a18;
+        color: #fff;
+        padding: 28px;
+        margin: 36px 0 20px;
+        border-radius: 3px;
+      }
+      .sponsor-cta p {
+        color: #ddd;
+        margin: 0 0 14px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+      .sponsor-cta p:first-child {
+        color: #c2541a;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .sponsor-cta .cta-headline {
+        color: #fff;
+        font-family: var(--serif);
+        font-size: 1.1rem;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+      .sponsor-cta a.button {
+        display: inline-block;
+        padding: 11px 22px;
+        background: #c2541a;
+        color: #fff;
+        font-family: var(--sans);
+        font-size: 0.84rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 2px;
+        margin-top: 8px;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Sponsored by Vertiv</span>
+          <span class="date">May 12, 2026</span>
+        </div>
+        <h1>Data Center Cooling Systems: A Foundational Guide From Vertiv</h1>
+
+        <div class="sponsor-disclosure">
+          <strong>SPONSORED CONTENT.</strong> This article was produced in
+          partnership with
+          <a
+            href="https://www.vertiv.com/en-asia/about/news-and-events/articles/educational-articles/a-beginners-guide-to-data-center-cooling-systems/"
+            target="_blank"
+            rel="noopener"
+            >Vertiv</a
+          >. The Cooling Report's editorial team adapted the source material for
+          our format. Vertiv reviewed the final version. The Cooling Report's
+          news coverage is editorially independent and unsponsored.
+        </div>
+
+        <div class="body">
+          <p>
+            Most articles in The Cooling Report assume the reader already knows
+            the difference between a CRAH and a CDU, can quote PUE at the rack
+            level, and has opinions about single-phase versus two-phase
+            immersion. The audience that pays for this newsletter has been doing
+            this work for years. But that audience also keeps asking us for a
+            clean primer to send to procurement leads, board members,
+            sustainability teams, and the new hires who need to be operational
+            by Q3.
+          </p>
+
+          <p>
+            This piece, sponsored by Vertiv, is that primer. It pulls from
+            Vertiv's foundational guide to data center cooling systems and
+            adapts it to the tighter, more operational frame this publication is
+            known for. If you have ever tried to explain to a non-engineer why a
+            100-megawatt facility needs more cooling capacity than the cooling
+            capacity itself uses to operate, this is the link to send.
+          </p>
+
+          <h2>What Environmental Control Actually Means</h2>
+
+          <p>
+            Data center environmental control is the management of temperature,
+            humidity, particulate filtration, and air movement inside a
+            facility, calibrated to keep IT equipment operating within
+            manufacturer-specified tolerances. The most-cited target band is 70
+            to 75°F (21 to 24°C) at the server intake. Some research suggests
+            legacy facilities run cooler than that, often below 70°F, which
+            costs energy without improving reliability.
+          </p>
+
+          <p>
+            The reason the band matters is that every degree below the upper
+            specification limit costs additional cooling power. Every degree
+            above accelerates component degradation and shortens equipment
+            lifetime. The optimization problem the cooling architecture is
+            trying to solve is to hold the intake band as close to the warm end
+            of the spec as possible without sustained excursions above it.
+          </p>
+
+          <h2>The Five Constraints Every Cooling Design Must Solve For</h2>
+
+          <p>
+            Vertiv's foundational guide names five technical challenges that
+            every cooling design has to address simultaneously. They are worth
+            listing because facility operators tend to optimize for one or two
+            of them and underweight the others, which is how mid-life problems
+            compound.
+          </p>
+
+          <p>
+            <strong>Adaptability and scalability.</strong> A cooling
+            architecture has to flex as compute demand changes. Rack densities
+            have migrated from 5 kW historical norms to 50 kW and beyond in
+            AI-heavy environments. A design that locks in the wrong density
+            assumption locks the operator out of the next workload generation.
+          </p>
+
+          <p>
+            <strong>Availability.</strong> The cooling system has to be more
+            reliable than the workload it supports. Mission-critical data
+            centers run at N+1 or 2N cooling redundancy because a single chiller
+            failure in a non-redundant plant can take a facility down inside 90
+            seconds.
+          </p>
+
+          <p>
+            <strong>Life cycle costs.</strong> The capex of a cooling system is
+            a fraction of the total cost of ownership. The opex on power, water,
+            maintenance, and refrigerant management over a 15-year operating
+            life will exceed the original purchase price several times over.
+          </p>
+
+          <p>
+            <strong>Maintenance and serviceability.</strong> Components have to
+            be accessible. Spare parts have to be available. Service technicians
+            have to be qualified on the specific equipment installed. A facility
+            designed around an exotic architecture with no local service depth
+            will pay for that decision through every emergency repair.
+          </p>
+
+          <p>
+            <strong>Manageability.</strong> The control system has to be
+            operable by the team that will own it. Vendor-specific control
+            platforms with proprietary interfaces and limited integration paths
+            create operational debt that compounds over time.
+          </p>
+
+          <h2>Airflow Management Is the Foundation</h2>
+
+          <p>
+            Before liquid cooling enters the conversation, every facility has to
+            solve airflow management. The principle is simple: hot exhaust air
+            and cold intake air should not mix. The execution is harder than it
+            looks.
+          </p>
+
+          <p>
+            Rack hygiene is the term of art. Blanking plates seal gaps in racks
+            where empty rack units would otherwise allow hot exhaust to
+            recirculate to the front of the rack. Hot-aisle and cold-aisle
+            separation runs perpendicular to the racks, keeping all server
+            intakes facing into a single cold aisle and all exhausts venting
+            into hot aisles. Containment, either hot-aisle or cold-aisle, takes
+            that separation to its logical conclusion by physically barricading
+            the two streams.
+          </p>
+
+          <p>
+            Facilities that get airflow management right operate at PUEs below
+            1.4 with conventional cooling. Facilities that do not can run PUEs
+            above 2.0 even with newer equipment, because the cooling plant is
+            constantly fighting recirculation losses that good airflow design
+            would have eliminated for free.
+          </p>
+
+          <h2>Where Energy Efficiency Gets Found</h2>
+
+          <p>
+            The energy efficiency conversation in modern data center cooling has
+            three lever points worth understanding.
+          </p>
+
+          <p>
+            The first is measurement. Most facilities do not have accurate
+            metering of non-IT power consumption at the granularity required to
+            find the next efficiency win. Cooling represents 30 to 40% of
+            facility electricity draw at conventional PUE. Without measurement,
+            the optimization opportunity stays invisible.
+          </p>
+
+          <p>
+            The second is computational fluid dynamics. CFD analysis models
+            airflow patterns inside the facility before construction. The output
+            reveals dead zones, recirculation paths, and stratification that
+            human intuition misses. Facilities designed with CFD operate closer
+            to theoretical PUE than facilities designed by rule of thumb.
+          </p>
+
+          <p>
+            The third is free cooling. When ambient air is colder than chilled
+            water return temperature, the facility can transfer heat to the
+            outside without running compressors. Free cooling availability is a
+            function of geography, season, and the design temperature of the
+            cooling loops. Sites with favorable climates can run free cooling
+            for thousands of hours per year, materially reducing the operating
+            energy of the cooling plant.
+          </p>
+
+          <h2>What Comes Next</h2>
+
+          <p>
+            Vertiv's guide identifies four trends shaping the next decade of
+            cooling architecture, and the operational data backs them up.
+          </p>
+
+          <p>
+            Operating temperatures are rising. ASHRAE has progressively expanded
+            its recommended envelope, and major hyperscalers now run intake
+            temperatures above 80°F on production workloads without reliability
+            impact. The benefit is reduced cooling energy. The risk is narrower
+            margin for cooling-system failure recovery.
+          </p>
+
+          <p>
+            Hybrid cooling is the practical default. Air cooling handles
+            workloads up to roughly 40 kW per rack. Liquid cooling takes over
+            above that. Most facilities will run both architectures concurrently
+            for the rest of the decade, because workload mixes do not migrate
+            uniformly and stranded thermal capacity is expensive.
+          </p>
+
+          <p>
+            Site selection now centers on thermal access. Proximity to
+            cold-water bodies, high-altitude or high-latitude geography with low
+            ambient temperatures, and access to renewable baseload power are
+            reshaping where new capacity is being announced. Nordic latitudes,
+            the Pacific Northwest, and certain parts of the U.S. Mountain West
+            are absorbing demand that historically would have gone to
+            lower-cost-of-power Southern markets.
+          </p>
+
+          <p>
+            Free cooling deployment is expanding. Direct outside air
+            economizers, indirect evaporative systems, and closed-loop chilled
+            water plants with high-temperature setpoints are all extending the
+            operating hours during which mechanical refrigeration is offline.
+            The energy savings compound across the operating life of the
+            facility.
+          </p>
+
+          <div class="sponsor-cta">
+            <p>About this sponsor</p>
+            <p class="cta-headline">
+              Vertiv designs, manufactures, and services the critical
+              infrastructure that supports vital applications for data centers,
+              communication networks, and commercial and industrial
+              environments.
+            </p>
+            <p>
+              The company's cooling portfolio spans CRAH/CRAC units, in-row and
+              rear-door heat exchangers, chilled water plants, liquid-to-air and
+              liquid-to-liquid CDUs, and high-density direct-to-chip and
+              immersion cooling architectures. Vertiv is the cooling vendor most
+              operators have already specified into one or more of their
+              facilities.
+            </p>
+            <a
+              href="https://www.vertiv.com/en-asia/about/news-and-events/articles/educational-articles/a-beginners-guide-to-data-center-cooling-systems/"
+              target="_blank"
+              rel="noopener"
+              class="button"
+              >Read the original Vertiv guide →</a
+            >
+          </div>
+
+          <p>
+            Send this primer to someone who needs the fundamentals. We will be
+            back next week with the regular intelligence operators come here
+            for.
+          </p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/vertiv-data-center-cooling-systems-beginners-guide-sponsored.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/vertiv-data-center-cooling-systems-beginners-guide-sponsored.html"
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/vertiv-data-center-cooling-systems-beginners-guide-sponsored.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/vertiv-data-center-cooling-systems-beginners-guide-sponsored.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+    /></noscript>
+  </body>
+</html>

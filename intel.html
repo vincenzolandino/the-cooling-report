@@ -107,6 +107,23 @@
         padding: 3px 8px;
         border-radius: 3px;
       }
+      .blog-post-tag.sponsored {
+        color: #ffffff;
+        background: #c2541a;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+      }
+      .blog-post.sponsored-post {
+        background: #fff8f0;
+        border-left: 4px solid #c2541a;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+      .blog-post.sponsored-post:last-child {
+        border-bottom: 1px solid #e5d5c2;
+      }
       .blog-post-date {
         font-family: var(--mono);
         font-size: 0.75rem;
@@ -433,6 +450,36 @@
             </div>
 
             <div class="blog-list">
+              <article class="blog-post sponsored-post">
+                <div class="blog-post-meta">
+                  <span class="blog-post-tag sponsored"
+                    >Sponsored by Vertiv</span
+                  >
+                  <span class="blog-post-date">May 12, 2026</span>
+                </div>
+                <h2>
+                  <a
+                    href="intel/vertiv-data-center-cooling-systems-beginners-guide-sponsored.html"
+                    >Data Center Cooling Systems: A Foundational Guide From
+                    Vertiv</a
+                  >
+                </h2>
+                <p class="article-preview">
+                  Send this primer to procurement, board members, or new hires.
+                  Sponsored by Vertiv. The Cooling Report adapted Vertiv's
+                  foundational guide on environmental setpoints, the five design
+                  constraints, airflow management, CFD-driven efficiency, and
+                  where free cooling availability is reshaping site selection.
+                  Editorial coverage on the rest of the site remains independent
+                  and unsponsored.
+                </p>
+                <a
+                  href="intel/vertiv-data-center-cooling-systems-beginners-guide-sponsored.html"
+                  class="read-more"
+                  >Read the sponsored guide →</a
+                >
+              </article>
+
               <article class="blog-post">
                 <div class="blog-post-meta">
                   <span class="blog-post-tag">Water</span>
