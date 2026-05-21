@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      UIUC Researchers Used Topology Optimization and 3D-Printed Copper to Cut
+      Cooling Energy by 95%. The Target PUE Is 1.011. | The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="University of Illinois researchers combined topology optimization with electrochemical additive manufacturing to redesign copper cold plate fin structures. The result: 32% better cooling, 68% pressure drop reduction, and a projected PUE of 1.011."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/copper-cold-plate-topology-ecam-uiuc-pue-1011.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="UIUC Researchers Used Topology Optimization and 3D-Printed Copper to Cut Cooling Energy by 95%. The Target PUE Is 1.011."
+    />
+    <meta
+      property="og:description"
+      content="Topology optimization plus electrochemical additive manufacturing produces cold plate fin geometries no machining process can replicate. 32% better cooling. 68% less pressure drop. PUE 1.011."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/copper-cold-plate-topology-ecam-uiuc-pue-1011.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="UIUC Researchers Used Topology Optimization and 3D-Printed Copper to Cut Cooling Energy by 95%. The Target PUE Is 1.011."
+    />
+    <meta
+      name="twitter:description"
+      content="Topology optimization plus ECAM produces copper cold plate geometries no machining process can replicate. 32% better cooling, 68% pressure drop reduction, PUE 1.011."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#pricing">Premium</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Technology</span>
+          <span class="date">May 20, 2026</span>
+        </div>
+        <h1>
+          UIUC Researchers Used Topology Optimization and 3D-Printed Copper to
+          Cut Cooling Energy by 95%. The Target PUE Is 1.011.
+        </h1>
+        <div class="body">
+          <p>
+            Data centers consumed
+            <a
+              href="https://newatlas.com/energy/cooling-copper-plates-data-center-energy-use/"
+              target="_blank"
+              rel="noopener"
+              >485 TWh of electricity in 2025</a
+            >. Roughly 30 percent of that, about 145.5 TWh, went to cooling. That
+            number exceeds Sweden's total annual power consumption. It is not a
+            rounding error. A single NVIDIA GB200 chip draws 1,200 watts and
+            dissipates every watt of that as heat. xAI's Colossus 1 runs 220,000
+            GPUs at 300 megawatts combined. Without active cooling, that hardware
+            reaches 1,200°C within an hour.
+          </p>
+
+          <p>
+            Researchers at the University of Illinois Urbana-Champaign have
+            published results that change what a cold plate fin structure can
+            look like and how much work it can do. Behnood Bazmi and Nenad
+            Miljkovic combined two methods that do not usually appear together in
+            the same fabrication pipeline: topology optimization, which uses
+            algorithms to generate complex internal geometries no human designer
+            would specify, and electrochemical additive manufacturing, which
+            3D-prints pure copper at feature resolution as fine as 30 to 50
+            micrometers. The results are published in
+            <em>Cell Reports Physical Science</em>.
+          </p>
+
+          <h2>What the Geometry Change Produces</h2>
+
+          <p>
+            Conventional cold plate fins are rectangular or cylindrical. Those
+            shapes are constraints of subtractive manufacturing, not constraints
+            of physics. Topology optimization removes the manufacturing
+            constraint and asks the algorithm to find whatever internal geometry
+            maximizes heat transfer while minimizing fluid resistance. The output
+            is irregular and jagged, the kind of structure that looks wrong to
+            someone trained on machined parts but is thermally correct.
+          </p>
+
+          <p>
+            The electrochemical additive manufacturing process, ECAM, deposits
+            pure copper at those algorithmic geometries with feature resolution
+            down to 30 micrometers. That is roughly one-third the width of a
+            human hair. Conventional copper machining cannot produce internal
+            channels at that scale. The combination of the two methods unlocks a
+            design space that was previously fabrication-limited.
+          </p>
+
+          <p>
+            Against a conventional cold plate baseline, the UIUC results show 32
+            percent better cooling performance and 68 percent reduction in
+            pressure drop. Both numbers matter. Better cooling reduces the
+            facility-side thermal load. Lower pressure drop reduces pump energy
+            and allows higher flow rates without proportional energy cost
+            increases.
+          </p>
+
+          <h2>What This Means for Facility-Level Numbers</h2>
+
+          <p>
+            The researchers applied their optimized cooling model to a
+            conventional 1-gigawatt air-cooled facility as a comparison
+            baseline. That facility would require roughly 550 megawatts of
+            cooling energy, more than half the total facility power draw going
+            to move heat rather than perform compute. The optimized liquid
+            cooling system in the UIUC model reduces facility cooling energy to
+            approximately 11 megawatts. Cooling drops from 30 to 35 percent of
+            facility consumption to 1.1 percent. The projected PUE under that
+            scenario is 1.011, near the theoretical limit for any real
+            infrastructure.
+          </p>
+
+          <p>
+            The industry talks about PUE improvement in tenths of a point.
+            Moving from a PUE of 1.4 to 1.3 is presented as a serious
+            operational achievement. The UIUC number puts a ceiling on what
+            optimized liquid cooling can produce at scale: essentially zero
+            overhead per watt of compute delivered.
+          </p>
+
+          <h2>The Gap Between Research and What Ships</h2>
+
+          <p>
+            ECAM is not a production process at data center scale. The
+            fabrication technique is validated at the component level. Moving
+            from laboratory-produced copper cold plates to high-volume
+            manufacturing at the throughput a hyperscale build requires is a
+            different problem with its own lead time, tooling cost, and supply
+            chain structure.
+          </p>
+
+          <p>
+            The research establishes a performance target and a fabrication
+            path. What it does not establish is a delivery timeline. Companies
+            like
+            <a href="https://thecoolingreport.com/intel/act-cold-plate-manufacturing-expansion-lancaster-500000-annual.html"
+              >ACT, which just announced a 500,000-unit annual cold plate
+              production ramp in Lancaster, Pennsylvania</a
+            >, are scaling proven single-phase and two-phase cold plate
+            architectures using conventional methods. The UIUC result shows
+            where the physics ceiling is. The production question is how quickly
+            the manufacturing process catches the geometry.
+          </p>
+
+          <p>
+            Cooling represents the single largest efficiency opportunity in AI
+            infrastructure. The GPU wattage roadmap is public. Nvidia's Vera
+            Rubin Ultra targets one megawatt per rack. At that density, the
+            difference between a PUE of 1.4 and 1.011 is not a footnote in an
+            annual sustainability report. It is hundreds of megawatts of
+            avoided generation capacity across the buildout. The UIUC paper
+            points at what liquid cooling can become when the geometry is no
+            longer constrained by what a mill can cut.
+          </p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/copper-cold-plate-topology-ecam-uiuc-pue-1011.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/copper-cold-plate-topology-ecam-uiuc-pue-1011.html&text=UIUC%20researchers%20hit%20PUE%201.011%20with%20topology-optimized%203D-printed%20copper%20cold%20plates"
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/copper-cold-plate-topology-ecam-uiuc-pue-1011.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/copper-cold-plate-topology-ecam-uiuc-pue-1011.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+      />
+    </noscript>
+  </body>
+</html>

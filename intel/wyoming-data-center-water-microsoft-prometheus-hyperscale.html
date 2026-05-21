@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Microsoft and Prometheus Hyperscale Are Building Data Centers in Cheyenne.
+      Developers Say They Won't Stress Wyoming's Water. The Math Is Unverified.
+      | The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="Microsoft has 11 data centers planned in Wyoming. Prometheus Hyperscale CEO Trenton Thornock says the company's closed-loop cooling uses water equivalent to eight single-family homes per refill cycle. Wyoming's Legislature is reviewing the claims. Combined power demand from Microsoft and Prometheus alone could exceed double the state's existing electricity consumption."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/wyoming-data-center-water-microsoft-prometheus-hyperscale.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Microsoft and Prometheus Hyperscale Are Building Data Centers in Cheyenne. Developers Say They Won't Stress Wyoming's Water. The Math Is Unverified."
+    />
+    <meta
+      property="og:description"
+      content="Developers claim projected combined water draw is 400 acre-feet annually, 3% of current usage. Power demand could exceed double Wyoming's existing grid load. The Legislature's Select Water Committee takes it up in August."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/wyoming-data-center-water-microsoft-prometheus-hyperscale.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#pricing">Premium</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Water</span>
+          <span class="date">May 20, 2026</span>
+        </div>
+        <h1>
+          Microsoft and Prometheus Hyperscale Are Building Data Centers in
+          Cheyenne. Developers Say They Won't Stress Wyoming's Water. The Math
+          Is Unverified.
+        </h1>
+        <div class="body">
+          <p>
+            Microsoft arrived in Cheyenne in 2012.
+            <a
+              href="https://wyofile.com/amid-growing-concern-data-center-developers-insist-they-wont-stress-wyoming-water/"
+              target="_blank"
+              rel="noopener"
+              >It now has 11 data centers planned in Wyoming</a
+            >. Meta is building an AI data center in Cheyenne. OpenAI and
+            Crusoe have regional plans. Prometheus Hyperscale, led by CEO
+            Trenton Thornock, is also in the Cheyenne market. The collective
+            investment in this buildout is operating against a backdrop of
+            $756 billion invested in AI infrastructure globally in the current
+            year, with $1.6 trillion projected by 2031.
+          </p>
+
+          <p>
+            The scrutiny in Wyoming focuses on water. The state sits on a
+            finite and politically sensitive water supply. Current Cheyenne data
+            centers draw approximately 200 acre-feet annually, representing 1.48
+            percent of city consumption. Developers project the combined new
+            center footprint reaching 400 acre-feet annually at full build,
+            about 3 percent of current use and 1.8 percent of Wyoming's 22,000
+            acre-feet available.
+          </p>
+
+          <h2>The Closed-Loop Claim</h2>
+
+          <p>
+            Thornock's case for Prometheus Hyperscale's low water draw rests on
+            a closed-loop propylene glycol-water cooling system. The claim: the
+            loop requires a refill cycle once every six years, and the volume
+            of water required for that refill is equivalent to what eight
+            single-family homes consume. Republican state representative Gary
+            Brown of Cheyenne was publicly skeptical. One representative
+            acknowledged the technical claim while noting that the infrequency
+            of consumption is what makes the architecture different from
+            evaporative cooling systems.
+          </p>
+
+          <p>
+            A closed-loop propylene glycol system is a real architecture.
+            Closed-loop liquid cooling with glycol inhibitor does reduce
+            water consumption to near-zero ongoing draw, with top-off intervals
+            measured in years rather than daily evaporative loss. The question
+            is whether the Prometheus facility actually runs that architecture
+            at the scale being proposed, and whether the six-year refill cycle
+            holds at AI rack densities as heat loads increase over the operating
+            life of the facility. Those are engineering verification questions,
+            not rhetorical ones.
+          </p>
+
+          <h2>The Power Problem Is Larger</h2>
+
+          <p>
+            The water question is the one getting public attention. The power
+            question may be more consequential. Microsoft and Prometheus
+            together could demand electricity in excess of double Wyoming's
+            existing grid capacity. The state's
+            <a href="https://thecoolingreport.com/intel/data-centers-electricity-costs-virginia-57-percent-public-opposition.html"
+              >grid absorption problem mirrors what other states are encountering
+              as AI buildout load accelerates</a
+            >. Wyoming's existing capacity is not sized for two hyperscalers
+            plus the existing industrial load.
+          </p>
+
+          <p>
+            Cheyenne Mayor Patrick Collins supports the development. The Wyoming
+            Outdoor Council has warned about regulatory gaps. The Legislature's
+            Select Water Committee is taking up the data center water question
+            again in August. The National Center for Atmospheric Research has
+            operated a supercomputer facility in Cheyenne for years, which
+            provides some local precedent for high-density computing
+            infrastructure. It does not provide precedent at the scale of 11
+            Microsoft campuses.
+          </p>
+
+          <p>
+            Cooling architecture choice is the variable that separates
+            operators who can make credible water stewardship claims from those
+            who cannot. A closed-loop system at verified low water intensity is
+            a legitimate claim. An evaporative cooling tower at AI density in a
+            water-stressed state is not. The difference matters more in Wyoming
+            than it does in a jurisdiction with surplus water, because here the
+            claim is being made to a legislature that controls the water rights.
+          </p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/wyoming-data-center-water-microsoft-prometheus-hyperscale.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/wyoming-data-center-water-microsoft-prometheus-hyperscale.html&text=Wyoming%20data%20center%20developers%20say%20they%20won%27t%20stress%20water%20supply.%20The%20Legislature%20isn%27t%20convinced."
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/wyoming-data-center-water-microsoft-prometheus-hyperscale.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/wyoming-data-center-water-microsoft-prometheus-hyperscale.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+      />
+    </noscript>
+  </body>
+</html>
