@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      The AI Water Panic Is Built on Bad Math. The Actual Problem Is More
+      Specific and More Solvable. | The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="Andy Masley found 1,000x errors in AI water reporting, including two corrections in Empire of AI. The national framing is wrong. The local constraints are real. The cooling industry needs both truths."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/andy-masley-ai-water-crisis-numbers-bad-math.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="The AI Water Panic Is Built on Bad Math. The Actual Problem Is More Specific and More Solvable."
+    />
+    <meta
+      property="og:description"
+      content="Andy Masley found 1,000x errors in AI water reporting, including two corrections in Empire of AI. The national framing is wrong. The local constraints are real."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/andy-masley-ai-water-crisis-numbers-bad-math.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .tag-opinion {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--orange);
+        background: rgba(194, 84, 26, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+        margin-left: 8px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .pullquote {
+        border-left: 3px solid var(--accent);
+        margin: 28px 0;
+        padding: 12px 20px;
+        background: var(--bg-card);
+        border-radius: 0 4px 4px 0;
+      }
+      .pullquote p {
+        font-family: var(--serif);
+        font-size: 1.05rem;
+        font-style: italic;
+        color: var(--text);
+        margin: 0;
+        line-height: 1.65;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#pricing">Premium</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Water</span>
+          <span class="tag-opinion">Analysis</span>
+          <span class="date">May 21, 2026</span>
+        </div>
+        <h1>
+          The AI Water Panic Is Built on Bad Math. The Actual Problem Is More
+          Specific and More Solvable.
+        </h1>
+
+        <div class="body">
+          <p>
+            The most-cited statistic about AI water use in the past two years
+            was wrong by a factor of 1,000. Karen Hao's
+            <em>Empire of AI</em>, published by Penguin Press, claimed a
+            Microsoft data center in Cerrillos, New Mexico was consuming a
+            thousand times more water than the surrounding region's residents.
+            Andy Masley, a former high school physics teacher, ran the math. For
+            Hao's claim to hold, daily residential water consumption in
+            Cerrillos would have to be 0.2 liters per person. Hao issued a
+            correction on December 17, 2025.
+          </p>
+
+          <p>
+            The error was a unit conversion. The government gave her data in
+            cubic meters. She treated it as liters. One cubic meter equals 1,000
+            liters. The entire 1,000x gap between the data center and the
+            community collapsed with a single dimensional check.
+          </p>
+
+          <p>
+            Then there was a second error in the book, involving a UK statistic.
+            A second correction followed. Masley found both.
+            <a
+              href="https://www.piratewires.com/p/andy-masley-ai-water-crisis-isnt-real"
+              target="_blank"
+              rel="noopener"
+              >Pirate Wires profiled his work in December 2025</a
+            >. He calls himself "a guy with a calculator and a chatbot." He uses
+            Claude to organize his research, maintains a Substack called The
+            Weird Turn Pro, and holds data center water reporting to the same
+            standard a physics teacher holds a student's homework. Bloomberg and
+            The Washington Post have published similar claims. Several have not
+            survived his review.
+          </p>
+
+          <h2>Where the Error Pattern Comes From</h2>
+
+          <p>
+            The structural problem is the virtual water concept applied without
+            calibration. Virtual water accounts for all the water embedded in a
+            product's full supply chain, direct and indirect. A pair of jeans
+            carries a 21,600-bottle water footprint. Leather shoes, 16,000. A
+            smartphone, 25,600. The average American's total water footprint
+            runs 1,600 bottles per day when you trace every calorie consumed,
+            every kilowatt-hour used, every manufactured good purchased.
+          </p>
+
+          <p>
+            The numbers are technically defensible. Applied to AI data centers
+            without comparison to agriculture, manufacturing, or ordinary
+            consumption, they read as catastrophe.
+          </p>
+
+          <p>
+            Texas AI centers used 463 million gallons, multiple outlets reported
+            last year. Compared to the water needs of "tens of thousands of
+            households." What the same outlets did not include: agriculture
+            accounts for roughly 80 percent of all water withdrawn from Texas
+            aquifers. The comparison that would reframe the data was left out.
+            That omission is not accident. It produces the impression of crisis
+            from numbers that describe something much smaller.
+          </p>
+
+          <h2>What Is Actually True</h2>
+
+          <p>
+            Data centers use water. The honest version of the claim is narrower
+            than the panic version.
+          </p>
+
+          <p>
+            At the national level, Masley's conclusion is that the AI buildout
+            is not a water crisis. Agriculture, manufacturing, and thermoelectric
+            power generation draw orders of magnitude more than server
+            facilities. The infrastructure cooling server racks is not the
+            forcing function on national water tables. There is no widely
+            confirmed instance of a functioning AI data center directly causing
+            water shortages or sustained hikes in local prices.
+          </p>
+
+          <p>
+            At the local level, the story changes. Data centers can contribute
+            meaningfully to aquifer drawdown when they cluster in
+            drought-stressed regions alongside other large industrial users.
+            <a href="wyoming-data-center-water-microsoft-prometheus-hyperscale.html"
+              >Microsoft's buildout in Wyoming</a
+            >
+            draws from a water system already under pressure from agriculture
+            and energy extraction. The
+            <a href="utah-stratos-kevin-oleary-9-gigawatt-box-elder-water-opposition.html"
+              >Box Elder County opposition in Utah</a
+            >
+            is not manufactured. Water protesters showed up with signs because
+            they live downstream. These constraints are real. They are just not
+            the same claim as "AI is destroying the water supply."
+          </p>
+
+          <div class="pullquote">
+            <p>
+              "I went pretty crazy pretty fast, realizing that it doesn't seem
+              like data centers in America have actually really impacted water
+              access." — Andy Masley
+            </p>
+          </div>
+
+          <p>
+            Masley's position is precise rather than dismissive. Data centers
+            "can definitely harm local water systems in the same way other large
+            industries can," he told Pirate Wires. The qualifier matters. They
+            are one industrial water user among many, subject to the same local
+            constraints as a semiconductor fab or a paper mill. The national
+            crisis framing inflates the category. The local constraint framing
+            describes something real.
+          </p>
+
+          <h2>Why This Matters for the Cooling Industry</h2>
+
+          <p>
+            Bad water statistics create two downstream failures. The first is
+            miscalibrated policy. A regulator designing water use restrictions
+            for data centers based on numbers that are 1,000x too high will
+            write different rules than one working from accurate figures. Those
+            rules will apply to facilities that had no role in producing the
+            inflated statistic.
+          </p>
+
+          <p>
+            The second failure is overcorrection. When corrections come at the
+            scale Masley has documented, the entire water conversation gets
+            discredited in the minds of the people whose opposition was already
+            skeptical. The actual constraints that do exist, in specific
+            geographies, become harder to address. The
+            <a href="asu-phoenix-data-center-heat-pollution-4-degree-downwind.html"
+              >thermal plume data from Phoenix</a
+            >
+            is real. The
+            <a href="millville-new-jersey-bans-14-gigawatt-data-center-a1.html"
+              >community opposition in New Jersey</a
+            >
+            is not going away. These conversations need accurate numbers to
+            produce accurate responses.
+          </p>
+
+          <p>
+            The cooling industry has a direct stake in the precision of water
+            reporting because its products are the answer to the actual problem.
+            Closed-loop CDUs, dry cooling, adiabatic systems, zero-water
+            architectures — the engineering response to water constraints exists
+            and is advancing. The market case for water-efficient cooling is not
+            weakened by the fact that journalism overstated the crisis. The
+            local constraints are sufficient on their own to justify the
+            investment. But sloppy national framing makes those engineering
+            arguments harder to land with operators and local governments who
+            are now skeptical of all data center water claims after watching
+            corrections pile up.
+          </p>
+
+          <h2>The Right Question</h2>
+
+          <p>
+            The cooling industry's readers here know the water draw of a CDU.
+            They know the difference between consumptive and non-consumptive
+            use. They understand that water returned to a source at elevated
+            temperature is a different problem than water evaporated from a
+            cooling tower. That knowledge is exactly what national water panic
+            journalism lacks.
+          </p>
+
+          <p>
+            Masley's 1,000x finding is not a license to dismiss the issue. It
+            is a calibration tool. The real constraint is geographic and
+            industrial: specific aquifer regions, specific drought cycles,
+            specific clusters of large users drawing from the same source. That
+            is a solvable engineering and siting problem. The EIA projects data
+            center electricity consumption reaching
+            <a href="eia-aeo-2026-data-center-electricity-818-billion-kwh-2050.html"
+              >818 billion kWh annually by 2050</a
+            >
+            under the high-demand scenario. At that scale, the water draw of
+            the cooling infrastructure is worth measuring precisely. Precisely.
+            Not 1,000x wrong.
+          </p>
+
+          <p>
+            The data center water issue is real in specific places and
+            overstated everywhere else. Getting that distinction right is not
+            PR. It is the precondition for building cooling infrastructure that
+            actually survives the regulatory environment it is entering.
+          </p>
+
+          <p
+            style="
+              font-family: var(--mono);
+              font-size: 0.78rem;
+              color: var(--text-muted);
+              margin-top: 32px;
+              padding-top: 20px;
+              border-top: 1px solid var(--border);
+            "
+          >
+            Source:
+            <a
+              href="https://www.piratewires.com/p/andy-masley-ai-water-crisis-isnt-real"
+              target="_blank"
+              rel="noopener"
+              >Pirate Wires, "The Data Center Water Crisis Isn't Real," Blake
+              Dodge and Harris Sockel, December 18, 2025</a
+            >
+          </p>
+        </div>
+
+        <div class="share-bar">
+          <p>Share this</p>
+          <div class="share-links">
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/andy-masley-ai-water-crisis-numbers-bad-math.html&text=The+AI+Water+Panic+Is+Built+on+Bad+Math.+The+Actual+Problem+Is+More+Specific+and+More+Solvable."
+              target="_blank"
+              rel="noopener"
+              >Share on X</a
+            >
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/andy-masley-ai-water-crisis-numbers-bad-math.html"
+              target="_blank"
+              rel="noopener"
+              >Share on LinkedIn</a
+            >
+            <a href="mailto:?subject=The AI Water Panic Is Built on Bad Math&body=https://thecoolingreport.com/intel/andy-masley-ai-water-crisis-numbers-bad-math.html"
+              >Email</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- LinkedIn Insight Tag -->
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+  </body>
+</html>
