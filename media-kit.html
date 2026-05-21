@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Kit | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta
+      name="description"
+      content="The Cooling Report media kit. Audience data, engagement stats, and sponsorship rates for the data center cooling intelligence newsletter."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .kit-page {
+        padding: 110px 24px 80px;
+      }
+      .kit-page .section-inner {
+        max-width: 760px;
+      }
+      .kit-hero {
+        margin-bottom: 64px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--border);
+      }
+      .kit-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 500;
+        margin-bottom: 16px;
+        display: block;
+      }
+      .kit-hero h1 {
+        font-family: var(--serif);
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 20px;
+        color: var(--text);
+      }
+      .kit-hero p {
+        font-size: 1.05rem;
+        color: var(--text-secondary);
+        line-height: 1.75;
+        max-width: 580px;
+      }
+      /* Stats row */
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin-bottom: 64px;
+      }
+      .stat-block {
+        background: var(--bg-card);
+        padding: 28px 24px;
+        text-align: center;
+      }
+      .stat-num {
+        font-family: var(--serif);
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1;
+        margin-bottom: 6px;
+        display: block;
+      }
+      .stat-num.accent {
+        color: var(--accent);
+      }
+      .stat-label {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: 1.4;
+        display: block;
+      }
+      /* Section headers */
+      .kit-section {
+        margin-bottom: 64px;
+      }
+      .kit-section h2 {
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 8px;
+      }
+      .kit-section .section-desc {
+        font-size: 0.92rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 28px;
+        max-width: 560px;
+      }
+      /* Audience breakdown */
+      .audience-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 32px;
+      }
+      .audience-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--bg-card);
+        padding: 24px;
+      }
+      .audience-card h3 {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 16px;
+      }
+      .audience-card ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .audience-card li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.88rem;
+      }
+      .audience-card li:last-child {
+        border-bottom: none;
+      }
+      .audience-card li span.company {
+        color: var(--text);
+        font-weight: 500;
+      }
+      .audience-card li span.count {
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .audience-card li span.role {
+        color: var(--text-secondary);
+      }
+      /* Tier cards */
+      .tiers-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .tier-row {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--bg-card);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: start;
+        gap: 24px;
+        padding: 28px 28px 28px 28px;
+      }
+      .tier-row.featured {
+        border-color: var(--accent);
+        background: var(--bg-card-hover);
+      }
+      .tier-row-left h3 {
+        font-family: var(--serif);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+      .tier-row-left .tier-tag {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+      .tier-row-left .tier-tag.hot {
+        color: var(--accent);
+      }
+      .tier-row-left p {
+        font-size: 0.88rem;
+        color: var(--text-secondary);
+        line-height: 1.65;
+        margin-bottom: 12px;
+        max-width: 460px;
+      }
+      .tier-row-left .specs-inline {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .tier-row-right {
+        text-align: right;
+        min-width: 140px;
+      }
+      .price-amount {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .price-unit {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        display: block;
+      }
+      /* Context bar */
+      .context-bar {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        border-radius: var(--radius);
+        padding: 20px 24px;
+        margin-bottom: 32px;
+        font-size: 0.88rem;
+        color: var(--text-secondary);
+        line-height: 1.65;
+      }
+      .context-bar strong {
+        color: var(--text);
+      }
+      /* Engagement context */
+      .engagement-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin-bottom: 32px;
+      }
+      .eng-block {
+        background: var(--bg-card);
+        padding: 24px 20px;
+      }
+      .eng-block .eng-label {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+        display: block;
+      }
+      .eng-block .eng-val {
+        font-family: var(--serif);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 4px;
+        display: block;
+      }
+      .eng-block .eng-context {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+      /* CTA */
+      .kit-cta {
+        border: 1px solid var(--accent);
+        border-radius: var(--radius);
+        padding: 36px;
+        text-align: center;
+        margin-top: 48px;
+      }
+      .kit-cta h2 {
+        font-family: var(--serif);
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 12px;
+      }
+      .kit-cta p {
+        font-size: 0.92rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+      .kit-cta a.btn {
+        display: inline-block;
+        background: var(--accent);
+        color: white;
+        font-family: var(--sans);
+        font-size: 0.88rem;
+        font-weight: 600;
+        padding: 12px 28px;
+        border-radius: 6px;
+        text-decoration: none;
+        letter-spacing: 0.01em;
+      }
+      .kit-cta .email-direct {
+        margin-top: 16px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+      .kit-cta .email-direct a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      @media (max-width: 700px) {
+        .stats-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .audience-grid {
+          grid-template-columns: 1fr;
+        }
+        .tier-row {
+          grid-template-columns: 1fr;
+        }
+        .tier-row-right {
+          text-align: left;
+        }
+        .engagement-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">
+          <span class="logo-icon">◈</span> The Cooling Report
+        </a>
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="intel.html">Intel</a>
+          <a href="resources.html">Resources</a>
+          <a href="sponsor.html">Sponsor</a>
+          <a href="/#pricing">Premium</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="kit-page">
+      <div class="section-inner">
+
+        <!-- Hero -->
+        <div class="kit-hero">
+          <span class="kit-eyebrow">Media Kit · 2026</span>
+          <h1>Reach the people<br>specifying cooling infrastructure.</h1>
+          <p>
+            The Cooling Report goes to thermal engineers, data center operators,
+            infrastructure investors, and cooling vendors. The list is small and
+            precise by design. These are senior buyers and specifiers, not a
+            general-interest audience.
+          </p>
+        </div>
+
+        <!-- Top stats -->
+        <div class="stats-row">
+          <div class="stat-block">
+            <span class="stat-num">700</span>
+            <span class="stat-label">Subscribers</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num accent">21%</span>
+            <span class="stat-label">Click-Through<br>Rate</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">95%</span>
+            <span class="stat-label">Corporate<br>Email Addresses</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">Weekly</span>
+            <span class="stat-label">Send<br>Cadence</span>
+          </div>
+        </div>
+
+        <!-- Engagement context -->
+        <div class="kit-section">
+          <h2>Engagement</h2>
+          <p class="section-desc">
+            21% click-through puts TCR roughly 10x above the B2B newsletter
+            average. The audience reads carefully, clicks deliberately, and
+            skews toward senior engineers and procurement leads.
+          </p>
+          <div class="engagement-row">
+            <div class="eng-block">
+              <span class="eng-label">Click-Through Rate</span>
+              <span class="eng-val">21%</span>
+              <span class="eng-context">B2B average: ~2%. TCR readers click on what matters to them.</span>
+            </div>
+            <div class="eng-block">
+              <span class="eng-label">Corporate Email Share</span>
+              <span class="eng-val">95%</span>
+              <span class="eng-context">Verified corporate addresses. Lockheed, Intel, Amazon, GE, Boeing, NASA, U.S. Navy.</span>
+            </div>
+            <div class="eng-block">
+              <span class="eng-label">Subscriber Type</span>
+              <span class="eng-val">B2B</span>
+              <span class="eng-context">Senior engineers, facility operators, investors, and cooling vendors — self-selected.</span>
+            </div>
+          </div>
+          <div class="context-bar">
+            <strong>Why the click rate matters more than subscriber count.</strong>
+            A list of 700 engineers who click 21% of the time drives more qualified
+            traffic than a list of 20,000 with 0.5% engagement. The sponsor's message
+            reaches people who are actively reading, not people who forgot they subscribed.
+          </div>
+        </div>
+
+        <!-- Audience breakdown -->
+        <div class="kit-section">
+          <h2>Who Reads This</h2>
+          <p class="section-desc">
+            Corporate subscribers verified by email domain. These are not estimated
+            figures — they reflect actual subscriber data from our platform.
+          </p>
+          <div class="audience-grid">
+            <div class="audience-card">
+              <h3>Companies in the list</h3>
+              <ul>
+                <li><span class="company">Intel</span><span class="count">31</span></li>
+                <li><span class="company">Lockheed Martin</span><span class="count">19</span></li>
+                <li><span class="company">Amazon</span><span class="count">18</span></li>
+                <li><span class="company">Halliburton</span><span class="count">17</span></li>
+                <li><span class="company">GE</span><span class="count">18</span></li>
+                <li><span class="company">Boeing</span><span class="count">11</span></li>
+                <li><span class="company">Blue Origin</span><span class="count">8</span></li>
+                <li><span class="company">U.S. Navy</span><span class="count">8</span></li>
+                <li><span class="company">NASA</span><span class="count">4</span></li>
+              </ul>
+            </div>
+            <div class="audience-card">
+              <h3>Reader profile</h3>
+              <ul>
+                <li><span class="role">Thermal &amp; mechanical engineers</span></li>
+                <li><span class="role">Data center facility operators</span></li>
+                <li><span class="role">Infrastructure investors</span></li>
+                <li><span class="role">Cooling equipment vendors</span></li>
+                <li><span class="role">Hyperscaler procurement teams</span></li>
+                <li><span class="role">Defense &amp; aerospace technologists</span></li>
+                <li><span class="role">Policy and regulatory analysts</span></li>
+                <li><span class="role">CDU and liquid cooling specifiers</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rates -->
+        <div class="kit-section">
+          <h2>Rates</h2>
+          <p class="section-desc">
+            Three formats. Each edition carries a maximum of one Primary Sponsor
+            and one Cooling Byte. No stacking beyond that.
+          </p>
+          <div class="tiers-list">
+            <div class="tier-row">
+              <div class="tier-row-left">
+                <span class="tier-tag">Cooling Byte</span>
+                <h3>Single-Line Mention</h3>
+                <p>
+                  A one-line sponsored mention inside the Cooling Bytes roundup.
+                  Your company name, a short message, one link. Sits alongside
+                  the news bites readers already scan every issue.
+                </p>
+                <span class="specs-inline">25 words max &bull; one link &bull; labeled Sponsor</span>
+              </div>
+              <div class="tier-row-right">
+                <span class="price-amount">$500</span>
+                <span class="price-unit">per edition</span>
+              </div>
+            </div>
+
+            <div class="tier-row featured">
+              <div class="tier-row-left">
+                <span class="tier-tag hot">Most Popular</span>
+                <h3>Primary Sponsor</h3>
+                <p>
+                  The main sponsorship block. Placed between editorial sections
+                  with a headline, body copy, and CTA link. This is the placement
+                  with enough room to say something worth clicking on. Sponsors
+                  receive click data within 48 hours of send.
+                </p>
+                <span class="specs-inline">Headline 12 words &bull; Body 50&ndash;80 words &bull; One CTA &bull; Optional logo &bull; Labeled Sponsored by [Company]</span>
+              </div>
+              <div class="tier-row-right">
+                <span class="price-amount">$2,000</span>
+                <span class="price-unit">per edition</span>
+              </div>
+            </div>
+
+            <div class="tier-row">
+              <div class="tier-row-left">
+                <span class="tier-tag">Deep Integration</span>
+                <h3>Dedicated Send</h3>
+                <p>
+                  A standalone email to the full subscriber list, written
+                  collaboratively between your team and ours. We bring the
+                  editorial voice. You bring the substance. Capped at one per
+                  month. Subject line co-crafted for deliverability and opens.
+                </p>
+                <span class="specs-inline">200&ndash;400 words &bull; up to 3 links &bull; your branding &bull; labeled A message from [Company] &bull; max 1x/month</span>
+              </div>
+              <div class="tier-row-right">
+                <span class="price-amount">$4,000</span>
+                <span class="price-unit">per send</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="context-bar" style="margin-top: 24px;">
+            <strong>Multi-edition packages available at a discount.</strong>
+            Four or more consecutive Primary Sponsor slots can be booked at a
+            reduced rate. Contact us for package pricing. Founding Sponsor
+            positions (12 consecutive weeks) are available for companies that
+            want sustained, locked-in visibility — four spots total, and the
+            rate is fixed for the full run.
+          </div>
+        </div>
+
+        <!-- What you get -->
+        <div class="kit-section">
+          <h2>What Sponsors Receive</h2>
+          <p class="section-desc">
+            Transparency is part of what makes the audience trust us — and it
+            extends to how we work with sponsors.
+          </p>
+          <div class="audience-grid">
+            <div class="audience-card">
+              <h3>Before the send</h3>
+              <ul>
+                <li><span class="role">Copy review and sharpening</span></li>
+                <li><span class="role">Subject line input on Dedicated Sends</span></li>
+                <li><span class="role">Scheduled send confirmation</span></li>
+                <li><span class="role">Audience breakdown on request</span></li>
+              </ul>
+            </div>
+            <div class="audience-card">
+              <h3>After the send</h3>
+              <ul>
+                <li><span class="role">Unique clicks on your link</span></li>
+                <li><span class="role">Click-through rate vs. edition average</span></li>
+                <li><span class="role">Delivered within 48 hours</span></li>
+                <li><span class="role">Archive link to the live edition</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="kit-cta">
+          <h2>Book a spot.</h2>
+          <p>
+            Tell us what you want to promote, which tier fits your goals, and
+            your preferred timing. We confirm fit and availability within two
+            business days.
+          </p>
+          <a href="mailto:sponsor@thecoolingreport.com" class="btn">Email sponsor@thecoolingreport.com</a>
+          <p class="email-direct">
+            Or reach Jack directly at
+            <a href="mailto:jack@thecoolingreport.com">jack@thecoolingreport.com</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+  </body>
+</html>
