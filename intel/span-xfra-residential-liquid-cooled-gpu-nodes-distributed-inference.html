@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Span Built a Liquid-Cooled GPU Node That Fits in a Garage. The Thermal Architecture Is the Actual Story. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="description" content="Span's XFRA unit puts 16 Nvidia GPUs, liquid cooling, and an integrated heat pump into a residential-scale enclosure. 8,000 units match a 100 MW data center. First deployment fall 2026." />
+    <link rel="canonical" href="https://thecoolingreport.com/intel/span-xfra-residential-liquid-cooled-gpu-nodes-distributed-inference.html" />
+    <meta property="og:type" content="article" /><meta property="og:title" content="Span Built a Liquid-Cooled GPU Node That Fits in a Garage. The Thermal Architecture Is the Actual Story." /><meta property="og:description" content="Span's XFRA unit puts 16 Nvidia GPUs, liquid cooling, and an integrated heat pump into a residential-scale enclosure. 8,000 units match a 100 MW data center. First deployment fall 2026." /><meta property="og:url" content="https://thecoolingreport.com/intel/span-xfra-residential-liquid-cooled-gpu-nodes-distributed-inference.html" /><meta property="og:image" content="https://thecoolingreport.com/og/default.png" /><meta name="twitter:image" content="https://thecoolingreport.com/og/default.png" /><meta property="og:site_name" content="The Cooling Report" /><meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page{padding:110px 24px 80px}.article-page .section-inner{max-width:720px}.article-page .tag{font-family:var(--mono);font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);background:rgba(13,118,128,.08);padding:3px 8px;border-radius:3px}.article-page .date{font-family:var(--mono);font-size:.75rem;color:var(--text-muted);margin-left:12px}.article-page .meta{margin-bottom:16px}.article-page h1{font-family:var(--serif);font-size:1.8rem;font-weight:700;line-height:1.25;margin-bottom:24px}.article-page .body p{font-size:.95rem;color:var(--text-secondary);line-height:1.8;margin-bottom:18px}.article-page .body h2{font-family:var(--serif);font-size:1.2rem;font-weight:700;margin-top:36px;margin-bottom:12px;color:var(--text)}.article-page .body a{color:var(--accent)}.article-page .back{font-size:.85rem;color:var(--accent);text-decoration:none;display:inline-block;margin-bottom:24px}.share-bar{margin-top:40px;padding-top:24px;border-top:1px solid var(--border)}.share-bar p{font-family:var(--mono);font-size:.72rem;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}.share-bar .share-links{display:flex;gap:12px;flex-wrap:wrap}.share-bar .share-links a{font-size:.84rem;color:var(--accent);text-decoration:none;padding:6px 14px;border:1px solid var(--border);border-radius:3px}@media(max-width:600px){.article-page h1{font-size:1.5rem}}
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+        <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open');"><span></span><span></span><span></span></div>
+        <div class="nav-links"><a href="../intel.html">Intel</a><a href="../resources.html">Resources</a><a href="../sponsor.html">Sponsor</a><a href="/#pricing">Premium</a><a href="/#subscribe" class="nav-cta">Subscribe</a></div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta"><span class="tag">Architecture</span><span class="date">May 2026</span></div>
+        <h1>Span Built a Liquid-Cooled GPU Node That Fits in a Garage. The Thermal Architecture Is the Actual Story.</h1>
+        <div class="body">
+          <p>The bottleneck that Span is trying to route around is not the cost of GPUs. Substation upgrades for a 100 MW data center take four to seven years in most U.S. locations. That timeline is the actual constraint on AI infrastructure deployment, and it has nothing to do with chips, software, or capital availability. Span, a San Francisco startup founded in 2018, has built a product premised on the idea that the residential electrical grid is a distributed power network that nobody is using correctly.</p>
+
+          <p>The product is called XFRA. Each unit packs 16 Nvidia GPUs, 4 CPUs, and 3 TB of RAM into an enclosure roughly the size of a residential air conditioner. At full load it draws 12.5 kilowatts. The cooling system is liquid-cooled with an integrated heat pump. No water is consumed. Chris Lander, Span's VP for XFRA, describes the underlying premise plainly: "That leaves roughly 80 amps of headroom that's just on the table, and it's never used." The average U.S. home is wired for 200-amp service and peaks at around 80 amps. The other 80 amps sit idle.</p>
+
+          <p>Eight thousand XFRA units, distributed across 8,000 homes, match the power demand of a 100 MW data center. The first deployment is planned for 100 homes in the southwestern U.S. in fall 2026, targeting an initial capacity of 1.2 MW. The long-term target is 1 gigawatt or more.</p>
+
+          <h2>The Heat Pump Integration Changes the Physics</h2>
+
+          <p>Most coverage of XFRA focuses on the distributed deployment model and the homebuilder partnership with PulteGroup. The thermal architecture deserves equal attention.</p>
+
+          <p>Span has built a heat pump directly into the XFRA enclosure. The unit cools itself via a refrigerant cycle, rejecting waste heat through the same thermal pathway as a residential HVAC system. In winter climates, that waste heat can reduce the home's heating load. The unit is quieter than a standard HVAC system. No cooling towers. No evaporative loss. No water draw at all.</p>
+
+          <p>At 12.5 kW per unit, the thermal load is within the range of a residential heat pump system. That is a fundamentally different heat rejection problem than a hyperscale campus. A 100 MW data center requires purpose-built thermal infrastructure: chillers, cooling towers, CDUs, manifolds, dry coolers, and the civil engineering to connect them. Eight thousand XFRA units distributed across residential neighborhoods offload that heat rejection to 8,000 separate refrigerant cycles, each sized for a single home's electrical panel. The infrastructure already exists. The heat pump just runs alongside the existing HVAC.</p>
+
+          <p>This matters beyond the novelty of the form factor. The <a href="https://thecoolingreport.com/intel/the-water-power-tradeoff-that-data-center-operators-keep-getting-wrong.html">water-power tradeoff</a> that drives most cooling architecture decisions at hyperscale does not apply here. No evaporative loss means no water consumption reporting requirement, no water rights application, no community opposition on groundwater grounds. The XFRA unit sidesteps the regulatory friction that is currently stalling projects measured in hundreds of megawatts.</p>
+
+          <h2>What It Can and Cannot Do</h2>
+
+          <p>XFRA is designed for AI inference workloads: chatbots, enterprise applications, coding assistants, voice systems, and augmented reality. Training is off the table. Training workloads require sustained high-bandwidth interconnects between thousands of GPUs, all-to-all communication patterns, and fault tolerance at cluster scale. Distributed residential nodes cannot provide those communication characteristics. The latency alone disqualifies them.</p>
+
+          <p>Inference is different. A chatbot query does not require a GPU in the same rack as the one that handled the previous query. The workload is embarrassingly parallel. Eight thousand nodes distributed across 8,000 homes can handle inference requests routed by software without any of them needing to communicate with each other in real time. Mahadev Satyanarayanan at Carnegie Mellon University called himself "completely convinced of the feasibility and the value." Rich Brown, formerly of Berkeley Lab, raised the grid stability concern: distributed data centers would eliminate load diversity benefits by "filling in all the valleys," meaning the aggregate demand profile could be less favorable to utilities than the current mix of residential and commercial loads.</p>
+
+          <p>Brown's concern is real but not fatal to the model. The grid stability question depends on deployment density and the geographic distribution of nodes. Eight thousand units spread across the southwestern U.S. are not 8,000 units in one metro area. Span will need to engage with utilities on the load profile question before scaling past the pilot.</p>
+
+          <h2>The Unit Economics Are the Open Question</h2>
+
+          <p>Homeowners in the Span model pay flat fees for power and Wi-Fi connectivity and receive compensation based on compute and energy usage. The business model is straightforward at pilot scale. At 1 gigawatt, distributed across tens of thousands of homes, the operational overhead becomes substantial: field service for hardware failures, workload routing software that handles node availability in real time, homeowner churn when someone moves or cancels, and the logistics of hardware recovery and redeployment.</p>
+
+          <p>A 100 MW centralized data center has one physical location to maintain. The distributed equivalent has 8,000 maintenance addresses. The capital efficiency of liquid-cooled hyperscale facilities comes partly from density: thousands of kW managed by a single operations team, a single electrical supply, a single cooling plant. Span's model trades that density for permitting speed and zero water consumption. Whether the operations overhead can be kept low enough to sustain margins is the question that pilot data from fall 2026 will need to answer.</p>
+
+          <p>The permitting argument is compelling. Four to seven years for substation upgrades is a real constraint, and it compounds as the pipeline of approved projects grows. Every month of delay at 100 MW of capacity represents real revenue unrealized by whoever commissioned the build. If Span can demonstrate that XFRA nodes can be deployed at meaningful scale in months rather than years, the total cost comparison to centralized infrastructure changes substantially.</p>
+
+          <p>The thermal model is already proven at unit level. The refrigerant cycle works. The heat pump works. The question is whether the distributed operations model scales. Fall 2026 will be a limited but meaningful test.</p>
+        </div>
+        <div class="share-bar">
+          <p>Share this</p>
+          <div class="share-links">
+            <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/span-xfra-residential-liquid-cooled-gpu-nodes-distributed-inference.html&text=Span%20Built%20a%20Liquid-Cooled%20GPU%20Node%20That%20Fits%20in%20a%20Garage.%20The%20Thermal%20Architecture%20Is%20the%20Actual%20Story." target="_blank" rel="noopener">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/span-xfra-residential-liquid-cooled-gpu-nodes-distributed-inference.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+            <a href="mailto:?subject=Span Built a Liquid-Cooled GPU Node That Fits in a Garage. The Thermal Architecture Is the Actual Story.&body=https://thecoolingreport.com/intel/span-xfra-residential-liquid-cooled-gpu-nodes-distributed-inference.html">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"><div class="section-inner"><div class="footer-inner"><p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p><p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p></div></div></footer>
+    <script type="text/javascript">_linkedin_partner_id="8831074";window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script>
+    <script type="text/javascript">(function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";s.parentNode.insertBefore(b,s)})(window.lintrk);</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-DYYCLVFLEF");</script>
+  </body>
+</html>
