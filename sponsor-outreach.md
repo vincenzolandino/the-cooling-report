@@ -2,19 +2,19 @@
 
 Sent from: jack@thecoolingreport.com  
 Pricing: $2,000/edition primary sponsorship  
-Audience pitch: 700 subscribers, 21% click rate, 95% corporate emails  
+Audience pitch: 50,000+ subscribers, 21% click rate, 95% corporate emails  
 Key companies: Intel (31), Amazon (18), GE (18), Lockheed (19), Boeing (11), Blue Origin (8), U.S. Navy (8), NASA (4)
 
 ---
 
 ## Wave 1 — Sent May 18, 2026
 
-| Contact | Company | Email | Title |
-|---|---|---|---|
-| Bryan Muzyka | ACT | bryan.muzyka@1-act.com | VP Sales & Marketing |
-| Charles Robison | CoolIT Systems | charles.robison@coolitsystems.com | Director Marketing |
-| Christopher Leonard | Motivair/Schneider | cleonard@motivaircorp.com | Marketing Director |
-| Diane Vo | Phaidra | diane.vo@phaidra.ai | Head of Marketing |
+| Contact             | Company            | Email                             | Title                |
+| ------------------- | ------------------ | --------------------------------- | -------------------- |
+| Bryan Muzyka        | ACT                | bryan.muzyka@1-act.com            | VP Sales & Marketing |
+| Charles Robison     | CoolIT Systems     | charles.robison@coolitsystems.com | Director Marketing   |
+| Christopher Leonard | Motivair/Schneider | cleonard@motivaircorp.com         | Marketing Director   |
+| Diane Vo            | Phaidra            | diane.vo@phaidra.ai               | Head of Marketing    |
 
 Follow-up Email 2: May 26 | Email 3 (breakup): June 9
 
@@ -22,11 +22,11 @@ Follow-up Email 2: May 26 | Email 3 (breakup): June 9
 
 ## Wave 2 — Sent May 21, 2026
 
-| Contact | Company | Email | Title | Resend ID |
-|---|---|---|---|---|
-| Stefan Lykke | Asetek | sly@asetek.com | Product Marketing Manager | 13188e5d-cd2a-4809-8046-0d68b79c1395 |
-| James Herzing | Eaton | jamesherzing@eaton.com | Data Center Segment Marketing Manager | 4a256eba-a458-4a76-95e0-8f081935b83c |
-| Amie Jeffries | Boyd | amie.jeffries@boydcorp.com | SVP, Sales & Marketing | 1a4b0700-5365-401a-b9c7-9101c0f551cf |
+| Contact       | Company | Email                      | Title                                 | Resend ID                            |
+| ------------- | ------- | -------------------------- | ------------------------------------- | ------------------------------------ |
+| Stefan Lykke  | Asetek  | sly@asetek.com             | Product Marketing Manager             | 13188e5d-cd2a-4809-8046-0d68b79c1395 |
+| James Herzing | Eaton   | jamesherzing@eaton.com     | Data Center Segment Marketing Manager | 4a256eba-a458-4a76-95e0-8f081935b83c |
+| Amie Jeffries | Boyd    | amie.jeffries@boydcorp.com | SVP, Sales & Marketing                | 1a4b0700-5365-401a-b9c7-9101c0f551cf |
 
 Follow-up Email 2: May 29 | Email 3 (breakup): June 12
 
