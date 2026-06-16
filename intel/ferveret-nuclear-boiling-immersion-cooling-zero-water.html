@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ferveret Borrows Reactor Boiling Physics to Cool Servers With Zero Water | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="description" content="MIT spinout Ferveret applies nuclear subcooled-boiling physics to two-phase immersion cooling, claiming 15% better efficiency, no PFAS, and zero water draw." />
+    <link rel="canonical" href="https://thecoolingreport.com/intel/ferveret-nuclear-boiling-immersion-cooling-zero-water.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Ferveret Borrows Reactor Boiling Physics to Cool Servers With Zero Water" />
+    <meta property="og:description" content="MIT spinout Ferveret applies nuclear subcooled-boiling physics to two-phase immersion cooling, claiming 15% better efficiency, no PFAS, and zero water draw." />
+    <meta property="og:url" content="https://thecoolingreport.com/intel/ferveret-nuclear-boiling-immersion-cooling-zero-water.html" />
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page { padding: 110px 24px 80px; }
+      .article-page .section-inner { max-width: 720px; }
+      .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13, 118, 128, 0.08); padding: 3px 8px; border-radius: 3px; }
+      .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+      .article-page .meta { margin-bottom: 16px; }
+      .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+      .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+      .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+      .article-page .body a { color: var(--accent); }
+      .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+      .article-page .back:hover { text-decoration: underline; }
+      .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+      .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+      .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+      .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+      .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+      @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+        <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Technology</span>
+          <span class="date">June 10, 2026</span>
+        </div>
+        <h1>Ferveret Borrows Reactor Boiling Physics to Cool Servers With Zero Water</h1>
+        <div class="body">
+          <p>MIT spinout Ferveret is pitching a cooling approach drawn from nuclear reactor engineering, according to <a href="https://news.mit.edu/2026/nuclear-inspired-cooling-system-ferveret-could-make-data-centers-more-sustainable-0610">MIT News' coverage</a> published June 10, 2026. Founders Reza Azizian, a former MIT nuclear engineering postdoc, and Matteo Bucci, an associate professor in MIT's Department of Nuclear Science and Engineering, started the company in 2021 after years of heat transfer research through the MIT Energy Initiative. Their core idea: the physics that governs how much heat a reactor core can shed also governs how much heat a GPU package can shed.</p>
+          <h2>Reactor boiling, applied to a server</h2>
+          <p>Ferveret's Adaptive Phase Cooling submerges servers in a dielectric liquid with a low boiling point and lets that liquid boil at the chip surface. Phase change absorbs a large amount of energy, which is exactly the energy pulled off the silicon. The company's claimed edge is bubble dynamics borrowed from subcooled boiling research: producing smaller bubbles that detach more frequently, which speeds the rewetting cycle and raises the heat transfer rate. Bucci frames the parallel bluntly, noting that in a reactor, heat transfer determines how much energy you can extract from the core, which translates directly to revenue. The same logic now applies to token throughput.</p>
+          <p>The fluid carries no PFAS. That matters because the two-phase immersion field has leaned heavily on engineered fluorinated fluids, and the regulatory and liability questions around those chemicals are mounting for any operator weighing a tank-based design. A PFAS-free working fluid removes one of the larger adoption blockers hanging over the immersion category.</p>
+          <h2>The numbers that touch cooling capex</h2>
+          <p>Ferveret claims a 15 percent improvement in computational power efficiency over state-of-the-art liquid cooling, and up to 35 percent more AI tokens from the same power budget when its cooling is paired with power optimization. The headline figure for facility planners is water: the system consumes zero water, since heat rejection runs through a closed dielectric loop rather than evaporative towers. That sidesteps the <a href="https://thecoolingreport.com/intel/the-water-power-tradeoff-that-data-center-operators-keep-getting-wrong.html">water and power tradeoff operators keep getting wrong</a>, and lands in the same design space as the <a href="https://thecoolingreport.com/intel/zero-water-cooling-pilots-are-launching-in-phoenix-and-mt-pleasant-the-results-w.html">zero-water cooling pilots now running in Phoenix and Mt. Pleasant</a>.</p>
+          <p>The form factor is the other tell. Rather than ship large immersion tanks, Ferveret delivers small boxes that each house a single server in a modular, rack-mounted package. That keeps the deployment closer to the way operators already rack and service hardware, lowering the operational friction that has kept tank immersion a niche choice next to cold plates.</p>
+          <h2>Why this lands now</h2>
+          <p>Air cooling still draws as much as 40 percent of a facility's power, a ceiling that no longer fits racks pushing past 100 kilowatts. Ferveret already counts CleanSpark, FuriosaAI, and Switch among its customers, sits inside Nvidia's Inception program, and says it is in talks with hyperscalers. The competitive question is the one that has dogged immersion for years: whether a two-phase approach can unseat cold plates on serviceability and ecosystem support, the same dynamic shaping the broader <a href="https://thecoolingreport.com/intel/immersion-cooling-market-14-billion-2034-forecast.html">immersion cooling market forecast to reach 14 billion dollars by 2034</a>. Ferveret's nuclear pedigree gives it a credible heat transfer story. The deployment math, and the water savings, are what will move thermal architects.</p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/ferveret-nuclear-boiling-immersion-cooling-zero-water.html" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/ferveret-nuclear-boiling-immersion-cooling-zero-water.html" target="_blank">X</a>
+            <a href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/ferveret-nuclear-boiling-immersion-cooling-zero-water.html" target="_blank">Email</a>
+            <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/ferveret-nuclear-boiling-immersion-cooling-zero-water.html'); this.textContent = 'Copied!'; setTimeout(() => (this.textContent = 'Copy Link'), 2000);">Copy Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+          <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script"); b.type = "text/javascript"; b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript><img height="1" width="1" style="display: none" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" /></noscript>
+  </body>
+</html>

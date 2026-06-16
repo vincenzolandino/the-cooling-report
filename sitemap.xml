@@ -575,4 +575,54 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/brett-guthrie-kentucky-data-center-moratorium-ratepayer-backlash.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/university-utah-data-center-flexibility-western-grid-590-million.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/space-data-centers-radiator-football-fields-heat-rejection-vacuum.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/newsom-california-data-center-gamble-water-electricity-rates.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/rackspace-amd-30-megawatt-governed-ai-compute-liquid-cooling.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/starbucks-center-sodo-small-data-center-seattle-moratorium-exemption.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/off-grid-gas-power-plants-ai-data-centers-73000-megawatts-little-scrutiny.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/north-carolina-data-center-water-evaporative-cooling-ban-senate-bill-730.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/amazon-data-center-water-efficiency-012-liters-kwh-wue.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/ferveret-nuclear-boiling-immersion-cooling-zero-water.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
