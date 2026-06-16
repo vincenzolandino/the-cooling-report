@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two Football Fields of Radiator: The Heat-Rejection Math That Grounds Space Data Centers | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="description" content="Penn State engineers put numbers on orbital data center cooling: dumping 10 MW of waste heat needs radiators the size of two football fields." />
+    <link rel="canonical" href="https://thecoolingreport.com/intel/space-data-centers-radiator-football-fields-heat-rejection-vacuum.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Two Football Fields of Radiator: The Heat-Rejection Math That Grounds Space Data Centers" />
+    <meta property="og:description" content="Penn State engineers put numbers on orbital data center cooling: dumping 10 MW of waste heat needs radiators the size of two football fields." />
+    <meta property="og:url" content="https://thecoolingreport.com/intel/space-data-centers-radiator-football-fields-heat-rejection-vacuum.html" />
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page { padding: 110px 24px 80px; }
+      .article-page .section-inner { max-width: 720px; }
+      .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13, 118, 128, 0.08); padding: 3px 8px; border-radius: 3px; }
+      .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+      .article-page .meta { margin-bottom: 16px; }
+      .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+      .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+      .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+      .article-page .body a { color: var(--accent); }
+      .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+      .article-page .back:hover { text-decoration: underline; }
+      .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+      .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+      .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+      .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+      .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+      @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+        <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Space</span>
+          <span class="date">June 16, 2026</span>
+        </div>
+        <h1>Two Football Fields of Radiator: The Heat-Rejection Math That Grounds Space Data Centers</h1>
+        <div class="body">
+          <p>Penn State engineers Sven Bilén and Wangda Zuo published a clear-eyed assessment of orbital data centers in <a href="https://theconversation.com/building-data-centers-in-space-is-an-intriguing-idea-on-paper-but-major-engineering-challenges-must-be-solved-284053">The Conversation's coverage</a> on June 16, 2026, and the central obstacle they identify is not power or launch cost. It is heat rejection. Removing 10 megawatts of waste heat in orbit, they write, can require radiator surfaces comparable to the size of two football fields. That single figure reframes the entire pitch for putting compute above the atmosphere.</p>
+          <h2>Why vacuum makes cooling harder, not easier</h2>
+          <p>The marketing case for space data centers leans on the cold of the background environment, roughly minus 270 degrees Celsius. The physics works the other way. There is no air in vacuum, so none of the convective heat transfer that air cooling and liquid cooling ultimately rely on. Every watt of waste heat has to leave the spacecraft as infrared radiation, a comparatively slow process governed by surface area and temperature. That is why a 10 MW load demands enormous radiator panels in addition to the solar arrays needed to power the racks, with current photovoltaics converting only about half the incident sunlight and Earth's shadow cutting into generation time on each orbit.</p>
+          <p>The thermal accounting also exposes how modest these systems would be. The authors note that SpaceX's planned AI compute satellite would be 100 to 1,000 times less capable than a ground-based facility. A terrestrial hyperscale campus pushes tens to hundreds of megawatts through its halls. Matching that in orbit would mean radiator structures measured in square kilometers, assembled and maintained in an environment where swapping a failed server every three to five years becomes a launch campaign rather than a technician with a cart.</p>
+          <h2>The same equation, read on the ground</h2>
+          <p>The orbital case is a stress test of a problem that already drives terrestrial cooling design: as rack density climbs, heat rejection becomes the binding constraint long before anyone runs out of compute. On Earth, operators have the luxury of water and air to carry heat away, which is exactly why the industry is racing toward liquid loops and direct-to-chip plates as power densities rise. The same pressure that makes <a href="https://thecoolingreport.com/intel/nvidia-rubin-liquid-cooling-standard-not-optional.html">liquid cooling the default for next-generation accelerators</a> is what makes radiative-only cooling so punishing once you remove the working fluid and the atmosphere.</p>
+          <p>This is also why the most serious space-cooling concepts converge on one design element: radiator area, and lots of it. The engineering conversation around <a href="https://thecoolingreport.com/intel/orbital-space-based-ai-data-centers-2027-radiative-cooling.html">radiative cooling for orbital AI clusters</a> keeps returning to deployable panels precisely because surface area is the only lever left. Bilén and Zuo's two-football-fields figure is a useful sanity check against the more optimistic timelines, and it lines up with the cost-and-maintenance objections that already shadow <a href="https://thecoolingreport.com/intel/orbital-data-centers-real-obstacles-cost-maintenance.html">the broader orbital data center thesis</a>.</p>
+          <h2>What it means for cooling capex</h2>
+          <p>For cooling vendors and thermal architects, the takeaway is grounding rather than dismissive. Space does not repeal the laws of heat transfer, it amplifies them by stripping away every coolant path except radiation. The closer a terrestrial facility moves toward sealed, water-light, or closed-loop designs, the more its heat-rejection economics start to rhyme with the orbital case: surface area, working-fluid choice, and the cost of moving joules out of a dense rack become the whole game. The two-football-field radiator is what cooling looks like with no shortcuts, and it sets a ceiling on how far the space narrative can run before the thermal bill comes due.</p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/space-data-centers-radiator-football-fields-heat-rejection-vacuum.html" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/space-data-centers-radiator-football-fields-heat-rejection-vacuum.html" target="_blank">X</a>
+            <a href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/space-data-centers-radiator-football-fields-heat-rejection-vacuum.html" target="_blank">Email</a>
+            <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/space-data-centers-radiator-football-fields-heat-rejection-vacuum.html'); this.textContent = 'Copied!'; setTimeout(() => (this.textContent = 'Copy Link'), 2000);">Copy Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+          <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script"); b.type = "text/javascript"; b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript><img height="1" width="1" style="display: none" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" /></noscript>
+  </body>
+</html>
