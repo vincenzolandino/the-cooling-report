@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      AI Data Centers in the American West Need 7 Billion Gallons of Water a
+      Year. The Cooling Architecture Decision Is Now a Water Rights Decision. |
+      The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="Quartz reports AI data centers in the American West need roughly 7 billion gallons of water a year as the region runs dry. Cooling architecture is now gated by water allocation, not PUE."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/american-west-data-center-water-7-billion-gallons-drought.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="AI Data Centers in the American West Need 7 Billion Gallons of Water a Year. The Cooling Architecture Decision Is Now a Water Rights Decision."
+    />
+    <meta
+      property="og:description"
+      content="Quartz reports AI data centers in the American West need roughly 7 billion gallons of water a year as the region runs dry."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/american-west-data-center-water-7-billion-gallons-drought.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Water</span>
+          <span class="date">May 13, 2026</span>
+        </div>
+        <h1>
+          AI Data Centers in the American West Need 7 Billion Gallons of Water a
+          Year. The Cooling Architecture Decision Is Now a Water Rights
+          Decision.
+        </h1>
+        <div class="body">
+          <p>
+            Quartz reported on May 13 that AI data centers across the American
+            West now require on the order of 7 billion gallons of water a year,
+            in a region where the supply is shrinking.
+            <a
+              href="https://qz.com/data-center-water-use-drought-american-west-051326"
+              >The reporting</a
+            >
+            sits on top of EPA figures showing US data centers directly consumed
+            about 17.4 billion gallons in 2023, with projections running between
+            38 and 73 billion gallons by 2028. Nevada and Arizona, two of the
+            most water-stressed states in the country, are absorbing a large
+            share of the new build.
+          </p>
+
+          <p>
+            The same week, the lower Colorado River basin states of Arizona,
+            Nevada, and California signed a conservation agreement targeting a
+            million acre-feet of savings. Data centers are landing in exactly
+            the basins where every acre-foot is now contested.
+          </p>
+
+          <h2>Water Allocation Is Now the First Design Input</h2>
+
+          <p>
+            For most of the past decade, cooling architecture in the West was
+            chosen on power and cost. Evaporative and water-cooled chiller
+            plants were the default because they deliver the lowest PUE in a
+            hot, dry climate. That calculus has flipped. When a county will not
+            grant a water allocation, the evaporative option is off the table
+            before the thermal engineers get a vote. The
+            <a
+              href="https://thecoolingreport.com/intel/the-water-power-tradeoff-that-data-center-operators-keep-getting-wrong.html"
+              >water and power tradeoff</a
+            >
+            is no longer an optimization. It is a permitting gate, and operators
+            keep arriving at it late.
+          </p>
+
+          <p>
+            The alternatives all carry a cost. Closed-loop and dry coolers cut
+            water draw sharply but raise energy use and capital cost, especially
+            in desert ambient conditions.
+            <a
+              href="https://thecoolingreport.com/intel/zero-water-cooling-pilots-are-launching-in-phoenix-and-mt-pleasant-the-results-w.html"
+              >Zero-water pilots in Phoenix and Mt. Pleasant</a
+            >
+            are the live experiment in whether that trade holds at scale.
+            <a
+              href="https://thecoolingreport.com/intel/seawater-cooling-data-centers-fresh-water-alternative.html"
+              >Seawater cooling</a
+            >
+            removes the fresh-water problem entirely but only works on the
+            coast, which the interior West is not.
+          </p>
+
+          <h2>The Number Operators Quote Is Not the Number That Matters</h2>
+
+          <p>
+            Public water disclosures usually count on-site cooling draw. They
+            tend to exclude the water consumed generating the electricity the
+            facility uses, which in much of the West still means thermoelectric
+            generation with its own large withdrawal. The
+            <a
+              href="https://thecoolingreport.com/intel/offsite-water-consumption-data-centers.html"
+              >offsite water footprint</a
+            >
+            can exceed the on-site number, and it is the part regulators and
+            reporters are starting to ask about. A facility that goes zero-water
+            on site while drawing grid power from a water-cooled plant has moved
+            the consumption, not eliminated it.
+          </p>
+
+          <h2>What This Means for the Cooling Vendor Base</h2>
+
+          <p>
+            The market signal is that water-lean architecture is becoming a
+            condition of doing business in the interior West, not a premium
+            option. Dry coolers, rear-door heat exchangers, and closed-loop
+            direct-to-chip systems that can hold a tight approach temperature in
+            desert heat are the products that clear permitting. This is the same
+            pressure that produced
+            <a
+              href="https://thecoolingreport.com/intel/ai-water-crisis-17-billion-gallons-great-lakes.html"
+              >the 17-billion-gallon water crisis framing</a
+            >
+            nationally, now arriving as a hard constraint in the driest markets
+            first. Vendors who can document water draw per megawatt under
+            high-ambient conditions will win the Western pipeline. Vendors who
+            cannot will be designed out at the county zoning hearing.
+          </p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/american-west-data-center-water-7-billion-gallons-drought.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/american-west-data-center-water-7-billion-gallons-drought.html"
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/american-west-data-center-water-7-billion-gallons-drought.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/american-west-data-center-water-7-billion-gallons-drought.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+    /></noscript>
+  </body>
+</html>

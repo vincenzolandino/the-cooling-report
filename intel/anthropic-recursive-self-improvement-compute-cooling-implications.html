@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Claude Wrote 80% of Anthropic's Code in May. $18,000 of Compute Did 97% of
+      a Human Research Job. The Cooling Demand Curve Just Got Steeper. | The
+      Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="Anthropic's institute piece on recursive self-improvement quietly lays out a compute multiplier the cooling industry has to plan against. If model development itself becomes compute-bound rather than human-bound, accelerator demand scales on a curve forecasters do not have."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/anthropic-recursive-self-improvement-compute-cooling-implications.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Claude Wrote 80% of Anthropic's Code in May. $18,000 of Compute Did 97% of a Human Research Job. The Cooling Demand Curve Just Got Steeper."
+    />
+    <meta
+      property="og:description"
+      content="Anthropic's RSI piece quietly lays out a compute multiplier the cooling industry has to plan against."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/anthropic-recursive-self-improvement-compute-cooling-implications.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/og/default.png"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 720px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 24px;
+      }
+      .article-page .body p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .article-page .back {
+        font-size: 0.85rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .article-page .back:hover {
+        text-decoration: underline;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Technology</span>
+          <span class="date">June 8, 2026</span>
+        </div>
+        <h1>
+          Claude Wrote 80% of Anthropic's Code in May. $18,000 of Compute Did
+          97% of a Human Research Job. The Cooling Demand Curve Just Got
+          Steeper.
+        </h1>
+        <div class="body">
+          <p>
+            Anthropic published a piece this week from its institute on
+            recursive self-improvement.
+            <a
+              href="https://www.anthropic.com/institute/recursive-self-improvement"
+              >The essay</a
+            >
+            includes a set of internal numbers worth pulling out. As of May
+            2026, more than 80 percent of Anthropic's production code was
+            authored by Claude. Engineers merged eight times more code per day
+            in the second quarter of 2026 than they did in 2024. In an April
+            research project, roughly $18,000 of compute over 800 cumulative
+            hours recovered 97 percent of a performance gap that two human
+            researchers had addressed at 23 percent in a week.
+          </p>
+
+          <h2>The Compute Multiplier is the Cooling Story</h2>
+
+          <p>
+            The Cooling Report is not an AI safety publication. The reason the
+            Anthropic numbers belong here is that they describe a shifting
+            elasticity in compute demand. For most of the last three years,
+            forecasts of accelerator and cooling demand have been gated by how
+            fast human research teams can use the available compute
+            productively. If model development itself becomes substantially
+            automated, the rate-limiting step moves from human researcher hours
+            to available accelerator hours, and the demand curve for compute
+            becomes much less elastic with respect to headcount.
+          </p>
+
+          <p>
+            For the cooling industry, that is a forecast input. The
+            <a
+              href="https://thecoolingreport.com/intel/data-centers-becoming-power-and-cooling-plants-grey-space.html"
+              >grey-space inversion at the data center</a
+            >
+            and the
+            <a
+              href="https://thecoolingreport.com/intel/nvidias-watt-roadmap-is-writing-the-cooling-industrys-business-plan.html"
+              >Nvidia wattage roadmap</a
+            >
+            both assumed continued human-paced research throughput. The
+            Anthropic disclosure is the strongest public signal yet that the
+            assumption is loosening at one of the major labs.
+          </p>
+
+          <h2>What the $18,000 Number Actually Means for a Vendor</h2>
+
+          <p>
+            Treat the absolute figure as a research result, not a unit economics
+            quote. The interesting structural fact is that the same task ran on
+            automated compute and on human research time, and the automated path
+            closed a gap the humans closed only partially in the same calendar
+            window. If even a fraction of the internal research at frontier labs
+            follows this curve, the aggregate accelerator demand at training
+            time grows on a path that current vendor forecasts do not capture,
+            and the cooling load grows with it.
+          </p>
+
+          <h2>What to Watch and What to Discount</h2>
+
+          <p>
+            The number to track is what fraction of new model development cycles
+            at the major labs runs as automated optimization versus
+            human-directed experimentation. The number to discount is the
+            timeline speculation. Anthropic is careful in the essay to say full
+            recursive self-improvement is not here. The cooling read does not
+            require it to be. A partial multiplier on research productivity at a
+            few major labs is sufficient to bend the demand curve for the
+            <a
+              href="https://thecoolingreport.com/intel/the-liquid-cooling-supply-chain-race-has-three-frontrunners-and-a-hundred-chaser.html"
+              >liquid cooling supply chain</a
+            >
+            past what the procurement teams modeled a year ago. The vendors with
+            available capacity in 2027 and 2028 are the ones who took this
+            signal seriously this year.
+          </p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/anthropic-recursive-self-improvement-compute-cooling-implications.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/anthropic-recursive-self-improvement-compute-cooling-implications.html"
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/anthropic-recursive-self-improvement-compute-cooling-implications.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/anthropic-recursive-self-improvement-compute-cooling-implications.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+    /></noscript>
+  </body>
+</html>

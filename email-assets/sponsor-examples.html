@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponsor Examples | The Cooling Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --teal: #0d7680;
+        --ink: #1a1814;
+        --paper: #f1ece0;
+        --paper-warm: #e8e1cd;
+        --rust: #c2541a;
+        --sepia: #2a2014;
+        --muted: #6e6857;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: #3a2f24;
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        color: var(--ink);
+      }
+      .frame {
+        max-width: 920px;
+        margin: 0 auto;
+        background: var(--paper);
+      }
+      .pad {
+        padding: 56px 56px;
+      }
+      .serif {
+        font-family: "Fraunces", Georgia, serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", "Courier New", monospace;
+      }
+      .kicker {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .label {
+        display: inline-block;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 6px 12px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      .example {
+        background: #fff;
+        border: 1px solid #e0d9c5;
+        margin: 0 0 56px;
+        position: relative;
+      }
+      .example .tag {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        background: var(--rust);
+        color: #fff;
+        padding: 7px 14px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      h1.cover {
+        font-family: "Fraunces", serif;
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        margin: 0 0 26px;
+        color: var(--paper);
+      }
+      h2.section {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 900;
+        margin: 0 0 12px;
+        letter-spacing: -0.015em;
+      }
+      h3.spec {
+        font-family: "Fraunces", serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 8px;
+        color: var(--rust);
+      }
+      .lead {
+        font-size: 18px;
+        line-height: 1.62;
+        color: #46412f;
+      }
+      .specs {
+        background: var(--paper-warm);
+        padding: 22px 28px;
+        margin: 32px 0 0;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: var(--ink);
+        line-height: 1.85;
+      }
+      .specs strong {
+        color: var(--rust);
+      }
+      .divider {
+        height: 1px;
+        background: #d9d3c2;
+        margin: 56px 0;
+      }
+      /* mini newsletter frame styling */
+      .mini-news {
+        font-family: "Fraunces", serif;
+        padding: 36px 36px 0;
+      }
+      .mini-news .mh {
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+        margin: 0 0 18px;
+      }
+      .mini-news .mh .dot {
+        color: var(--teal);
+      }
+      .mini-news .editorial-head {
+        font-family: "Fraunces", serif;
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 1.08;
+        letter-spacing: -0.015em;
+        margin: 8px 0 14px;
+      }
+      .mini-news p {
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        line-height: 1.66;
+        color: #46412f;
+        margin: 0 0 16px;
+      }
+      .mini-news .read-more {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--teal);
+        text-decoration: none;
+      }
+      /* cooling byte single line */
+      .coolingbyte {
+        background: #faf6ec;
+        border-top: 2px solid var(--ink);
+        border-bottom: 2px solid var(--ink);
+        padding: 22px 36px;
+        margin: 0 36px 36px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink);
+      }
+      .coolingbyte .sp {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--rust);
+        white-space: nowrap;
+      }
+      .coolingbyte a {
+        color: var(--teal);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      /* primary sponsor card */
+      .primary-card {
+        background: var(--sepia);
+        padding: 28px 26px;
+        margin: 0 0 36px;
+      }
+      .primary-card-inner {
+        background: #fff;
+        border: 3px solid #76b900;
+        padding: 36px 34px;
+      }
+      .primary-card .nv-kicker {
+        background: #76b900;
+        color: #fff;
+        display: inline-block;
+        padding: 6px 12px;
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin: 0 0 22px;
+      }
+      .primary-card .logo {
+        width: 180px;
+        margin: 0 0 18px;
+      }
+      .primary-card h3 {
+        font-family: "Fraunces", serif;
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 1.08;
+        margin: 0 0 16px;
+        color: var(--ink);
+        letter-spacing: -0.015em;
+      }
+      .primary-card p {
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        line-height: 1.62;
+        color: #4a4434;
+        margin: 0 0 18px;
+      }
+      .primary-card .cta {
+        display: inline-block;
+        background: #76b900;
+        color: #1a1814;
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        padding: 14px 24px;
+        text-decoration: none;
+      }
+      /* dedicated send mockup */
+      .ds {
+        background: #fff;
+        border: 1px solid #e0d9c5;
+        margin: 0 0 36px;
+        font-family: "Inter", sans-serif;
+      }
+      .ds .ds-from {
+        padding: 16px 28px;
+        border-bottom: 1px solid #e0d9c5;
+        background: #faf6ec;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .ds .ds-from strong {
+        color: var(--ink);
+      }
+      .ds .ds-from .ds-subj {
+        font-family: "Fraunces", serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-top: 4px;
+        display: block;
+      }
+      .ds .ds-body {
+        padding: 30px 32px;
+      }
+      .ds .ds-label {
+        display: inline-block;
+        background: #1a1814;
+        color: var(--paper);
+        padding: 5px 11px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin: 0 0 22px;
+      }
+      .ds h4 {
+        font-family: "Fraunces", serif;
+        font-size: 26px;
+        font-weight: 900;
+        margin: 0 0 14px;
+        letter-spacing: -0.01em;
+      }
+      .ds .ds-body p {
+        font-size: 15px;
+        line-height: 1.65;
+        color: #46412f;
+        margin: 0 0 14px;
+      }
+      .ds .ds-cta {
+        display: inline-block;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 12px 22px;
+        font-weight: 800;
+        font-size: 14px;
+        text-decoration: none;
+        margin: 8px 0 0;
+      }
+      .ds .ds-fine {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 22px;
+        padding-top: 14px;
+        border-top: 1px solid #e0d9c5;
+      }
+      .footnote {
+        font-size: 13px;
+        color: var(--muted);
+        font-style: italic;
+        margin: 10px 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <!-- Cover -->
+      <div
+        class="pad"
+        style="
+          background: var(--sepia);
+          padding-top: 64px;
+          padding-bottom: 50px;
+        "
+      >
+        <div class="kicker" style="color: var(--rust); margin: 0 0 22px">
+          The Cooling Report &nbsp;&middot;&nbsp; Sponsor Format Examples
+        </div>
+        <h1 class="cover">
+          Three sponsor formats.<br />
+          One newsletter your buyer reads end-to-end.
+        </h1>
+        <p class="lead" style="color: #c9c3b4; max-width: 600px">
+          Visual examples of the three placements offered to advertisers in
+          Cooling Bytes: the Single-Line Cooling Byte, the Primary Sponsor, and
+          the Dedicated Send. All formats run with full editorial-style design
+          and clear sponsor labeling.
+        </p>
+        <p
+          class="mono"
+          style="
+            color: var(--rust);
+            font-size: 13px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin: 28px 0 0;
+          "
+        >
+          Confidential preview for ExxonMobil Product Solutions
+        </p>
+      </div>
+
+      <div class="pad">
+        <!-- Example 1: Cooling Byte / Single Line -->
+        <h2 class="section">01 &nbsp; Cooling Byte (Single Line)</h2>
+        <h3 class="spec">A one-line sponsored mention inside the dispatch.</h3>
+        <p class="lead" style="margin: 0 0 28px">
+          Native-feeling placement between editorial sections. Reads like a news
+          bite. Clearly labeled. One sentence, one link, your company name.
+        </p>
+
+        <div class="example">
+          <span class="tag">Live mockup</span>
+          <div class="mini-news">
+            <p class="mh">
+              <span class="dot">&#9672;</span> The Cooling Report &nbsp;<span
+                style="
+                  color: var(--muted);
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.12em;
+                "
+                >EXAMPLE ISSUE</span
+              >
+            </p>
+            <h4 class="editorial-head">
+              ZutaCore brought Mitsubishi, Carrier, and Samsung onto the
+              two-phase cap table.
+            </h4>
+            <p>
+              Series C placed by Goldman. 75-plus deployments. A new C-suite and
+              a 2 MW emulation lab. The investor list is the real story.
+            </p>
+            <a class="read-more" href="#">Read more &rarr;</a>
+          </div>
+          <div class="coolingbyte">
+            <span class="sp">Cooling Byte</span>
+            <span>
+              <strong>ExxonMobil Synthetic Fluids</strong> just published the
+              cooling-loop chemistry compatibility chart operators have been
+              asking for.
+              <a href="#">See the chart &rarr;</a>
+            </span>
+          </div>
+          <div class="mini-news">
+            <h4 class="editorial-head">
+              SpaceX wrote water scarcity into its IPO filing.
+            </h4>
+            <p>
+              Wired pulls three signals together. A Gallup poll. SpaceX's
+              risk-factor language. Microsoft and Google's public response.
+              Cooling architecture is a securities disclosure now.
+            </p>
+            <a
+              class="read-more"
+              href="#"
+              style="margin-bottom: 36px; display: inline-block"
+              >Read more &rarr;</a
+            >
+          </div>
+        </div>
+
+        <div class="specs">
+          <strong>Spec.</strong> One sentence, max 25 words.<br />
+          <strong>Link.</strong> One CTA link.<br />
+          <strong>Branding.</strong> Company name displayed, labeled "Cooling
+          Byte".<br />
+          <strong>Tracking.</strong> UTM-tagged links supported and
+          encouraged.<br />
+          <strong>Best for.</strong> Product launches, event promos, open roles,
+          sustained weekly visibility without heavy commitment.
+        </div>
+        <p class="footnote">
+          Example copy is illustrative. Actual sponsor message would be
+          co-developed with your team.
+        </p>
+
+        <div class="divider"></div>
+
+        <!-- Example 2: Primary Sponsor -->
+        <h2 class="section">02 &nbsp; Primary Sponsor</h2>
+        <h3 class="spec">
+          The main sponsor block. Bordered card. Logo, headline, body, CTA.
+        </h3>
+        <p class="lead" style="margin: 0 0 28px">
+          The placement most readers engage with. Sits between editorial spreads
+          with clear sponsor framing and your brand mark front and center. Below
+          is the actual Primary Sponsor card from our June 1 dispatch (NVIDIA),
+          shown with NVIDIA's own brand color and logo.
+        </p>
+
+        <div class="example">
+          <span class="tag">Past placement &middot; NVIDIA, June 1</span>
+          <div class="primary-card">
+            <div class="primary-card-inner">
+              <span class="nv-kicker"
+                >A word from our sponsor &middot; NVIDIA</span
+              >
+              <img
+                class="logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/1280px-Nvidia_logo.svg.png"
+                alt="NVIDIA"
+              />
+              <h3>Meet RTX Spark. The AI PC, redefined.</h3>
+              <p>
+                A Grace Arm CPU, a Blackwell GPU, and 128 GB of unified memory
+                on a single package, shipping in more than thirty laptops and
+                ten desktops this fall. The architecture that has been running
+                the data center is now the architecture inside the chassis on
+                your desk.
+              </p>
+              <p>
+                See NVIDIA's announcement on RTX Spark and what agentic Windows
+                on the AI PC looks like.
+              </p>
+              <a class="cta" href="#">Read the NVIDIA announcement &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="specs">
+          <strong>Spec.</strong> Headline: 12 words max. Body: 50-80 words.<br />
+          <strong>Brand.</strong> Your logo at 200px max, your brand accent on
+          the card border and CTA.<br />
+          <strong>Link.</strong> One CTA link.<br />
+          <strong>Label.</strong> "Sponsored by [Company]" / "A word from our
+          sponsor &middot; [Company]".<br />
+          <strong>Tracking.</strong> UTM-tagged. Performance report delivered
+          within 48 hours of the send.<br />
+          <strong>Best for.</strong> Demo requests, datasheet downloads, webinar
+          signups, primary brand presence.
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Example 3: Dedicated Send -->
+        <h2 class="section">03 &nbsp; Dedicated Send</h2>
+        <h3 class="spec">
+          A standalone email to the full subscriber list. Written
+          collaboratively.
+        </h3>
+        <p class="lead" style="margin: 0 0 28px">
+          Your message, sent solo. Written between your team and ours so it
+          reads like something worth opening, not something worth archiving.
+          Capped at one per month so we do not burn the list.
+        </p>
+
+        <div class="example">
+          <span class="tag">Live mockup</span>
+          <div class="ds">
+            <div class="ds-from">
+              <div>
+                <strong>From:</strong> The Cooling Report
+                &lt;premium@thecoolingreport.com&gt;
+              </div>
+              <div><strong>To:</strong> [Your address]</div>
+              <span class="ds-subj">
+                A message from ExxonMobil: cooling-loop chemistry for 60&deg;C
+                hyperscale loops
+              </span>
+            </div>
+            <div class="ds-body">
+              <span class="ds-label">A message from ExxonMobil</span>
+              <h4>
+                The synthetic base stocks built for the new direct-to-chip
+                temperature regime.
+              </h4>
+              <p>
+                Hyperscale liquid cooling loops now run at 50 to 60 Celsius,
+                with some hyperscalers testing at 90. That is a different
+                chemistry environment than the comfort-cooling industry was ever
+                built to handle.
+              </p>
+              <p>
+                ExxonMobil Product Solutions has formulated synthetic base
+                stocks specifically for the thermal and oxidative stress profile
+                of direct-to-chip cooling. The technical brief covers base oil
+                selection criteria, additive package compatibility with biocides
+                and corrosion inhibitors, and field data from multi-year trials
+                at scale.
+              </p>
+              <p>
+                Download the technical brief, or schedule a call with the
+                lubricants engineering team.
+              </p>
+              <a class="ds-cta" href="#">Download the brief &rarr;</a>
+              <div class="ds-fine">
+                You are receiving this because you subscribed to The Cooling
+                Report. ExxonMobil sponsored this send. Editorial coverage on
+                the rest of the newsletter remains independent and unsponsored.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="specs">
+          <strong>Spec.</strong> Full email, 200-400 words.<br />
+          <strong>Crafted.</strong> Written collaboratively. We will not forward
+          a press release.<br />
+          <strong>Brand.</strong> Your logo and visual identity on the send.<br />
+          <strong>Subject line.</strong> Co-crafted for deliverability and open
+          rate.<br />
+          <strong>Links.</strong> Up to 3.<br />
+          <strong>Label.</strong> "A message from [Company]".<br />
+          <strong>Cadence.</strong> Capped at 1 per month across all
+          advertisers.<br />
+          <strong>Best for.</strong> Major product launches, funding
+          announcements, case study distribution, targeted campaigns.
+        </div>
+
+        <div class="divider"></div>
+
+        <h2 class="section">Audience snapshot</h2>
+        <p class="lead" style="margin: 0 0 22px">
+          Cooling Bytes is read by data center infrastructure decision-makers.
+          Engineers, hyperscale procurement leads, infrastructure investors, and
+          AI capex planners.
+        </p>
+        <div class="specs">
+          <strong>Total contact database.</strong> 60,000+ contacts across the
+          data center, energy, and industrial infrastructure verticals.<br />
+          <strong>Opt-in newsletter subscribers.</strong> 2,500+ confirmed
+          opt-in.<br />
+          <strong>Average click-through rate.</strong> 21% on recent
+          subscriber sends, against roughly 0.5% typical for B2B newsletters at
+          this size.<br />
+          <strong>Average open rate.</strong> Reported per send in the
+          performance brief delivered after each campaign.<br />
+          <strong>List health.</strong> 100% opt-in. Continuous bounce and
+          complaint suppression via Resend. Manual list audit quarterly.<br />
+          <strong>Reader companies include.</strong> NVIDIA, Anthropic, Parker
+          Hannifin, Accelsius, Vertiv, ASU, Trane, Castrol, and the procurement
+          teams at the hyperscalers, colos, and AI labs they serve.
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="lead" style="margin: 0 0 8px">
+          For pricing, availability, and editorial calendar, contact:
+        </p>
+        <p class="lead">
+          <strong>
+            <a
+              href="mailto:jack@thecoolingreport.com"
+              style="color: var(--teal); text-decoration: none"
+              >jack@thecoolingreport.com</a
+            >
+          </strong>
+        </p>
+      </div>
+
+      <div style="background: var(--sepia); padding: 22px 56px">
+        <p
+          class="serif"
+          style="
+            font-size: 16px;
+            color: var(--paper);
+            margin: 0;
+            font-weight: 700;
+          "
+        >
+          <span style="color: var(--rust)">&#9672;</span> The Cooling Report
+          <span
+            class="mono"
+            style="
+              font-size: 11px;
+              color: var(--muted);
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              margin-left: 12px;
+            "
+          >
+            Sponsor Format Examples &middot; June 2026
+          </span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
