@@ -133,6 +133,35 @@
       .format-card p {
         margin-bottom: 8px;
       }
+      .past-sponsors {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin: 8px 0 12px;
+      }
+      .ps-cell {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        height: 96px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px 24px;
+      }
+      .ps-cell img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+      @media (max-width: 560px) {
+        .past-sponsors {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
       .format-card .specs {
         font-family: var(--mono);
         font-size: 0.76rem;
@@ -290,6 +319,77 @@
           standards high, because that is what makes it worth something for
           everyone.
         </p>
+
+        <h2>Past Sponsors</h2>
+        <p>
+          One primary sponsor per issue, by design. These are some of the
+          companies that have run with The Cooling Report.
+        </p>
+        <div class="past-sponsors">
+          <div class="ps-cell">
+            <img
+              src="/email-assets/nvidia-logo.png"
+              alt="NVIDIA"
+              loading="lazy"
+            />
+          </div>
+          <div class="ps-cell">
+            <img
+              src="/email-assets/trane-logo.png"
+              alt="Trane Technologies"
+              loading="lazy"
+            />
+          </div>
+          <div class="ps-cell">
+            <img
+              src="/email-assets/vertiv-logo.png"
+              alt="Vertiv"
+              loading="lazy"
+            />
+          </div>
+          <div class="ps-cell">
+            <img
+              src="/email-assets/parker-logo.png"
+              alt="Parker Hannifin"
+              loading="lazy"
+            />
+          </div>
+          <div class="ps-cell">
+            <img
+              src="/email-assets/mitsubishi-logo.png"
+              alt="Mitsubishi Electric"
+              loading="lazy"
+            />
+          </div>
+          <div class="ps-cell">
+            <img
+              src="/email-assets/burkert-logo.png"
+              alt="Bürkert"
+              loading="lazy"
+            />
+          </div>
+          <div class="ps-cell">
+            <img
+              src="/email-assets/cologix-logo.png"
+              alt="Cologix"
+              loading="lazy"
+            />
+          </div>
+          <div class="ps-cell">
+            <img
+              src="/email-assets/datacool-logo.jpg"
+              alt="DataCool"
+              loading="lazy"
+            />
+          </div>
+          <div class="ps-cell">
+            <img
+              src="/email-assets/bessemer-logo.png"
+              alt="Bessemer Venture Partners"
+              loading="lazy"
+            />
+          </div>
+        </div>
 
         <h2>How We Think About Sponsorships</h2>
         <p>
@@ -529,8 +629,12 @@
         <p>
           Rates, subscriber count, engagement stats, and audience breakdown are
           all in our
-          <a href="media-kit.html" style="color: var(--accent); font-weight: 500;">media kit</a>.
-          We offer single-edition bookings and multi-week packages at a discount.
+          <a
+            href="media-kit.html"
+            style="color: var(--accent); font-weight: 500"
+            >media kit</a
+          >. We offer single-edition bookings and multi-week packages at a
+          discount.
         </p>
         <p>
           A <strong>Cooling Byte</strong> and a
