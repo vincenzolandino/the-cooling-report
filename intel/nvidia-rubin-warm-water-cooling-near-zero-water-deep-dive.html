@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      NVIDIA's Rubin AI Factory Runs Hot to Use Almost No Water. The Open
+      Questions Are Chillers and Power Plants. | The Cooling Report
+    </title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta
+      name="description"
+      content="NVIDIA's Vera Rubin DSX reference design runs warm-water liquid cooling at 45C to cut onsite data center cooling water to near zero. A Cooling Report special report, in partnership with NVIDIA, on the design, the chiller-free debate, and the offsite power-plant water it does not touch."
+    />
+    <link
+      rel="canonical"
+      href="https://thecoolingreport.com/intel/nvidia-rubin-warm-water-cooling-near-zero-water-deep-dive.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="NVIDIA's Rubin AI Factory Runs Hot to Use Almost No Water. The Open Questions Are Chillers and Power Plants."
+    />
+    <meta
+      property="og:description"
+      content="A Cooling Report special report, in partnership with NVIDIA: how the Vera Rubin DSX warm-water design cuts onsite cooling water to near zero, the chiller-free debate, and the offsite power-plant water it leaves untouched."
+    />
+    <meta
+      property="og:url"
+      content="https://thecoolingreport.com/intel/nvidia-rubin-warm-water-cooling-near-zero-water-deep-dive.html"
+    />
+    <meta
+      property="og:image"
+      content="https://thecoolingreport.com/media/nvidia-data-center-45c-cooling-poster.jpg"
+    />
+    <meta
+      name="twitter:image"
+      content="https://thecoolingreport.com/media/nvidia-data-center-45c-cooling-poster.jpg"
+    />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="NVIDIA's Rubin AI Factory Runs Hot to Use Almost No Water"
+    />
+    <meta
+      name="twitter:description"
+      content="In partnership with NVIDIA: the warm-water Rubin design that cuts onsite cooling water to near zero, the chiller-free debate, and the power-plant water it does not touch."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page {
+        padding: 110px 24px 80px;
+      }
+      .article-page .section-inner {
+        max-width: 760px;
+      }
+      .article-page .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: rgba(13, 118, 128, 0.08);
+        padding: 3px 8px;
+        border-radius: 3px;
+      }
+      .article-page .date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 12px;
+      }
+      .article-page .meta {
+        margin-bottom: 16px;
+      }
+      .partner-lockup {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+        padding: 0 0 18px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 22px;
+      }
+      .partner-kicker {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+      .partner-logo {
+        height: 30px;
+        width: auto;
+        display: block;
+      }
+      .article-page h1 {
+        font-family: var(--serif);
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.22;
+        margin-bottom: 22px;
+      }
+      .sponsor-disclosure {
+        background: #fff8f0;
+        border-left: 4px solid #c2541a;
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-family: var(--sans);
+        font-size: 0.82rem;
+        color: #6a4a30;
+        line-height: 1.6;
+        border-radius: 2px;
+      }
+      .sponsor-disclosure strong {
+        color: #c2541a;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+      .hero-video {
+        margin: 8px 0 30px;
+      }
+      .hero-video video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 6px;
+        background: #000;
+      }
+      .hero-video figcaption {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        margin-top: 9px;
+        line-height: 1.55;
+      }
+      .article-page .body p {
+        font-size: 0.97rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+      .article-page .body h2 {
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-top: 40px;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .article-page .body a {
+        color: var(--accent);
+      }
+      .keystats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 30px 0;
+        padding: 24px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .keystat-num {
+        font-family: var(--serif);
+        font-size: 1.95rem;
+        font-weight: 700;
+        color: var(--accent);
+        display: block;
+        line-height: 1.1;
+      }
+      .keystat-lbl {
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-muted);
+        display: block;
+        margin-top: 8px;
+        max-width: 180px;
+        line-height: 1.5;
+      }
+      .pull-quote {
+        border-left: 4px solid var(--accent);
+        padding: 4px 0 4px 24px;
+        margin: 30px 0;
+      }
+      .pull-quote p {
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        font-style: italic;
+        line-height: 1.5;
+        color: var(--text);
+        margin-bottom: 10px;
+      }
+      .pull-quote cite {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        font-style: normal;
+      }
+      .sponsor-cta {
+        background: #1a1a18;
+        color: #fff;
+        padding: 28px;
+        margin: 40px 0 20px;
+        border-radius: 3px;
+      }
+      .sponsor-cta p {
+        color: #ddd;
+        margin: 0 0 14px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+      .sponsor-cta p:first-child {
+        color: #76b900;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .sponsor-cta .cta-headline {
+        color: #fff;
+        font-family: var(--serif);
+        font-size: 1.1rem;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+      .sponsor-cta a.button {
+        display: inline-block;
+        padding: 11px 22px;
+        background: #76b900;
+        color: #fff;
+        font-family: var(--sans);
+        font-size: 0.84rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 2px;
+        margin-top: 8px;
+      }
+      .share-bar {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .share-bar p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .share-bar .share-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .share-bar .share-links a {
+        font-size: 0.84rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .share-bar .share-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .article-page h1 {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"
+          ><span class="logo-icon">◈</span> The Cooling Report</a
+        >
+        <div
+          class="hamburger"
+          onclick="
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('open');
+          "
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#pricing">Premium</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="partner-lockup">
+          <span class="partner-kicker"
+            >Special Report · In partnership with NVIDIA</span
+          >
+          <img
+            class="partner-logo"
+            src="/email-assets/nvidia-logo.png"
+            alt="NVIDIA"
+            width="120"
+          />
+        </div>
+        <div class="meta">
+          <span class="tag">Special Report</span>
+          <span class="date">June 23, 2026</span>
+        </div>
+        <h1>
+          NVIDIA's Rubin AI Factory Runs Hot to Use Almost No Water. The Open
+          Questions Are Chillers and Power Plants.
+        </h1>
+
+        <div class="sponsor-disclosure">
+          <strong>IN PARTNERSHIP WITH NVIDIA.</strong> This special report is
+          published in partnership with NVIDIA and features NVIDIA's own
+          visualization of its Rubin-generation cooling design. The reporting,
+          the figures we flag as vendor claims, and the criticism that follows
+          are The Cooling Report's own. NVIDIA did not review or approve this
+          article, and our news coverage is editorially independent.
+        </div>
+
+        <figure class="hero-video">
+          <video
+            controls
+            playsinline
+            preload="none"
+            poster="/media/nvidia-data-center-45c-cooling-poster.jpg"
+          >
+            <source
+              src="/media/nvidia-data-center-45c-cooling.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support embedded video.
+          </video>
+          <figcaption>
+            NVIDIA's visualization of warm-water direct-to-chip cooling. Coolant
+            enters the rack at 45 degrees Celsius and leaves in the mid-50s, hot
+            enough for outdoor dry coolers to reject the heat without
+            evaporation. Source: NVIDIA.
+          </figcaption>
+        </figure>
+
+        <div class="body">
+          <p>
+            NVIDIA used London Climate Week to make a sustainability claim that
+            lands directly on the cooling industry. In a
+            <a
+              href="https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/"
+              target="_blank"
+              rel="noopener"
+              >reference design for liquid-cooled AI factories</a
+            >, the company says its Vera Rubin generation is the first NVIDIA AI
+            infrastructure to run on 100 percent liquid cooling, with no fans
+            anywhere in the system, and that the design eliminates onsite water
+            consumption entirely. The number it put on the change is large.
+            Conventional cooling-tower facilities draw roughly 2.6 million
+            gallons of water per megawatt per year. The DSX reference design,
+            NVIDIA says, takes that to near zero.
+          </p>
+
+          <p>
+            The engineering is real and the direction is correct. The framing
+            around it is where the work for an operator begins. NVIDIA Chief
+            Sustainability Officer Josh Parker told reporters the
+            water-consumption challenge for data centers is "largely solved." A
+            warm-water closed loop does solve a specific, important part of that
+            challenge. It does not touch the larger part, which sits outside the
+            fence line at the power plant. This report walks through what NVIDIA
+            actually built, why running hot uses almost no water, and the two
+            questions the cooling industry is already pressing on: whether the
+            design is truly chiller-free, and where the rest of AI's water
+            footprint actually lives.
+          </p>
+
+          <div class="keystats">
+            <div>
+              <span class="keystat-num">2.6M → 0</span>
+              <span class="keystat-lbl"
+                >Facility cooling water, gallons per MW per year</span
+              >
+            </div>
+            <div>
+              <span class="keystat-num">45 °C</span>
+              <span class="keystat-lbl"
+                >Coolant supply temperature, chillers optional</span
+              >
+            </div>
+            <div>
+              <span class="keystat-num">~¼ to ⅓</span>
+              <span class="keystat-lbl"
+                >Share of AI's true water footprint the design addresses</span
+              >
+            </div>
+          </div>
+
+          <h2>What NVIDIA Actually Built</h2>
+
+          <p>
+            The Vera Rubin DSX is a full AI-factory reference design, a
+            blueprint that integrates compute, networking, storage, power, and
+            cooling rather than a single product. On the thermal side, the
+            change is a move to direct-to-chip liquid cooling for every
+            heat-generating component, including the networking gear that
+            earlier designs still cooled with air. Cold plates sit on the
+            processors and capture heat at the source. A closed loop carries it
+            to outdoor dry coolers, passive radiators that reject heat to
+            ambient air. NVIDIA developed the architecture with Motivair, the
+            advanced cooling division of Schneider Electric.
+          </p>
+
+          <p>
+            The driver is power density. Blackwell-class GPUs already dissipate
+            on the order of 1.2 to 1.4 kilowatts each, and Rubin racks push past
+            150 kilowatts. Air cannot move that much heat out of that small a
+            volume. "Once the watts per chip crossed a certain level, liquid
+            cooling became mandatory," Motivair CEO Richard Whitmore said. The
+            secondary effects are substantial in their own right. NVIDIA says
+            the design collapses rack height from six rack units to two, removes
+            roughly 85 decibels of fan noise, and replaces perforated bezels
+            with sealed front panels. The hot-aisle and cold-aisle choreography
+            that has organized data center floors for two decades goes away.
+          </p>
+
+          <h2>Why Running Hot Uses Almost No Water</h2>
+
+          <p>
+            The water savings are a consequence of temperature, not a separate
+            feature. Conventional facilities use evaporative cooling towers,
+            which throw heat away by boiling off water, and they consume that
+            water continuously. NVIDIA's loop runs warm enough to skip
+            evaporation. Coolant enters the cold plates at up to 45 degrees
+            Celsius, 113 degrees Fahrenheit, hotter than a hot tub, and leaves
+            around 55. At those temperatures a dry cooler can shed heat straight
+            to the outside air across most of the year, the way a car radiator
+            does, with no water boiled off in the process.
+          </p>
+
+          <p>
+            The loop itself is filled once and runs closed for the life of the
+            facility. The working fluid is a mix of roughly 75 percent water and
+            25 percent propylene glycol, closer to engine coolant than to tap
+            water, and it is recirculated rather than consumed. The efficiency
+            logic is the same lever the industry has pulled for years, turned
+            into an architecture. Raising chiller-plant temperatures by a single
+            degree trims cooling energy cost by about 4 percent, and warm-water
+            direct-to-chip raises the supply temperature permanently. NVIDIA
+            puts the facility-level result at more than 4 million dollars a year
+            in combined cooling energy and water savings for a 50-megawatt site,
+            and cites closed-loop efficiency gains of up to 25 times on energy
+            and more than 300 times on water against conventional designs. Those
+            last figures are NVIDIA's own, drawn from its marketing, and worth
+            reading as vendor claims rather than independent measurements.
+          </p>
+
+          <p>
+            The same warm return that eliminates the cooling tower also makes
+            the waste heat useful. Coolant coming back at 45 to 50 degrees and
+            above is hot enough to feed district heating, industrial preheating,
+            or water treatment, which is why operators like Nautilus Data
+            Technologies argue data centers do not have to consume water, they
+            choose to. We covered the underlying shift toward
+            <a
+              href="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html"
+              >45-degree hot-water cooling that designs the chiller out</a
+            >
+            when NVIDIA first signaled it, and the Rubin reference design turns
+            that signal into a specification the rest of the supply chain will
+            build against.
+          </p>
+
+          <h2>The Chiller-Free Claim, and the Vendors Who Disagree</h2>
+
+          <p>
+            NVIDIA frames 45-degree operation as a path to a "chiller-less
+            ideal," a facility where mechanical chillers might run only a
+            handful of days a year. The company is careful to note that
+            geography matters. A data center in the Scottish Highlands and one
+            in Phoenix, Arizona face very different realities, in NVIDIA's own
+            words, though it argues even warm climates move significantly closer
+            to the chiller-free target. It has real third-party support on this
+            point. Microsoft's Steve Solomon, a vice president of data center
+            engineering, said the approach could eliminate the need for any type
+            of mechanical chiller in most climates most of the time, even in hot
+            places such as Arizona, and called it "a big deal for everybody" if
+            every chip could be cooled this way.
+          </p>
+
+          <p>
+            Cooling vendors who build this equipment for a living are more
+            measured, and their objection is specific. CoolIT Systems put it
+            bluntly: warm-water cooling reduces chiller dependency, but it does
+            not magically eliminate the need for mechanical cooling. The
+            limiting factor is the temperature delta between the facility water
+            and the outside air. A site can run chiller-free only where ambient
+            air can reliably produce 45-degree water. Data centers are
+            engineered for worst-case conditions, the heat waves and humid
+            afternoons, so chillers stay installed as a risk-management backstop
+            for the hottest days even if they sit idle most of the year.
+          </p>
+
+          <div class="pull-quote">
+            <p>
+              "Warm water cooling reduces chiller dependency, but it does not
+              magically eliminate the need for mechanical cooling. Data centers
+              are designed for worst-case conditions."
+            </p>
+            <cite>CoolIT Systems</cite>
+          </div>
+
+          <p>
+            The physics is unforgiving in hot regions. CoolIT's own example: 45
+            degree water against 35 degree ambient leaves a 10 degree delta to
+            work with, while against 5 degree ambient the delta is 40, and a
+            fourfold change in delta fundamentally changes how the system
+            performs. Advanced Cooling Technologies, the engineering firm also
+            known as 1-ACT, raises a different concern. Pushing inlet
+            temperatures up strips away the thermal-headroom buffer that used to
+            hide small deviations between components, so the difficulty does not
+            disappear, it concentrates upstream as plate-to-plate variance, pump
+            cycling, and harder-to-tune controls. Both companies sell the cold
+            plates, CDUs, and two-phase hardware that this complexity creates
+            demand for, so their read carries a commercial interest. It is still
+            the more accurate description of what an operator outside a cool
+            climate will actually experience.
+          </p>
+
+          <p>
+            There is a serviceability tension as well. A hermetically sealed,
+            fanless loop is elegant until a server or GPU fails and a technician
+            needs to pull it without draining a cluster. Quick-disconnect
+            fittings with dripless seals exist to manage that, and they are a
+            tradeoff rather than a clean solution. None of this makes the design
+            wrong. It means the headline of a chiller-free, sealed facility
+            describes the best case, and the cooling plant an operator specifies
+            still has to survive the worst one.
+          </p>
+
+          <h2>The Water That Moves Upstream</h2>
+
+          <p>
+            The larger asterisk is about where the accounting stops. NVIDIA's
+            zero-water claim is measured at the facility boundary. It is
+            accurate inside that boundary and incomplete outside it, because the
+            largest share of AI's water footprint was never onsite to begin
+            with. It sits at the power plants generating the electricity, and to
+            a lesser degree in chip manufacturing. By the analysis in the
+            <a
+              href="https://techcrunch.com/2026/06/22/nvidia-wants-to-cut-data-center-water-use-but-thats-not-the-same-as-fixing-ais-water-problem/"
+              target="_blank"
+              rel="noopener"
+              >coverage that followed the announcement</a
+            >, offsite water can double or triple a facility's total footprint,
+            which leaves NVIDIA's design addressing roughly a quarter to a third
+            of the real number.
+          </p>
+
+          <p>
+            The water hides in the generation mix. Thermoelectric power plants
+            consume water for their own cooling, and the intensity varies
+            sharply by source: about 1.17 liters per kilowatt-hour for natural
+            gas and 2.2 for coal, against roughly 0.01 for wind and 0.03 for
+            solar. Even hydropower, usually filed under clean, loses about 6.8
+            liters per kilowatt-hour to reservoir evaporation. U.S. fossil-fuel
+            power plants consume an estimated 2.7 billion gallons of water a day
+            for cooling, and fossil generation still supplies about half of data
+            center electricity, with the IEA projecting gas and coal will cover
+            more than 40 percent of the new power AI demand requires through
+            2030. As long as those plants feed the building, the water a sealed
+            loop no longer evaporates in the facility yard evaporates instead at
+            the station upstream. We laid out that boundary problem in detail in
+            our analysis of
+            <a
+              href="https://thecoolingreport.com/intel/offsite-water-consumption-data-centers.html"
+              >the offsite water data centers do not count</a
+            >.
+          </p>
+
+          <p>
+            MIT Sloan's regional analysis called the dynamic a sustainability
+            paradox: a near-zero onsite number can mask the broader upstream
+            cost, and cooling technology alone cannot close AI's water footprint
+            without a parallel move to low-water generation that does not yet
+            exist at the scale the buildout needs. There is a rebound risk on
+            top of it. Making each facility cheaper and lighter on water can
+            accelerate how many get built, which is how an efficiency gain can
+            still raise the industry's aggregate draw. The honest version of
+            NVIDIA's claim is conditional on the grid, and the design cannot
+            control that variable. Our companion
+            <a
+              href="https://thecoolingreport.com/intel/nvidia-data-center-design-cuts-onsite-water-ai-water-problem.html"
+              >news brief on the announcement</a
+            >
+            covers the same boundary in short form.
+          </p>
+
+          <h2>What It Means for the Cooling Industry</h2>
+
+          <p>
+            Strip away the sustainability framing and the Rubin design is a
+            standard-setting event. The company that defines the rack is now
+            defining the facility around it, and the reference architecture
+            assumes a sealed warm-water loop with high supply temperatures and
+            outdoor dry coolers. Evaporative cooling as the default
+            heat-rejection method is on a clock. Vendors selling cooling towers,
+            CDUs, dry coolers, manifolds, and quick disconnects will be
+            specifying against this design whether or not NVIDIA is a named
+            customer, the same way
+            <a
+              href="https://thecoolingreport.com/intel/nvidias-watt-roadmap-is-writing-the-cooling-industrys-business-plan.html"
+              >NVIDIA's watt roadmap has been writing the cooling industry's
+              business plan</a
+            >
+            generation by generation.
+          </p>
+
+          <p>
+            The competitive ground shifts toward components. As facility-level
+            thermal headroom disappears, the reliability of a warm-water site
+            comes down to precision at the cold plate, the manifold, the flow
+            controls, and leak mitigation, which is exactly where 1-ACT argues
+            warm-water operation exposes deviations that cooler water used to
+            hide. That favors suppliers who can hold tight tolerances at volume
+            and reopens the two-phase versus single-phase question, since
+            two-phase cold plates run at lower mass flow and tolerate higher
+            inlet temperatures. Higher-temperature direct-to-chip is now the
+            industry's trajectory rather than a frontier, and the warm return it
+            produces turns waste heat from a disposal problem into a salable
+            output.
+          </p>
+
+          <p>
+            NVIDIA has built something the cooling industry should take
+            seriously, and it has described it in terms an operator should read
+            carefully. The onsite water reduction is genuine and worth the
+            engineering. The chiller-free promise holds where the climate
+            cooperates and needs a backstop where it does not. The total-water
+            claim depends on a grid the design does not touch. For the people
+            specifying thermal plants against this reference, the takeaway is to
+            adopt the architecture and keep the boundaries visible, because the
+            asterisks are where the real procurement decisions live.
+          </p>
+        </div>
+
+        <div class="sponsor-cta">
+          <p>About this partner</p>
+          <p class="cta-headline">
+            NVIDIA's Vera Rubin DSX reference design and the case for
+            warm-water, 100 percent liquid-cooled AI factories.
+          </p>
+          <p>
+            The design, the temperatures, and the visualization in this report
+            come from NVIDIA's own announcement. Read it in full and judge the
+            claims for yourself.
+          </p>
+          <a
+            href="https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/"
+            target="_blank"
+            rel="noopener"
+            class="button"
+            >Read NVIDIA's announcement →</a
+          >
+        </div>
+
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/nvidia-rubin-warm-water-cooling-near-zero-water-deep-dive.html"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/nvidia-rubin-warm-water-cooling-near-zero-water-deep-dive.html&text=NVIDIA%27s%20Rubin%20AI%20factory%20runs%20hot%20to%20use%20almost%20no%20water"
+              target="_blank"
+              >X</a
+            >
+            <a
+              href="mailto:?subject=NVIDIA%20Rubin%20warm-water%20cooling&body=https://thecoolingreport.com/intel/nvidia-rubin-warm-water-cooling-near-zero-water-deep-dive.html"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                navigator.clipboard.writeText(
+                  'https://thecoolingreport.com/intel/nvidia-rubin-warm-water-cooling-near-zero-water-deep-dive.html',
+                );
+                this.textContent = 'Copied!';
+                setTimeout(() => (this.textContent = 'Copy Link'), 2000);
+              "
+              >Copy Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo">
+            <span class="logo-icon">◈</span> The Cooling Report
+          </p>
+          <p class="footer-copy">
+            &copy; 2026 The Cooling Report. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif"
+      />
+    </noscript>
+  </body>
+</html>
