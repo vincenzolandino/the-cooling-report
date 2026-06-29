@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heatwaves Spike Cooling Demand When the Grid Has Least to Give, and Frontier Data Centers Are Most Exposed | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="description" content="Cooling runs ~40% of data center energy and spikes in heatwaves when the grid is tightest. 79% of capacity faces acute climate hazards." />
+    <link rel="canonical" href="https://thecoolingreport.com/intel/heatwave-data-center-cooling-grid-stress-climate-risk.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Heatwaves Spike Cooling Demand When the Grid Has Least to Give, and Frontier Data Centers Are Most Exposed" />
+    <meta property="og:description" content="Cooling runs ~40% of data center energy and spikes in heatwaves when the grid is tightest. 79% of capacity faces acute climate hazards." />
+    <meta property="og:url" content="https://thecoolingreport.com/intel/heatwave-data-center-cooling-grid-stress-climate-risk.html" />
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page { padding: 110px 24px 80px; }
+      .article-page .section-inner { max-width: 720px; }
+      .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13, 118, 128, 0.08); padding: 3px 8px; border-radius: 3px; }
+      .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+      .article-page .meta { margin-bottom: 16px; }
+      .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+      .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+      .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+      .article-page .body a { color: var(--accent); }
+      .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+      .article-page .back:hover { text-decoration: underline; }
+      .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+      .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+      .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+      .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+      .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+      @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+        <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">&larr; Back to Intel</a>
+        <div class="meta">
+          <span class="tag">Infrastructure</span>
+          <span class="date">June 29, 2026</span>
+        </div>
+        <h1>Heatwaves Spike Cooling Demand When the Grid Has Least to Give, and Frontier Data Centers Are Most Exposed</h1>
+        <div class="body">
+          <p>The thermal load a data center has to reject does not stay constant, and a heatwave is when it peaks against the weakest grid. <a href="https://www.cnbc.com/2026/06/29/ai-data-centers-heatwave-climate-risk-weather.html">CNBC reported</a> that cooling already accounts for roughly 40% of a data center's energy use at normal temperatures, and that share climbs during extreme heat exactly when grid power is scarcest. The physics is simple. Hotter outside air means less free cooling, harder-working chillers, and a draw curve that bends up just as utilities ration supply.</p>
+          <h2>The setpoint is the cheapest lever on the floor</h2>
+          <p>Operators have two thermal moves that change the math. The first is warm-water liquid cooling. Nvidia's newest AI servers can run cooling liquid at 45 degrees Celsius, up from previously lower temperatures, which cuts the chiller dependence that heatwaves punish. We covered how <a href="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html">running hot water at 45C eliminates the chiller</a> as a single point of summer failure. The second lever is the setpoint itself: raising chiller water temperature by one degree cuts cooling energy costs by about 4%, a margin that compounds across every peak-demand hour.</p>
+          <h2>The build is moving toward the weather, not away from it</h2>
+          <p>Geography is working against the grid. A study cited by CNBC finds 79% of global data center capacity is exposed to acute climate hazards including flooding, extreme winds, and wildfires, with just over half sitting in markets carrying chronic heat and drought stress. The damage is already landing on the cooling hardware. Severe weather has become the leading cause of loss in Zurich's U.S. data center builders' risk portfolio over the past three years, driving about a third of losses, and Turin, Italy hit around 38C (100F) in May, putting underground cables under thermal stress and causing repeated blackouts.</p>
+          <p>The siting trend deepens the exposure. CNBC reports that 64% of data center capacity under construction this year sits outside traditional hubs like Northern Virginia, pushing into frontier markets such as West Texas, Tennessee, Wisconsin, and Ohio. Those builds lean on exposed roof HVAC, cooling towers, and energy installations that tornadoes, hail, and high winds can take offline in an afternoon. The same grid pressure shaping these moves runs through our reporting on <a href="https://thecoolingreport.com/intel/power-grid-constraints-data-center-development.html">power grid constraints on data center development</a>.</p>
+          <h2>The cooling capex reset is already priced</h2>
+          <p>The cost case is no longer theoretical. Extreme heat, drought, and other climate hazards could raise the cumulative annual running costs of today's operating data centers by $3.3 trillion by 2055. That number routes straight through the heat-rejection design: a 40% energy line that swings hardest when the grid is tightest, and rooftop cooling plants sitting in the path of the weather. For planners pricing frontier sites, the move is toward warm-water loops, higher chiller setpoints, and hardened heat-rejection that survives a storm. The water and power tension behind every one of those choices is the same one we tracked in <a href="https://thecoolingreport.com/intel/the-water-power-tradeoff-that-data-center-operators-keep-getting-wrong.html">the water-power tradeoff operators keep getting wrong</a>.</p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/heatwave-data-center-cooling-grid-stress-climate-risk.html" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/heatwave-data-center-cooling-grid-stress-climate-risk.html" target="_blank">X</a>
+            <a href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/heatwave-data-center-cooling-grid-stress-climate-risk.html" target="_blank">Email</a>
+            <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/heatwave-data-center-cooling-grid-stress-climate-risk.html'); this.textContent = 'Copied'; setTimeout(() => (this.textContent = 'Copy Link'), 2000);">Copy Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+          <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script"); b.type = "text/javascript"; b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript><img height="1" width="1" style="display: none" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" /></noscript>
+  </body>
+</html>

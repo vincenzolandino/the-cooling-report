@@ -675,4 +675,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/heatwave-data-center-cooling-grid-stress-climate-risk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/omen-ai-31-million-coolant-chemistry-spectrometer-bacterial-monitoring.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/south-korea-1-2-trillion-18-gigawatt-data-center-water-cooling.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/amphenol-liquid-cooling-quick-disconnect-connectors-barklip-busbars-ai-racks.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/elea-bel1-amazon-belem-ai-data-center-tropical-cooling.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/hyperscale-data-michigan-120-million-reserve-cooling-infrastructure.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/ge-vernova-gas-turbines-sold-out-2029-ai-power-bottleneck.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
