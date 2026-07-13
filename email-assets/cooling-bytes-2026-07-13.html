@@ -1,0 +1,1439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cooling Bytes, July 13, 2026 | The Cooling Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ─── RESET ─────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f5f2ec;
+        color: #1a1a18;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ─── TOKENS ─────────────────────────────── */
+      :root {
+        --night: #07090d;
+        --midnight: #0c1420;
+        --navy: #192648;
+        --sepia: #2a2014;
+        --paper: #f5f2ec;
+        --cream: #f3e9d0;
+        --sand: #ede4d4;
+        --white: #ffffff;
+        --teal: #0c7278;
+        --water: #1498b0;
+        --terracotta: #c2541a;
+        --rose: #cc2e2e;
+        --amber: #9a7010;
+        --ferveret: #2c4a7c;
+        --muted: #7a7870;
+        --mono: "JetBrains Mono", monospace;
+        --pad: clamp(28px, 6vw, 100px);
+        --inner: 1120px;
+      }
+
+      /* ─── SPONSOR WELCOME RIBBON ──────────────── */
+      .ribbon {
+        background: var(--ferveret);
+        padding: 11px var(--pad);
+        text-align: center;
+      }
+      .ribbon span {
+        font-family: "Inter", sans-serif;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      .ribbon span b {
+        font-weight: 900;
+      }
+
+      /* ─── MASTHEAD ───────────────────────────── */
+      .masthead {
+        background: var(--night);
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 var(--pad);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .mast-logo {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.01em;
+      }
+      .mast-logo .dia {
+        color: var(--teal);
+        margin-right: 7px;
+      }
+      .mast-date {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* ─── ISSUE OPENING ──────────────────────── */
+      .opening {
+        background: var(--night);
+        padding: clamp(56px, 8vw, 118px) var(--pad) clamp(50px, 7vw, 100px);
+      }
+      .opening-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-bottom: 28px;
+      }
+      .opening-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(3rem, 7vw, 6.5rem);
+        font-weight: 900;
+        line-height: 1;
+        color: #fff;
+        letter-spacing: -0.025em;
+        max-width: 900px;
+        margin-bottom: 36px;
+      }
+      .opening-intro {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+        font-weight: 300;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.48);
+        max-width: 700px;
+      }
+
+      /* ─── SECTION SHELL ──────────────────────── */
+      .sec {
+        padding: clamp(64px, 9vw, 130px) var(--pad);
+      }
+      .sec-inner {
+        max-width: var(--inner);
+      }
+
+      /* ─── SECTION TAG ────────────────────────── */
+      .tag {
+        display: inline-block;
+        font-family: "Inter", sans-serif;
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        margin-bottom: 32px;
+      }
+      .tag-water {
+        background: rgba(20, 152, 176, 0.14);
+        color: #1498b0;
+      }
+      .tag-policy {
+        background: rgba(25, 38, 72, 0.11);
+        color: #2c3c64;
+      }
+      .tag-community {
+        background: rgba(194, 84, 26, 0.12);
+        color: #c2541a;
+      }
+
+      /* ─── READ LINK ──────────────────────────── */
+      .rdl {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin-top: 22px;
+      }
+      .rdl:hover {
+        text-decoration: underline;
+      }
+
+      /* ═══ S01 - META LOUISIANA - MIDNIGHT HERO ═ */
+      .s01 {
+        background: var(--midnight);
+        position: relative;
+        overflow: hidden;
+      }
+      .s01-ghost {
+        position: absolute;
+        top: -0.08em;
+        right: -0.04em;
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-size: clamp(16rem, 32vw, 34rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: rgba(255, 255, 255, 0.018);
+        pointer-events: none;
+        user-select: none;
+      }
+      .s01-inner {
+        position: relative;
+        max-width: var(--inner);
+      }
+      .s01-hero-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(5rem, 14vw, 13rem);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: var(--water);
+        display: block;
+      }
+      .s01-hero-label {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        margin-top: 12px;
+        margin-bottom: 48px;
+        display: block;
+      }
+      .s01-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2rem, 4vw, 3.8rem);
+        font-weight: 700;
+        line-height: 1.12;
+        color: #fff;
+        letter-spacing: -0.022em;
+        max-width: 860px;
+        margin-bottom: 36px;
+      }
+      .s01-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.35vw, 1.18rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: rgba(255, 255, 255, 0.54);
+        max-width: 680px;
+        margin-bottom: 18px;
+      }
+      .s01-trio {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin: 44px 0;
+        padding: 36px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .s01-trio-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.82);
+        display: block;
+        letter-spacing: -0.025em;
+      }
+      .s01-trio-lbl {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        display: block;
+        margin-top: 8px;
+      }
+      .s01-rdl {
+        color: var(--water);
+      }
+
+      /* ═══ FERVERET - MID-ISSUE SPONSOR CARD ════ */
+      .s-ferveret {
+        background: var(--night);
+        padding: clamp(40px, 6vw, 80px) var(--pad);
+      }
+      .ferveret-card {
+        max-width: var(--inner);
+        margin: 0 auto;
+        background: var(--cream);
+        border: 3px solid var(--ferveret);
+        padding: clamp(36px, 5vw, 68px);
+      }
+      .ferveret-badge {
+        display: inline-block;
+        background: var(--ferveret);
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.56rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 5px 13px;
+        margin-bottom: 30px;
+      }
+      .ferveret-logo {
+        width: clamp(190px, 26vw, 260px);
+        height: auto;
+        margin-bottom: 30px;
+        display: block;
+      }
+      .ferveret-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.8rem, 3.6vw, 3rem);
+        font-weight: 700;
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        color: #1c1208;
+        max-width: 820px;
+        margin-bottom: 28px;
+      }
+      .ferveret-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.85;
+        color: #463724;
+        max-width: 720px;
+        margin-bottom: 16px;
+      }
+      .ferveret-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px;
+        padding: 28px 0;
+        border-top: 1px solid rgba(44, 74, 124, 0.22);
+        border-bottom: 1px solid rgba(44, 74, 124, 0.22);
+        margin: 28px 0;
+      }
+      .ferveret-stat-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+        font-weight: 900;
+        color: var(--ferveret);
+        display: block;
+        letter-spacing: -0.025em;
+      }
+      .ferveret-stat-lbl {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(70, 55, 36, 0.7);
+        display: block;
+        margin-top: 6px;
+        max-width: 190px;
+      }
+      .ferveret-cta {
+        display: inline-block;
+        background: var(--ferveret);
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 15px 30px;
+        margin-top: 16px;
+      }
+      .ferveret-cta:hover {
+        background: #1c3252;
+      }
+
+      /* ═══ S02 - JD VANCE - TEAL STAMP ═══════════ */
+      .s02 {
+        background: var(--sand);
+      }
+      .s02-layout {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: clamp(40px, 6vw, 90px);
+        align-items: start;
+        max-width: var(--inner);
+      }
+      .s02-stamp-col {
+        padding-top: 12px;
+      }
+      .stamp-ring {
+        width: clamp(170px, 22vw, 250px);
+        height: clamp(170px, 22vw, 250px);
+        border-radius: 50%;
+        border: clamp(7px, 1vw, 11px) solid var(--teal);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-9deg);
+        position: relative;
+        box-shadow: inset 0 0 0 6px rgba(12, 114, 120, 0.15);
+      }
+      .stamp-ring::before {
+        content: "";
+        position: absolute;
+        inset: 10px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(12, 114, 120, 0.35);
+      }
+      .stamp-big {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.8rem, 5.6vw, 4.6rem);
+        font-weight: 900;
+        color: var(--teal);
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      .stamp-word {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(0.5rem, 0.8vw, 0.62rem);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-top: 6px;
+      }
+      .s02-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.9rem, 3.6vw, 3.2rem);
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        color: #14201f;
+        margin-bottom: 28px;
+      }
+      .s02-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: #2f3a39;
+        margin-bottom: 18px;
+      }
+      .s02-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px;
+        padding: 28px 0;
+        border-top: 1px solid rgba(12, 114, 120, 0.22);
+        border-bottom: 1px solid rgba(12, 114, 120, 0.22);
+        margin: 32px 0;
+      }
+      .s02-stat-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+        font-weight: 900;
+        color: var(--teal);
+        display: block;
+        letter-spacing: -0.025em;
+      }
+      .s02-stat-lbl {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(47, 58, 57, 0.55);
+        display: block;
+        margin-top: 6px;
+        max-width: 200px;
+      }
+      .s02-rdl {
+        color: var(--teal);
+      }
+
+      /* ═══ S03 - PENNSYLVANIA - ACADEMIC DROP-CAP  */
+      .s03 {
+        background: var(--white);
+      }
+      .s03-inner {
+        max-width: var(--inner);
+      }
+      .s03-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.2rem, 4.5vw, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.022em;
+        color: #1a1a18;
+        max-width: 840px;
+        margin-bottom: 40px;
+      }
+      .drop-cap {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.35vw, 1.18rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: #333;
+      }
+      .drop-cap::first-letter {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-size: clamp(5.5rem, 10vw, 9rem);
+        color: var(--water);
+        float: left;
+        line-height: 0.82;
+        padding-right: 0.07em;
+        padding-top: 0.07em;
+      }
+      .s03-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 52px;
+        margin-top: 32px;
+      }
+      .s03-col-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: #444;
+      }
+      .pull-quote {
+        grid-column: 1 / -1;
+        border-left: 4px solid var(--water);
+        background: #eef8fb;
+        padding: 32px 40px;
+        margin: 8px 0;
+      }
+      .pq-text {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.4rem, 2.6vw, 2.05rem);
+        font-weight: 500;
+        font-style: italic;
+        line-height: 1.34;
+        color: #0c5f78;
+        letter-spacing: -0.01em;
+      }
+      .pq-attr {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 14px;
+      }
+      .s03-rdl {
+        color: var(--water);
+      }
+
+      /* ═══ S04 - DENTON - BIG STAT FINISH ════════ */
+      .s04 {
+        background: var(--paper);
+        border-top: 1px solid #ddd8d0;
+      }
+      .s04-inner {
+        max-width: var(--inner);
+      }
+      .s04-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.2rem, 4.5vw, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.022em;
+        color: var(--terracotta);
+        max-width: 860px;
+        margin-bottom: 56px;
+      }
+      .stat-wall {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(40px, 7vw, 96px);
+        padding-bottom: 52px;
+        border-bottom: 3px solid var(--terracotta);
+        margin-bottom: 52px;
+      }
+      .sw-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(4rem, 10vw, 8.5rem);
+        font-weight: 900;
+        color: var(--terracotta);
+        display: block;
+        line-height: 1;
+        letter-spacing: -0.045em;
+      }
+      .sw-unit {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(0.82rem, 1.2vw, 1rem);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        opacity: 0.7;
+        display: block;
+        margin-top: 6px;
+      }
+      .sw-desc {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 400;
+        color: var(--muted);
+        display: block;
+        margin-top: 10px;
+        max-width: 220px;
+        line-height: 1.5;
+      }
+      .s04-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.35vw, 1.18rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: #444;
+        max-width: 720px;
+        margin-bottom: 18px;
+      }
+      .s04-rdl {
+        color: var(--terracotta);
+        font-weight: 600;
+      }
+
+      /* ═══ ALSO PUBLISHED ═══════════════════════ */
+      .s-more {
+        background: #e8e4dc;
+      }
+      .more-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 40px;
+      }
+      .more-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+        max-width: var(--inner);
+      }
+      .more-card {
+        background: var(--paper);
+        padding: 28px 26px 26px;
+        border-top: 4px solid var(--amber);
+      }
+      .more-card-tag {
+        font-family: "Inter", sans-serif;
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--amber);
+        margin-bottom: 12px;
+      }
+      .more-card-title {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.28;
+        color: #1a1a18;
+        margin-bottom: 18px;
+      }
+      .more-card-link {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--amber);
+        letter-spacing: 0.04em;
+      }
+      .more-card-link:hover {
+        text-decoration: underline;
+      }
+
+      /* ═══ FROM THE NEWSROOM - CTA ══════════════ */
+      .newsroom {
+        background: var(--cream);
+        padding: clamp(64px, 9vw, 130px) var(--pad);
+      }
+      .newsroom-inner {
+        max-width: var(--inner);
+      }
+      .newsroom-kicker {
+        font-family: "Inter", sans-serif;
+        font-size: 0.64rem;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        margin-bottom: 24px;
+      }
+      .newsroom-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(6rem, 18vw, 16rem);
+        font-weight: 900;
+        line-height: 0.86;
+        color: #1c1208;
+        letter-spacing: -0.05em;
+      }
+      .newsroom-cap {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #6a5638;
+        margin-top: 22px;
+        margin-bottom: 40px;
+      }
+      .newsroom-sub {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.6rem, 3vw, 2.6rem);
+        font-weight: 700;
+        font-style: italic;
+        line-height: 1.18;
+        color: #1c1208;
+        max-width: 760px;
+        margin-bottom: 26px;
+      }
+      .newsroom-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.85;
+        color: #463724;
+        max-width: 660px;
+        margin-bottom: 40px;
+      }
+      .newsroom-rollcap {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #8a7448;
+        margin-bottom: 14px;
+      }
+      .newsroom-roll {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.05rem, 1.9vw, 1.55rem);
+        font-weight: 600;
+        color: #2a1c0c;
+        line-height: 1.5;
+        max-width: 820px;
+        margin-bottom: 44px;
+      }
+      .newsroom-cta {
+        display: inline-block;
+        background: var(--night);
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 17px 34px;
+      }
+      .newsroom-cta:hover {
+        background: #1a1f28;
+      }
+
+      /* ═══ CLOSER ═══════════════════════════════ */
+      .closer {
+        background: var(--sepia);
+        padding: clamp(64px, 9vw, 130px) var(--pad);
+      }
+      .closer-inner {
+        max-width: var(--inner);
+      }
+      .closer-kicker {
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.34);
+        margin-bottom: 24px;
+      }
+      .closer-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.4rem, 5vw, 4.6rem);
+        font-weight: 900;
+        line-height: 1.04;
+        color: #fff;
+        letter-spacing: -0.028em;
+        max-width: 880px;
+        margin-bottom: 28px;
+      }
+      .closer-sub {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+        font-weight: 300;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.5);
+        max-width: 640px;
+        margin-bottom: 40px;
+      }
+      .closer-cta {
+        display: inline-block;
+        background: #fff;
+        color: var(--sepia);
+        font-family: "Inter", sans-serif;
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 17px 34px;
+      }
+      .closer-cta:hover {
+        background: #f0e8da;
+      }
+
+      /* ─── FOOTER ─────────────────────────────── */
+      .footer {
+        background: var(--night);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 36px var(--pad);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .ft-logo {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      .ft-logo .dia {
+        color: var(--teal);
+        margin-right: 7px;
+      }
+      .ft-links {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .ft-links a {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.3);
+        letter-spacing: 0.04em;
+        transition: color 0.2s;
+      }
+      .ft-links a:hover {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .ft-copy {
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.18);
+        letter-spacing: 0.04em;
+        margin-top: 4px;
+      }
+      .ft-band {
+        background: #04050a;
+        padding: 18px var(--pad);
+        text-align: center;
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.26);
+      }
+      .ft-band .dia {
+        color: var(--teal);
+      }
+
+      /* ─── RESPONSIVE ─────────────────────────── */
+      @media (max-width: 760px) {
+        .s02-layout {
+          grid-template-columns: 1fr;
+        }
+        .s02-stamp-col {
+          display: flex;
+          justify-content: center;
+        }
+        .s03-cols {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .pull-quote {
+          grid-column: 1;
+        }
+        .stat-wall {
+          flex-direction: column;
+          gap: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── PREHEADER (hidden) ───────────────────── -->
+    <div
+      style="
+        display: none;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        color: #07090d;
+        font-size: 1px;
+        line-height: 1px;
+      "
+    >
+      Meta doubles its Louisiana campus to 5 gigawatts and 50 billion dollars,
+      and its own water permit allows 14 times what it says it needs. JD Vance
+      rents a Virginia farm from a data center land baron. Pennsylvania
+      farmers split 586 million dollars next to a nuclear plant. Denton
+      organizes against two data centers running opposite cooling
+      architectures. Ferveret has this issue.
+    </div>
+
+    <!-- ── SPONSOR WELCOME RIBBON ────────────────── -->
+    <div class="ribbon">
+      <span>This issue is brought to you by <b>Ferveret</b></span>
+    </div>
+
+    <!-- ── MASTHEAD ─────────────────────────────── -->
+    <header class="masthead">
+      <div class="mast-logo"><span class="dia">◈</span>The Cooling Report</div>
+      <div class="mast-date">July 13, 2026</div>
+    </header>
+
+    <!-- ── ISSUE OPENING ─────────────────────────── -->
+    <section class="opening">
+      <p class="opening-eyebrow">
+        Cooling Bytes &nbsp;·&nbsp; Iss. 43 &nbsp;·&nbsp; July 13, 2026
+      </p>
+      <h1 class="opening-hed">
+        The land under AI data centers is worth more than the compute running on it.
+      </h1>
+      <p class="opening-intro">
+        Four stories on the same asset: dirt. Meta is doubling its Louisiana
+        campus to 5 gigawatts and $50 billion, and its own water permit
+        allows 14 times what it says it needs. JD Vance is renting a Virginia
+        farm from the land baron who sold data center acreage down the road
+        for $615 million. Ninety-six Pennsylvania families split $586 million
+        for land beside a nuclear plant, while regulators cut the
+        neighboring water request in half. Denton, Texas is organizing
+        against two data centers finishing construction this fall, and only
+        one has disclosed how much water it needs. Land, water, and
+        political proximity are pricing this buildout now, and cooling
+        decides which side of every number a project lands on. Ferveret has
+        this issue.
+      </p>
+    </section>
+
+    <!-- ══ S01 - META LOUISIANA - MIDNIGHT HERO ══ -->
+    <section id="s01" class="sec s01">
+      <div class="s01-ghost">01</div>
+      <div class="s01-inner">
+        <span class="tag tag-water">Water</span>
+
+        <span class="s01-hero-num">14×</span>
+        <span class="s01-hero-label"
+          >Gap between Meta's water permit and its own usage estimate
+          &nbsp;·&nbsp; Richland Parish, Louisiana &nbsp;·&nbsp; shared
+          aquifer</span
+        >
+
+        <h2 class="s01-hed">
+          Meta Is Doubling Its Louisiana Data Center to 5 Gigawatts and $50
+          Billion. Its Own Water Permit Allows 14 Times What It Says It
+          Needs.
+        </h2>
+
+        <p class="s01-body">
+          Meta will more than double its Hyperion campus in Richland Parish,
+          Louisiana, raising total investment from $10 billion to as much as
+          $50 billion and pushing the site toward 5 gigawatts of capacity,
+          according to NOLA.com's coverage of the expansion. The state
+          granted Meta a water permit covering up to 23 million gallons a
+          day. Meta's own projection for the finished facility lands at 500
+          to 600 million gallons a year, roughly 1.5 million gallons a day.
+          The permit runs close to 14 times the company's own number.
+        </p>
+
+        <div class="s01-trio">
+          <div>
+            <span class="s01-trio-num">$50B</span>
+            <span class="s01-trio-lbl">Total investment, up from $10 billion</span>
+          </div>
+          <div>
+            <span class="s01-trio-num">5 GW</span>
+            <span class="s01-trio-lbl">Compute capacity Meta is building toward</span>
+          </div>
+          <div>
+            <span class="s01-trio-num">10</span>
+            <span class="s01-trio-lbl">Gas plants Entergy has proposed to power the site</span>
+          </div>
+        </div>
+
+        <p class="s01-body">
+          Meta describes the cooling system as closed loop, with makeup
+          water needed mainly in the hottest stretches of the year. Entergy
+          Louisiana has proposed seven new gas-fired plants on top of three
+          already under construction, adding 7,400 megawatts of gas
+          alongside a 2,500-megawatt request for solar and wind. Logan Burke
+          of the Alliance for Affordable Energy calls the buildout
+          overwhelming: three plants tripled to ten in under a year. The
+          real test lands after 2028, when Meta's actual water draw either
+          tracks its own estimate or climbs toward the permitted ceiling as
+          rack density rises.
+        </p>
+
+        <a
+          href="https://thecoolingreport.com/intel/meta-hyperion-louisiana-50-billion-water-permit-gap.html"
+          class="rdl s01-rdl"
+          >Read the full analysis →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ FERVERET - MID-ISSUE SPONSOR CARD ═════ -->
+    <section class="s-ferveret">
+      <div class="ferveret-card">
+        <div class="ferveret-badge">A word from this issue's sponsor</div>
+        <img
+          class="ferveret-logo"
+          src="https://thecoolingreport.com/email-assets/ferveret-logo.png"
+          alt="Ferveret"
+          width="260"
+        />
+        <h2 class="ferveret-hed">
+          Ferveret Runs Cooling on Reactor Physics. Zero Water, No PFAS,
+          Built in El Paso.
+        </h2>
+        <p class="ferveret-body">
+          Ferveret is an MIT spinout founded in 2021 by Dr. Reza Azizian and
+          Dr. Matteo Bucci, who met as lab mates researching heat transfer
+          inside MIT's nuclear engineering department. Their Adaptive Phase
+          Cooling submerges servers in a dielectric fluid and borrows
+          subcooled-boiling physics from reactor design to pull heat off the
+          chip package. Y Combinator backed the company in its first year,
+          and Aramco, Climate Capital, and Cathexis Ventures have since
+          joined the cap table.
+        </p>
+        <div class="ferveret-stats">
+          <div>
+            <span class="ferveret-stat-num">Zero</span>
+            <span class="ferveret-stat-lbl">Water consumed by the closed dielectric loop</span>
+          </div>
+          <div>
+            <span class="ferveret-stat-num">15%</span>
+            <span class="ferveret-stat-lbl">Efficiency gain Ferveret claims over standard liquid cooling</span>
+          </div>
+          <div>
+            <span class="ferveret-stat-num">El Paso</span>
+            <span class="ferveret-stat-lbl">Where Ferveret's innovation factory builds every unit</span>
+          </div>
+        </div>
+        <p class="ferveret-body">
+          Every feature in this issue turns on a water number: Meta's permit
+          gap, the Susquehanna's allocation fight, Denton's undisclosed
+          cooling method. Ferveret's pitch is that the water column can read
+          zero without asking whose aquifer takes the draw.
+        </p>
+        <a
+          href="https://www.ferveret.com/about-us?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=the-cooling-report-7-13"
+          class="ferveret-cta"
+          >Explore Ferveret →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ S02 - JD VANCE - TEAL STAMP ════════════ -->
+    <section id="s02" class="sec s02">
+      <div class="s02-layout">
+        <div class="s02-stamp-col">
+          <div class="stamp-ring">
+            <span class="stamp-big">$615M</span>
+            <span class="stamp-word">Land Sale</span>
+          </div>
+        </div>
+        <div class="s02-text">
+          <span class="tag tag-policy">Policy</span>
+          <h2 class="s02-hed">
+            JD Vance Is Renting a Virginia Farm From a Data Center Land Baron
+            Who Sold Acreage Down the Road for $615 Million
+          </h2>
+
+          <p class="s02-body">
+            Vice President JD Vance is leasing part of a nearly 500-acre
+            farm outside Middleburg, Virginia, from a firm controlled by
+            Chuck Kuhn, founder of JK Moving Services and Loudoun County's
+            largest private landowner, eight months after Kuhn sold 97 acres
+            of nearby data center land for $615 million, according to Daily
+            Kos's coverage. Vance's attorney says the vice president will
+            pay market rate. Nobody has produced evidence of a quid pro quo.
+          </p>
+
+          <div class="s02-stats">
+            <div>
+              <span class="s02-stat-num">$57M → $615M</span>
+              <span class="s02-stat-lbl"
+                >What Kuhn's Twin Creeks parcel sold for, then resold for</span
+              >
+            </div>
+            <div>
+              <span class="s02-stat-num">5</span>
+              <span class="s02-stat-lbl">Two-story data centers approved on the 97-acre site</span>
+            </div>
+            <div>
+              <span class="s02-stat-num">12-18 mo</span>
+              <span class="s02-stat-lbl">Lead time on chillers, CDUs, and switchgear, permit or not</span>
+            </div>
+          </div>
+
+          <p class="s02-body">
+            The parcel carries its own dedicated Dominion Energy substation,
+            the detail that actually moved the price. A two-story data
+            center is a structural decision before it is a cooling decision,
+            and running chilled water risers vertically instead of across
+            one slab changes pump head, floor loading, and redundancy for
+            every loop above grade. Trump's July 2025 executive order
+            accelerating federal permitting can compress a timeline to
+            weeks. It cannot compress the order book for chillers and
+            switchgear, which still runs 12 to 18 months no matter who signs
+            the approval.
+          </p>
+
+          <a
+            href="https://thecoolingreport.com/intel/jd-vance-chuck-kuhn-virginia-data-center-farm-lease.html"
+            class="rdl s02-rdl"
+            >Read the full analysis →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ S03 - PENNSYLVANIA - ACADEMIC DROP-CAP ═ -->
+    <section id="s03" class="sec s03">
+      <div class="s03-inner">
+        <span class="tag tag-water">Water</span>
+        <h2 class="s03-hed">
+          96 Pennsylvania Landowners Split $586 Million Near a Nuclear Plant.
+          Regulators Just Cut Amazon's Water Request by More Than Half.
+        </h2>
+
+        <p class="drop-cap">
+          Ninety-six families in Salem Township, Pennsylvania sold roughly
+          1,700 acres of farmland to data-center developer QTS for $586
+          million, an average of $330,000 an acre, according to The Wall
+          Street Journal's coverage of the deal. Marilee and David Kiliti's
+          89-acre farm alone sold for more than $22 million. QTS is owned by
+          Blackstone. Its assemblage sits west of Talen's Susquehanna nuclear
+          plant, a 2.5-gigawatt facility that gave this stretch of Luzerne
+          County its value long before AI arrived.
+        </p>
+
+        <div class="s03-cols">
+          <div class="pull-quote">
+            <p class="pq-text">
+              "Same river. Same plant. Two developers, two cooling
+              architectures, and one regulator that already decided how much
+              of the Susquehanna leaves the watershed."
+            </p>
+            <p class="pq-attr">
+              The Cooling Report &nbsp;·&nbsp; July 13, 2026
+            </p>
+          </div>
+
+          <div class="s03-col-body">
+            <p>
+              QTS says its buildings run on a closed-loop system and will
+              not consume river water once operational. Amazon Data
+              Services, building an adjacent campus off the same nuclear
+              plant, petitioned to raise its consumptive-use limit from
+              60,000 gallons a day to 277,000. The Susquehanna River Basin
+              Commission ruled in March, granting 129,000 gallons a day:
+              more than double the old ceiling, and less than half of what
+              Amazon asked for.
+            </p>
+          </div>
+
+          <div class="s03-col-body">
+            <p>
+              A second assemblage is already moving nearby: 200 landowners
+              across more than 4,000 acres, eyeing a combined $1.3 billion.
+              Salem Township's land brokers priced the power a nuclear plant
+              guarantees. The next assemblage is about to find out what the
+              commission prices the water at.
+            </p>
+            <a
+              href="https://thecoolingreport.com/intel/pennsylvania-farmers-586-million-nuclear-data-center-water-fight.html"
+              class="rdl s03-rdl"
+              style="display: inline-flex; margin-top: 20px"
+              >Read the full analysis →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ S04 - DENTON - BIG STAT FINISH ═════════ -->
+    <section id="s04" class="sec s04">
+      <div class="s04-inner">
+        <span class="tag tag-community">Community</span>
+        <h2 class="s04-hed">
+          Denton Is Organizing Against Two Data Centers Finishing
+          Construction This Fall. Only One Has Disclosed How It Cools
+          Itself.
+        </h2>
+
+        <div class="stat-wall">
+          <div class="stat-wall-item">
+            <span class="sw-num">8.5</span>
+            <span class="sw-unit">DFW Airports</span>
+            <span class="sw-desc"
+              >Equivalent grid draw of both projects combined</span
+            >
+          </div>
+          <div class="stat-wall-item">
+            <span class="sw-num">82,000</span>
+            <span class="sw-unit">Homes</span>
+            <span class="sw-desc"
+              >Power draw versus Denton's 57,000 total households</span
+            >
+          </div>
+          <div class="stat-wall-item">
+            <span class="sw-num">0 gal</span>
+            <span class="sw-unit">Disclosed by QumulusAI</span>
+            <span class="sw-desc"
+              >Core Scientific has not said publicly which method it uses</span
+            >
+          </div>
+        </div>
+
+        <p class="s04-body">
+          Denton, Texas residents get their pitch this Thursday: organize
+          against two AI data centers finishing construction this fall,
+          according to KERA News's coverage. DSA Denton and Revolutionary
+          Front are hosting the town hall. Core Scientific's 78-acre,
+          260-megawatt campus runs direct-to-chip liquid loops. QumulusAI's
+          4-acre, 20-megawatt site runs a closed loop of non-conductive
+          fluid that its director of engineering, Spencer Smith, says needs
+          zero water at all, chasing a PUE of 1.1.
+        </p>
+
+        <p class="s04-body">
+          The water argument only half applies. QumulusAI has already put
+          its answer on the record. Core Scientific has not said publicly
+          which method it uses, whether dry coolers, a closed fluid loop, or
+          the kind of open evaporative towers that draw from the same
+          municipal supply residents are worried about. Every one of the 86
+          North Texas projects still in the pipeline faces the same choice,
+          and the cooling architecture decision is the one that actually
+          decides whether the next fight is about water.
+        </p>
+
+        <a
+          href="https://thecoolingreport.com/intel/denton-core-scientific-qumulusai-cooling-divide-town-hall.html"
+          class="rdl s04-rdl"
+          >Read the full analysis →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ ALSO PUBLISHED ════════════════════════ -->
+    <section id="more" class="sec s-more">
+      <p class="more-eyebrow">Also published this week</p>
+      <div class="more-grid">
+        <div class="more-card">
+          <p class="more-card-tag">Policy</p>
+          <p class="more-card-title">
+            The White House Is Expanding Its AI Power Cost Pledge to
+            Utilities and Governors. The Number That Matters Is Cooling
+            Margin.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/white-house-ratepayer-protection-pledge-utilities-data-centers.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Water</p>
+          <p class="more-card-title">
+            The Hill's Opinion Page Calls AI Data Centers "Environmental
+            Monstrosities." The Cooling Method Behind That Claim Goes
+            Unnamed.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/john-mac-ghlionn-hill-opinion-data-center-water.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Community</p>
+          <p class="more-card-title">
+            Data Center Opposition Groups Doubled to 833 in One Quarter. The
+            Fights Increasingly Turn on Water Permits and Chiller Noise.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/data-center-opposition-doubles-833-groups-130-billion.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Policy</p>
+          <p class="more-card-title">
+            Greg Abbott Wants to Ban AI Data Centers in Rural Texas. The
+            Fight Is Over Whose Water Cools Them.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/abbott-texas-rural-data-center-ban-water-cooling.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Research</p>
+          <p class="more-card-title">
+            Rice Researchers Say Carbon Capture Could Cut 74% of Data Center
+            Emissions by 2030. The Cooling Bill Just Moved to the Power
+            Plant.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/rice-carbon-capture-storage-ai-data-center-emissions.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div
+          class="more-card"
+          style="
+            background: var(--teal);
+            border-top-color: rgba(255, 255, 255, 0.3);
+          "
+        >
+          <p class="more-card-tag" style="color: rgba(255, 255, 255, 0.6)">
+            All Intel
+          </p>
+          <p class="more-card-title" style="color: #fff">
+            Browse every article in The Cooling Report Intel archive
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel.html"
+            class="more-card-link"
+            style="color: rgba(255, 255, 255, 0.85)"
+            >See all articles →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FROM THE NEWSROOM - CTA ═══════════════ -->
+    <section class="newsroom">
+      <div class="newsroom-inner">
+        <p class="newsroom-kicker">From the newsroom</p>
+        <div class="newsroom-num">2,500+</div>
+        <p class="newsroom-cap">
+          Data center infrastructure decision-makers get Cooling Bytes every
+          week, at a 40 percent click rate
+        </p>
+        <p class="newsroom-sub">
+          One sponsor per issue. Ferveret has this one.
+        </p>
+        <p class="newsroom-body">
+          Cooling Bytes reaches the operators, engineers, and infrastructure
+          buyers deciding how the next gigawatt gets cooled. One sponsor
+          carries each edition, in the editorial flow, never in a banner.
+          The next slot is open.
+        </p>
+        <p class="newsroom-rollcap">Read by people at</p>
+        <p class="newsroom-roll">
+          NVIDIA &nbsp;·&nbsp; Parker Hannifin &nbsp;·&nbsp; Accelsius
+          &nbsp;·&nbsp; Vertiv &nbsp;·&nbsp; ASU &nbsp;·&nbsp; Castrol
+        </p>
+        <a href="https://thecoolingreport.com/sponsor.html" class="newsroom-cta"
+          >Sponsor an issue →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ CLOSER ════════════════════════════════ -->
+    <section class="closer">
+      <div class="closer-inner">
+        <p class="closer-kicker">The week, closed</p>
+        <h2 class="closer-hed">
+          Four features on who owns the dirt, the water, and the political
+          proximity the AI buildout now runs on.
+        </h2>
+        <p class="closer-sub">
+          $50 billion in Louisiana, $615 million in Virginia, $586 million in
+          Pennsylvania, and a Texas town organizing against two cooling
+          architectures it can only half verify. Every story, plus the full
+          archive of cooling intelligence, lives at Intel.
+        </p>
+        <a href="https://thecoolingreport.com/intel.html" class="closer-cta"
+          >Read everything in Intel →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ════════════════════════════════ -->
+    <footer class="footer">
+      <div class="ft-logo"><span class="dia">◈</span>The Cooling Report</div>
+      <nav class="ft-links">
+        <a href="https://thecoolingreport.com">Site</a>
+        <a href="https://thecoolingreport.com/intel.html">Intel</a>
+        <a href="https://thecoolingreport.com/sponsor.html">Sponsor</a>
+        <a href="{{{RESEND_UNSUBSCRIBE_URL}}}">Unsubscribe</a>
+      </nav>
+      <p class="ft-copy">
+        © 2026 The Cooling Report. Data center cooling intelligence for
+        operators, engineers, and the people building the thermal infrastructure
+        that AI runs on.
+      </p>
+    </footer>
+    <div class="ft-band">
+      <span class="dia">◈</span> &nbsp; The Cooling Report &nbsp;·&nbsp; Iss. 43
+      &nbsp;·&nbsp; July 13, 2026
+    </div>
+  </body>
+</html>
