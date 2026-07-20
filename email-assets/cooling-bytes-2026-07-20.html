@@ -48,10 +48,31 @@
         --terracotta: #c2541a;
         --rose: #cc2e2e;
         --amber: #9a7010;
+        --liquidstack: #141110;
+        --liquidstack-gold: #f7be00;
         --muted: #7a7870;
         --mono: "JetBrains Mono", monospace;
         --pad: clamp(28px, 6vw, 100px);
         --inner: 1120px;
+      }
+
+      /* ─── SPONSOR WELCOME RIBBON ──────────────── */
+      .ribbon {
+        background: var(--liquidstack);
+        padding: 11px var(--pad);
+        text-align: center;
+      }
+      .ribbon span {
+        font-family: "Inter", sans-serif;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      .ribbon span b {
+        font-weight: 900;
+        color: var(--liquidstack-gold);
       }
 
       /* ─── MASTHEAD ───────────────────────────── */
@@ -265,6 +286,102 @@
       }
       .s01-rdl {
         color: var(--water);
+      }
+
+      /* ═══ LIQUIDSTACK - MID-ISSUE SPONSOR CARD ═ */
+      .s-liquidstack {
+        background: var(--night);
+        padding: clamp(40px, 6vw, 80px) var(--pad);
+      }
+      .liquidstack-card {
+        max-width: var(--inner);
+        margin: 0 auto;
+        background: var(--cream);
+        border: 3px solid var(--liquidstack-gold);
+        padding: clamp(36px, 5vw, 68px);
+      }
+      .liquidstack-badge {
+        display: inline-block;
+        background: var(--liquidstack);
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.56rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 5px 13px;
+        margin-bottom: 30px;
+      }
+      .liquidstack-logo {
+        width: clamp(190px, 26vw, 260px);
+        height: auto;
+        margin-bottom: 30px;
+        display: block;
+      }
+      .liquidstack-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.8rem, 3.6vw, 3rem);
+        font-weight: 700;
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        color: #1c1208;
+        max-width: 820px;
+        margin-bottom: 28px;
+      }
+      .liquidstack-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.85;
+        color: #463724;
+        max-width: 720px;
+        margin-bottom: 16px;
+      }
+      .liquidstack-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px;
+        padding: 28px 0;
+        border-top: 1px solid rgba(20, 17, 16, 0.16);
+        border-bottom: 1px solid rgba(20, 17, 16, 0.16);
+        margin: 28px 0;
+      }
+      .liquidstack-stat-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+        font-weight: 900;
+        color: var(--liquidstack-gold);
+        display: block;
+        letter-spacing: -0.025em;
+        -webkit-text-stroke: 0.5px #1c1208;
+      }
+      .liquidstack-stat-lbl {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(70, 55, 36, 0.7);
+        display: block;
+        margin-top: 6px;
+        max-width: 190px;
+      }
+      .liquidstack-cta {
+        display: inline-block;
+        background: var(--liquidstack);
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 15px 30px;
+        margin-top: 16px;
+      }
+      .liquidstack-cta:hover {
+        background: #2c2620;
       }
 
       /* ═══ S02 - PJM - TEAL STAMP ════════════════ */
@@ -818,7 +935,12 @@
       monitor blames data centers for $6.3 billion of the latest capacity
       auction. Sierra Club, NRDC, and Earthjustice just nationalized the
       opposition network. A Kansas developer's sworn testimony does not match
-      what he told the radio four days earlier.
+      what he told the radio four days earlier. LiquidStack has this issue.
+    </div>
+
+    <!-- ── SPONSOR WELCOME RIBBON ────────────────── -->
+    <div class="ribbon">
+      <span>This issue is brought to you by <b>LiquidStack</b></span>
     </div>
 
     <!-- ── MASTHEAD ─────────────────────────────── -->
@@ -909,6 +1031,59 @@
           href="https://thecoolingreport.com/intel/hut-8-beacon-point-closed-loop-water-cooling.html"
           class="rdl s01-rdl"
           >Read the full analysis →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ LIQUIDSTACK - MID-ISSUE SPONSOR CARD ══ -->
+    <section class="s-liquidstack">
+      <div class="liquidstack-card">
+        <div class="liquidstack-badge">A word from this issue's sponsor</div>
+        <img
+          class="liquidstack-logo"
+          src="https://thecoolingreport.com/email-assets/liquidstack-logo.png"
+          alt="LiquidStack"
+          width="260"
+        />
+        <h2 class="liquidstack-hed">
+          LiquidStack's Coolant Distribution Units Now Ship Under Trane's
+          $21 Billion HVAC Balance Sheet.
+        </h2>
+        <p class="liquidstack-body">
+          Trane Technologies completed its acquisition of LiquidStack in
+          March, folding the <a href="https://thecoolingreport.com/intel/trane-technologies-liquidstack-acquisition-immersion-cooling.html" style="color: inherit; text-decoration: underline;">two-phase immersion pioneer</a>
+          in alongside its Stellar Energy Digital cold-plate business.
+          LiquidStack's CDUs are the piece that actually does the unglamorous
+          work: moving coolant between the facility loop and the rack,
+          metering flow, and holding pressure on a liquid circuit most
+          operators are running for the first time. Founded in Hong Kong in
+          2012 as Allied Control, the company built its name on two-phase
+          immersion before Trane put it on the same balance sheet as a
+          conglomerate that books $21 billion a year.
+        </p>
+        <div class="liquidstack-stats">
+          <div>
+            <span class="liquidstack-stat-num">252 kW</span>
+            <span class="liquidstack-stat-lbl">Rack density LiquidStack's tanks support in a standard 48U footprint</span>
+          </div>
+          <div>
+            <span class="liquidstack-stat-num">1.02</span>
+            <span class="liquidstack-stat-lbl">Partial PUE the company claims on two-phase immersion</span>
+          </div>
+          <div>
+            <span class="liquidstack-stat-num">41%</span>
+            <span class="liquidstack-stat-lbl">Energy cut claimed versus air cooling</span>
+          </div>
+        </div>
+        <p class="liquidstack-body">
+          A CDU is the least discussed part of any direct-to-chip build, and
+          the one that determines whether a rack pushing past what a chiller
+          alone can hold actually stays inside spec.
+        </p>
+        <a
+          href="https://liquidstack.com/liquidstack-resources/coolant-distribution-unit-data-sheet?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=the-cooling-report-7-20"
+          class="liquidstack-cta"
+          >Get the CDU Data Sheet →</a
         >
       </div>
     </section>
@@ -1228,7 +1403,7 @@
           week, at a 40 percent click rate
         </p>
         <p class="newsroom-sub">
-          One sponsor per issue. This one is open.
+          One sponsor per issue. LiquidStack has this one.
         </p>
         <p class="newsroom-body">
           Cooling Bytes reaches the operators, engineers, and infrastructure
