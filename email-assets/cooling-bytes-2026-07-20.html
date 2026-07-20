@@ -1,0 +1,1465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cooling Bytes, July 20, 2026 | The Cooling Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ─── RESET ─────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f5f2ec;
+        color: #1a1a18;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ─── TOKENS ─────────────────────────────── */
+      :root {
+        --night: #07090d;
+        --midnight: #0c1420;
+        --navy: #192648;
+        --sepia: #2a2014;
+        --paper: #f5f2ec;
+        --cream: #f3e9d0;
+        --sand: #ede4d4;
+        --white: #ffffff;
+        --teal: #0c7278;
+        --water: #1498b0;
+        --terracotta: #c2541a;
+        --rose: #cc2e2e;
+        --amber: #9a7010;
+        --liquidstack: #141110;
+        --liquidstack-gold: #f7be00;
+        --muted: #7a7870;
+        --mono: "JetBrains Mono", monospace;
+        --pad: clamp(28px, 6vw, 100px);
+        --inner: 1120px;
+      }
+
+      /* ─── SPONSOR WELCOME RIBBON ──────────────── */
+      .ribbon {
+        background: var(--liquidstack);
+        padding: 11px var(--pad);
+        text-align: center;
+      }
+      .ribbon span {
+        font-family: "Inter", sans-serif;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      .ribbon span b {
+        font-weight: 900;
+        color: var(--liquidstack-gold);
+      }
+
+      /* ─── MASTHEAD ───────────────────────────── */
+      .masthead {
+        background: var(--night);
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 var(--pad);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .mast-logo {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.01em;
+      }
+      .mast-logo .dia {
+        color: var(--teal);
+        margin-right: 7px;
+      }
+      .mast-date {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* ─── ISSUE OPENING ──────────────────────── */
+      .opening {
+        background: var(--night);
+        padding: clamp(56px, 8vw, 118px) var(--pad) clamp(50px, 7vw, 100px);
+      }
+      .opening-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-bottom: 28px;
+      }
+      .opening-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(3rem, 7vw, 6.5rem);
+        font-weight: 900;
+        line-height: 1;
+        color: #fff;
+        letter-spacing: -0.025em;
+        max-width: 900px;
+        margin-bottom: 36px;
+      }
+      .opening-intro {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+        font-weight: 300;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.48);
+        max-width: 700px;
+      }
+
+      /* ─── SECTION SHELL ──────────────────────── */
+      .sec {
+        padding: clamp(64px, 9vw, 130px) var(--pad);
+      }
+      .sec-inner {
+        max-width: var(--inner);
+      }
+
+      /* ─── SECTION TAG ────────────────────────── */
+      .tag {
+        display: inline-block;
+        font-family: "Inter", sans-serif;
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        margin-bottom: 32px;
+      }
+      .tag-infra {
+        background: rgba(154, 112, 16, 0.16);
+        color: #8a6410;
+      }
+      .tag-energy {
+        background: rgba(204, 46, 46, 0.12);
+        color: #cc2e2e;
+      }
+      .tag-policy {
+        background: rgba(25, 38, 72, 0.11);
+        color: #2c3c64;
+      }
+      .tag-community {
+        background: rgba(194, 84, 26, 0.12);
+        color: #c2541a;
+      }
+
+      /* ─── READ LINK ──────────────────────────── */
+      .rdl {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin-top: 22px;
+      }
+      .rdl:hover {
+        text-decoration: underline;
+      }
+
+      /* ═══ S01 - HUT 8 - MIDNIGHT HERO ═══════════ */
+      .s01 {
+        background: var(--midnight);
+        position: relative;
+        overflow: hidden;
+      }
+      .s01-ghost {
+        position: absolute;
+        top: -0.08em;
+        right: -0.04em;
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-size: clamp(16rem, 32vw, 34rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: rgba(255, 255, 255, 0.018);
+        pointer-events: none;
+        user-select: none;
+      }
+      .s01-inner {
+        position: relative;
+        max-width: var(--inner);
+      }
+      .s01-hero-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(4.2rem, 11vw, 10rem);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: var(--water);
+        display: block;
+      }
+      .s01-hero-label {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        margin-top: 12px;
+        margin-bottom: 48px;
+        display: block;
+      }
+      .s01-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2rem, 4vw, 3.8rem);
+        font-weight: 700;
+        line-height: 1.12;
+        color: #fff;
+        letter-spacing: -0.022em;
+        max-width: 860px;
+        margin-bottom: 36px;
+      }
+      .s01-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.35vw, 1.18rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: rgba(255, 255, 255, 0.54);
+        max-width: 680px;
+        margin-bottom: 18px;
+      }
+      .s01-trio {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin: 44px 0;
+        padding: 36px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .s01-trio-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.82);
+        display: block;
+        letter-spacing: -0.025em;
+      }
+      .s01-trio-lbl {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        display: block;
+        margin-top: 8px;
+      }
+      .s01-rdl {
+        color: var(--water);
+      }
+
+      /* ═══ LIQUIDSTACK - MID-ISSUE SPONSOR CARD ═ */
+      .s-liquidstack {
+        background: var(--night);
+        padding: clamp(40px, 6vw, 80px) var(--pad);
+      }
+      .liquidstack-card {
+        max-width: var(--inner);
+        margin: 0 auto;
+        background: var(--cream);
+        border: 3px solid var(--liquidstack-gold);
+        padding: clamp(36px, 5vw, 68px);
+      }
+      .liquidstack-badge {
+        display: inline-block;
+        background: var(--liquidstack);
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.56rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 5px 13px;
+        margin-bottom: 30px;
+      }
+      .liquidstack-logo {
+        width: clamp(190px, 26vw, 260px);
+        height: auto;
+        margin-bottom: 30px;
+        display: block;
+      }
+      .liquidstack-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.8rem, 3.6vw, 3rem);
+        font-weight: 700;
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        color: #1c1208;
+        max-width: 820px;
+        margin-bottom: 28px;
+      }
+      .liquidstack-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.85;
+        color: #463724;
+        max-width: 720px;
+        margin-bottom: 16px;
+      }
+      .liquidstack-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px;
+        padding: 28px 0;
+        border-top: 1px solid rgba(20, 17, 16, 0.16);
+        border-bottom: 1px solid rgba(20, 17, 16, 0.16);
+        margin: 28px 0;
+      }
+      .liquidstack-stat-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+        font-weight: 900;
+        color: var(--liquidstack-gold);
+        display: block;
+        letter-spacing: -0.025em;
+        -webkit-text-stroke: 0.5px #1c1208;
+      }
+      .liquidstack-stat-lbl {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(70, 55, 36, 0.7);
+        display: block;
+        margin-top: 6px;
+        max-width: 190px;
+      }
+      .liquidstack-cta {
+        display: inline-block;
+        background: var(--liquidstack);
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 15px 30px;
+        margin-top: 16px;
+      }
+      .liquidstack-cta:hover {
+        background: #2c2620;
+      }
+
+      /* ═══ S02 - PJM - TEAL STAMP ════════════════ */
+      .s02 {
+        background: var(--sand);
+      }
+      .s02-layout {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: clamp(40px, 6vw, 90px);
+        align-items: start;
+        max-width: var(--inner);
+      }
+      .s02-stamp-col {
+        padding-top: 12px;
+      }
+      .stamp-ring {
+        width: clamp(170px, 22vw, 250px);
+        height: clamp(170px, 22vw, 250px);
+        border-radius: 50%;
+        border: clamp(7px, 1vw, 11px) solid var(--teal);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-9deg);
+        position: relative;
+        box-shadow: inset 0 0 0 6px rgba(12, 114, 120, 0.15);
+      }
+      .stamp-ring::before {
+        content: "";
+        position: absolute;
+        inset: 10px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(12, 114, 120, 0.35);
+      }
+      .stamp-big {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.8rem, 5.6vw, 4.6rem);
+        font-weight: 900;
+        color: var(--teal);
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      .stamp-word {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(0.5rem, 0.8vw, 0.62rem);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-top: 6px;
+      }
+      .s02-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.9rem, 3.6vw, 3.2rem);
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        color: #14201f;
+        margin-bottom: 28px;
+      }
+      .s02-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: #2f3a39;
+        margin-bottom: 18px;
+      }
+      .s02-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px;
+        padding: 28px 0;
+        border-top: 1px solid rgba(12, 114, 120, 0.22);
+        border-bottom: 1px solid rgba(12, 114, 120, 0.22);
+        margin: 32px 0;
+      }
+      .s02-stat-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+        font-weight: 900;
+        color: var(--teal);
+        display: block;
+        letter-spacing: -0.025em;
+      }
+      .s02-stat-lbl {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(47, 58, 57, 0.55);
+        display: block;
+        margin-top: 6px;
+        max-width: 200px;
+      }
+      .s02-rdl {
+        color: var(--teal);
+      }
+
+      /* ═══ S03 - GREEN GROUPS - ACADEMIC DROP-CAP ═ */
+      .s03 {
+        background: var(--white);
+      }
+      .s03-inner {
+        max-width: var(--inner);
+      }
+      .s03-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.2rem, 4.5vw, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.022em;
+        color: #1a1a18;
+        max-width: 840px;
+        margin-bottom: 40px;
+      }
+      .drop-cap {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.35vw, 1.18rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: #333;
+      }
+      .drop-cap::first-letter {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-size: clamp(5.5rem, 10vw, 9rem);
+        color: var(--water);
+        float: left;
+        line-height: 0.82;
+        padding-right: 0.07em;
+        padding-top: 0.07em;
+      }
+      .s03-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 52px;
+        margin-top: 32px;
+      }
+      .s03-col-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: #444;
+      }
+      .pull-quote {
+        grid-column: 1 / -1;
+        border-left: 4px solid var(--water);
+        background: #eef8fb;
+        padding: 32px 40px;
+        margin: 8px 0;
+      }
+      .pq-text {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.4rem, 2.6vw, 2.05rem);
+        font-weight: 500;
+        font-style: italic;
+        line-height: 1.34;
+        color: #0c5f78;
+        letter-spacing: -0.01em;
+      }
+      .pq-attr {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 14px;
+      }
+      .s03-rdl {
+        color: var(--water);
+      }
+
+      /* ═══ S04 - EMPORIA - BIG STAT FINISH ═══════ */
+      .s04 {
+        background: var(--paper);
+        border-top: 1px solid #ddd8d0;
+      }
+      .s04-inner {
+        max-width: var(--inner);
+      }
+      .s04-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.2rem, 4.5vw, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.022em;
+        color: var(--terracotta);
+        max-width: 860px;
+        margin-bottom: 56px;
+      }
+      .stat-wall {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(40px, 7vw, 96px);
+        padding-bottom: 52px;
+        border-bottom: 3px solid var(--terracotta);
+        margin-bottom: 52px;
+      }
+      .sw-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(4rem, 10vw, 8.5rem);
+        font-weight: 900;
+        color: var(--terracotta);
+        display: block;
+        line-height: 1;
+        letter-spacing: -0.045em;
+      }
+      .sw-unit {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(0.82rem, 1.2vw, 1rem);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        opacity: 0.7;
+        display: block;
+        margin-top: 6px;
+      }
+      .sw-desc {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 400;
+        color: var(--muted);
+        display: block;
+        margin-top: 10px;
+        max-width: 220px;
+        line-height: 1.5;
+      }
+      .s04-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.35vw, 1.18rem);
+        font-weight: 300;
+        line-height: 1.88;
+        color: #444;
+        max-width: 720px;
+        margin-bottom: 18px;
+      }
+      .s04-rdl {
+        color: var(--terracotta);
+        font-weight: 600;
+      }
+
+      /* ═══ ALSO PUBLISHED ═══════════════════════ */
+      .s-more {
+        background: #e8e4dc;
+      }
+      .more-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 40px;
+      }
+      .more-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+        max-width: var(--inner);
+      }
+      .more-card {
+        background: var(--paper);
+        padding: 28px 26px 26px;
+        border-top: 4px solid var(--amber);
+      }
+      .more-card-tag {
+        font-family: "Inter", sans-serif;
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--amber);
+        margin-bottom: 12px;
+      }
+      .more-card-title {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.28;
+        color: #1a1a18;
+        margin-bottom: 18px;
+      }
+      .more-card-link {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--amber);
+        letter-spacing: 0.04em;
+      }
+      .more-card-link:hover {
+        text-decoration: underline;
+      }
+
+      /* ═══ FROM THE NEWSROOM - CTA ══════════════ */
+      .newsroom {
+        background: var(--cream);
+        padding: clamp(64px, 9vw, 130px) var(--pad);
+      }
+      .newsroom-inner {
+        max-width: var(--inner);
+      }
+      .newsroom-kicker {
+        font-family: "Inter", sans-serif;
+        font-size: 0.64rem;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        margin-bottom: 24px;
+      }
+      .newsroom-num {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(6rem, 18vw, 16rem);
+        font-weight: 900;
+        line-height: 0.86;
+        color: #1c1208;
+        letter-spacing: -0.05em;
+      }
+      .newsroom-cap {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #6a5638;
+        margin-top: 22px;
+        margin-bottom: 40px;
+      }
+      .newsroom-sub {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.6rem, 3vw, 2.6rem);
+        font-weight: 700;
+        font-style: italic;
+        line-height: 1.18;
+        color: #1c1208;
+        max-width: 760px;
+        margin-bottom: 26px;
+      }
+      .newsroom-body {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.85;
+        color: #463724;
+        max-width: 660px;
+        margin-bottom: 40px;
+      }
+      .newsroom-rollcap {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #8a7448;
+        margin-bottom: 14px;
+      }
+      .newsroom-roll {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(1.05rem, 1.9vw, 1.55rem);
+        font-weight: 600;
+        color: #2a1c0c;
+        line-height: 1.5;
+        max-width: 820px;
+        margin-bottom: 44px;
+      }
+      .newsroom-cta {
+        display: inline-block;
+        background: var(--night);
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 17px 34px;
+      }
+      .newsroom-cta:hover {
+        background: #1a1f28;
+      }
+
+      /* ═══ CLOSER ═══════════════════════════════ */
+      .closer {
+        background: var(--sepia);
+        padding: clamp(64px, 9vw, 130px) var(--pad);
+      }
+      .closer-inner {
+        max-width: var(--inner);
+      }
+      .closer-kicker {
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.34);
+        margin-bottom: 24px;
+      }
+      .closer-hed {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: clamp(2.4rem, 5vw, 4.6rem);
+        font-weight: 900;
+        line-height: 1.04;
+        color: #fff;
+        letter-spacing: -0.028em;
+        max-width: 880px;
+        margin-bottom: 28px;
+      }
+      .closer-sub {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+        font-weight: 300;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.5);
+        max-width: 640px;
+        margin-bottom: 40px;
+      }
+      .closer-cta {
+        display: inline-block;
+        background: #fff;
+        color: var(--sepia);
+        font-family: "Inter", sans-serif;
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 17px 34px;
+      }
+      .closer-cta:hover {
+        background: #f0e8da;
+      }
+
+      /* ─── FOOTER ─────────────────────────────── */
+      .footer {
+        background: var(--night);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 36px var(--pad);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .ft-logo {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      .ft-logo .dia {
+        color: var(--teal);
+        margin-right: 7px;
+      }
+      .ft-links {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .ft-links a {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.3);
+        letter-spacing: 0.04em;
+        transition: color 0.2s;
+      }
+      .ft-links a:hover {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .ft-copy {
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.18);
+        letter-spacing: 0.04em;
+        margin-top: 4px;
+      }
+      .ft-band {
+        background: #04050a;
+        padding: 18px var(--pad);
+        text-align: center;
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.26);
+      }
+      .ft-band .dia {
+        color: var(--teal);
+      }
+
+      /* ─── RESPONSIVE ─────────────────────────── */
+      @media (max-width: 760px) {
+        .s02-layout {
+          grid-template-columns: 1fr;
+        }
+        .s02-stamp-col {
+          display: flex;
+          justify-content: center;
+        }
+        .s03-cols {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .pull-quote {
+          grid-column: 1;
+        }
+        .stat-wall {
+          flex-direction: column;
+          gap: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── PREHEADER (hidden) ───────────────────── -->
+    <div
+      style="
+        display: none;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        color: #07090d;
+        font-size: 1px;
+        line-height: 1px;
+      "
+    >
+      Hut 8 signs a second $9.8 billion lease after proving its cooling loop
+      draws under 10,000 gallons of municipal water a day. PJM's own market
+      monitor blames data centers for $6.3 billion of the latest capacity
+      auction. Sierra Club, NRDC, and Earthjustice just nationalized the
+      opposition network. A Kansas developer's sworn testimony does not match
+      what he told the radio four days earlier. LiquidStack has this issue.
+    </div>
+
+    <!-- ── SPONSOR WELCOME RIBBON ────────────────── -->
+    <div class="ribbon">
+      <span>This issue is brought to you by <b>LiquidStack</b></span>
+    </div>
+
+    <!-- ── MASTHEAD ─────────────────────────────── -->
+    <header class="masthead">
+      <div class="mast-logo"><span class="dia">◈</span>The Cooling Report</div>
+      <div class="mast-date">July 20, 2026</div>
+    </header>
+
+    <!-- ── ISSUE OPENING ─────────────────────────── -->
+    <section class="opening">
+      <p class="opening-eyebrow">
+        Cooling Bytes &nbsp;·&nbsp; Iss. 44 &nbsp;·&nbsp; July 20, 2026
+      </p>
+      <h1 class="opening-hed">
+        The data center industry's numbers are getting checked. Some of them don't hold up.
+      </h1>
+      <p class="opening-intro">
+        Four stories on the same question: who checks the number. Hut 8
+        signed a second $9.8 billion lease at its Texas campus after proving
+        its closed-loop system pulls under 10,000 gallons of municipal water
+        a day, the kind of receipt that clears deals where water fights kill
+        others. PJM's own market monitor says data centers drove $6.3 billion
+        of the latest capacity auction and wants them priced separately.
+        Sierra Club, NRDC, and Earthjustice just nationalized the opposition
+        network, and their fights still run on water permits and chiller
+        noise, not press releases. In Emporia, Kansas, the man who told local
+        radio he was the master developer swore under oath four days later
+        that he has no interest in the project at all. Somebody is going to
+        have to check that story too.
+      </p>
+    </section>
+
+    <!-- ══ S01 - HUT 8 - MIDNIGHT HERO ═══════════ -->
+    <section id="s01" class="sec s01">
+      <div class="s01-ghost">01</div>
+      <div class="s01-inner">
+        <span class="tag tag-infra">Infrastructure</span>
+
+        <span class="s01-hero-num">&lt;10K</span>
+        <span class="s01-hero-label"
+          >Gallons of municipal water a day &nbsp;·&nbsp; Beacon Point, Texas
+          &nbsp;·&nbsp; a $19.6 billion campus</span
+        >
+
+        <h2 class="s01-hed">
+          Hut 8 Signs a Second $9.8 Billion Lease, Doubling One Tenant to 704
+          Megawatts. The Water Number Is Why the Deal Could Close This Fast.
+        </h2>
+
+        <p class="s01-body">
+          Hut 8 signed a second 15-year lease worth $9.8 billion at its
+          Beacon Point campus in Nueces County, Texas, the same undisclosed,
+          high investment-grade tenant doubling its footprint to 704
+          megawatts. The campus's base-term contract value now stands at
+          $19.6 billion, with renewal options that could push it to $50.2
+          billion. None of it survives without the thermal engineering
+          underneath.
+        </p>
+
+        <div class="s01-trio">
+          <div>
+            <span class="s01-trio-num">$19.6B</span>
+            <span class="s01-trio-lbl">Contracted campus value after the second lease</span>
+          </div>
+          <div>
+            <span class="s01-trio-num">704 MW</span>
+            <span class="s01-trio-lbl">One tenant's total footprint at Beacon Point</span>
+          </div>
+          <div>
+            <span class="s01-trio-num">57%</span>
+            <span class="s01-trio-lbl">Density increase engineered into the same acreage</span>
+          </div>
+        </div>
+
+        <p class="s01-body">
+          Cooling at Beacon Point runs on a closed loop filled once, roughly
+          1.8 million gallons trucked in from outside Nueces County, then
+          recirculated for four to seven years before it needs a refill.
+          Hailey Miller, Hut 8's senior director of regulatory and government
+          affairs, put it plainly: "Under no circumstance will we use
+          municipal water for cooling." Elsewhere in the market, neocloud
+          deals keep stalling because colocation providers won't sign
+          without investment-grade credit behind the lease. Twice now, at the
+          same site, the market has answered yes.
+        </p>
+
+        <a
+          href="https://thecoolingreport.com/intel/hut-8-beacon-point-closed-loop-water-cooling.html"
+          class="rdl s01-rdl"
+          >Read the full analysis →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ LIQUIDSTACK - MID-ISSUE SPONSOR CARD ══ -->
+    <section class="s-liquidstack">
+      <div class="liquidstack-card">
+        <div class="liquidstack-badge">A word from this issue's sponsor</div>
+        <img
+          class="liquidstack-logo"
+          src="https://thecoolingreport.com/email-assets/liquidstack-logo.png"
+          alt="LiquidStack"
+          width="260"
+        />
+        <h2 class="liquidstack-hed">
+          LiquidStack's Coolant Distribution Units Now Ship Under Trane's
+          $21 Billion HVAC Balance Sheet.
+        </h2>
+        <p class="liquidstack-body">
+          Trane Technologies completed its acquisition of LiquidStack in
+          March, folding the <a href="https://thecoolingreport.com/intel/trane-technologies-liquidstack-acquisition-immersion-cooling.html" style="color: inherit; text-decoration: underline;">two-phase immersion pioneer</a>
+          in alongside its Stellar Energy Digital cold-plate business.
+          LiquidStack's CDUs are the piece that actually does the unglamorous
+          work: moving coolant between the facility loop and the rack,
+          metering flow, and holding pressure on a liquid circuit most
+          operators are running for the first time. Founded in Hong Kong in
+          2012 as Allied Control, the company built its name on two-phase
+          immersion before Trane put it on the same balance sheet as a
+          conglomerate that books $21 billion a year.
+        </p>
+        <div class="liquidstack-stats">
+          <div>
+            <span class="liquidstack-stat-num">252 kW</span>
+            <span class="liquidstack-stat-lbl">Rack density LiquidStack's tanks support in a standard 48U footprint</span>
+          </div>
+          <div>
+            <span class="liquidstack-stat-num">1.02</span>
+            <span class="liquidstack-stat-lbl">Partial PUE the company claims on two-phase immersion</span>
+          </div>
+          <div>
+            <span class="liquidstack-stat-num">41%</span>
+            <span class="liquidstack-stat-lbl">Energy cut claimed versus air cooling</span>
+          </div>
+        </div>
+        <p class="liquidstack-body">
+          A CDU is the least discussed part of any direct-to-chip build, and
+          the one that determines whether a rack pushing past what a chiller
+          alone can hold actually stays inside spec.
+        </p>
+        <a
+          href="https://liquidstack.com/liquidstack-resources/coolant-distribution-unit-data-sheet?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=the-cooling-report-7-20"
+          class="liquidstack-cta"
+          >Get the CDU Data Sheet →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ S02 - PJM - TEAL STAMP ═════════════════ -->
+    <section id="s02" class="sec s02">
+      <div class="s02-layout">
+        <div class="s02-stamp-col">
+          <div class="stamp-ring">
+            <span class="stamp-big">$6.3B</span>
+            <span class="stamp-word">Capacity Auction</span>
+          </div>
+        </div>
+        <div class="s02-text">
+          <span class="tag tag-energy">Energy</span>
+          <h2 class="s02-hed">
+            PJM's Own Market Monitor Says Data Centers Cost $6.3 Billion in
+            the Latest Auction. He Wants Them Out of the Shared Market.
+          </h2>
+
+          <p class="s02-body">
+            Joseph Bowring, PJM's independent market monitor, attributes $6.3
+            billion of the grid operator's latest $16.4 billion capacity
+            auction to data center load, and $29.4 billion across the last
+            four auctions combined. His proposal: move hyperscalers into a
+            dedicated capacity market where they procure their own
+            generation instead of bidding against homes and factories for
+            the same megawatts.
+          </p>
+
+          <div class="s02-stats">
+            <div>
+              <span class="s02-stat-num">$29.4B</span>
+              <span class="s02-stat-lbl">Data center share across four PJM auctions</span>
+            </div>
+            <div>
+              <span class="s02-stat-num">$16.4B</span>
+              <span class="s02-stat-lbl">Total cost of the latest auction</span>
+            </div>
+            <div>
+              <span class="s02-stat-num">1</span>
+              <span class="s02-stat-lbl">Market monitor pushing to split the market in two</span>
+            </div>
+          </div>
+
+          <p class="s02-body">
+            A capacity auction prices reserve margin, and reserve margin is
+            set by the worst thermal day on the grid, the afternoon every
+            chiller and CRAH unit pulls max power at once. That is the same
+            mechanic behind the White House's ratepayer pledge last week:
+            cooling-driven peak demand is what utilities size feeders and
+            substations against, and what Bowring wants hyperscalers to price
+            for themselves. A dedicated capacity market would not eliminate
+            the load. It would just put the cooling bill where it belongs,
+            on the account that created it.
+          </p>
+
+          <a
+            href="https://thecoolingreport.com/intel/pjm-market-monitor-data-center-capacity-auction-costs.html"
+            class="rdl s02-rdl"
+            >Read the full analysis →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ S03 - GREEN GROUPS - ACADEMIC DROP-CAP ═ -->
+    <section id="s03" class="sec s03">
+      <div class="s03-inner">
+        <span class="tag tag-policy">Policy</span>
+        <h2 class="s03-hed">
+          Sierra Club, NRDC, and Earthjustice Just Nationalized the Data
+          Center Fight. It Still Comes Down to a Water Permit and a Chiller
+          Complaint.
+        </h2>
+
+        <p class="drop-cap">
+          Sierra Club, NRDC, Earthjustice, and Food and Water Watch are
+          building a national coordination network for data center
+          opposition, according to Politico's reporting on the shift.
+          Eighteen months of federal losses pushed the strategy: no
+          moratorium bill has cleared Congress, no federal permitting rule
+          has slowed a single project, and national environmental groups
+          spent that stretch losing on the issue that most animates their
+          local chapters.
+        </p>
+
+        <div class="s03-cols">
+          <div class="pull-quote">
+            <p class="pq-text">
+              "National coalitions and reelection strategy make the
+              headline. A water permit for a cooling tower and a noise
+              variance for a chiller plant still make the case."
+            </p>
+            <p class="pq-attr">
+              The Cooling Report &nbsp;·&nbsp; July 20, 2026
+            </p>
+          </div>
+
+          <div class="s03-col-body">
+            <p>
+              The funding and staff time are new. The target is not.
+              Sanders and AOC's federal moratorium bill went nowhere in
+              Congress, and eleven states are weighing construction pauses
+              of their own with no federal help behind them. What is
+              actually winning cases at the local level is the same
+              mechanic activist coalitions have coordinated on for over a
+              year: water withdrawal permits for evaporative cooling towers,
+              and noise variances for chiller plants and diesel generators
+              running next to a subdivision.
+            </p>
+          </div>
+
+          <div class="s03-col-body">
+            <p>
+              A national press operation can put a Sierra Club spokesperson
+              on cable news. It cannot make a planning board approve a water
+              permit it was already going to deny. The nationalized
+              network's real value is speeding up a process that already
+              works: finding the cooling architecture decision hiding inside
+              every permit application, and putting a lawyer on it before
+              the hearing date instead of after.
+            </p>
+            <a
+              href="https://thecoolingreport.com/intel/green-groups-nationalize-data-center-opposition-network.html"
+              class="rdl s03-rdl"
+              style="display: inline-flex; margin-top: 20px"
+              >Read the full analysis →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ S04 - EMPORIA KANSAS - BIG STAT FINISH ═ -->
+    <section id="s04" class="sec s04">
+      <div class="s04-inner">
+        <span class="tag tag-community">Community</span>
+        <h2 class="s04-hed">
+          Gary Pinkston Told Kansas Radio He Was the Master Developer. Four
+          Days Later, He Swore Under Oath He Has No Interest in the Project.
+        </h2>
+
+        <div class="stat-wall">
+          <div class="stat-wall-item">
+            <span class="sw-num">4</span>
+            <span class="sw-unit">Days</span>
+            <span class="sw-desc"
+              >Between the radio interview and the sworn testimony</span
+            >
+          </div>
+          <div class="stat-wall-item">
+            <span class="sw-num">1 GW</span>
+            <span class="sw-unit">Campus Size</span>
+            <span class="sw-desc"
+              >Flint Hills Digital Campus, proposed for Emporia, Kansas</span
+            >
+          </div>
+          <div class="stat-wall-item">
+            <span class="sw-num">0</span>
+            <span class="sw-unit">Cooling Method Disclosed</span>
+            <span class="sw-desc"
+              >Still undecided, according to the Kansas Reflector</span
+            >
+          </div>
+        </div>
+
+        <p class="s04-body">
+          Gary Pinkston told Kansas radio listeners he was the master
+          developer behind Emporia's proposed 1-gigawatt Flint Hills Digital
+          Campus, according to the Kansas Reflector's reporting. Four days
+          later, in a sworn filing, he said he has no interest in the
+          project at all. Residents at the hearing called the reversal
+          exactly what it looked like: a credibility problem dressed up as a
+          legal technicality.
+        </p>
+
+        <p class="s04-body">
+          Nobody in Emporia has been told what the campus will actually cool
+          with. A gigawatt of AI compute pulls a specific thermal load
+          regardless of who signs the permit, and the county cannot size a
+          water allocation or a noise ordinance against a cooling
+          architecture the developer will not name. Pinkston's testimony
+          answers a legal question about liability. It does not answer the
+          one the town actually asked: what pulls the heat off a gigawatt of
+          silicon, and where does the water for it come from.
+        </p>
+
+        <a
+          href="https://thecoolingreport.com/intel/emporia-kansas-flint-hills-digital-campus-sworn-testimony.html"
+          class="rdl s04-rdl"
+          >Read the full analysis →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ ALSO PUBLISHED ════════════════════════ -->
+    <section id="more" class="sec s-more">
+      <p class="more-eyebrow">Also published this week</p>
+      <div class="more-grid">
+        <div class="more-card">
+          <p class="more-card-tag">Community</p>
+          <p class="more-card-title">
+            142 Data Center Protests Hit 42 States in One Day. Every Fight
+            Traces Back to a Cooling Tower.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/humansfirst-142-protests-42-states-water-cooling.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Water</p>
+          <p class="more-card-title">
+            Data Centers Keep Rising Beside the West's Fastest-Shrinking
+            Lakes. Closed-Loop Cooling Still Draws From Them.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/shrinking-lakes-data-center-closed-loop-water-math.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Policy</p>
+          <p class="more-card-title">
+            Georgia Power Wants 300 Land Parcels for an AI Transmission Line.
+            Most of the Megawatts Being Condemned Are Cooling Load.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/georgia-power-eminent-domain-transmission-line-cooling-load.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Supply Chain</p>
+          <p class="more-card-title">
+            Molex Signs a $6.29 Billion, Ten-Year Optical Cable Deal With
+            Prysmian. Liquid Cooling Made Room for the Wire.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/molex-prysmian-6-29-billion-optical-cable-deal.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Policy</p>
+          <p class="more-card-title">
+            Virginia Data Centers Are Building Gas Turbines Behind the Meter
+            to Dodge State Carbon Rules. Nobody Is Counting the Heat They'll
+            Have to Reject.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/virginia-data-centers-gas-turbines-vcea-loophole.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Energy</p>
+          <p class="more-card-title">
+            Google and Amazon's Nuclear Deals Cover a Fraction of One Percent
+            of Data Center Capex. The Reactors Won't Run Before 2035.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/big-tech-smr-nuclear-deals-data-center-capex-gap.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div class="more-card">
+          <p class="more-card-tag">Policy</p>
+          <p class="more-card-title">
+            Pennsylvania's Budget Added One Data Center Rule: Report the
+            Water and Power Draw. Every Cost-Recovery Bill Died in the
+            Senate.
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel/pennsylvania-data-center-water-disclosure-senate-stalemate.html"
+            class="more-card-link"
+            >Read →</a
+          >
+        </div>
+        <div
+          class="more-card"
+          style="
+            background: var(--teal);
+            border-top-color: rgba(255, 255, 255, 0.3);
+          "
+        >
+          <p class="more-card-tag" style="color: rgba(255, 255, 255, 0.6)">
+            All Intel
+          </p>
+          <p class="more-card-title" style="color: #fff">
+            Browse every article in The Cooling Report Intel archive
+          </p>
+          <a
+            href="https://thecoolingreport.com/intel.html"
+            class="more-card-link"
+            style="color: rgba(255, 255, 255, 0.85)"
+            >See all articles →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FROM THE NEWSROOM - CTA ═══════════════ -->
+    <section class="newsroom">
+      <div class="newsroom-inner">
+        <p class="newsroom-kicker">From the newsroom</p>
+        <div class="newsroom-num">2,500+</div>
+        <p class="newsroom-cap">
+          Data center infrastructure decision-makers get Cooling Bytes every
+          week, at a 40 percent click rate
+        </p>
+        <p class="newsroom-sub">
+          One sponsor per issue. LiquidStack has this one.
+        </p>
+        <p class="newsroom-body">
+          Cooling Bytes reaches the operators, engineers, and infrastructure
+          buyers deciding how the next gigawatt gets cooled. One sponsor
+          carries each edition, in the editorial flow, never in a banner.
+        </p>
+        <p class="newsroom-rollcap">Read by people at</p>
+        <p class="newsroom-roll">
+          NVIDIA &nbsp;·&nbsp; Parker Hannifin &nbsp;·&nbsp; Accelsius
+          &nbsp;·&nbsp; Vertiv &nbsp;·&nbsp; ASU &nbsp;·&nbsp; Castrol
+        </p>
+        <a href="https://thecoolingreport.com/sponsor.html" class="newsroom-cta"
+          >Sponsor an issue →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ CLOSER ════════════════════════════════ -->
+    <section class="closer">
+      <div class="closer-inner">
+        <p class="closer-kicker">The week, closed</p>
+        <h2 class="closer-hed">
+          Four features on who actually checks the data center industry's
+          numbers, and what happens when nobody has.
+        </h2>
+        <p class="closer-sub">
+          $9.8 billion in Texas, $6.3 billion in one PJM auction, a national
+          opposition network funded by three of the country's biggest
+          environmental groups, and a Kansas developer whose story does not
+          hold up under oath. Every story, plus the full archive of cooling
+          intelligence, lives at Intel.
+        </p>
+        <a href="https://thecoolingreport.com/intel.html" class="closer-cta"
+          >Read everything in Intel →</a
+        >
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ════════════════════════════════ -->
+    <footer class="footer">
+      <div class="ft-logo"><span class="dia">◈</span>The Cooling Report</div>
+      <nav class="ft-links">
+        <a href="https://thecoolingreport.com">Site</a>
+        <a href="https://thecoolingreport.com/intel.html">Intel</a>
+        <a href="https://thecoolingreport.com/sponsor.html">Sponsor</a>
+        <a href="{{{RESEND_UNSUBSCRIBE_URL}}}">Unsubscribe</a>
+      </nav>
+      <p class="ft-copy">
+        © 2026 The Cooling Report. Data center cooling intelligence for
+        operators, engineers, and the people building the thermal infrastructure
+        that AI runs on.
+      </p>
+    </footer>
+    <div class="ft-band">
+      <span class="dia">◈</span> &nbsp; The Cooling Report &nbsp;·&nbsp; Iss. 44
+      &nbsp;·&nbsp; July 20, 2026
+    </div>
+  </body>
+</html>
