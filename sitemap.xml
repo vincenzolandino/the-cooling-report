@@ -885,4 +885,39 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/nvidia-dsx-45c-coolant-4-million-savings-energy-star-citation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/lg-electronics-600kw-cdu-nvidia-ai-factory-validation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/vertiv-italy-chiller-capacity-double-tognana-testing-lab.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/kansas-health-institute-data-center-water-quadruple-2028-cooling.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/google-botetourt-air-cooling-carvins-cove-water-power-tradeoff.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/zutacore-truong-waterless-cooling-closed-loop-sponsored-critique.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/hot-standby-cooling-redundancy-beats-idle-spares-ai-racks.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

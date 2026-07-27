@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NVIDIA Says 45C Coolant Saves a 50MW Site $4 Million a Year. The Citation Behind the Math Measures Air. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="description" content="NVIDIA's blog puts more than $4 million in annual savings on a 50-megawatt liquid-cooled site. The 4%-per-degree figure behind it links to an Energy Star page measuring server inlet air, in Fahrenheit, for buildings with fans." />
+    <link rel="canonical" href="https://thecoolingreport.com/intel/nvidia-dsx-45c-coolant-4-million-savings-energy-star-citation.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="NVIDIA Says 45C Coolant Saves a 50MW Site $4 Million a Year. The Citation Behind the Math Measures Air." />
+    <meta property="og:description" content="NVIDIA's blog puts more than $4 million in annual savings on a 50-megawatt liquid-cooled site. The 4%-per-degree figure behind it links to an Energy Star page measuring server inlet air, in Fahrenheit, for buildings with fans." />
+    <meta property="og:url" content="https://thecoolingreport.com/intel/nvidia-dsx-45c-coolant-4-million-savings-energy-star-citation.html" />
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page { padding: 110px 24px 80px; }
+      .article-page .section-inner { max-width: 720px; }
+      .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13, 118, 128, 0.08); padding: 3px 8px; border-radius: 3px; }
+      .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+      .article-page .meta { margin-bottom: 16px; }
+      .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+      .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+      .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+      .article-page .body a { color: var(--accent); }
+      .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+      .article-page .back:hover { text-decoration: underline; }
+      .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+      .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+      .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+      .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+      .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+      @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+        <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');"><span></span><span></span><span></span></div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta"><span class="tag">Technology</span><span class="date">June 21, 2026</span></div>
+        <h1>NVIDIA Says 45C Coolant Saves a 50MW Site $4 Million a Year. The Citation Behind the Math Measures Air.</h1>
+        <div class="body">
+<p>Cooling has taken up to 40% of a data center's electricity, a figure NVIDIA sources to McKinsey, and NVIDIA has now attached a dollar figure to shrinking it. A 50-megawatt hyperscale facility saves more than $4 million a year in cooling-related energy and water costs by moving to fully liquid-cooled infrastructure, <a href="https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/">according to a June 21 post on NVIDIA's own blog</a> by Josh Parker, the company's head of sustainability. The claim covers the Rubin generation, which NVIDIA calls the world's first infrastructure to run 100% liquid cooling with no fans anywhere in the system, and the method is written into the company's DSX AI factory reference design. Treat the arithmetic as NVIDIA's until your own plant model says otherwise.</p><h2>The Citation Measures a Different Temperature</h2><p>One input carries the calculation, and NVIDIA links its source. The post says raising chiller plant temperatures by one degree cuts cooling energy costs by about 4%, and it hangs the phrase "industry estimates" on a link to an Energy Star guidance page. That page says something else. Energy Star puts the savings at 4% to 5% for every 1 degree Fahrenheit of increase in server inlet air temperature, the air entering the front of a server, inside a recommended band of 64.4F to 80.6F drawn from ASHRAE's 2008 guidance. Two substitutions happen between the source and the sentence. Server inlet air becomes chiller plant. Fahrenheit becomes an unspecified degree in a post where every other temperature is Celsius, and a Celsius degree is 1.8 times larger.</p><p>The mismatch matters more than the unit. Energy Star describes an air-cooled hall where server fans move the heat, and that same page warns that pushing inlet air past the upper 70s Fahrenheit makes those fans spin up and claw back the savings. Rubin has no fans. NVIDIA removed them on purpose, which is the entire point of the platform, so running a fan-era air-side heuristic out to a fanless 45C facility loop is an extrapolation across roughly 20 degrees and a change of working fluid. NVIDIA does not show that step. The post also never states the baseline PUE for the 50-megawatt comparison, the climate, the power price, or how the $4 million splits between electricity and water. NVIDIA has said before that <a href="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html">45C cooling water eliminates chillers</a>. This is the first time it put money on the claim.</p><h2>The Chillers Stay in the Building</h2><p>Ali Heydari, NVIDIA's director of data center cooling and infrastructure, set the boundary himself. He described the dry-cooler design as a closed loop with no evaporative cooling, outside "maybe 1% of the year when we might need chillers" in some climates. Read that as an equipment list. The chillers stay in the building. They get purchased, rigged, commissioned, and maintained on a full schedule so they can carry the entire load for roughly 88 hours a year, which puts NVIDIA's $4 million on the operating line while the capital budget still buys a mechanical plant.</p><p>Richard Whitmore, president and CEO of Motivair, the advanced cooling division of Schneider Electric, described the ideal case as outdoor radiator coils doing all the heat rejection in the right geography, with no refrigeration equipment at the site at all. NVIDIA picks its own two poles for that spread, the Scottish Highlands against Phoenix, Arizona. The water side of the post is cleaner. NVIDIA pegs conventional cooling-tower consumption at roughly 2.6 million gallons per megawatt per year and puts the closed loop near zero, a reduction it sizes at up to 100%, and we examined that math when the Rubin design <a href="https://thecoolingreport.com/intel/nvidia-rubin-warm-water-cooling-near-zero-water-deep-dive.html">runs hot to use almost no water</a>.</p><h2>Ten Degrees Across the Chip</h2><p>The thermal spec is tighter than the headline temperature suggests. NVIDIA says coolant enters the cold plate at 45C and exits at roughly 55C. That 10-degree rise sets the flow rate, and flow rate sets manifold diameter, pump head, CDU capacity, and how much dry cooler surface the site has to buy. Earlier liquid-cooled servers were hybrids, cold plates on the GPUs and CPUs, finned heat sinks shedding everything else into moving air. NVIDIA says its thermal engineers redesigned cooling for those remaining components and routed liquid to multiple high-power chips on the board through a single inlet and outlet at the tray. The visible tell is the bezel, sealed on Rubin, perforated on anything that still breathes.</p><p>Density is where this gets expensive for the facility team. NVIDIA says a system that once occupied six rack units now fits in two. That reads as a real estate win on the floor plan, and it roughly triples the watts your slab has to reject per square foot. The fans go away, and so does the noise wall that showed up in zoning hearings once <a href="https://thecoolingreport.com/intel/data-center-noise-air-cooling-community-pushback.html">air-cooled sites hit 80 decibels and communities pushed back</a>. NVIDIA puts traditional data center fan noise at or above 85 decibels, loud enough to require ear protection. What replaces it outdoors is a dry cooler field, and the post discloses nothing about how large that field gets, what it costs, or how many acres per megawatt it takes.</p><p>Run your own number. Take the design-hour dry bulb at your site, set it against a 45C supply and a 10-degree rise across the chip, and you get the two answers that decide whether any of this pencils: how many square feet of dry cooler you buy, and how many hours a year the chiller you still own has to carry the entire load by itself.</p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/nvidia-dsx-45c-coolant-4-million-savings-energy-star-citation.html" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/nvidia-dsx-45c-coolant-4-million-savings-energy-star-citation.html" target="_blank">X</a>
+            <a href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/nvidia-dsx-45c-coolant-4-million-savings-energy-star-citation.html" target="_blank">Email</a>
+            <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/nvidia-dsx-45c-coolant-4-million-savings-energy-star-citation.html'); this.textContent = 'Copied!'; setTimeout(() => (this.textContent = 'Copy Link'), 2000);">Copy Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner"><div class="footer-inner">
+        <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+        <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+      </div></div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) { if (!l) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
+        var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript"; b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s); })(window.lintrk);
+    </script>
+    <noscript><img height="1" width="1" style="display: none" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" /></noscript>
+  </body>
+</html>
