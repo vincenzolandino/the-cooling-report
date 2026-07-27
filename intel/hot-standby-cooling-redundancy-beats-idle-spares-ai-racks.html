@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>An ASHRAE Case Study Cut Cooling Power 15% by Running the Spares Hot. It Ran at 8.8 kW a Rack. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="description" content="Solomon Obadimu of Digital Realty argues operators should run redundant cooling hot instead of idle. He cites an ASHRAE case study where hot standby sparing cut total cooling power 15% and moved cooling PUE from 1.23 to 1.20. That 30MW facility ran 8.8 kW per rack, roughly fifteen times below AI density." />
+    <link rel="canonical" href="https://thecoolingreport.com/intel/hot-standby-cooling-redundancy-beats-idle-spares-ai-racks.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="An ASHRAE Case Study Cut Cooling Power 15% by Running the Spares Hot. It Ran at 8.8 kW a Rack." />
+    <meta property="og:description" content="Solomon Obadimu of Digital Realty argues operators should run redundant cooling hot instead of idle. He cites an ASHRAE case study where hot standby sparing cut total cooling power 15% and moved cooling PUE from 1.23 to 1.20. That 30MW facility ran 8.8 kW per rack, roughly fifteen times below AI density." />
+    <meta property="og:url" content="https://thecoolingreport.com/intel/hot-standby-cooling-redundancy-beats-idle-spares-ai-racks.html" />
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page { padding: 110px 24px 80px; }
+      .article-page .section-inner { max-width: 720px; }
+      .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13, 118, 128, 0.08); padding: 3px 8px; border-radius: 3px; }
+      .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+      .article-page .meta { margin-bottom: 16px; }
+      .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+      .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+      .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+      .article-page .body a { color: var(--accent); }
+      .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+      .article-page .back:hover { text-decoration: underline; }
+      .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+      .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+      .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+      .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+      .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+      @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"><span class="logo-icon">◈</span> The Cooling Report</a>
+        <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');"><span></span><span></span><span></span></div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">← Back to Intel</a>
+        <div class="meta"><span class="tag">Infrastructure</span><span class="date">June 18, 2026</span></div>
+        <h1>An ASHRAE Case Study Cut Cooling Power 15% by Running the Spares Hot. It Ran at 8.8 kW a Rack.</h1>
+        <div class="body">
+<p>Solomon Obadimu wants operators to stop parking redundant cooling equipment in the off position. Digital Realty's program manager for OT remediation made the case in <a href="https://www.datacenterdynamics.com/en/opinions/rethinking-redundancy-smarter-strategies-for-the-ai-driven-data-center/">DataCenterDynamics' June 18 opinion pages</a>. Hot standby sparing should displace cold standby sparing as the industry default. He builds the section on Cho et al. (2024), published in the February 2024 ASHRAE Journal. The paper modeled a 30MW facility and reported that running the redundant cooling units at partial load instead of leaving them dark cut total cooling power consumption 15 percent and moved cooling PUE from 1.23 to 1.20. His thesis: "How redundancy is implemented is more impactful than how much redundancy is in place." Obadimu also puts cooling failures at 51 percent of data center downtime, the single largest cause of interruption, a figure he takes secondhand from a study Cho cites.</p><h2>The Case Study Ran at 8.8 kW a Rack</h2><p>Here is the number that never makes the headline. Cho's 30MW facility carried 8.8 kW of IT load per rack. That is air cooling. A GB300 cabinet draws past 100 kW, and the industry has already <a href="https://thecoolingreport.com/intel/ai-rack-density-liquid-cooling-nonnegotiable.html">moved from 2 kW to 130 kW per cabinet in forty years</a>. Obadimu titled the piece for the AI-driven data center, then sourced his cooling evidence from a hall running roughly fifteen times below AI density. The 15 percent holds inside Cho's assumptions. Whether it survives the jump to a direct-to-chip loop is a separate question, and the piece never tests it.</p><h2>Liquid Loops Do Not Give You Minutes</h2><p>The redundancy math changes when the working fluid changes. An 8.8 kW room has thermal mass to spend: room air, floor plenum, chilled water volume. All of it buys an operator time to start a cold spare and let it stabilize. A direct-to-chip loop carries almost none of that. The integrator Introl puts ride-through at under 10 seconds at full load once the pump stops, shorter than the start sequence on most standby mechanical equipment. That is the strongest argument available to Obadimu, and he never reaches for it. At AI density, hot standby is a reliability requirement. A CDU with 1+1 pumps backed by a cold spare chiller still cooks the die if that chiller needs sixty seconds to come up. <a href="https://thecoolingreport.com/intel/direct-to-chip-flow-balancing-problem-liquid-cooling.html">Manifold flow balancing</a> is the other half of it. A failed unit does not degrade evenly across a row.</p><h2>Power and Servers Get the Same Argument</h2><p>Obadimu runs the identical logic through two more pillars. On power he cites Takci et al. (2025) putting 10 to 50 percent of UPS capacity unused even during outages, and proposes that 2N and 2(N+1) sites sell that headroom back to the grid as a revenue line. On servers he cites Shaukat et al. (2022) in Sensors, where an energy-aware fault-tolerant scheduler cut unfinished processing tasks 80 percent during failures with servers simulated at 75 percent load, while requiring 27 percent fewer backup devices than GreenCloud, against a fleet where utilization sits between 12 and 30 percent and idle servers still burn roughly 66 percent of what an active one burns. He closes on aviation, recommending dissimilar redundancy across different hardware and software to kill common-mode failures.</p><p>Check the commercial angle and it runs against him. Obadimu works for an operator that sells redundancy tiers, and his conclusion argues for buying less of it and running it harder. The harder problem sits downstream. If NVIDIA's 45C warm-water architecture <a href="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html">removes the mechanical chiller entirely</a>, the cold-versus-hot standby debate loses its subject, and redundancy relocates to the CDU, the pumps, the manifolds, and the dry coolers. Somebody needs to run the Cho analysis again on a 130 kW rack with a 45C supply and a ten second failure window. Nobody has published that number.</p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/hot-standby-cooling-redundancy-beats-idle-spares-ai-racks.html" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/hot-standby-cooling-redundancy-beats-idle-spares-ai-racks.html" target="_blank">X</a>
+            <a href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/hot-standby-cooling-redundancy-beats-idle-spares-ai-racks.html" target="_blank">Email</a>
+            <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/hot-standby-cooling-redundancy-beats-idle-spares-ai-racks.html'); this.textContent = 'Copied!'; setTimeout(() => (this.textContent = 'Copy Link'), 2000);">Copy Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner"><div class="footer-inner">
+        <p class="footer-logo"><span class="logo-icon">◈</span> The Cooling Report</p>
+        <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+      </div></div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) { if (!l) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
+        var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript"; b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s); })(window.lintrk);
+    </script>
+    <noscript><img height="1" width="1" style="display: none" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&fmt=gif" /></noscript>
+  </body>
+</html>
