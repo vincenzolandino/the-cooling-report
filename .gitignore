@@ -4,3 +4,14 @@ research-*.md
 *-pricing-*.md
 competitive-analysis.md
 drafts/
+
+# Operator runbooks and pipeline docs (contain config, credentials, contact PII)
+*-HANDOFF.md
+*-outreach.md
+sponsor-outreach.md
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
