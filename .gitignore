@@ -4,3 +4,13 @@ research-*.md
 *-pricing-*.md
 competitive-analysis.md
 drafts/
+
+# macOS AppleDouble sidecars (this repo lives on a FAT/msdos volume)
+._*
+.DS_Store
+
+# Operator runbook (contains config, must never deploy)
+*-HANDOFF.md
+
+# Weekly ship scratch folders
+_ship-*/
