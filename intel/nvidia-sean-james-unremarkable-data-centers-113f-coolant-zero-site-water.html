@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>An NVIDIA Distinguished Engineer Says the Goal Is a Data Center Nobody Notices. His Number for It Is 113 Degree Coolant. | The Cooling Report</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="description" content="Sean James spent 25 years building data centers at Microsoft before joining NVIDIA. He argues the industry's endpoint is a facility that is visibly unremarkable, and the design that gets there runs coolant hot enough to reject to outside air." />
+    <link rel="canonical" href="https://thecoolingreport.com/intel/nvidia-sean-james-unremarkable-data-centers-113f-coolant-zero-site-water.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="An NVIDIA Distinguished Engineer Says the Goal Is a Data Center Nobody Notices. His Number for It Is 113 Degree Coolant." />
+    <meta property="og:description" content="Sean James spent 25 years building data centers at Microsoft before joining NVIDIA. He argues the industry's endpoint is a facility that is visibly unremarkable, and the design that gets there runs coolant hot enough to reject to outside air." />
+    <meta property="og:url" content="https://thecoolingreport.com/intel/nvidia-sean-james-unremarkable-data-centers-113f-coolant-zero-site-water.html" />
+    <meta property="og:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta name="twitter:image" content="https://thecoolingreport.com/og/default.png" />
+    <meta property="og:site_name" content="The Cooling Report" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .article-page { padding: 110px 24px 80px; }
+      .article-page .section-inner { max-width: 720px; }
+      .article-page .tag { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); background: rgba(13, 118, 128, 0.08); padding: 3px 8px; border-radius: 3px; }
+      .article-page .date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 12px; }
+      .article-page .meta { margin-bottom: 16px; }
+      .article-page h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 24px; }
+      .article-page .body p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+      .article-page .body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+      .article-page .body a { color: var(--accent); }
+      .article-page .back { font-size: 0.85rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+      .article-page .back:hover { text-decoration: underline; }
+      .share-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+      .share-bar p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+      .share-bar .share-links { display: flex; gap: 12px; flex-wrap: wrap; }
+      .share-bar .share-links a { font-size: 0.84rem; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 3px; }
+      .share-bar .share-links a:hover { border-color: var(--accent); text-decoration: none; }
+      @media (max-width: 600px) { .article-page h1 { font-size: 1.5rem; } }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"><span class="logo-icon">&#9672;</span> The Cooling Report</a>
+        <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');"><span></span><span></span><span></span></div>
+        <div class="nav-links">
+          <a href="../intel.html">Intel</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../sponsor.html">Sponsor</a>
+          <a href="/#subscribe" class="nav-cta">Subscribe</a>
+        </div>
+      </div>
+    </nav>
+    <div class="article-page">
+      <div class="section-inner">
+        <a href="../intel.html" class="back">&larr; Back to Intel</a>
+        <div class="meta"><span class="tag">Technology</span><span class="date">August 9, 2026</span></div>
+        <h1>An NVIDIA Distinguished Engineer Says the Goal Is a Data Center Nobody Notices. His Number for It Is 113 Degree Coolant.</h1>
+        <div class="body">
+<p>Sean James, a distinguished engineer in energy systems at NVIDIA, published a first-person case for making AI data centers boring, <a href="https://www.businessinsider.com/nvidia-ai-data-center-designer-engineer-more-efficient-less-visible-2026-8">in an essay for Business Insider</a>. He started as a submarine electrician in the Navy and spent more than 25 years designing and building data centers at Microsoft before moving to NVIDIA. His framing: "Data centers need to fade into the background too, and that is the goal of every data center designer." He is careful to say he does not mean hiding them. He means designing them so there is nothing left to complain about, and he closes on making them "efficient, sustainable, and eventually unremarkable."</p>
+<h2>113 degrees Fahrenheit is 45C, and 45C deletes a building</h2>
+<p>James points to the design NVIDIA went public with this summer, which runs facility coolant up to 113F. At that supply temperature the outdoor loop can reject heat through dry coolers and outside air across most climates for most of the year, so the cooling tower comes off the site plan and the makeup water rate goes to zero. What leaves with it: the basin, the biocide program, the blowdown permit, the drift eliminators, the scale chemistry, and the plume that shows up in every community hearing. <a href="https://thecoolingreport.com/intel/nvidia-hot-water-cooling-45c-eliminates-chillers.html">The 45C loop eliminates the chiller plant as well as the tower</a>, and <a href="https://thecoolingreport.com/intel/nvidia-rubin-warm-water-cooling-near-zero-water-deep-dive.html">the Rubin generation is where it becomes the reference design rather than an option</a>.</p>
+<h2>The grid sentence he does not linger on</h2>
+<p>James notes that more than 1,000 megawatts of data center load dropping off the grid in seconds is enough to trigger a grid alert, and that diesel generators are being displaced by fault-tolerant network designs, batteries, and fuel cells. That is a much larger claim than it looks. A gigawatt of GPUs going idle between training steps is a thermal transient before it is an electrical one, and the loop has to absorb the swing without the plates going into film boiling or the return temperature collapsing the outdoor approach. <a href="https://thecoolingreport.com/intel/university-utah-data-center-flexibility-western-grid-590-million.html">Load flexibility is worth hundreds of millions to a western grid operator</a>, and it is the cooling system that decides how fast a campus can actually ramp.</p>
+<p>Set this essay next to the rest of this week's news and the argument gets sharper. Gilroy, Chester County, and Mason County are all fights about towers, noise, water, and the things a neighbor can see and hear from the property line. James is describing an architecture where all four go away, and it ships from the vendor that already sets the rack specification. PUE went from 3 to 5 in the 1990s down to 1.2 to 1.5 today, and the industry got no political credit for it because the buildings kept getting louder and thirstier. The design he is pointing at is the first one that changes what the neighbor experiences. The constraint is the installed fleet: every hall built for 20C supply water needs new coils, new pumps, and a new outdoor loop to get to 45C, and nobody is budgeting that retrofit yet.</p>
+        </div>
+        <div class="share-bar">
+          <p>Share this article</p>
+          <div class="share-links">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecoolingreport.com/intel/nvidia-sean-james-unremarkable-data-centers-113f-coolant-zero-site-water.html" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/intent/tweet?url=https://thecoolingreport.com/intel/nvidia-sean-james-unremarkable-data-centers-113f-coolant-zero-site-water.html" target="_blank">X</a>
+            <a href="mailto:?subject=The%20Cooling%20Report&body=https://thecoolingreport.com/intel/nvidia-sean-james-unremarkable-data-centers-113f-coolant-zero-site-water.html" target="_blank">Email</a>
+            <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('https://thecoolingreport.com/intel/nvidia-sean-james-unremarkable-data-centers-113f-coolant-zero-site-water.html'); this.textContent = 'Copied!'; setTimeout(() =&gt; (this.textContent = 'Copy Link'), 2000);">Copy Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="section-inner"><div class="footer-inner">
+        <p class="footer-logo"><span class="logo-icon">&#9672;</span> The Cooling Report</p>
+        <p class="footer-copy">&copy; 2026 The Cooling Report. All rights reserved.</p>
+      </div></div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYYCLVFLEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DYYCLVFLEF");
+    </script>
+    <script type="text/javascript">
+      _linkedin_partner_id = "8831074";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) { if (!l) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
+        var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript"; b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s); })(window.lintrk);
+    </script>
+    <noscript><img height="1" width="1" style="display: none" alt="" src="https://px.ads.linkedin.com/collect/?pid=8831074&amp;fmt=gif" /></noscript>
+  </body>
+</html>
