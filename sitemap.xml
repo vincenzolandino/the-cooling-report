@@ -1015,4 +1015,44 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/nvidia-sb-energy-openai-ports-pike-ohio-8-gigawatt-campus.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/nate-silver-jasmine-sun-data-center-opposition-golf-course-water.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/data-center-solar-battery-storage-gigawatt-scale-night-cooling-load.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/waxhaw-bellevue-preemptive-data-center-moratoriums-no-proposal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/elko-nevada-reclaimed-water-locked-golf-course-data-center-cooling.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/florida-sb-484-data-center-full-cost-of-service-governor-race.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/epri-data-centers-lowered-electricity-rates-causal-study.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecoolingreport.com/intel/golf-courses-water-31-percent-reduction-data-center-benchmark.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
